@@ -8,12 +8,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const inriaSans = Inria_Sans({
   variable: "--font-inria-sans",
-  weight: "300"
+  weight: "300",
+  subsets: ["latin"], 
 });
 
 const scheherazadeNew = Scheherazade_New({
   variable: "--font-scheherazade-new",
-  weight: "400"
+  weight: "400",
+  subsets: ["arabic", "latin"], 
 });
 
 export const metadata: Metadata = {
