@@ -1,7 +1,7 @@
-@import '../public/Vector12.png';
+/* @import '../public/Vector12.png';
 @import '../public/articleCard1.png';
 @import '../public/articleCard2.png';
-@import '../public/articleCard3.png';
+@import '../public/articleCard3.png'; */
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap');
 
 /* .headerSection {
@@ -282,15 +282,15 @@
 }
 
 .articleCard1 {
-  background-image: url('/articleCard1.png');
+  background-image: url('../public/articleCard1.png');
 }
 
 .articleCard2 {
-  background-image: url('/articleCard2.png');
+  background-image: url('../public/articleCard2.png');
 }
 
 .articleCard3 {
-  background-image: url('/articleCard3.png');
+  background-image: url('../public/articleCard3.png');
   margin-right: 0 !important;
 }
 
