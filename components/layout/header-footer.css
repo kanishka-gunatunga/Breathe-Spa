@@ -1,0 +1,169 @@
+@font-face {
+    font-family: 'AwesomeSerif';
+    src: url('/fonts/AwesomeSerif-Regular.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Coefficient DEMO';
+    src: url('/fonts/Coefficient-Regular.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.nav-item {
+    font-family: 'AwesomeSerif', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 5%;
+    color: #656565;
+    text-decoration: none;
+}
+
+.nav-link{
+    margin-inline: 10px;
+}
+
+.nav-item:active {
+    text-decoration: underline !important;
+}
+
+
+
+.footer-backg {
+    width: 100vw;
+}
+
+.search-form {
+    width: 100%;
+}
+
+.search-form input {
+    height: 46px;
+    border-radius: 0;
+
+
+    font-family: Work Sans;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 30px;
+    letter-spacing: 0%;
+
+}
+
+.search-form Button {
+    height: 46px;
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.footer-content {
+
+    top: 50%;
+    padding-inline: 8rem;
+    background-color: #F2EDE6;
+}
+
+.footer-row {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 2px solid #C1C7CD;
+}
+
+.footer-link-tag {
+    text-decoration: none;
+}
+
+.footer-h5 {
+    font-family: 'AwesomeSerif', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    color: #313131;
+}
+
+
+.footer-quick-links {
+    font-family: 'AwesomeSerif', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 2%;
+    color: #656565;
+
+    display: flex;
+    gap: 20px;
+}
+
+.footer {
+    background-repeat: no-repeat;
+}
+
+.bottom-p {
+    font-family: Work Sans;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0%;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 968px) {
+
+    .navbar-nav{
+    display: none !important;
+    }
+
+    .navbar > .container-fluid{
+        flex-wrap: nowrap !important;
+    }
+
+    .navbar-collapse{
+        justify-content: end !important;
+    }
+    .footer-content {
+        padding-inline: 10px;
+        background-color: #F2EDE6 !important;
+    }
+
+    .footer-row-2 {
+        margin-bottom: 60px;
+    }
+
+    .footer-h5 {
+        margin-bottom: 30px;
+    }
+
+    .footer-backg{
+        height: 200px !important;
+    }
+}

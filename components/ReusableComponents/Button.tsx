@@ -1,13 +1,21 @@
 'use client';
-import React from 'react'
+import React from 'react';
+import Link from 'next/link';
 
-const Button = () => {
-    return (
-        <button type="button" className="btn btn-primary"  onClick={() => console.log('Clicked!')}>
-            Click Me
-        </button>
 
-    )
+interface ButtonProps {
+    text: string;
+    href?: string;
 }
 
-export default Button
+const Button: React.FC<ButtonProps> = ({ text, href }) => {
+    const buttonElement = (
+        <button type="button" className="brownButton">
+            {text}
+        </button>
+    );
+
+    return href ? <Link href={href}>{buttonElement}</Link> : buttonElement;
+};
+
+export default Button;
