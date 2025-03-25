@@ -423,7 +423,7 @@ export default function Home() {
               <div>
                 <h3 className={styles.locationDivTitle}>Recent Articles</h3>
                 <p className={`mt-0 ${styles.locationDivP}`}>
-                  Here’s what we've been up to recently.
+                  Here’s what we&apos;ve been up to recently.
                 </p>
               </div>
             </div>

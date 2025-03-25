@@ -68,11 +68,14 @@ const page = () => {
         </div>
 
         <div className={styles.baseSection}>
-          <div className="col-10">
-            <div className="card mb-3" >
-              <div className="row g-0">
-                <div className="col-md-4">
-                  <Image src="/testimonialPic.png" alt="testimonialPic" width={289} height={343} />
+          <div className={styles.articleDiv}>
+            <div className="d-md-flex d-lg-flex d-block justify-content-between">
+              <div className="col-12 col-md-6 col-lg-6">
+                <div>
+                  <h3 className={styles.locationDivTitle}>Recent Articles</h3>
+                  <p className={`mt-0 ${styles.locationDivP}`}>
+                    Here’s what we&apos;ve been up to recently.
+                  </p>
                 </div>
                 <div className="col-md-8">
                   <div className="card-body">
