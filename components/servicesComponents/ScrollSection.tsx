@@ -23,11 +23,11 @@ const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category }) =
 
     return (
         <div className="section">
-            <div className="d-flex flex-column flex-lg-row">
-                <div className="col-12 col-lg-6 pe-lg-2">
+            <div className="d-flex flex-column-reverse flex-lg-row">
+                <div className="col-12 col-lg-6 pe-lg-2 mt-3 mt-lg-0">
                     <h3 className={`${style.serviceTitle}`}>{category.title}</h3>
                     <p className={`${style.paragraph}`}>{category.description}</p>
-                    <div className={`${style.servicesList} row p-0 row-cols-1 row-cols-md-2`}>
+                    <div className={`${style.servicesList} row p-0 row-cols-2 row-cols-md-2`}>
                         {category.services.map((service, index) => (
                             <div key={index} className={`${style.serviceItem}`}>
                                 <h4>{service.serviceName}</h4>
@@ -35,7 +35,7 @@ const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category }) =
                                 <ul>
                                     {service.pricing.map((pricing, idx) => (
                                         <li key={idx}>
-                                            {pricing.duration} | ${pricing.price}
+                                            {pricing.duration} | Rs.{pricing.price}
                                         </li>
                                     ))}
                                 </ul>
@@ -46,13 +46,16 @@ const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category }) =
                 </div>
                 <div className="col-12 col-lg-6 ps-lg-2 d-flex justify-content-end align-items-start">
                     {category.mainImage && (
-                        <Image
-                            src={urlFor(category.mainImage).url()}
-                            alt={category.title}
-                            className={`${style.serviceImage} img-fluid`}
-                            height={600}
-                            width={500}
-                        />
+                        <div className="position-relative">
+                            <Image
+                                src={urlFor(category.mainImage).url()}
+                                alt={category.title}
+                                className={`${style.serviceImage} img-fluid`}
+                                height={600}
+                                width={500}
+                            />
+                            <div className={`${style.darkRectangleServiceMain}`}></div>
+                        </div>
                     )}
                 </div>
             </div>

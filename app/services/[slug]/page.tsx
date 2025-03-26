@@ -77,38 +77,12 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
                 title={title}
                 description={groupedServices[title][0].serviceDescription?.description}
               />
-              {/* <div className="section">
-                {groupedServices[title].map((service, index) => (
-                  <div key={service.serviceName + index} className={`p-0 position-relative`}>
-                    <div className={`${style.serviceInnerItem} p-2 p-lg-4`}>
-                      <div className="d-flex flex-column flex-md-row">
-                        <div className="col-12 col-lg-10 d-flex flex-column align-items-start">
-                          <h4>{service.serviceName}</h4>
-                          <ul>
-                            {service.pricing.map((price, priceIndex) => (
-                              <li key={priceIndex}>
-                                {price.duration}: ${price.price}
-                              </li>
-                            ))}
-                          </ul>
-                          <Paragraph text={service.serviceItemDescription} />
-                        </div>
-                        <div className="col-12 col-lg-2 d-flex justify-content-end align-items-start pt-2">
-                          <Link href={"/contact"} >Learn More</Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div> */}
-              <div className="section py-0">
+              <div className="my-3 my-lg-0 section">
                 {groupedServices[title].map((service, index) => (
                   <div
                     key={service.serviceName + index}
                     className="p-0 position-relative"
                   >
-                    
-
                     <div
                       className={`p-2 p-md-3 p-lg-4 ${style.serviceInnerItem} ${index % 2 === 0 ? style.roundedBottomLeft : style.roundedTopRight}`}
                     >
@@ -118,7 +92,7 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
                           <ul>
                             {service.pricing.map((price, priceIndex) => (
                               <li key={priceIndex}>
-                                {price.duration}: ${price.price}
+                                {price.duration}: Rs.{price.price}
                               </li>
                             ))}
                           </ul>
