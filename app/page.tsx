@@ -222,22 +222,6 @@ export default function Home() {
           </div>
         </div>
 
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         {/* section 04 hygene for desktop and mobile hide*/}
         <div className={`${styles.baseSection}, ${styles.mobileHide} `}>
           <div className={`d-block d-md-flex d-lg-flex gap-4 ${styles.marginBottom}`}>
@@ -259,20 +243,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
 
         {/* section 05 personl cr for desktop and mobile hide*/}
         <div className={`${styles.baseSection}, ${styles.mobileHide} `}>
@@ -296,69 +266,67 @@ export default function Home() {
           </div>
         </div>
 
-
-        
       </div>
 
-            {/* proffesionalism for mobile and desktop hide*/}
-        <div className={`${styles.baseSection}, ${styles.DesktopHide} `}>
-          <div className="row p-3">
-            <div className="d-flex flex-column justify-content-between p-2 gap-4">
+      {/* proffesionalism for mobile and desktop hide*/}
+      <div className={`${styles.baseSection}, ${styles.DesktopHide} `}>
+        <div className="row p-3">
+          <div className="d-flex flex-column justify-content-between p-2 gap-4">
 
-              <h3 className={styles.sectionTitle}>Professionalism</h3>
-              <Image className={`img-fluid ${styles.leftBoxShadow}`} src="/Rectangle4431.png" height={368} width={624} alt="" />
-              <p className={styles.sectionDescription}>
-                We understand that for our clients, a visit to Breathe Day Spa is an investment in their wellbeing.
-                Our specialist therapists are trained and certified internationally to ensure the highest quality treatments, and their craft is as much an art as it is a talent.
-                Our treatments entail high attention to detail so our appointments run to time. We value our clients’ time and appreciate punctual arrival for treatments.
-              </p>
+            <h3 className={styles.sectionTitle}>Professionalism</h3>
+            <Image className={`img-fluid ${styles.leftBoxShadow}`} src="/Rectangle4431.png" height={368} width={624} alt="" />
+            <p className={styles.sectionDescription}>
+              We understand that for our clients, a visit to Breathe Day Spa is an investment in their wellbeing.
+              Our specialist therapists are trained and certified internationally to ensure the highest quality treatments, and their craft is as much an art as it is a talent.
+              Our treatments entail high attention to detail so our appointments run to time. We value our clients’ time and appreciate punctual arrival for treatments.
+            </p>
 
-              <div>
-                <Button text="EXPLORE MORE" href="#" />
-              </div>
+            <div>
+              <Button text="EXPLORE MORE" href="#" />
             </div>
           </div>
         </div>
+      </div>
 
 
 
-        {/* section 04 hygene for mobile and desktop hide*/}
-        <div className={`${styles.baseSection}, ${styles.DesktopHide} `}>
+      {/* section 04 hygene for mobile and desktop hide*/}
+      <div className={`${styles.baseSection}, ${styles.DesktopHide} `}>
 
-          <div className="row p-3">
-            <div className="d-flex flex-column justify-content-between p-2 gap-4">
+        <div className="row p-3">
+          <div className="d-flex flex-column justify-content-between p-2 gap-4">
 
-              <h3 className={styles.sectionTitle}>Hygiene</h3>
-              <Image className={`img-fluid ${styles.rightBoxShadow}`} src="/hygen.png" height={368} width={624} alt="" />
-              <p className={styles.sectionDescription}>
-                We are obsessed with hygiene and maintain surgery-grade sterilization standards at all times. We use hospital-grade, EPA-approved disinfectants to sanitize all metal instruments, followed by sterilization in an Autoclave, ensuring surgical-grade standards. We also use high quality metal foot files & crystal foot files which allows us to safely and gently remove calluses. The files are then sanitized and sterilized. We use podiatrist approved products such as Gehwol and Footlogix to treat various nail and skin conditions. Our strict sanitization procedures ensure a safe and hygienic experience for every guest.
-              </p>
+            <h3 className={styles.sectionTitle}>Hygiene</h3>
+            <Image className={`img-fluid ${styles.rightBoxShadow}`} src="/hygen.png" height={368} width={624} alt="" />
+            <p className={styles.sectionDescription}>
+              We are obsessed with hygiene and maintain surgery-grade sterilization standards at all times. We use hospital-grade, EPA-approved disinfectants to sanitize all metal instruments, followed by sterilization in an Autoclave, ensuring surgical-grade standards. We also use high quality metal foot files & crystal foot files which allows us to safely and gently remove calluses. The files are then sanitized and sterilized. We use podiatrist approved products such as Gehwol and Footlogix to treat various nail and skin conditions. Our strict sanitization procedures ensure a safe and hygienic experience for every guest.
+            </p>
 
-              <div>
-                <Button text="EXPLORE MORE" href="#" />
-              </div>
+            <div>
+              <Button text="EXPLORE MORE" href="#" />
             </div>
           </div>
         </div>
+      </div>
 
 
-        {/* section 05 personl cr for mobile and desktop hide*/}
-        <div className={`${styles.baseSection}, ${styles.DesktopHide} `}>
-          <div className="row p-3">
-            <div className="d-flex flex-column justify-content-between p-2 gap-4">
+      {/* section 05 personl cr for mobile and desktop hide*/}
+      <div className={`${styles.baseSection}, ${styles.DesktopHide} `}>
+        <div className="row p-3">
+          <div className="d-flex flex-column justify-content-between p-2 gap-4">
 
-              <h3 className={styles.sectionTitle}>Personalized Care</h3>
-              <Image className={`img-fluid ${styles.leftBoxShadow}`} src="/person.png" height={368} width={624} alt="" />
-              <p className={styles.sectionDescription}>
-                We understand that each client’s wellness and beauty needs are unique. From a simple manicure to a customized massage treatment to help you melt into relaxation, to curating the ultimate Spa Day for your valuable “me-time”, our team will help personalize each experience for you.
-              </p>
+            <h3 className={styles.sectionTitle}>Personalized Care</h3>
+            <Image className={`img-fluid ${styles.leftBoxShadow}`} src="/person.png" height={368} width={624} alt="" />
+            <p className={styles.sectionDescription}>
+              We understand that each client’s wellness and beauty needs are unique. From a simple manicure to a customized massage treatment to help you melt into relaxation, to curating the ultimate Spa Day for your valuable “me-time”, our team will help personalize each experience for you.
+            </p>
 
-              <div>
-                <Button text="EXPLORE MORE" href="#" />
-              </div>
+            <div>
+              <Button text="EXPLORE MORE" href="#" />
             </div>
           </div>
-          {/* <div className={`d-block d-md-flex d-lg-flex gap-4 ${styles.marginBottom}`}>
+        </div>
+        {/* <div className={`d-block d-md-flex d-lg-flex gap-4 ${styles.marginBottom}`}>
           <div className="col-12 col-md-6 d-flex justify-content-center">
             <Image className={`img-fluid ${styles.leftBoxShadow}`} src="/person.png" height={368} width={624} alt="" />
           </div>
@@ -376,7 +344,7 @@ export default function Home() {
             </div>
           </div>
         </div> */}
-        </div>
+      </div>
 
       <div className={`mx-0 px-0 ${styles.baseSection, styles.mobileHide}`}>
         <div className="position-relative">
@@ -406,6 +374,7 @@ export default function Home() {
         {/* <div className="col-12"> */}
         <div className={styles.location}>
           <h3 className={styles.locationDivTitle}>Conveniently Located in Central Colombo</h3>
+          <Image className={`img-fluid ${styles.locationImg}`} src="/interior.png" height={731} width={640} alt="" />
           <p className={styles.locationDivP}>
             Breathe is within a 15-minute drive from all prominent Hotels in the heart of Colombo. Our neighborhood is in Cinnamon Gardens –  where the old-world charm of tree-lined streets, parks, and large gardens of beautifully preserved colonial homes – is a repository of heritage and beauty within the rapidly evolving urban dynamics of Colombo. We choose a beautiful old bungalow down a leafy, residential cul-de-sac. It is one of the most tranquil quarters of Colombo and ideally suited for Breathe’s bespoke and private experience style. The Spa blends in to the neighborhood with minimal external signage – partly to preserve the serene, residential ambiance, but also to enhance its ‘hidden refuge in Cinnamon Gardens’ vibe.
           </p>
