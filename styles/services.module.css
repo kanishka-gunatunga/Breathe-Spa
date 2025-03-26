@@ -1,0 +1,204 @@
+@font-face {
+    font-family: 'AwesomeSerif';
+    src: url('/fonts/AwesomeSerif-SemBdExtraTall.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  
+  @font-face {
+    font-family: 'Coefficient DEMO';
+    src: url('/fonts/Coefficient-Regular.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+  }
+
+
+/* hero section image styles */
+.imageContainer img {
+    width: 100vw;
+    height: auto;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+@media (min-width: 768px) {
+    .imageContainer img {
+        max-height: 60vh;
+    }
+}
+
+@media (min-width: 1024px) {
+    .imageContainer img {
+        max-height: 70vh;
+    }
+}
+
+@media (min-width: 1280px) {
+    .imageContainer img {
+        max-height: 80vh;
+    }
+}
+
+@media (min-width: 1600px) {
+    .imageContainer img {
+        max-height: 85vh;
+    }
+}
+
+
+
+
+
+/* text styles */
+.mainTitle {
+    color: #313131;
+    font-family: 'Coefficient DEMO';
+    font-weight: 400;
+    font-size: 60px;
+}
+
+.mainTitleStyleTwo {
+    color: #313131;
+    font-family: 'Coefficient DEMO';
+    font-weight: 400;
+    font-size: 54px;
+}
+
+.serviceTitle {
+    color: #292929;
+    font-family: 'Coefficient DEMO';
+    font-weight: 400;
+    font-size: 40px;
+}
+
+.paragraph {
+    color: #313131;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 30px;
+}
+
+.imgHeight {
+    object-fit: contain;
+    object-position: right;
+    height: 100%;
+    width: 100%;
+    max-height: 580px;
+}
+
+.serviceImage {}
+
+.darkButton {
+    background-color: #313131;
+    min-width: 107px;
+    min-height: 33px;
+    height: max-content;
+    border-radius: 4px;
+    color: #F3EEE7;
+    font-family: 'AwesomeSerif';
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    text-decoration: none;
+    letter-spacing: 1.5px !important;
+}
+.serviceItem{
+    position: relative;
+    margin-bottom: 40px;
+}
+.servicesList{
+    height: max-content !important;
+    margin-bottom: 20px;
+}
+.serviceItem h4{
+    font-family: 'AwesomeSerif', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #292929;
+    letter-spacing: 1px !important;
+}
+
+.serviceItem h5{
+    font-family: 'AwesomeSerif', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: #595959;
+    letter-spacing: 1px !important;
+}
+.serviceItem ul{
+    list-style: none;
+    padding-left: 0px;
+}
+.serviceItem li{
+    font-family: 'AwesomeSerif', sans-serif;
+    color: #8F8F8F;
+    letter-spacing: 1px !important;
+    padding-left: 0px;
+    font-weight: 300;
+}
+
+@media (max-width: 992px) {
+    .imgHeight {
+        object-position: center;
+    }
+
+    .mobileHeight {
+        height: 80vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .mainTitle {
+        font-size: 50px;
+        margin-top: 30px;
+    }
+
+    .mainTitleStyleTwo {
+        font-size: 44px;
+    }
+
+    .paragraph {
+        line-height: 25px;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .mainTitleStyleTwo {
+        font-size: 40px;
+    }
+}
+
+
+
+/* shape background */
+.sectionShaped {
+    padding: 40px 16px;
+}
+
+@media (min-width: 768px) {
+    .sectionShaped {
+        padding: 64px 24px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .sectionShaped {
+        padding: 80px 32px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .sectionShaped {
+        padding: 96px 40px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .sectionShaped {
+        padding: 120px 48px;
+    }
+}

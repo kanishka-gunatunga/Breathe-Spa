@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap');
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --x-space: 
 }
 
 html,
@@ -65,4 +69,44 @@ a {
   line-height: 100%;
   letter-spacing: 10%;
 
+}
+
+
+
+
+/* section spacing and screen max width */
+.section {
+  padding: 40px 16px;
+  max-width: 1400px;  
+  margin: 0 auto; 
+}
+
+@media (min-width: 768px) {
+  .section {
+      padding: 64px 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+      padding: 80px 32px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .section {
+      padding: 96px 40px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .section {
+      padding: 120px 48px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .section {
+      max-width: 1400px; 
+  }
 }

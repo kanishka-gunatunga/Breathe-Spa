@@ -7,7 +7,10 @@ export const GET_SERVICE_CATEGORIES = `
     description,
     "services": services[] {
       serviceName,
-      serviceSlug,
+      serviceDescription->{
+      title,
+      description
+    },
       pricing[] {
         duration,
         price
@@ -15,3 +18,26 @@ export const GET_SERVICE_CATEGORIES = `
     }
   }
 `
+export const GET_SERVICE_CATEGORY_BY_SLUG = `
+  *[_type == "serviceCategory" && slug.current == $slug][0] {
+    _id,
+    title,
+    slug,
+    servicesHeroImage,
+    servicesImage,
+    categoryTitle,
+    categoryDescription,
+    innerHeroTitle,
+    "services": services[] {
+      serviceName,
+      serviceDescription->{
+        title,
+        description
+      },
+      pricing[] {
+        duration,
+        price
+      }
+    }
+  }
+`;
