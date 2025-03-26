@@ -362,6 +362,178 @@
 
 
 
+/* about page */
+
+.headSection {
+  margin-top: 100px;
+}
+
+.testimonialCard {
+  background-color: #F3EEE7;
+  padding: 20px;
+  border-radius: 0;
+  border: none;
+}
+
+.testimonialPic {
+  background-color: #FFFFFF;
+}
+
+.arrowDiv {
+  right: 0;
+  bottom: -10px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  display: flex;
+  gap: 10px;
+}
+
+.arrowDiv svg {
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  padding: 5px;
+
+
+  
+}
+
+
+.aboutSectionTitle {
+  font-family: 'Coefficient DEMO', sans-serif;
+  font-size: 60px !important;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.TestimonialCardText {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 5%;
+
+}
+
+.testimonialCardName {
+  font-family: 'AwesomeSerif', sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+
+}
+
+.testimonialCardJob {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+
+}
+
+.arrowLink {
+  color: black;
+}
+
+.breatheTeamDiv {
+  top: 175px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+
+
+.teamCard {
+  position: relative;
+  width: 370px;
+  background-color: #FFFFFF;
+  height: 435px;
+  display: flex;
+  justify-content: end;
+  border: none;
+  border-radius: 15px;
+
+
+  -webkit-box-shadow: 1px 1px 1px 0px rgba(133, 133, 133, 1);
+  -moz-box-shadow: 1px 1px 12px 0px rgba(133, 133, 133, 1);
+  box-shadow: 1px 1px 12px 0px rgba(133, 133, 133, 1);
+}
+
+
+.teamCardImageDiv {
+  top: -46px;
+  left: -7px;
+}
+
+
+
+
+
+
+
+.teamAbsoluteCard{
+ height: max-content; 
+}
+
+
+/* .arrowDiv {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  display: flex;
+  gap: 10px;
+} */
+
+.customNext,
+.customPrev, .teamPrev, .teamNext {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Optional: Add hover effects */
+.custom-next:hover,
+.custom-prev:hover {
+  opacity: 0.8;
+}
+
+
+
+
+
+
+/* Add to your module.css */
+.teamSwiper {
+  width: 100%;
+  padding: 0 15px;
+}
+
+.teamCard {
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.teamCardImageDiv {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.whiteBack {
+  width: 100%;
+  padding-top: 100%; /* Maintain aspect ratio */
+  background: white;
+  position: relative;
+}
 
 
 
@@ -371,15 +543,7 @@
 
 
 
-
-
-
-
-
-
-
-
-@media screen and (max-width: 968px) {
+@media screen and (max-width: 800px) {
   .baseSection {
     margin-inline: 10px;
   }
@@ -462,26 +626,53 @@
     box-shadow: none;
   }
 
-  .exclusiveTitle{
+  .exclusiveTitle {
     text-align: center;
   }
 
 
-  .bespokeDivTitle, .ethosTitle,.exclusiveTitle{
+  .bespokeDivTitle,
+  .ethosTitle,
+  .exclusiveTitle {
     font-size: 35px;
     line-height: 50px;
   }
 
-  
+  .mobileSection .locationDivP{
+    text-align: justify;
+  }
+.teamCardImageDiv{
+  background-color: #F3EEE7;
 }
 
 
+  
 
-@media screen and (max-width: 1300px) and (min-width:800) {
+
+}
+
+/* ipad air */
+
+@media screen and (max-width: 900px) and (min-width:800) {
+  .aboutPage .mobileHide{
+    display: none !important;
+  }
+
+  .mobileSection .aboutSectionTitle{
+    text-align: center;
+  }
+
+  .aboutPage .DesktopHide{
+    display: block !important;
+  }
+
   .articleDiv {
     padding-inline: 10px;
   }
 
+  .aboutPage .baseSection {
+    padding-inline: 20px;
+  }
 
   .articleCard1,
   .articleCard2,
@@ -490,5 +681,123 @@
     height: 300px;
   }
 
+  .footer-backg {
+    height: revert-layer;
+  }
 
+  .aboutPage .ethosBackgorund {
+    height: 1600px !important;
+  }
+
+  .aboutBreathDescriptionMobile{
+    padding-inline: 20px;
+    padding-top: 50px;
+  }
+  .mobileSection .aboutSectionTitle ,  .mobileSection .locationDivTitle{
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .mobileSection .locationDivP{
+    padding-inline: 20px;
+  }
+
+
+  .mobileSection .choosUsImg{
+    width: 100%;
+    margin-inline: 20px;
+    margin-top: 30px;
+  }
+
+  .mobileSection Button {
+    margin-top: 40px;
+    font-size: 24px;
+  }
+
+  .testimonialCard{
+    width: 100%;
+  }
+/* .teamCard{
+  width: auto !important;
+} */
+
+
+}
+
+
+/* ipad pro */
+
+
+@media screen and (max-width: 1025px) and (min-width:900px) {
+
+
+  
+  .aboutPage .mobileHide{
+    display: none !important;
+  }
+
+  .mobileSection .aboutSectionTitle ,  .mobileSection .locationDivTitle{
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .aboutPage .DesktopHide{
+    display: block !important;
+  }
+
+  .articleDiv {
+    margin-top: 300px !important;
+  }
+
+  .ethosContainer {
+    top: 32%;
+    right: 0%;
+  }
+
+  .headSection {
+    display: block !important;
+    /* background-color: black; */
+  }
+
+  .mobileSection{
+    width: 100%;
+    /* background-color: blue !important; */
+  }
+
+  .aboutBreathDescriptionMobile{
+    padding-inline: 20px;
+    padding-top: 50px;
+  }
+
+  .mobileSection .locationDivP{
+    padding-inline: 20px;
+  }
+
+
+  .mobileSection .choosUsImg{
+    width: 100%;
+    margin-inline: 20px;
+    margin-top: 30px;
+  }
+
+  .mobileSection Button {
+    margin-top: 40px;
+    font-size: 24px;
+  }
+
+  .testimonialCard{
+    width: 100%;
+  }
+
+
+
+
+
+}
+
+
+@media screen and (max-width: 1090px) and (min-width:1025px) {
+  .aboutPage .ethosBackgorund{
+    height: 1600px;
+  }
 }

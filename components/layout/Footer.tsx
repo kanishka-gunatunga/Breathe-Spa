@@ -50,7 +50,7 @@ const Footer = () => {
           </div>
 
 
-          <div className="col-12 col-md-1 col-lg-2 footer-row-2">
+          <div className="col-12 col-md-2 col-lg-2 footer-row-2">
             <div className='quick-links-container'>
               <h5 className='footer-h5'>SERVICES</h5>
               <a href="" className='footer-link-tag'><p className='footer-quick-links'>Nails</p></a>
