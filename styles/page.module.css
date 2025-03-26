@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap');
 
 /* .headerSection {
-  background-image: url('/Vector12.png'); 
+  background-image: url('/Vector12.png');
   background-size: cover;
   background-position: center;
   background-color: antiquewhite;
@@ -20,6 +20,12 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'AwesomeSerif R';
+  src: url('/fonts/AwesomeSerif-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 @font-face {
   font-family: 'Coefficient DEMO';
@@ -40,7 +46,7 @@
 }
 
 
-/* 
+/*
 .headingImage {
   width: 100vw;
   height: auto;
@@ -203,7 +209,6 @@
   line-height: 100%;
   letter-spacing: 0%;
   vertical-align: middle;
-
 }
 
 .leftBoxShadow {
@@ -349,35 +354,315 @@
   padding-inline: 50px;
 }
 
-/* .location .bespokeDivTitle{
-  text-align: start;
+.section_title {
+  font-family: 'Coefficient DEMO', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #171A31;
+  text-align: left;
 }
-.location .bespokeDivP {
+
+.sectionSubTitle {
+  font-family: 'AwesomeSerif', sans-serif;
+  font-weight: 400;
+  font-size: 26px;
+  color: #171A31B2;
+}
+
+.form_label {
+  font-family: 'AwesomeSerif R', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #344054;
+  line-height: 20px;
+  margin-bottom: 0.1rem;
+  letter-spacing: 1px;
+}
+
+.form_control {
+  border-radius: 0;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.form_control:focus {
+  box-shadow: none;
+  border-color: #333;
+}
+
+.submit_button {
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: 600;
+  font-family: 'AwesomeSerif', sans-serif;
+  font-size: 17px;
+  color: #FFFFFF;
+  background-color: #313131;
+  letter-spacing: 2px;
+}
+
+.map_hours_desc {
+  font-size: 16px;
+  color: #313131;
+  font-family: "Work Sans", sans-serif;
+  letter-spacing: 1px;
+  font-weight: 300;
   text-align: justify;
-} */
+}
 
+.map_hours_title {
+  font-family: 'AwesomeSerif', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #313131;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: left;
+}
 
+.map_hours_section ul {
+  font-size: 0.9rem;
+  color: #666;
+}
 
+.map_hours_section ul li {
+  font-size: 0.9rem;
+  color: #666;
+}
 
+.map_hours_days {
+  font-family: 'AwesomeSerif', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: #313131;
+}
 
+.map_hours_time {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: #313131;
+}
 
+.sectionBackground {
+  width: 100vw;
+  height: 90%;
+  object-fit: cover;
+}
 
+.map_hours_section p {
+  font-size: 0.9rem;
+  color: #666;
+}
 
+.map_hours_section a {
+  color: #666;
+  text-decoration: none;
+}
 
+.contact_info {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  font-size: 17px;
+}
 
+.map_hours_section a:hover {
+  color: #333;
+}
 
+.map_hours_container {
+  top: 20%;
+  left: 3%;
+  padding: 20px;
+}
 
+.map_container {
+  border-radius: 20px;
+  overflow: hidden;
+  border: solid 1px #B9B9B9;
+  height: 100%;
+}
 
+.map_hours_bg {
+  width: 100vw;
+  height: auto;
+  object-fit: cover;
+}
 
+.map_hours_bg_container {
+  height:250px;
+  display: flex;
+  align-items: center;
+}
 
+/* Blog Card */
+.blogCard {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
 
+.blogCard:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
 
+.blogCardDate {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: #999999;
+}
 
+.blogCardTitle {
+  font-family: 'AwesomeSerif', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  color: #313131;
+}
 
+.blogCardDesc {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: #666666;
+  line-height: 24px;
+  margin-top: 8px;
+}
 
+.blogCardRead {
+  font-family: 'AwesomeSerif', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  text-decoration-line: underline;
+  color: #313131;
+  cursor: pointer;
+  margin-top: 12px;
+}
 
+a.text-decoration-none {
+  color: inherit;
+  text-decoration: none;
+}
 
+.blogContent {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: #313131;
+}
 
+.blogContent h2 {
+  font-family: 'AwesomeSerif', sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  color: #313131;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+.blogContent p {
+  margin-bottom: 20px;
+}
+
+.blogImageContainer {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 992px) {
+  .blogImageContainer {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.mapHouContainer{
+  min-height: 100%;
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../public/map_bg.png);
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.mapMain{
+  padding: 5rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width: 576px) {
+  .mapMain {
+    padding: 5rem 0;
+  }
+
+  .mapHouContainer {
+    padding: 3rem 0.5rem;
+  }
+
+  .section_title {
+    font-size: 28px;
+  }
+
+  .map_container {
+    height: 250px;
+  }
+
+  .map_hours_title{
+    font-size: 14px;
+  }
+
+  .map_hours_days{
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section_title {
+    font-size: 32px;
+  }
+
+  .mapMain {
+    padding: 8rem 0;
+  }
+
+  .sectionSubTitle {
+    font-size: 16px;
+  }
+
+  .formSection {
+    margin-top: 24px;
+  }
+
+  .form_label {
+    font-size: 16px;
+  }
+
+  .map_container {
+    height: 300px;
+  }
+
+  .map_hours_title{
+    font-size: 16px;
+  }
+
+  .map_hours_days{
+    font-size: 15px;
+  }
+}
 
 @media screen and (max-width: 968px) {
   .baseSection {
@@ -462,22 +747,21 @@
     box-shadow: none;
   }
 
-  .exclusiveTitle{
+  .exclusiveTitle {
     text-align: center;
   }
 
 
-  .bespokeDivTitle, .ethosTitle,.exclusiveTitle{
+  .bespokeDivTitle, .ethosTitle, .exclusiveTitle {
     font-size: 35px;
     line-height: 50px;
   }
 
-  
+
 }
 
 
-
-@media screen and (max-width: 1300px) and (min-width:800) {
+@media screen and (max-width: 1300px) and (min-width: 800) {
   .articleDiv {
     padding-inline: 10px;
   }
