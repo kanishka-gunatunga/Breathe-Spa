@@ -34,12 +34,24 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
   return (
     <div className='d-flex flex-column '>
       {/* hero section */}
-      <div className={`d-flex ${style.imageContainer}`}>
+      <div className={`d-flex position-relative ${style.imageContainer}`}>
         {category.servicesHeroImage && (
-          <Image src={urlFor(category.servicesHeroImage).url()} alt='services hero image' width={1920} height={1080} style={{ width: "100vw", height: "auto", objectFit: 'cover' }} />
+          <Image
+            src={urlFor(category.servicesHeroImage).url()}
+            alt="services hero image"
+            width={1920}
+            height={1080}
+            style={{ width: "100vw", height: "auto", objectFit: 'cover' }}
+          />
         )}
+        <div className="position-absolute top-50 start-50 translate-middle text-white text-center">
 
+          {category.innerHeroTitle && (
+            <h1 className={`${style.heroTxt}`}>{category.innerHeroTitle}</h1>
+          )}
+        </div>
       </div>
+
 
       <div className="section">
         <div className="d-flex flex-column flex-lg-row">
@@ -55,6 +67,7 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
           </div>
         </div>
       </div>
+
       {/* loop */}
       <div className=''>
         <div>
@@ -64,26 +77,63 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
                 title={title}
                 description={groupedServices[title][0].serviceDescription?.description}
               />
-              {groupedServices[title].map((service, index) => (
-                <div key={service.serviceName + index} className={`${style.serviceInnerItem} section py-2`}>
-                  <div className="d-flex flex-column flex-md-row">
-                    <div className="col-12 col-lg-10">
-                      <h4>{service.serviceName}</h4>
-                      <ul>
-                        {service.pricing.map((price, priceIndex) => (
-                          <li key={priceIndex}>
-                            {price.duration}: ${price.price}
-                          </li>
-                        ))}
-                      </ul>
-                      <Paragraph text={service.serviceItemDescription} />
-                    </div>
-                    <div className="col-12 col-lg-2">
-                      <Link href={"/contact"} >Learn More</Link>
+              {/* <div className="section">
+                {groupedServices[title].map((service, index) => (
+                  <div key={service.serviceName + index} className={`p-0 position-relative`}>
+                    <div className={`${style.serviceInnerItem} p-2 p-lg-4`}>
+                      <div className="d-flex flex-column flex-md-row">
+                        <div className="col-12 col-lg-10 d-flex flex-column align-items-start">
+                          <h4>{service.serviceName}</h4>
+                          <ul>
+                            {service.pricing.map((price, priceIndex) => (
+                              <li key={priceIndex}>
+                                {price.duration}: ${price.price}
+                              </li>
+                            ))}
+                          </ul>
+                          <Paragraph text={service.serviceItemDescription} />
+                        </div>
+                        <div className="col-12 col-lg-2 d-flex justify-content-end align-items-start pt-2">
+                          <Link href={"/contact"} >Learn More</Link>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div> */}
+              <div className="section py-0">
+                {groupedServices[title].map((service, index) => (
+                  <div
+                    key={service.serviceName + index}
+                    className="p-0 position-relative"
+                  >
+                    
+
+                    <div
+                      className={`p-2 p-md-3 p-lg-4 ${style.serviceInnerItem} ${index % 2 === 0 ? style.roundedBottomLeft : style.roundedTopRight}`}
+                    >
+                      <div className="d-flex flex-column flex-md-row">
+                        <div className="col-12 col-lg-10 d-flex flex-column align-items-start">
+                          <h4>{service.serviceName}</h4>
+                          <ul>
+                            {service.pricing.map((price, priceIndex) => (
+                              <li key={priceIndex}>
+                                {price.duration}: ${price.price}
+                              </li>
+                            ))}
+                          </ul>
+                          <Paragraph text={service.serviceItemDescription} />
+                        </div>
+                        <div className="col-12 col-lg-2 d-flex justify-content-end align-items-start pt-2">
+                          <Link href={"/contact"}>Learn More</Link>
+                        </div>
+                      </div>
+                    </div>
+                    <div className={`${style.darkRectangle} ${index % 2 === 0 ? style.roundedBottomLeftRct : style.roundedTopRightRct}`}></div>
+                  </div>
+                ))}
+              </div>
+
             </div>
           ))}
         </div>
