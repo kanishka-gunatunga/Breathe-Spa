@@ -54,6 +54,7 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
           </div>
         </div>
       </div>
+      {/* loop */}
       <div>
         {Object.keys(groupedServices).slice(0, 2).map((title, index) => (
           <div key={index}>
