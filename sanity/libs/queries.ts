@@ -30,6 +30,7 @@ export const GET_SERVICE_CATEGORY_BY_SLUG = `
     innerHeroTitle,
     "services": services[] {
       serviceName,
+      serviceItemDescription,
       serviceDescription->{
         title,
         description

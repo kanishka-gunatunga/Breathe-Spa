@@ -7,6 +7,7 @@ import Paragraph from '@/components/servicesComponents/Paragraph';
 import DescriptionSection from '@/components/servicesComponents/DescriptionSection';
 import { urlFor } from '@/sanity/libs/sanity';
 import { Service } from '@/sanity/types';
+import Link from 'next/link';
 
 
 
@@ -31,7 +32,7 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
   }, {});
 
   return (
-    <div className='d-flex flex-column'>
+    <div className='d-flex flex-column '>
       {/* hero section */}
       <div className={`d-flex ${style.imageContainer}`}>
         {category.servicesHeroImage && (
@@ -55,27 +56,37 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
         </div>
       </div>
       {/* loop */}
-      <div>
-        {Object.keys(groupedServices).slice(0, 2).map((title, index) => (
-          <div key={index}>
-            <DescriptionSection
-              title={title}
-              description={groupedServices[title][0].serviceDescription?.description}
-            />
-            {groupedServices[title].map((service, index) => (
-              <div key={service.serviceName + index} className="serviceItem">
-                <h4>{service.serviceName}</h4>
-                <ul>
-                  {service.pricing.map((price, priceIndex) => (
-                    <li key={priceIndex}>
-                      {price.duration}: ${price.price}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        ))}
+      <div className=''>
+        <div>
+          {Object.keys(groupedServices).slice(0, 2).map((title, index) => (
+            <div key={index}>
+              <DescriptionSection
+                title={title}
+                description={groupedServices[title][0].serviceDescription?.description}
+              />
+              {groupedServices[title].map((service, index) => (
+                <div key={service.serviceName + index} className={`${style.serviceInnerItem} section py-2`}>
+                  <div className="d-flex flex-column flex-md-row">
+                    <div className="col-12 col-lg-10">
+                      <h4>{service.serviceName}</h4>
+                      <ul>
+                        {service.pricing.map((price, priceIndex) => (
+                          <li key={priceIndex}>
+                            {price.duration}: ${price.price}
+                          </li>
+                        ))}
+                      </ul>
+                      <Paragraph text={service.serviceItemDescription} />
+                    </div>
+                    <div className="col-12 col-lg-2">
+                      <Link href={"/contact"} >Learn More</Link>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
 
     </div>

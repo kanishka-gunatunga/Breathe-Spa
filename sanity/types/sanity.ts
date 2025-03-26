@@ -17,6 +17,7 @@ export interface ServiceCategory {
   
   export interface Service {
     serviceName: string
+    serviceItemDescription: string
     serviceDescription: ServiceDescription;
     pricing: Pricing[]
   }

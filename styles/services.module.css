@@ -3,15 +3,15 @@
     src: url('/fonts/AwesomeSerif-SemBdExtraTall.otf') format('opentype');
     font-weight: bold;
     font-style: normal;
-  }
-  
-  
-  @font-face {
+}
+
+
+@font-face {
     font-family: 'Coefficient DEMO';
     src: url('/fonts/Coefficient-Regular.otf') format('opentype');
     font-weight: bold;
     font-style: normal;
-  }
+}
 
 
 /* hero section image styles */
@@ -105,15 +105,18 @@
     text-decoration: none;
     letter-spacing: 1.5px !important;
 }
-.serviceItem{
+
+.serviceItem {
     position: relative;
     margin-bottom: 40px;
 }
-.servicesList{
+
+.servicesList {
     height: max-content !important;
     margin-bottom: 20px;
 }
-.serviceItem h4{
+
+.serviceItem h4 {
     font-family: 'AwesomeSerif', sans-serif;
     font-weight: 600;
     font-size: 18px;
@@ -121,23 +124,62 @@
     letter-spacing: 1px !important;
 }
 
-.serviceItem h5{
+.serviceItem h5 {
     font-family: 'AwesomeSerif', sans-serif;
     font-weight: 400;
     font-size: 12px;
     color: #595959;
     letter-spacing: 1px !important;
 }
-.serviceItem ul{
+
+.serviceItem ul,
+.serviceInnerItem ul {
     list-style: none;
     padding-left: 0px;
 }
-.serviceItem li{
+
+.serviceItem li {
+    font-family: 'AwesomeSerif', sans-serif;
+    color: #8F8F8F;
+    font-size: 14px;
+    letter-spacing: 1px !important;
+    padding-left: 0px;
+    font-weight: 300;
+}
+
+.serviceInnerItem h4 {
+    font-family: 'AwesomeSerif', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    color: #292929;
+    letter-spacing: 1px !important;
+}
+
+.serviceInnerItem li {
     font-family: 'AwesomeSerif', sans-serif;
     color: #8F8F8F;
     letter-spacing: 1px !important;
     padding-left: 0px;
+    font-size: 26px;
     font-weight: 300;
+}
+
+.serviceInnerItem a {
+    font-family: 'AwesomeSerif', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 7.86px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #BCBCBC;
+    text-decoration: none;
+
+}
+.serviceInnerItem{
+    box-shadow: 0px 2px 4px 0px #00000026;
+    border: 1px solid #F3EEE7;
+    border-radius: 15px 50px 15px 15px;
+    margin-bottom: 50px;
 }
 
 @media (max-width: 992px) {
