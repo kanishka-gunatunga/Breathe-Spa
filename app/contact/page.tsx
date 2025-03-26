@@ -2,7 +2,6 @@
 import Image from "next/image";
 import styles from "@/styles/page.module.css";
 import React, {useState} from "react";
-import Button from "@/components/ReusableComponents/Button";
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -252,63 +251,125 @@ const Contact = () => {
             {/*    </div>*/}
             {/*</section>*/}
 
-            <div className={`mx-0 px-0 mt-0 ${styles.baseSection}`}>
-                <div className={styles.ourEthos}>
-                    <div className="position-relative">
-                        <div className={styles.ethosImageContainer}>
-                            <Image className={styles.ethosBackgorund} src="/map_bg.png" width={624}
-                                   height={368} alt=""/>
-                        </div>
-                        <div className={`position-absolute ${styles.map_hours_container}`}>
-                            <div>
-                                <div className="row align-items-center p-2">
-                                    <div className="col-md-6">
-                                        <h2 className={styles.section_title}>Schedule your in Haus presence</h2>
-                                        <p className={`text-muted ${styles.map_hours_desc}`}>
-                                            Lorem ipsum dolor sit amet consectetur. Amet ultricies pulvinar amet
-                                            aliquet consequat lectus tortor. Felis consectetur tempus luctus
-                                            habitasse lacus elit vel sapien. Magna massa sed tempus sagittis lorem.
-                                            Velit sit neque interdum nisl.
-                                        </p>
-                                        <h3 className={`mt-5 mb-4 ${styles.map_hours_title}`}>OPENING HOURS</h3>
-                                        <ul className="list-unstyled">
-                                            <li className="d-flex justify-content-between border-top border-1 border-secondary py-2">
-                                                <span className={styles.map_hours_days}>Tuesday To Saturday</span>
-                                                <span className={styles.map_hours_time}>9:00am - 8:00pm</span>
-                                            </li>
-                                            <li className="d-flex justify-content-between border-top py-2">
-                                                <span className={styles.map_hours_days}>Monday</span>
-                                                <span className={styles.map_hours_time}>Closed</span>
-                                            </li>
-                                        </ul>
-                                        <h3 className={`mt-5 mb-4 border-bottom border-1 border-secondary py-4 ${styles.map_hours_title}`}>CONTACT
-                                            US</h3>
-                                        <p className={`d-flex align-items-center gap-4 ${styles.contact_info}`}>
-                                            <Image src="/location.png" alt="location icon" width={24} height={24}/>
-                                            14 Albert Cres, Colombo 007
-                                        </p>
-                                        <p className={`d-flex align-items-center gap-4 ${styles.contact_info}`}>
-                                            <Image src="/email.png" alt="email icon" width={24} height={24}/>
-                                            <a href="mailto:shout@breathespa.com">breathe@gmail.com</a>
-                                        </p>
-                                        <p className={`d-flex align-items-center gap-4 ${styles.contact_info}`}>
-                                            <Image src="/call.png" alt="phone icon" width={24} height={24}/>
-                                            <a href="tel:+94772314888">+94 77 231 4888</a>
-                                        </p>
+            {/*<div className={`mx-0 px-0 mt-0 ${styles.baseSection}`}>*/}
+            {/*    <div className={styles.ourEthos}>*/}
+            {/*        <div className="position-relative">*/}
+            {/*            <div className={styles.ethosImageContainer}>*/}
+            {/*                <Image className={styles.ethosBackgorund} src="/map_bg.png" width={624}*/}
+            {/*                       height={368} alt=""/>*/}
+            {/*            </div>*/}
+            {/*            <div className={`position-absolute ${styles.map_hours_container}`}>*/}
+            {/*                <div>*/}
+            {/*                    <div className="row align-items-center p-2">*/}
+            {/*                        <div className="col-md-6">*/}
+            {/*                            <h2 className={styles.section_title}>Schedule your in Haus presence</h2>*/}
+            {/*                            <p className={`text-muted ${styles.map_hours_desc}`}>*/}
+            {/*                                Lorem ipsum dolor sit amet consectetur. Amet ultricies pulvinar amet*/}
+            {/*                                aliquet consequat lectus tortor. Felis consectetur tempus luctus*/}
+            {/*                                habitasse lacus elit vel sapien. Magna massa sed tempus sagittis lorem.*/}
+            {/*                                Velit sit neque interdum nisl.*/}
+            {/*                            </p>*/}
+            {/*                            <h3 className={`mt-5 mb-4 ${styles.map_hours_title}`}>OPENING HOURS</h3>*/}
+            {/*                            <ul className="list-unstyled">*/}
+            {/*                                <li className="d-flex justify-content-between border-top border-1 border-secondary py-2">*/}
+            {/*                                    <span className={styles.map_hours_days}>Tuesday To Saturday</span>*/}
+            {/*                                    <span className={styles.map_hours_time}>9:00am - 8:00pm</span>*/}
+            {/*                                </li>*/}
+            {/*                                <li className="d-flex justify-content-between border-top py-2">*/}
+            {/*                                    <span className={styles.map_hours_days}>Monday</span>*/}
+            {/*                                    <span className={styles.map_hours_time}>Closed</span>*/}
+            {/*                                </li>*/}
+            {/*                            </ul>*/}
+            {/*                            <h3 className={`mt-5 mb-4 border-bottom border-1 border-secondary py-4 ${styles.map_hours_title}`}>CONTACT*/}
+            {/*                                US</h3>*/}
+            {/*                            <p className={`d-flex align-items-center gap-4 ${styles.contact_info}`}>*/}
+            {/*                                <Image src="/location.png" alt="location icon" width={24} height={24}/>*/}
+            {/*                                14 Albert Cres, Colombo 007*/}
+            {/*                            </p>*/}
+            {/*                            <p className={`d-flex align-items-center gap-4 ${styles.contact_info}`}>*/}
+            {/*                                <Image src="/email.png" alt="email icon" width={24} height={24}/>*/}
+            {/*                                <a href="mailto:shout@breathespa.com">breathe@gmail.com</a>*/}
+            {/*                            </p>*/}
+            {/*                            <p className={`d-flex align-items-center gap-4 ${styles.contact_info}`}>*/}
+            {/*                                <Image src="/call.png" alt="phone icon" width={24} height={24}/>*/}
+            {/*                                <a href="tel:+94772314888">+94 77 231 4888</a>*/}
+            {/*                            </p>*/}
+            {/*                        </div>*/}
+            {/*                        <div className="col-md-6 px-5 ">*/}
+            {/*                            <div className={styles.map_container}>*/}
+            {/*                                <iframe*/}
+            {/*                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.902929805852!2d79.858243314772!3d6.902210995003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2593b6f1b7b3f%3A0x4b7c6e7d8f1b7b3f!2s41%20Herbert%20Cres%2C%20Colombo%20007%2C%20Sri%20Lanka!5e0!3m2!1sen!2sus!4v1698771234567!5m2!1sen!2sus"*/}
+            {/*                                    width="100%"*/}
+            {/*                                    height="650"*/}
+            {/*                                    style={{border: 1}}*/}
+            {/*                                    allowFullScreen*/}
+            {/*                                    loading="lazy"*/}
+            {/*                                    referrerPolicy="no-referrer-when-downgrade"*/}
+            {/*                                ></iframe>*/}
+            {/*                            </div>*/}
+            {/*                        </div>*/}
+            {/*                    </div>*/}
+            {/*                </div>*/}
+            {/*            </div>*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
+
+            <div className={styles.mapHouContainer}>
+                <div className={styles.mapMain}>
+                    <div className="container p-5">
+                        <div className="row">
+                            <div className="col-lg-6 col-md-12 mb-4">
+                                <h1 className={styles.sectionTitle}>Schedule your in-Haus presence</h1>
+                                <p className={styles.map_hours_desc}>
+                                    Lorem ipsum dolor sit amet consectetur. Amet ultricies pulvinar
+                                    amet aliquet consequat lectus tortor. Felis consectetur tempus
+                                    luctus habitasse lacus elit vel sapien. Magna massa sed tempus
+                                    sagittis lorem. Velit sit neque interdum nisl.
+                                </p>
+
+                                <h3 className={`mt-5 mb-4 ${styles.map_hours_title}`}>OPENING
+                                    HOURS</h3>
+                                <div className="">
+                                    <div className="d-flex justify-content-between border-top border-1 border-secondary py-2">
+                                        <span className={styles.map_hours_days}>TUESDAY TO SATURDAY</span>
+                                        <span className={styles.map_hours_time}>9:00am - 8:00pm</span>
                                     </div>
-                                    <div className="col-md-6 px-5 ">
-                                        <div className={styles.map_container}>
-                                            <iframe
-                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.902929805852!2d79.858243314772!3d6.902210995003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2593b6f1b7b3f%3A0x4b7c6e7d8f1b7b3f!2s41%20Herbert%20Cres%2C%20Colombo%20007%2C%20Sri%20Lanka!5e0!3m2!1sen!2sus!4v1698771234567!5m2!1sen!2sus"
-                                                width="100%"
-                                                height="650"
-                                                style={{border: 1}}
-                                                allowFullScreen
-                                                loading="lazy"
-                                                referrerPolicy="no-referrer-when-downgrade"
-                                            ></iframe>
-                                        </div>
+                                    <div className="d-flex justify-content-between border-top py-2">
+                                        <span className={styles.map_hours_days}>MONDAY</span>
+                                        <span className={styles.map_hours_time}>Closed</span>
                                     </div>
+                                </div>
+
+                                <h3 className={`mt-5 mb-4 border-bottom border-1 border-secondary py-4 ${styles.map_hours_title}`}>CONTACT
+                                    US</h3>
+                                <div className="">
+                                    <p className={`d-flex align-items-center gap-4 ${styles.contact_info}`}>
+                                        <Image src="/location.png" alt="location icon" width={24} height={24}/>
+                                        14 Albert Cres, Colombo 007
+                                    </p>
+                                    <p className={`d-flex align-items-center gap-4 ${styles.contact_info}`}>
+                                        <Image src="/email.png" alt="email icon" width={24} height={24}/>
+                                        <span>breathe@gmail.com</span>
+                                    </p>
+                                    <p className={`d-flex align-items-center gap-4 ${styles.contact_info}`}>
+                                        <Image src="/call.png" alt="phone icon" width={24} height={24}/>
+                                        <span>+94 77 231 4888</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="col-lg-6 col-md-12">
+                                <div className={styles.map_container}>
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.847711096713!2d79.85992937481267!3d6.90880641856629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2594fe67ad047%3A0x958aa9f666117ab1!2sBreathe%20Day%20Spa!5e0!3m2!1sen!2slk!4v1742980011520!5m2!1sen!2slk"
+                                        width="100%"
+                                        height="100%"
+                                        style={{border: 0, borderRadius: '15px'}}
+                                        allowFullScreen
+                                        loading="lazy"
+                                        referrerPolicy="no-referrer-when-downgrade"
+                                    ></iframe>
                                 </div>
                             </div>
                         </div>

@@ -1,19 +1,31 @@
 import Image from "next/image";
+import styles from "@/styles/page.module.css";
 
-const BlogCard = () => {
+const BlogCard = ({post}) => {
     return (
-        <div>
-            <div className="card">
-                <Image className="card-img-top" width="260" height="260" src="/blog_card.png" alt="Card image cap"/>
-                <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">This is a longer card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                    <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
-                </div>
+        <div
+            className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:scale-[1.02]"
+        >
+            <Image
+                src={post.imageUrl}
+                alt={post.title}
+                layout="responsive"
+                width={500}
+                height={300}
+                className="w-full h-auto object-cover"
+            />
+            <div className="py-4">
+                <p className={`text-[15px] ${styles.blogCardDate}`}>6 January 2025</p>
+                <h3 className={`mb-2 ${styles.blogCardTitle}`}>
+                    {post.title}
+                </h3>
+                <p className={styles.blogCardDesc}>{post.description}</p>
+                <p className={`${styles.blogCardRead}`}>
+                    Read More...
+                </p>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default BlogCard;
