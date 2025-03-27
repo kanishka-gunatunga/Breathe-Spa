@@ -64,146 +64,150 @@ const Contact = () => {
                 />
             </div>
 
-            <section className="container py-5">
-                <div className="row align-items-center">
-                    <div className="col-md-6">
-                        <Image
-                            src="/spa_contact.png"
-                            alt="Spa treatment"
-                            width={500}
-                            height={400}
-                            className="img-fluid rounded"
-                        />
+            <section className={`container pt-5 ${styles.formSection}`}>
+                <div className={`row align-items-stretch ${styles.equalHeightRow}`}>
+                    <div className="col-md-6 mb-4 mb-md-0">
+                        <div className={styles.imageContainer}>
+                            <Image
+                                src="/spa_contact.png"
+                                alt="Spa treatment"
+                                fill
+                                className={`img-fluid ${styles.responsiveImage}`}
+                                style={{objectFit: 'cover'}}
+                            />
+                        </div>
                     </div>
-                    <div className={`col-md-6 ${styles.formSection}`}>
-                        <h2 className={styles.section_title}>Schedule your in Haus presence</h2>
-                        <p className={`text-muted ${styles.sectionSubTitle}`}>Get in touch with us</p>
+                    <div className={`col-md-6 ${styles.formWrapper}`}>
+                        <div className={styles.formContainer}>
+                            <h2 className={styles.section_title}>Schedule your in Haus presence</h2>
+                            <p className={`text-muted ${styles.sectionSubTitle}`}>Get in touch with us</p>
 
-                        {submissionStatus === "success" && (
-                            <div className="alert alert-success" role="alert">
-                                Thank you for your message! We&#39;ll get back to you soon.
-                            </div>
-                        )}
-                        {submissionStatus === "error" && (
-                            <div className="alert alert-danger" role="alert">
-                                Something went wrong. Please try again later.
-                            </div>
-                        )}
+                            {submissionStatus === "success" && (
+                                <div className="alert alert-success" role="alert">
+                                    Thank you for your message! We&#39;ll get back to you soon.
+                                </div>
+                            )}
+                            {submissionStatus === "error" && (
+                                <div className="alert alert-danger" role="alert">
+                                    Something went wrong. Please try again later.
+                                </div>
+                            )}
 
-                        <form onSubmit={handleSubmit} className="mt-4">
-                            <div className="row">
-                                <div className="col-md-6 mb-3">
-                                    <label htmlFor="firstName" className={styles.form_label}>
-                                        First name
+                            <form onSubmit={handleSubmit} className="mt-4">
+                                <div className="row">
+                                    <div className="col-md-6 mb-3">
+                                        <label htmlFor="firstName" className={styles.form_label}>
+                                            First name
+                                        </label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="firstName"
+                                            name="firstName"
+                                            placeholder="First name"
+                                            value={formData.firstName}
+                                            onChange={handleChange}
+                                        />
+                                    </div>
+                                    <div className="col-md-6 mb-3">
+                                        <label htmlFor="lastName" className={styles.form_label}>
+                                            Last name
+                                        </label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="lastName"
+                                            name="lastName"
+                                            placeholder="Last name"
+                                            value={formData.lastName}
+                                            onChange={handleChange}
+                                        />
+                                    </div>
+                                </div>
+                                <div className="mb-3">
+                                    <label htmlFor="email" className={styles.form_label}>
+                                        Email
                                     </label>
                                     <input
-                                        type="text"
+                                        type="email"
                                         className="form-control"
-                                        id="firstName"
-                                        name="firstName"
-                                        placeholder="First name"
-                                        value={formData.firstName}
+                                        id="email"
+                                        name="email"
+                                        placeholder="you@company.com"
+                                        value={formData.email}
                                         onChange={handleChange}
                                     />
                                 </div>
-                                <div className="col-md-6 mb-3">
-                                    <label htmlFor="lastName" className={styles.form_label}>
-                                        Last name
+                                <div className="mb-3">
+                                    <label htmlFor="phone" className={styles.form_label}>
+                                        Phone number
                                     </label>
                                     <input
-                                        type="text"
+                                        type="tel"
                                         className="form-control"
-                                        id="lastName"
-                                        name="lastName"
-                                        placeholder="Last name"
-                                        value={formData.lastName}
+                                        id="phone"
+                                        name="phone"
+                                        placeholder="+94 1128 4571 174"
+                                        value={formData.phone}
                                         onChange={handleChange}
                                     />
                                 </div>
-                            </div>
-                            <div className="mb-3">
-                                <label htmlFor="email" className={styles.form_label}>
-                                    Email
-                                </label>
-                                <input
-                                    type="email"
-                                    className="form-control"
-                                    id="email"
-                                    name="email"
-                                    placeholder="you@company.com"
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                />
-                            </div>
-                            <div className="mb-3">
-                                <label htmlFor="phone" className={styles.form_label}>
-                                    Phone number
-                                </label>
-                                <input
-                                    type="tel"
-                                    className="form-control"
-                                    id="phone"
-                                    name="phone"
-                                    placeholder="+94 1128 4571 174"
-                                    value={formData.phone}
-                                    onChange={handleChange}
-                                />
-                            </div>
-                            <div className="mb-3">
-                                <label htmlFor="message" className={styles.form_label}>
-                                    Message
-                                </label>
-                                <textarea
-                                    className="form-control"
-                                    id="message"
-                                    name="message"
-                                    rows={4}
-                                    placeholder="Message"
-                                    value={formData.message}
-                                    onChange={handleChange}
-                                ></textarea>
-                            </div>
-                            <div className="form-check mb-3">
-                                <input
-                                    type="checkbox"
-                                    className="form-check-input"
-                                    id="privacyPolicy"
-                                    name="privacyPolicy"
-                                    checked={formData.privacyPolicy}
-                                    onChange={handleChange}
-                                />
-                                <label className="form-check-label" htmlFor="privacyPolicy">
-                                    I agree to our friendly <a href="#">Privacy Policy</a>.
-                                </label>
-                            </div>
-                            <button
-                                type="submit"
-                                className={`btn btn-dark w-100 ${styles.submit_button}`}
-                                disabled={isLoading}
-                            >
-                                {isLoading ? (
-                                    <>
+                                <div className="mb-3">
+                                    <label htmlFor="message" className={styles.form_label}>
+                                        Message
+                                    </label>
+                                    <textarea
+                                        className="form-control"
+                                        id="message"
+                                        name="message"
+                                        rows={4}
+                                        placeholder="Message"
+                                        value={formData.message}
+                                        onChange={handleChange}
+                                    ></textarea>
+                                </div>
+                                <div className="form-check mb-3">
+                                    <input
+                                        type="checkbox"
+                                        className="form-check-input"
+                                        id="privacyPolicy"
+                                        name="privacyPolicy"
+                                        checked={formData.privacyPolicy}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="form-check-label" htmlFor="privacyPolicy">
+                                        I agree to our friendly <a href="#">Privacy Policy</a>.
+                                    </label>
+                                </div>
+                                <button
+                                    type="submit"
+                                    className={`btn btn-dark w-100 ${styles.submit_button}`}
+                                    disabled={isLoading}
+                                >
+                                    {isLoading ? (
+                                        <>
                     <span
                         className="spinner-border spinner-border-sm me-2"
                         role="status"
                         aria-hidden="true"
                     ></span>
-                                        Sending...
-                                    </>
-                                ) : (
-                                    "Send message"
-                                )}
-                            </button>
-                        </form>
+                                            Sending...
+                                        </>
+                                    ) : (
+                                        "Send message"
+                                    )}
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <div className={styles.mapHouContainer}>
                 <div className={styles.mapMain}>
-                    <div className="container p-5">
+                    <div className="container p-4">
                         <div className="row">
-                            <div className="col-lg-6 col-md-12 mb-4">
+                            <div className={`col-lg-6 col-md-12 mb-4 ${styles.contact_info_container}`}>
                                 <h1 className={styles.sectionTitle}>Schedule your in-Haus presence</h1>
                                 <p className={styles.map_hours_desc}>
                                     Lorem ipsum dolor sit amet consectetur. Amet ultricies pulvinar
@@ -212,7 +216,7 @@ const Contact = () => {
                                     sagittis lorem. Velit sit neque interdum nisl.
                                 </p>
 
-                                <h3 className={`mt-5 mb-4 ${styles.map_hours_title}`}>OPENING
+                                <h3 className={`mb-4 ${styles.map_hours_title}`}>OPENING
                                     HOURS</h3>
                                 <div className="">
                                     <div
@@ -226,7 +230,7 @@ const Contact = () => {
                                     </div>
                                 </div>
 
-                                <h3 className={`mt-5 mb-4 border-bottom border-1 border-secondary py-4 ${styles.map_hours_title}`}>CONTACT
+                                <h3 className={`mt-4 mb-4 border-bottom border-1 border-secondary py-4 ${styles.map_hours_title}`}>CONTACT
                                     US</h3>
                                 <div className="">
                                     <p className={`d-flex align-items-center gap-4 ${styles.contact_info}`}>
