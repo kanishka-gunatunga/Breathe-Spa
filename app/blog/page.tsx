@@ -50,9 +50,9 @@ const Blog = () => {
 
     return (
         <div>
-            <div className={styles.bannerImageDiv}>
+            <div>
                 <Image
-                    className={`m-0 p-0 ${styles.headingImage}`}
+                    className={`m-0 p-0 ${styles.blogCon}`}
                     src="/blog_banner.png"
                     width={0}
                     height={0}
@@ -62,8 +62,8 @@ const Blog = () => {
                 />
             </div>
 
-            <div className="container py-5 px-4 px-lg-5">
-                <h3 className={`${styles.sectionTitle} mb-5 text-start`}>Our Recent Posts</h3>
+            <div className={`${styles.contactContainer} py-5 px-4 px-lg-5`}>
+                <h3 className={`${styles.section_title} mb-5 text-start`}>Our Recent Posts</h3>
                 <div className="row g-4">
                     {blogPosts.map((post) => (
                         <div key={post.id} className="col-md-4">

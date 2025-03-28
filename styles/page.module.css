@@ -420,6 +420,7 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     text-align: left;
+    margin-bottom: 1.5rem;
 }
 
 .map_hours_section ul {
@@ -502,9 +503,9 @@
     align-items: center;
 }
 
-/* Blog Card */
 .blogCard {
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
 }
 
 .blogCard:hover {
@@ -526,6 +527,7 @@
     text-transform: capitalize;
     letter-spacing: 1px;
     color: #313131;
+    min-height: max-content;
 }
 
 .blogCardDesc {
@@ -610,11 +612,6 @@ a.text-decoration-none {
     width: 100%;
 }
 
-.equalHeightRow {
-    display: flex;
-    align-items: stretch;
-}
-
 .imageContainer {
     position: relative;
     height: 100%;
@@ -633,18 +630,22 @@ a.text-decoration-none {
     flex-direction: column;
     justify-content: center;
     height: 100%;
-    padding-left: 7rem;
+    padding-left: 4rem;
 }
 
 .formWrapper {
-    display: flex;
+    /*display: flex;*/
     align-items: stretch;
 }
 
-.formSection{
+.formSection {
     padding-bottom: 3rem;
 }
 
+.equalHeightRow {
+    display: flex;
+    align-items: stretch;
+}
 
 @media (max-width: 576px) {
     .mapMain {
@@ -673,12 +674,12 @@ a.text-decoration-none {
         letter-spacing: 2px;
     }
 
-    .formWrapper{
+    .formWrapper {
         padding-left: 0;
         margin-top: 20px;
     }
 
-    .formSection{
+    .formSection {
         padding-bottom: 0;
     }
 
@@ -716,12 +717,12 @@ a.text-decoration-none {
         font-size: 16px;
     }
 
-    .formWrapper{
+    .formWrapper {
         padding-left: 0;
         margin-top: 20px;
     }
 
-    .formSection{
+    .formSection {
         padding-bottom: 0;
     }
 
@@ -758,7 +759,7 @@ a.text-decoration-none {
         height: 400px;
     }
 
-    .equalHeightRow{
+    .equalHeightRow {
         padding: 0 1rem 0 1rem;
     }
 
@@ -847,11 +848,9 @@ a.text-decoration-none {
         box-shadow: none;
     }
 
-    .exclusiveTitle {
-        text-align: center;
-    }
-
-
+    /*.exclusiveTitle {*/
+    /*    text-align: center;*/
+    /*}*/
     .bespokeDivTitle, .ethosTitle, .exclusiveTitle {
         font-size: 35px;
         line-height: 50px;
@@ -861,7 +860,7 @@ a.text-decoration-none {
 }
 
 
-@media screen and (max-width: 1300px) and (min-width: 800) {
+@media screen and (max-width: 1300px) and (min-width: 800px) {
     .articleDiv {
         padding-inline: 10px;
     }
@@ -875,4 +874,349 @@ a.text-decoration-none {
     }
 
 
+}
+
+.contactContainer {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    width: 90%;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.formControl {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 2px solid #dee2e6;
+    border-radius: 10px;;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.contactFormDiv {
+    margin-bottom: 1rem !important
+}
+
+.formCheckBox {
+    flex-shrink: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.25em;
+    vertical-align: top;
+    background-color: #fff;
+    background-position: center;
+    background-size: contain;
+    border: 2px solid #dee2e6;
+}
+
+.formCheck {
+    padding-left: 1rem;
+}
+
+@media screen and (min-width: 1920px) {
+    .exclusiveTitle {
+        font-size: 70px;
+    }
+
+    .exclusiveDescription {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    body {
+        font-size: 18px;
+    }
+
+    .contactFormDiv {
+        margin-bottom: 2rem !important
+    }
+
+    .contactContainer {
+        max-width: 1900px;
+        padding: 0 2rem;
+    }
+
+    .section_title {
+        font-size: 4rem;
+        line-height: 1.2;
+        margin-bottom: 2rem;
+    }
+
+    .sectionSubTitle {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .form_label {
+        font-size: 32px;
+        margin-bottom: 1rem;
+    }
+
+    .formControl {
+        font-size: 28px;
+        padding: 1rem 1.5rem;
+        height: auto;
+    }
+
+    .formCheck {
+        font-size: 24px;
+        padding-left: 1.5rem;
+    }
+
+    .formCheckBox {
+        width: 2em;
+        height: 2em;
+    }
+
+    .submit_button {
+        font-size: 1.5rem;
+        padding: 1.25rem 2rem;
+        letter-spacing: 3px;
+    }
+
+    .sectionTitle {
+        font-size: 4rem;
+    }
+
+    .blogCard {
+        transition: all 0.3s ease;
+    }
+
+    .blogCardTitle {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .blogCardDesc {
+        margin-top: 28px;
+        font-size: 1.8rem;
+        line-height: 1.6;
+    }
+
+    .blogCardDate {
+        font-size: 2rem;
+    }
+
+    .blogCardRead {
+        font-size: 30px;
+        margin-top: 24px;
+    }
+
+    .blogContent {
+        font-size: 2.1rem;
+        line-height: 1.8;
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+
+    .blogContent h2 {
+        font-size: 2.8rem;
+        margin: 2.5rem 0 1.8rem;
+    }
+
+    .blogImageContainer {
+        max-width: 1200px;
+        margin: 2rem auto;
+    }
+
+    .imageContainer {
+        height: 100%;
+    }
+
+    .mapHouContainer {
+        padding: 4rem 2rem;
+    }
+
+    .contact_info {
+        font-size: 26px;
+    }
+
+    .map_hours_title {
+        font-size: 28px;
+        margin-bottom: 2rem;
+    }
+
+    .map_hours_days {
+        font-size: 24px;
+    }
+
+    .map_hours_time {
+        font-size: 24px;
+    }
+
+    .map_hours_desc {
+        font-size: 24px;
+    }
+
+    .row {
+        --bs-gutter-x: 2rem;
+        --bs-gutter-y: 2rem;
+    }
+
+    .col-lg-4 {
+        flex: 0 0 auto;
+        width: 33.33333%;
+    }
+}
+
+@media screen and (min-width: 3840px) {
+    .exclusiveTitle {
+        font-size: 90px;
+        padding-top: 3rem;
+    }
+
+    .exclusiveDescription {
+        font-size: 36px;
+        line-height: 28px;
+        padding: 3rem 0;
+    }
+
+    body {
+        font-size: 18px;
+    }
+
+    .contactFormDiv {
+        margin-bottom: 3.5rem !important
+    }
+
+    .contactContainer {
+        max-width: 3100px;
+        padding: 0 4rem;
+    }
+
+    .section_title {
+        font-size: 6rem;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+    }
+
+    .sectionSubTitle {
+        font-size: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .form_label {
+        font-size: 42px;
+        margin-bottom: 2rem;
+    }
+
+    .formControl {
+        font-size: 38px;
+        padding: 1rem 1.5rem;
+        height: auto;
+    }
+
+    .formCheck {
+        font-size: 36px;
+        padding-left: 2rem;
+    }
+
+    .submit_button {
+        font-size: 42px;
+        padding: 1.25rem 2rem;
+        letter-spacing: 5px;
+    }
+
+    .sectionTitle {
+        font-size: 4.5rem;
+    }
+
+    .formCheckBox {
+        width: 3em;
+        height: 3em;
+    }
+
+    .blogCard {
+        transition: all 0.3s ease;
+    }
+
+    .blogCardTitle {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .blogCardDesc {
+        font-size: 2.1rem;
+        line-height: 1.6;
+    }
+
+    .blogCardDate {
+        font-size: 2.5rem;
+    }
+
+    .blogCardRead {
+        font-size: 36px;
+        margin-top: 30px;
+    }
+
+    .blogContent {
+        font-size: 2.5rem;
+        line-height: 1.8;
+        max-width: 2000px;
+        margin: 0 auto;
+    }
+
+    .blogContent h2 {
+        font-size: 3.5rem;
+        margin: 3rem 0 2.5rem;
+    }
+
+    .blogImageContainer {
+        max-width: 1200px;
+        margin: 2rem auto;
+    }
+
+    .imageContainer {
+        height: 100%;
+    }
+
+    .mapHouContainer {
+        padding: 8rem 0;
+    }
+
+    .contact_info {
+        font-size: 42px;
+    }
+
+    .map_hours_title {
+        font-size: 46px;
+        margin-bottom: 2.5rem;
+    }
+
+    .map_hours_days {
+        font-size: 38px;
+    }
+
+    .map_hours_time {
+        font-size: 36px;
+    }
+
+    .map_hours_desc {
+        font-size: 38px;
+        letter-spacing: 3px;
+        text-align: start;
+        line-height: 42px;
+        padding: 3rem 0;
+    }
+
+    .row {
+        --bs-gutter-x: 2rem;
+        --bs-gutter-y: 2rem;
+    }
+
+    .col-lg-4 {
+        flex: 0 0 auto;
+        width: 33.33333%;
+    }
 }

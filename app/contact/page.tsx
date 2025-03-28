@@ -16,7 +16,6 @@ const Contact = () => {
     const [submissionStatus, setSubmissionStatus] = useState<"success" | "error" | null>(null);
     const [isLoading, setIsLoading] = useState(false);
 
-    // Handle input changes
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const {name, value, type} = e.target;
         const checked = "checked" in e.target ? (e.target as HTMLInputElement).checked : false;
@@ -26,7 +25,6 @@ const Contact = () => {
         }));
     };
 
-    // Handle form submission
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setSubmissionStatus(null);
@@ -64,7 +62,7 @@ const Contact = () => {
                 />
             </div>
 
-            <section className={`container pt-5 ${styles.formSection}`}>
+            <section className={`${styles.contactContainer} pt-5 ${styles.formSection}`}>
                 <div className={`row align-items-stretch ${styles.equalHeightRow}`}>
                     <div className="col-md-6 mb-4 mb-md-0">
                         <div className={styles.imageContainer}>
@@ -95,13 +93,13 @@ const Contact = () => {
 
                             <form onSubmit={handleSubmit} className="mt-4">
                                 <div className="row">
-                                    <div className="col-md-6 mb-3">
+                                    <div className={`col-md-6 ${styles.contactFormDiv}`}>
                                         <label htmlFor="firstName" className={styles.form_label}>
                                             First name
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control"
+                                            className={styles.formControl}
                                             id="firstName"
                                             name="firstName"
                                             placeholder="First name"
@@ -109,13 +107,13 @@ const Contact = () => {
                                             onChange={handleChange}
                                         />
                                     </div>
-                                    <div className="col-md-6 mb-3">
+                                    <div className={`col-md-6 ${styles.contactFormDiv}`}>
                                         <label htmlFor="lastName" className={styles.form_label}>
                                             Last name
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control"
+                                            className={styles.formControl}
                                             id="lastName"
                                             name="lastName"
                                             placeholder="Last name"
@@ -124,13 +122,13 @@ const Contact = () => {
                                         />
                                     </div>
                                 </div>
-                                <div className="mb-3">
+                                <div className={styles.contactFormDiv}>
                                     <label htmlFor="email" className={styles.form_label}>
                                         Email
                                     </label>
                                     <input
                                         type="email"
-                                        className="form-control"
+                                        className={styles.formControl}
                                         id="email"
                                         name="email"
                                         placeholder="you@company.com"
@@ -138,13 +136,13 @@ const Contact = () => {
                                         onChange={handleChange}
                                     />
                                 </div>
-                                <div className="mb-3">
+                                <div className={styles.contactFormDiv}>
                                     <label htmlFor="phone" className={styles.form_label}>
                                         Phone number
                                     </label>
                                     <input
                                         type="tel"
-                                        className="form-control"
+                                        className={styles.formControl}
                                         id="phone"
                                         name="phone"
                                         placeholder="+94 1128 4571 174"
@@ -152,12 +150,12 @@ const Contact = () => {
                                         onChange={handleChange}
                                     />
                                 </div>
-                                <div className="mb-3">
+                                <div className={styles.contactFormDiv}>
                                     <label htmlFor="message" className={styles.form_label}>
                                         Message
                                     </label>
                                     <textarea
-                                        className="form-control"
+                                        className={styles.formControl}
                                         id="message"
                                         name="message"
                                         rows={4}
@@ -166,16 +164,16 @@ const Contact = () => {
                                         onChange={handleChange}
                                     ></textarea>
                                 </div>
-                                <div className="form-check mb-3">
+                                <div className={`flex flex-row align-content-center ${styles.contactFormDiv}`}>
                                     <input
                                         type="checkbox"
-                                        className="form-check-input"
+                                        className={styles.formCheckBox}
                                         id="privacyPolicy"
                                         name="privacyPolicy"
                                         checked={formData.privacyPolicy}
                                         onChange={handleChange}
                                     />
-                                    <label className="form-check-label" htmlFor="privacyPolicy">
+                                    <label className={`form-check-label ${styles.formCheck}`} htmlFor="privacyPolicy">
                                         I agree to our friendly <a href="#">Privacy Policy</a>.
                                     </label>
                                 </div>
@@ -205,7 +203,7 @@ const Contact = () => {
 
             <div className={styles.mapHouContainer}>
                 <div className={styles.mapMain}>
-                    <div className="container p-4">
+                    <div className={`${styles.contactContainer} p-4`}>
                         <div className="row">
                             <div className={`col-lg-6 col-md-12 mb-4 ${styles.contact_info_container}`}>
                                 <h1 className={styles.sectionTitle}>Schedule your in-Haus presence</h1>
@@ -216,7 +214,7 @@ const Contact = () => {
                                     sagittis lorem. Velit sit neque interdum nisl.
                                 </p>
 
-                                <h3 className={`mb-4 ${styles.map_hours_title}`}>OPENING
+                                <h3 className={`${styles.map_hours_title}`}>OPENING
                                     HOURS</h3>
                                 <div className="">
                                     <div
@@ -230,7 +228,7 @@ const Contact = () => {
                                     </div>
                                 </div>
 
-                                <h3 className={`mt-4 mb-4 border-bottom border-1 border-secondary py-4 ${styles.map_hours_title}`}>CONTACT
+                                <h3 className={`mt-4 border-bottom border-1 border-secondary py-4 ${styles.map_hours_title}`}>CONTACT
                                     US</h3>
                                 <div className="">
                                     <p className={`d-flex align-items-center gap-4 ${styles.contact_info}`}>
