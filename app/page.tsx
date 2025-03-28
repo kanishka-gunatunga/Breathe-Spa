@@ -20,30 +20,34 @@ export default function Home() {
           alt="" />
       </div> */}
 
-<div className={`d-flex ${style.imageContainer}`}>
-          <Image src={"/Vector12.png"} alt='services hero image' width={1920} height={1080} style={{ width: "100vw", height: "auto", objectFit: 'cover' }} />
-        </div>
+      <div className={`d-flex ${style.imageContainer}`}>
+        <Image src={"/Vector12.png"} alt='services hero image' width={1920} height={1080} style={{ width: "100vw", height: "auto", objectFit: 'cover' }} />
+      </div>
 
 
 
       {/* section 1 */}
       <div className={styles.baseSection}>
         <div className="row">
-          <div className="col-12 col-md-6 col-lg-6">
-            <h1 className={styles.bespokeDivTitle}>
-              Bespoke Wellness for Relaxation, Rejuvenation, & Personalized Care
-            </h1>
+          <div className="col-12 col-md-6 col-lg-6 d-flex flex-column justify-content-between">
+            <div>
+              <h1 className={styles.bespokeDivTitle}>
+                Bespoke Wellness for Relaxation, Rejuvenation, & Personalized Care
+              </h1>
 
-            <p className={styles.bespokeDivP}>
-              At Breathe Day Spa’s calm and elegant space, we help you look, feel, and be your best. We provide luxurious massages, bespoke manicures and pedicures, and HydraFacial treatments. Our therapists are internationally trained and certified, and we are obsessed with hygiene.
-            </p>
-            <Image className="img-fluid" src="/Rectangle4422.png" height={400} width={655} alt="" />
+              <p className={styles.bespokeDivP}>
+                At Breathe Day Spa’s calm and elegant space, we help you look, feel, and be your best. We provide luxurious massages, bespoke manicures and pedicures, and HydraFacial treatments. Our therapists are internationally trained and certified, and we are obsessed with hygiene.
+              </p>
+              <Image className="img-fluid" src="/Rectangle4422.png" height={400} width={655} alt="" />
+            </div>
+
             <div>
               <Button href="#" text="Book a Treatment" />
             </div>
           </div>
 
           <div className="col-12 col-md-6 col-lg-6">
+            <div className="px-4">
             <div className={`card ${styles.card1}`}>
               <div className="card-body">
                 <div>
@@ -54,10 +58,10 @@ export default function Home() {
                     <h3 className={styles.captionTop}>TREATMENTS</h3>
                     <div className="row">
                       <div className={`row d-flex justify-content-between ${styles.borderedRow}`}>
-                        <div className="col-6">
+                        <div className="col-4">
                           <p className={styles.column1}>Massages</p>
                         </div>
-                        <div className="col-6">
+                        <div className="col-8">
                           <p className={styles.column2}>
                             Easing you into relaxation, with multiple tissue techniques, aromatherapy, body scrubs and wraps.
                           </p>
@@ -66,10 +70,10 @@ export default function Home() {
 
 
                       <div className={`row d-flex justify-content-between ${styles.borderedRow}`}>
-                        <div className="col-6">
+                        <div className="col-4">
                           <p className={styles.column1}>Nail Treatments</p>
                         </div>
-                        <div className="col-6">
+                        <div className="col-8">
                           <p className={styles.column2}>
                             Your concierce for clean, hygenic, and glossy nails. Mani’s, Pedi’s and more.
                           </p>
@@ -78,10 +82,10 @@ export default function Home() {
 
 
                       <div className={`row d-flex justify-content-between ${styles.borderedRow}`}>
-                        <div className="col-6">
+                        <div className="col-4">
                           <p className={styles.column1}>Facial Treatments</p>
                         </div>
-                        <div className="col-6">
+                        <div className="col-8">
                           <p className={styles.column2}>
                             The HydraFacial Glow is a signature Breathe Day Spa experience
                           </p>
@@ -91,10 +95,10 @@ export default function Home() {
 
 
                       <div className={`row d-flex justify-content-between ${styles.borderedRow}`}>
-                        <div className="col-6">
+                        <div className="col-4">
                           <p className={styles.column1}>Gift Vouchers</p>
                         </div>
-                        <div className="col-6">
+                        <div className="col-8">
                           <p className={styles.column2}>
                             Stylish gift cards to share the benefits of wellness, relaxation, and pampering
                           </p>
@@ -108,10 +112,10 @@ export default function Home() {
                     <h3 className={styles.captionTop}>HOURS</h3>
                     <div className="row">
                       <div className={`row d-flex justify-content-between ${styles.borderedRow}`}>
-                        <div className="col-6">
+                        <div className="col-4">
                           <p className={styles.column1}>Tuesday to Saturday</p>
                         </div>
-                        <div className="col-6">
+                        <div className="col-8">
                           <p className={styles.column2}>
                             9.00am - 8.00pm
                           </p>
@@ -120,10 +124,10 @@ export default function Home() {
 
 
                       <div className={`row d-flex justify-content-between ${styles.borderedRow}`}>
-                        <div className="col-6">
+                        <div className="col-4">
                           <p className={styles.column1}>Monday</p>
                         </div>
-                        <div className="col-6">
+                        <div className="col-8">
                           <p className={styles.column2}>
                             Closed
                           </p>
@@ -139,10 +143,10 @@ export default function Home() {
                     <h3 className={styles.captionTop}>CONTACT</h3>
                     <div className="row">
                       <div className={`row d-flex justify-content-between ${styles.borderedRow}`}>
-                        <div className="col-6">
+                        <div className="col-4">
                           <p className={styles.column1}>Phone</p>
                         </div>
-                        <div className="col-6">
+                        <div className="col-8">
                           <p className={styles.column2}>
                             +94  77 244  4888
                           </p>
@@ -151,10 +155,10 @@ export default function Home() {
 
 
                       <div className={`row d-flex justify-content-between ${styles.borderedRow}`}>
-                        <div className="col-6">
+                        <div className="col-4">
                           <p className={styles.column1}>Email</p>
                         </div>
-                        <div className="col-6">
+                        <div className="col-8">
                           <p className={styles.column2}>
                             shout@breathe-spa.com
                           </p>
@@ -176,6 +180,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            </div>
+            
           </div>
         </div>
       </div>
@@ -203,7 +209,7 @@ export default function Home() {
       </div> */}
       <DescriptionSection title="Our Ethos" description=" We are passionately committed to providing our clients with the most professional, customized, and hygienic wellness experience." />
 
-      <div className="px-5">
+      <div className="px-md-5 pt-lg-5 px-lg-5">
 
         {/* section 3  proffesionalism for desktop and mobile hide*/}
         <div className={`${styles.baseSection}, ${styles.mobileHide} `}>
@@ -395,7 +401,7 @@ export default function Home() {
       <div className={styles.baseSection}>
         <div className={styles.articleDiv}>
           <div className="d-md-flex d-lg-flex d-block justify-content-between">
-            <div className="col-12 col-md-6 col-lg-6">
+            <div className="col-12 col-md-8 col-lg-8">
               <div>
                 <h3 className={styles.locationDivTitle}>Recent Articles</h3>
                 <p className={`mt-0 ${styles.locationDivP}`}>
@@ -405,7 +411,7 @@ export default function Home() {
             </div>
 
 
-            <div className={`col-12 col-md-6 col-lg-6 d-flex justify-content-start justify-content-lg-end justify-content-md-end ${styles.viewAll}`}>
+            <div className={`col-12 col-md-4 col-lg-4 d-flex justify-content-start justify-content-lg-end justify-content-md-end ${styles.viewAll}`}>
               <Button text="View All" href="#" />
             </div>
           </div>

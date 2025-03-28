@@ -163,9 +163,17 @@
         margin-bottom: 30px;
     }
 
-    /* .footer-backg{
-        height: 200px !important;
-    } */
+    
+
+    
+}
+
+@media screen and (max-width: 800px) {
+    .footer-backg{
+        height: 380px !important;
+        width: 100vw;
+    }
+
 }
 
 
@@ -177,7 +185,18 @@
 
 
   @media screen and (max-width: 900px) and (min-width:800) {
-    .footer-backg {
-        height: revert-layer;
+    .footer-backg{
+        height: 380px !important;
+        width: 100vw;
     }
+  }
+
+
+
+  @media screen and (max-width: 1500px) and (min-width:900) {
+    .footer-backg{
+        height: 580px !important;
+        width: 100vw;
+    }
+
   }

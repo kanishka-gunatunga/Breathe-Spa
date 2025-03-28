@@ -41,12 +41,12 @@ const page = () => {
           <Image src={"/banner-about.png"} alt='services hero image' width={1920} height={1080} style={{ width: "100vw", height: "auto", objectFit: 'cover' }} />
         </div>
         {/* section 3  about brehte for desktop and mobile hide*/}
-        <div className={`${styles.baseSection}, ${styles.mobileHide}`}>
+        <div className={` ${styles.baseSection}, ${styles.mobileHide}`}>
           <div className={`d-block d-lg-flex justify-content-center gap-md-5 gap-lg-0 px-3 px-md-0 px-lg-0 ${styles.headSection}`}>
             <div className={`col-12 col-lg-5 my-5 my-md-0 my-lg-0 `}>
               <Image className={`img-fluid ${styles.locationImg1}`} src="/about1.png" height={650} width={548} alt="" />
             </div>
-            <div className="col-12 col-lg-5 d-flex flex-column justify-content-between about">
+            <div className={`col-12 col-lg-5 d-flex flex-column justify-content-between about ${styles.aboutBreatheContainer}`}>
               <h3 className={styles.aboutSectionTitle}>About Breathe</h3>
               <p className={styles.sectionDescription}>
                 Lorem ipsum dolor sit amet consectetur. Sed curabitur non adipiscing varius ut ullamcorper elementum duis. Sodales sem ultrices non diam diam rhoncus. Cursus ac odio purus consequat ac consequat tortor euismod viverra. Dignissim integer molestie dictum aliquet est quam. Augue viverra sed ullamcorper amet faucibus ipsum et. Amet vulputate morbi morbi euismod aliquam egestas sem tellus. Quisque et tincidunt tincidunt cras amet nulla vestibulum. Est quisque sed vel pretium nam pharetra. Nunc viverra pretium ultricies in ultrices. Velit orci a interdum odio vitae eu non lorem. Quisque velit pharetra nascetur id sagittis facilisis nam morbi. Egestas at sed sed fermentum ornare. Aenean pharetra amet vivamus nec. Viverra diam ac nec turpis cursus. Fringilla scelerisque malesuada sapien egestas et. Risus mi natoque sed ac varius semper. Nulla laoreet in tortor ac augue. Sit cursus id commodo enim. Nullam semper id porttitor non vitae tincidunt. Lectus in habitasse aliquam sed pellentesque. Ligula lectus dignissim ac consequat eleifend massa quam dictumst. Mi mi tortor aliquam sed ut dolor pellentesque dolor.
@@ -72,7 +72,7 @@ const page = () => {
         </div>
 
         <div className={`mx-0 px-0 ${styles.baseSection}, ${styles.mobileHide}`}>
-          <div className="position-relative">
+          <div className={`position-relative ${styles.whyChooseUsBackg}`}>
             <Image className={styles.ethosBackgorund} src="/Group1000003149(1).png" height={368} width={620} alt="" />
             <div className={`position-absolute ${styles.locationDiv}`}>
               <div className="row d-flex justify-content-center p-5 px-lg-0 gap-5">
@@ -140,7 +140,7 @@ const page = () => {
                           </div>
                           <div className="d-flex flex-column justify-content-between pt-5">
                             <p className={styles.TestimonialCardText}>
-                              "Lorem ipsum dolor sit amet consectetur. Nisl in dictum viverra in sagittis tincidunt."
+                              "Lorem ipsum dolor sit amet consectetur. Nisl in dictum viverra in sagittis tincidunt. Ut aenean id mattis quis consectetur at cras accumsan. Maecenas pulvinar tortor ligula aliquam scelerisque pharetra."
                             </p>
                             <div>
                               <h5 className={styles.testimonialCardName}>David Miller</h5>
@@ -160,7 +160,23 @@ const page = () => {
                                   </svg>
                                 ))}
                               </div>
+
+
+
+                              
                             </div>
+                            <div className={styles.arrowDiv}>
+                                <button className={`testimonial-prev ${styles.customPrev}`}>
+                                  <svg width="40" height="40" viewBox="0 0 16 16" fill="currentColor">
+                                    <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
+                                  </svg>
+                                </button>
+                                <button className={`testimonial-next ${styles.customNext}`}>
+                                  <svg width="40" height="40" viewBox="0 0 16 16" fill="currentColor">
+                                    <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                                  </svg>
+                                </button>
+                              </div>
                           </div>
                         </div>
                       </div>
@@ -169,18 +185,7 @@ const page = () => {
                 ))}
               </Swiper>
 
-              <div className={styles.arrowDiv}>
-                <button className={`testimonial-prev ${styles.customPrev}`}>
-                  <svg width="40" height="40" viewBox="0 0 16 16" fill="currentColor">
-                    <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
-                  </svg>
-                </button>
-                <button className={`testimonial-next ${styles.customNext}`}>
-                  <svg width="40" height="40" viewBox="0 0 16 16" fill="currentColor">
-                    <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
-                  </svg>
-                </button>
-              </div>
+
             </div>
           </div>
         </div>
