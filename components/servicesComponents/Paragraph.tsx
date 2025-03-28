@@ -7,7 +7,7 @@ interface MainTitleProps {
 
 const Paragraph: React.FC<MainTitleProps> = (props) => {
   return (
-    <h2 className={style.paragraph}>{props.text}</h2>
+    <h2 className={`${style.paragraph} mb-0`}>{props.text}</h2>
   )
 }
 

@@ -13,7 +13,8 @@ export const GET_SERVICE_CATEGORIES = `
     },
       pricing[] {
         duration,
-        price
+        price,
+        priceDescription
       }
     }
   }
@@ -37,7 +38,8 @@ export const GET_SERVICE_CATEGORY_BY_SLUG = `
       },
       pricing[] {
         duration,
-        price
+        price,
+        priceDescription
       }
     }
   }
