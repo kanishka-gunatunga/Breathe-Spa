@@ -3,20 +3,26 @@ import styles from "@/styles/page.module.css";
 import Image from "next/image";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ExclusiveDeals from "@/components/ReusableComponents/ExclusiveDeals";
+import style from '@/styles/services.module.css'
+import DescriptionSection from '@/components/servicesComponents/DescriptionSection'
 
 export default function Home() {
   return (
     <div>
 
       {/* banner image part */}
-      <div className={styles.bannerImageDiv}>
+      {/* <div className={styles.bannerImageDiv}>
         <Image className={`m-0 p-0 ${styles.headingImage}`} src="/Vector12.png"
           width={0}
           height={0}
           sizes="100%"
           style={{ width: '100%', height: 'auto' }}
           alt="" />
-      </div>
+      </div> */}
+
+<div className={`d-flex ${style.imageContainer}`}>
+          <Image src={"/Vector12.png"} alt='services hero image' width={1920} height={1080} style={{ width: "100vw", height: "auto", objectFit: 'cover' }} />
+        </div>
 
 
 
@@ -176,7 +182,7 @@ export default function Home() {
 
 
       {/* section 2 */}
-      <div className={`mx-0 px-0 mt-0 ourEthosSection ${styles.baseSection}`}>
+      {/* <div className={`mx-0 px-0 mt-0 ourEthosSection ${styles.baseSection}`}>
         <div className={styles.ourEthos}>
           <div className="position-relative">
             <div className={styles.ethosImageContainer}>
@@ -194,7 +200,8 @@ export default function Home() {
           </div>
 
         </div>
-      </div>
+      </div> */}
+      <DescriptionSection title="Our Ethos" description=" We are passionately committed to providing our clients with the most professional, customized, and hygienic wellness experience." />
 
       <div className="px-5">
 
@@ -347,8 +354,8 @@ export default function Home() {
       </div>
 
       <div className={`mx-0 px-0 ${styles.baseSection, styles.mobileHide}`}>
-        <div className="position-relative">
-          <Image className={styles.ethosBackgorund} src="/Group1000003149(1).png" height={368} width={620} alt="" />
+        <div className={`position-relative ${styles.yellow}`}>
+          <Image className={`${styles.ethosBackgorund}`} src="/Group1000003149(1).png" height={368} width={620} alt="" />
           <div className={`position-absolute ${styles.locationDiv}`}>
             <div className="row d-flex justify-content-between p-2 p-md-5 p-lg-5">
               <div className="col-12 col-md-6 col-lg-6 d-flex flex-column justify-content-between">

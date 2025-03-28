@@ -163,14 +163,21 @@
         margin-bottom: 30px;
     }
 
-    .footer-backg{
+    /* .footer-backg{
         height: 200px !important;
-    }
+    } */
 }
 
 
 @media screen and (max-width: 1400px) and (min-width:1200) {
     .footer-content{
         padding-inline: 2rem !important;
+    }
+  }
+
+
+  @media screen and (max-width: 900px) and (min-width:800) {
+    .footer-backg {
+        height: revert-layer;
     }
   }
