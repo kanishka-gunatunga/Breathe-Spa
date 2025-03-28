@@ -9,7 +9,7 @@
 
 html,
 body {
-  max-width: 2160px;
+  /* max-width: 2160px; */
   overflow-x: hidden;
 }
 
@@ -78,7 +78,7 @@ a {
 /* section spacing and screen max width */
 .section {
   padding: 40px 16px;
-  max-width: 1400px;  
+  /* max-width: 1400px;   */
   margin: 0 auto; 
 }
 
@@ -93,7 +93,7 @@ a {
       padding: 80px 32px;
   }
 }
-
+/* 
 @media (min-width: 1280px) {
   .section {
       padding: 96px 40px;
@@ -110,23 +110,52 @@ a {
   .section {
       max-width: 1400px; 
   }
+} */
+
+
+/* animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-
-
-.stickyImage {
-  position: sticky;
-  top: 10vh; 
-  z-index: 1;
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-.fadeIn {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-.fadeIn.visible {
-  opacity: 1;
-  transform: translateY(0);
+.fade-in-up {
+  animation: fadeInUp 1.5s ease-in-out;
 }
+
+.fade-in-right {
+  animation: fadeInRight 1.5s ease-in-out;
+}
+
+.fade-in-left {
+  animation: fadeInLeft 1.5s ease-in-out;
+}
+

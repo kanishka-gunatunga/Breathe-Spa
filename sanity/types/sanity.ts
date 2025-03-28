@@ -27,7 +27,8 @@ export interface ServiceCategory {
   }
   export interface Pricing {
     duration: string
-    price: number
+    price: string
+    priceDescription:string
   }
   
   export interface Image {

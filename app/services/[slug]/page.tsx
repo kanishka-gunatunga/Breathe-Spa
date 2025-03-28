@@ -53,7 +53,7 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
       </div>
 
 
-      <div className="section">
+      <div className="container section pb-0">
         <div className="d-flex flex-column flex-lg-row">
           <div className="col-12 col-lg-5 d-flex">
 
@@ -77,29 +77,35 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
                 title={title}
                 description={groupedServices[title][0].serviceDescription?.description}
               />
-              <div className="my-3 my-lg-0 section">
+              <div className="my-3 my-lg-0 container section pb-0">
                 {groupedServices[title].map((service, index) => (
                   <div
                     key={service.serviceName + index}
                     className="p-0 position-relative"
                   >
                     <div
-                      className={`p-2 p-md-3 p-lg-4 ${style.serviceInnerItem} ${index % 2 === 0 ? style.roundedBottomLeft : style.roundedTopRight}`}
+                      className={`p-3 p-md-3 p-lg-4 ${style.serviceInnerItem} ${index % 2 === 0 ? style.roundedBottomLeft : style.roundedTopRight}`}
                     >
                       <div className="d-flex flex-column flex-md-row">
-                        <div className="col-12 col-lg-10 d-flex flex-column align-items-start">
+                        <div className="col-12 col-lg-12 d-flex flex-column align-items-start">
+                          <div className="d-flex w-100 justify-content-between align-items-top">
                           <h4>{service.serviceName}</h4>
-                          <ul>
+                          <div className="d-none d-md-flex">
+                          <Link href={"/contact"}>Learn More</Link>
+                          </div>
+                          </div>
+                          <ul className={`${style.pricingList } `}>
                             {service.pricing.map((price, priceIndex) => (
-                              <li key={priceIndex}>
-                                {price.duration}: Rs.{price.price}
+                              <li key={priceIndex} className={`${style.pricingItem} me-5`}>
+                                {price.duration} | Rs.{price.price}.00
+                                {price.priceDescription && <span> ({price.priceDescription})</span>}
                               </li>
                             ))}
                           </ul>
                           <Paragraph text={service.serviceItemDescription} />
-                        </div>
-                        <div className="col-12 col-lg-2 d-flex justify-content-end align-items-start pt-2">
+                          <div className="d-flex d-md-none my-3">
                           <Link href={"/contact"}>Learn More</Link>
+                          </div>
                         </div>
                       </div>
                     </div>

@@ -22,7 +22,7 @@
     object-position: bottom;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     .imageContainer img {
         max-height: 60vh;
     }
@@ -36,15 +36,15 @@
 
 @media (min-width: 1280px) {
     .imageContainer img {
-        max-height: 80vh;
+        max-height: 100vh;
     }
 }
 
 @media (min-width: 1600px) {
     .imageContainer img {
-        max-height: 85vh;
+        max-height: 100vh;
     }
-}
+} */
 
 
 
@@ -82,7 +82,7 @@
 
 .imgHeight {
     object-fit: contain;
-    object-position: right;
+    object-position: center;
     height: 100%;
     width: 100%;
     max-height: 580px;
@@ -93,6 +93,7 @@
 .darkButton {
     background-color: #313131;
     min-width: 107px;
+    max-width: 107px;
     min-height: 33px;
     height: max-content;
     border-radius: 4px;
@@ -108,7 +109,11 @@
 
 .serviceItem {
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+}
+
+.serviceItem>*:last-child {
+    margin-top: auto;
 }
 
 .servicesList {
@@ -118,7 +123,7 @@
 
 .serviceItem h4 {
     font-family: 'AwesomeSerif', sans-serif;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 18px;
     color: #292929;
     letter-spacing: 1px !important;
@@ -229,11 +234,14 @@
     right: -10px;
 
 }
+
 .serviceImage {
     border-radius: 15px;
     position: relative;
     z-index: 2;
+    min-width: 600px;
 }
+
 .darkRectangleServiceMain {
     position: absolute;
     width: 100%;
@@ -241,27 +249,39 @@
     background-color: #F3EEE7;
     z-index: 1;
     border-radius: 100px 15px 15px 15px;
-    top: -15px;
-    right: -15px;
+    top: -20px;
+    right: -20px;
 }
 
 .shapedBg {
     height: 70% !important;
 }
 
+
+.pricingList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+  }
+  
+  .pricingItem {
+    list-style-type: none;
+  }
+  
+
 @media (max-width: 1280px) {
     .heroTxt {
         font-size: 80px;
     }
+    .serviceImage {
+        min-width: 550px;
+    }
 }
 
 @media (max-width: 992px) {
-    .imgHeight {
-        object-position: center;
-    }
 
     .mobileHeight {
-        height: 40vh;
+        height: 48vh;
     }
 }
 
@@ -295,14 +315,43 @@
     }
 
     .mobileHeight {
-        height: 40vh;
+        height: 48vh;
     }
 
     .shapedBg {
         height: 100% !important;
     }
+
+    .serviceImage {
+        min-width: 100%;
+    }
+
+    .darkRectangleServiceMain {
+        top: -10px;
+        right: -8px;
+    }
+
+    .serviceInnerItem h4 {
+        font-size: 30px;
+    }
+
+    .serviceInnerItem li {
+        font-size: 20px;
+    }
+
+    .serviceInnerItem a {
+        font-size: 16px;
+
+    }
+    .pricingList {
+        display: flex;
+        flex-direction: column;
+        
+      }
 }
 
+  
+  
 
 
 /* shape background */
@@ -322,7 +371,7 @@
     }
 }
 
-@media (min-width: 1280px) {
+/* @media (min-width: 1280px) {
     .sectionShaped {
         padding: 96px 40px;
     }
@@ -330,6 +379,6 @@
 
 @media (min-width: 1600px) {
     .sectionShaped {
-        padding: 120px 48px;
+        padding: 80px 48px;
     }
-}
+} */
