@@ -578,7 +578,17 @@ a.text-decoration-none {
 
 .blogImageContainer {
     width: 100%;
-    max-width: 100%;
+    /*max-width: 100%;*/
+    overflow: hidden;
+    background-color: #f5f5f5;
+}
+
+.blogImageContainer img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 700px;
+    object-fit: cover;
 }
 
 @media (min-width: 992px) {
@@ -934,10 +944,6 @@ a.text-decoration-none {
         line-height: 28px;
     }
 
-    body {
-        font-size: 18px;
-    }
-
     .contactFormDiv {
         margin-bottom: 2rem !important
     }
@@ -1025,10 +1031,10 @@ a.text-decoration-none {
         margin: 2.5rem 0 1.8rem;
     }
 
-    .blogImageContainer {
-        max-width: 1200px;
-        margin: 2rem auto;
-    }
+    /*.blogImageContainer {*/
+    /*    max-width: 1200px;*/
+    /*    margin: 2rem auto;*/
+    /*}*/
 
     .imageContainer {
         height: 100%;
@@ -1058,15 +1064,144 @@ a.text-decoration-none {
     .map_hours_desc {
         font-size: 24px;
     }
+}
 
-    .row {
-        --bs-gutter-x: 2rem;
-        --bs-gutter-y: 2rem;
+@media screen and (min-width: 2560px) and (max-width: 3839px) {
+    .contactContainer {
+        max-width: 2300px;
+        padding: 0 3rem;
     }
 
-    .col-lg-4 {
-        flex: 0 0 auto;
-        width: 33.33333%;
+    .section_title {
+        font-size: 5rem;
+        line-height: 1.1;
+        margin-bottom: 2.5rem;
+    }
+
+    .sectionSubTitle {
+        font-size: 2.75rem;
+        margin-bottom: 2rem;
+    }
+
+    .form_label {
+        font-size: 36px;
+        margin-bottom: 1.5rem;
+    }
+
+    .formControl {
+        font-size: 32px;
+        padding: 1rem 1.5rem;
+    }
+
+    .submit_button {
+        font-size: 1.75rem;
+        padding: 1.25rem 2.5rem;
+        letter-spacing: 4px;
+    }
+
+    .sectionTitle {
+        font-size: 4.25rem;
+    }
+
+    .contactFormDiv {
+        margin-bottom: 2.5rem !important;
+    }
+
+    .formCheck {
+        font-size: 28px;
+        padding-left: 1.75rem;
+    }
+
+    .formCheckBox {
+        width: 2.5em;
+        height: 2.5em;
+    }
+
+    .blogCardTitle {
+        font-size: 3rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .blogCardDesc {
+        font-size: 2rem;
+        line-height: 1.6;
+        margin-top: 20px;
+    }
+
+    .blogCardDate {
+        font-size: 2.25rem;
+    }
+
+    .blogCardRead {
+        font-size: 32px;
+        margin-top: 20px;
+    }
+
+    .blogContent {
+        font-size: 2.3rem;
+        line-height: 1.7;
+        max-width: 1800px;
+        margin: 0 auto;
+    }
+
+    .blogContent h2 {
+        font-size: 3rem;
+        margin: 2rem 0 1.5rem;
+    }
+
+    /*.blogImageContainer {*/
+    /*    max-width: 1000px; !* Between 700px (992px+) and 1200px (1920px/3840px) *!*/
+    /*    margin: 2rem auto;*/
+    /*}*/
+
+    .mapHouContainer {
+        padding: 6rem 1rem;
+    }
+
+    .mapMain {
+        padding: 10rem 0;
+    }
+
+    .contact_info {
+        font-size: 32px;
+    }
+
+    .map_hours_title {
+        font-size: 36px;
+        margin-bottom: 2rem;
+    }
+
+    .map_hours_days {
+        font-size: 28px;
+    }
+
+    .map_hours_time {
+        font-size: 28px;
+    }
+
+    .map_hours_desc {
+        font-size: 28px;
+        line-height: 36px;
+        padding: 2rem 0;
+    }
+
+    .exclusiveTitle {
+        font-size: 60px;
+        padding-top: 2rem;
+    }
+
+    .exclusiveDescription {
+        font-size: 24px;
+        line-height: 32px;
+        padding: 2rem 0;
+    }
+
+    .imageContainer {
+        height: 100%;
+    }
+
+    .responsiveImage {
+        border-radius: 20px;
     }
 }
 
@@ -1080,10 +1215,6 @@ a.text-decoration-none {
         font-size: 36px;
         line-height: 28px;
         padding: 3rem 0;
-    }
-
-    body {
-        font-size: 18px;
     }
 
     .contactFormDiv {
@@ -1172,10 +1303,10 @@ a.text-decoration-none {
         margin: 3rem 0 2.5rem;
     }
 
-    .blogImageContainer {
-        max-width: 1200px;
-        margin: 2rem auto;
-    }
+    /*.blogImageContainer {*/
+    /*    max-width: 1200px;*/
+    /*    margin: 2rem auto;*/
+    /*}*/
 
     .imageContainer {
         height: 100%;
@@ -1208,15 +1339,5 @@ a.text-decoration-none {
         text-align: start;
         line-height: 42px;
         padding: 3rem 0;
-    }
-
-    .row {
-        --bs-gutter-x: 2rem;
-        --bs-gutter-y: 2rem;
-    }
-
-    .col-lg-4 {
-        flex: 0 0 auto;
-        width: 33.33333%;
     }
 }

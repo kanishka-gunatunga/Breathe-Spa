@@ -35,7 +35,8 @@ const BlogPost = () => {
                     alt={blogPost.title}
                     layout="responsive"
                     width={1200}
-                    height={600}
+                    height={400}
+                    priority
                     className="w-full h-auto object-cover rounded-3"
                 />
             </div>
