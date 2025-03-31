@@ -44,3 +44,16 @@ export const GET_SERVICE_CATEGORY_BY_SLUG = `
     }
   }
 `;
+
+
+
+export const GET_SERVICE_MAIN_PAGE_DATA = `
+   *[_type == "serviceMainPage"] {
+        _id,
+        title,
+        mainImage,
+        servicesHeroImage,
+        categoryTitle,
+        description
+      }
+`;

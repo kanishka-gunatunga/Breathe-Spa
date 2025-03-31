@@ -39,3 +39,11 @@ export interface ServiceCategory {
     }
   }
   
+
+  export interface ServiceMainData {
+    _id: string
+    title: string,
+    mainImage?: Image
+    servicesHeroImage?: Image
+    description: string
+  }
