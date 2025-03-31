@@ -13,6 +13,7 @@ import 'swiper/css/pagination';
 import { Navigation, Pagination } from 'swiper/modules';
 import CardSlider from "@/components/ReusableComponents/Slider";
 import style from '@/styles/services.module.css'
+import YellowBackSection from "@/components/ReusableComponents/YellowBackSection";
 
 
 
@@ -71,7 +72,16 @@ const page = () => {
           </div>
         </div>
 
-        <div className={`mx-0 px-0 ${styles.baseSection}, ${styles.mobileHide}`}>
+
+
+
+        <YellowBackSection
+        title="Why Choose Us"
+        description="Lorem ipsum dolor sit amet consectetur. Ac arcu auctor non imperdiet laoreet morbi tristique metus. Bibendum enim ut non ac aenean malesuada eget lectus. Vitae amet at amet diam. Massa porttitor mi scelerisque praesent auctor pharetra eget ut. Augue elementum consequat lacus sit. Suspendisse ipsum odio eu sagittis semper tincidunt. Sit ultrices egestas arcu odio tristique amet interdum montes. Cras vel sed cursus vulputate viverra mauris. Pellentesque quam ultricies adipiscing quam nunc purus lectus. Vitae amet velit at ut. Adipiscing amet eleifend duis a augue. Maecenas vulputate sed tellus imperdiet dictum imperdiet etiam quis. Blandit consectetur placerat imperdiet in purus amet. Eget posuere ac commodo ultrices tristique dolor turpis interdum semper. Arcu ut ornare placerat dolor scelerisque tincidunt commodo duis egestas. Euismod amet scelerisque nullam purus duis velit. Augue sit aliquet auctor aliquam. Mauris egestas dolor egestas consectetur. Blandit eget egestas mauris sit. Feugiat neque consequat sit lorem mattis enim nibh. Neque odio quis ultrices morbi sit augue ut eget. Bibendum enim proin dui ut in. Ac placerat quisque iaculis rhoncus ut sit. Leo a vulputate purus et."
+          image="/Group1000003149(1).png"
+        buttonText="EXPLORE OUR SERVICES"
+        />
+        {/* <div className={`mx-0 px-0 ${styles.baseSection}, ${styles.mobileHide}`}>
           <div className={`position-relative ${styles.whyChooseUsBackg}`}>
             <Image className={styles.ethosBackgorund} src="/Group1000003149(1).png" height={368} width={620} alt="" />
             <div className={`position-absolute ${styles.locationDiv}`}>
@@ -105,7 +115,7 @@ const page = () => {
               <Button text="Discover Our Location" href="#" />
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Testimonials Swiper */}
         <div className={styles.baseSection}>
@@ -191,8 +201,8 @@ const page = () => {
         </div>
 
         {/* Team Swiper */}
-        <div className={`mx-0 px-0 ${styles.baseSection}`}>
-          <div className="position-relative">
+        <div className={`mx-0 px-0 mt-2 ${styles.baseSection}`}>
+          <div className={`position-relative ${styles.relativeBack}`}>
             <Image className={styles.ethosBackgorund} src="/Group1000003149(1).png" height={368} width={620} alt="Team background" />
             <div className={`position-absolute col-12 ${styles.breatheTeamDiv}`}>
               <div className="d-flex flex-column align-items-center justify-content-center">

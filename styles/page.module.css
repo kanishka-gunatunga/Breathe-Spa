@@ -75,26 +75,12 @@
 }
 
 .baseSection {
-  margin: 80px 50px 20px 50px;
+  margin: 48px 50px 20px 50px;
 }
 
 .bespokeDiv {
   display: flex;
 }
-
-.bespokeDivTitle {
-  font-family: 'Coefficient DEMO', sans-serif;
-  font-weight: 400;
-  font-size: 50px;
-  line-height: 65px;
-  letter-spacing: 5%;
-
-}
-
-/* .bespokeDiv1,
-.bespokeDiv2 {
-  width: 50%;
-} */
 
 
 .bespokeDivP {
@@ -106,17 +92,18 @@
 
 }
 
-.card1 {
-  background-color: #F3EEE7 !important;
-  width: fit-content;
-  border: none;
-  padding-inline: 50px;
+
+.bespokeDivTitle {
+  font-family: 'Coefficient DEMO', sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 65px;
+  letter-spacing: 5%;
+
 }
 
-.borderedRow {
-  border-bottom: 1px dashed #BDBDBD;
-  margin-top: 20px;
-}
+
+
 
 .captionTop {
   font-family: 'AwesomeSerif Light Extra Tall', sans-serif;
@@ -132,6 +119,9 @@
 
 }
 
+
+
+
 .column1 {
   font-family: 'AwesomeSerif Light Extra Tall', sans-serif;
   font-weight: 400;
@@ -139,6 +129,7 @@
   line-height: 100%;
   letter-spacing: 5%;
   color: #313131 !important;
+  margin: 15px 0 !important;
 
 }
 
@@ -151,7 +142,32 @@
   text-transform: capitalize;
   text-align: justify;
   color: #313131 !important;
+  margin: 15px 0 !important;
 }
+
+.bottomBorder{
+  border-bottom: 1px dashed #BDBDBD;
+  display: flex;
+  align-items: center;
+}
+
+.card1 {
+  background-color: #F3EEE7 !important;
+  border: none;
+  padding-inline: 30px;
+}
+
+
+.cardtitle {
+  font-family: 'AwesomeSerif Semi Bold Extra Tall', sans-serif;
+  font-weight: 300;
+  font-size: 25px;
+  /* line-height: 50px;
+  letter-spacing: 5%; */
+
+}
+
+
 
 .privacyPRow {
   display: flex;
@@ -174,44 +190,7 @@
 
 }
 
-.ourEthos,
-.relativeSection {
-  display: flex;
-  flex-direction: column;
-  /* background-color: #F3EEE7;
-    background-image: url(/Group1000003148.png);
-    background-repeat: no-repeat;
-    height: 500px;
-    width: 100%; */
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
 
-.fullWidth {
-  width: 100% !important;
-}
-
-.ethosTitle {
-  font-family: 'Coefficient DEMO', sans-serif;
-  font-weight: 400;
-  font-size: 60px;
-  line-height: 48px;
-  letter-spacing: 0.2px;
-  text-align: center;
-  vertical-align: middle;
-
-}
-
-.ethosText {
-  font-family: "Work Sans", sans-serif;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 26px;
-  letter-spacing: 0%;
-  text-align: center;
-
-}
 
 .sectionDescription {
   font-family: "Work Sans", sans-serif;
@@ -236,31 +215,17 @@
 .leftBoxShadow {
   box-shadow: -31px -26px #F3EEE7;
   border-radius: 15px;
+  width: 100%;
 }
 
 .rightBoxShadow {
   box-shadow: 31px -26px #F3EEE7;
   border-radius: 15px;
   border-top-left-radius: 100px;
+  width: 100%;
 }
 
-.marginBottom {
-  margin-bottom: 50px;
-}
 
-.locationDiv {
-  top: 10%;
-}
-
-.locationDivP {
-  font-family: "Work Sans", sans-serif;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 30px;
-  letter-spacing: 5%;
-  text-align: justify;
-  margin-top: 50px;
-}
 
 .locationDivTitle {
 
@@ -285,9 +250,20 @@
 
 }
 
-.articleDiv {
+.locationDivP {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 5%;
+  text-align: justify;
+  margin-top: 50px;
+}
+
+.locationContainer Button{
   padding-inline: 50px;
 }
+
 
 
 .viewAll Button {
@@ -322,14 +298,7 @@
   margin-right: 0 !important;
 }
 
-.cardtitle {
-  font-family: 'AwesomeSerif Semi Bold Extra Tall', sans-serif;
-  font-weight: 300;
-  font-size: 25px;
-  line-height: 50px;
-  letter-spacing: 5%;
 
-}
 
 .articleCardTitle {
   font-family: 'AwesomeSerif', sans-serif;
@@ -341,6 +310,49 @@
   color: #FFFFFF;
   margin-left: 20px;
 }
+
+
+
+.exclusiveDeals {
+  border-top: 2px solid #BDBDBD;
+  border-bottom: 2px solid #BDBDBD;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 50px 0 50px;
+  padding: 60px 0;
+
+}
+
+.exclusiveDescription {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 5%;
+  text-align: center;
+  text-align: center;
+}
+
+.exclusiveTitle {
+  font-family: 'Coefficient DEMO', sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 48px;
+  letter-spacing: 0.2px;
+
+}
+
+.exclusiveDeals Button {
+  padding-inline: 50px;
+}
+
+
+
+
+
+
 
 
 
@@ -413,7 +425,7 @@
   bottom: 24px;
 }
 
-.breatheTeamDiv{
+.breatheTeamDiv {
   top: 200px;
 }
 
@@ -423,41 +435,6 @@
   border-radius: 50%;
   padding: 5px;
   background-color: #FFFFFF;
-}
-
-.exclusiveDeals {
-  border-top: 2px solid #BDBDBD;
-  border-bottom: 2px solid #BDBDBD;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 50px 50px 0 50px;
-  padding: 60px 0;
-
-}
-
-.exclusiveDescription {
-  font-family: "Work Sans", sans-serif;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 22px;
-  letter-spacing: 5%;
-  text-align: center;
-  text-align: center;
-}
-
-.exclusiveTitle {
-  font-family: 'Coefficient DEMO', sans-serif;
-  font-weight: 400;
-  font-size: 50px;
-  line-height: 48px;
-  letter-spacing: 0.2px;
-
-}
-
-.exclusiveDeals Button {
-  padding-inline: 50px;
 }
 
 .section_title {
@@ -474,6 +451,85 @@
   font-size: 26px;
   color: #171A31B2;
 }
+
+
+.OnDesktopHide{
+  display: none;
+}
+
+.OnmobileHide{
+  display: block;
+}
+
+
+
+/* 
+
+
+
+
+
+.borderedRow {
+  border-bottom: 1px dashed #BDBDBD;
+  margin-top: 20px;
+}
+
+
+
+
+
+.ourEthos,
+.relativeSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.fullWidth {
+  width: 100% !important;
+}
+
+.ethosTitle {
+  font-family: 'Coefficient DEMO', sans-serif;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 48px;
+  letter-spacing: 0.2px;
+  text-align: center;
+  vertical-align: middle;
+
+}
+
+.ethosText {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  text-align: center;
+
+}
+
+
+.marginBottom {
+  margin-bottom: 50px;
+}
+
+.locationDiv {
+  top: 10%;
+}
+
+
+
+.articleDiv {
+  padding-inline: 50px;
+}
+
+
+
+ */
 
 .form_label {
   font-family: 'AwesomeSerif R', sans-serif;
@@ -684,6 +740,7 @@
   .map_hours_days {
     font-size: 14px;
   }
+
 }
 
 
@@ -721,8 +778,62 @@
   .map_hours_days {
     font-size: 15px;
   }
+  
 }
 
+@media screen and (max-width: 992px){
+  .sectionTitle , .leftBoxShadow{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .sectionDescription{
+    margin-bottom: 20px;
+  }
+  .rightBoxShadow{
+    margin-top: 50px;
+  }
+
+  .yellowSvg{
+    height: 1600px;
+  }
+
+  .articleCard1,
+  .articleCard2,
+  .articleCard3 {
+    width: auto;
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+
+  .articleDiv {
+    padding-inline: 10px;
+  }
+
+  .viewAll {
+    margin-bottom: 30px;
+  }
+
+  .locationContainer Button {
+    margin-bottom: 30px;
+  }
+  .OnDesktopHide{
+    display: block;
+  }
+
+  .OnmobileHide{
+    display: none;
+  }
+
+  .aboutSectionTitle {
+
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+}
+
+
+/* 
 @media screen and (max-width: 800px) {
   .baseSection {
     margin-inline: 10px;
@@ -779,21 +890,7 @@
     font-size: 30px;
   }
 
-  .articleCard1,
-  .articleCard2,
-  .articleCard3 {
-    width: auto;
-    margin-bottom: 20px;
-    margin-right: 0;
-  }
 
-  .articleDiv {
-    padding-inline: 10px;
-  }
-
-  .viewAll {
-    margin-bottom: 30px;
-  }
 
   .locationDivTitle {
     font-size: 30px;
@@ -836,19 +933,14 @@
     height: 1200px;
   }
 
-  .aboutSectionTitle {
-
-    text-align: center;
-    font-size: 40px !important;
-    margin-top: 30px;
-  }
+  
 
 
 
-}
+} */
 
 /* ipad air */
-
+/* 
 @media screen and (max-width: 900px) and (min-width:800) {
   .aboutPage .mobileHide {
     display: none !important;
@@ -930,17 +1022,15 @@
     padding-inline: 10px !important;
   }
 
-  /* .teamCard{
-  width: auto !important;
+
+
+
 } */
-
-
-}
 
 
 /* ipad pro */
 
-
+/* 
 @media screen and (max-width: 1025px) and (min-width:900px) {
 
 
@@ -961,9 +1051,6 @@
     display: block !important;
   }
 
-  /* .articleDiv {
-    margin-top: 300px !important;
-  } */
 
   .ethosContainer {
     top: 32%;
@@ -976,12 +1063,12 @@
 
   .headSection {
     display: block !important;
-    /* background-color: black; */
+    
   }
 
   .mobileSection {
     width: 100%;
-    /* background-color: blue !important; */
+   
   }
 
   .aboutBreathDescriptionMobile {
@@ -1013,15 +1100,21 @@
 
 
 
-}
-
+} */
+/* 
 
 @media screen and (max-width: 1090px) and (min-width:1025px) {
   .aboutPage .ethosBackgorund {
-    height: 1600px;
+    height: 1200px;
   }
 }
 
+
+@media screen and (max-width: 1490px) and (min-width:1090px) {
+  .aboutPage .ethosBackgorund {
+    height: 1200px;
+  }
+}
 
 @media screen and (max-width: 1290px) and (min-width:1040px) {
   .yellow .ethosBackgorund {
@@ -1029,7 +1122,7 @@
 
   }
 
-  .whyChooseUsBackg .ethosBackgorund{
+  .whyChooseUsBackg .ethosBackgorund {
     height: 1200px;
   }
 }
@@ -1042,7 +1135,7 @@
     object-fit: cover;
   }
 
-  
+
 
   .bespokeDivTitle {
     font-size: 40px;
@@ -1070,11 +1163,32 @@
 @media screen and (max-width: 1350px) and (min-width:1025px) {
 
 
-  .headSection .locationImg1{
+  .headSection .locationImg1 {
     height: 700px;
   }
-  .aboutBreatheContainer{
+
+  .aboutBreatheContainer {
     margin-inline: 30px;
   }
 
 }
+
+@media screen and (min-width:1920px) {
+
+  .breatheTeamDiv {
+    top: 25%;
+  }
+
+  .baseSection {
+    max-width: 1500px;
+  }
+
+  .aboutBreatheContainer {
+    margin-inline: 30px;
+  }
+
+  .locationDiv {
+    right: 30%;
+    top: 30%;
+  }
+} */
