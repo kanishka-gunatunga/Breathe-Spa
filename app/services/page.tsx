@@ -23,7 +23,7 @@ const page = async () => {
       {/* services description page */}
       <div className="container section pb-3">
         <div className="d-flex flex-column flex-lg-row">
-          <div className="col-12 col-lg-5 d-flex" data-aos="fade-right">
+          <div className="col-12 col-lg-5 d-flex">
             <Image src={"/services/service-description.png"} alt='services description image' width={600} height={800} className={`${style.imgHeight} fade-in`} />
           </div>
           <div className="col-12 col-lg-7 ps-lg-5 d-flex flex-column align-items-stretch" data-aos="fade-left">
@@ -35,9 +35,9 @@ const page = async () => {
 
       <DescriptionSection title="Discover the Best in Beauty & Care" description="Our services blend quality and hygiene, ensuring you receive only the best. Explore our range of treatments below and find your perfect match." />
 
-      <div className="scroll-sections">
-        {services.map((category) => (
-          <ServiceCategoryCard key={category._id} category={category} />
+      <div className="scroll-sections ">
+        {services.map((category, index) => (
+          <ServiceCategoryCard key={index} category={category} categoryId={index} />
         ))}
       </div>
     </div>

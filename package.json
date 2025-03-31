@@ -15,6 +15,7 @@
     "aos": "^2.3.4",
     "bootstrap": "^5.3.3",
     "framer-motion": "^12.5.0",
+    "gsap": "^3.12.7",
     "next": "15.2.3",
     "next-sanity": "^9.9.5",
     "react": "^19.0.0",

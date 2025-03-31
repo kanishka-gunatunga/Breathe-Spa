@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ClientWrapper from "@/components/servicesComponents/ClientWrapper";
+// import ClientWrapper from "@/components/servicesComponents/ClientWrapper";
 
 const inriaSans = Inria_Sans({
   variable: "--font-inria-sans",
@@ -33,8 +33,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${scheherazadeNew.variable} ${inriaSans.variable}`}>
         <Header />
-        <ClientWrapper>{children}</ClientWrapper>
-        {/* <Footer /> */}
+        {/* <ClientWrapper> */}
+          {children}
+          {/* </ClientWrapper> */}
+        <Footer />
       </body>
     </html>
   );
