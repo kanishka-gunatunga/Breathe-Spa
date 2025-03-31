@@ -17,7 +17,7 @@ const YellowBackSection: React.FC<YellowBackSectionProps> = ({ title, descriptio
     
         <div className={`d-flex position-relative flex-column justify-content-center align-items-center ${styles.mobileHeightOnMobile}`} style={{ width: "100%", overflow: "hidden" }}>
             <svg 
-            className={style.shapedBg}
+            className={`${styles.YellowBackMobileHide} ${style.shapedBg}`}
             width="100%" 
             height="100%" 
             viewBox="0 0 1440 1196" 
@@ -29,7 +29,7 @@ const YellowBackSection: React.FC<YellowBackSectionProps> = ({ title, descriptio
 
 
 
-            <div className="container position-absolute">
+            <div className={`container ${styles.yellowAbsoluteDiv}`}>
                 <div className="d-block d-lg-flex d-xl-flex gap-5">
 
                     {/* Left Column - Text */}

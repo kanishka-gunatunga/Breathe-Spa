@@ -40,7 +40,7 @@ const page = () => {
           <Image src={"/banner-about.png"} alt='services hero image' width={1920} height={1080} style={{ width: "100vw", height: "auto", objectFit: 'cover' }} />
         </div>
         {/* section 3  about brehte for desktop and mobile hide*/}
-        <div className={`container ${styles.baseSection}, ${styles.OnmobileHide}`}>
+        <div className={`container ${styles.OnDesktopHideExtra}`}>
           <div className={`d-block d-lg-flex justify-content-center gap-5 mt-5 ${styles.headSection}`}>
             <div className={`col-12 col-lg-5 my-5 my-md-0 my-lg-0 `}>
               <Image className={`img-fluid ${styles.locationImg1}`} src="/about1.png" height={650} width={548} alt="" />
@@ -56,7 +56,7 @@ const page = () => {
         </div>
 
         {/* about breathe mobile view desktop hide */}
-        <div className={`${styles.baseSection}, ${styles.OnDesktopHide}`}>
+        <div className={`${styles.baseSection}, ${styles.OnmobileHideExtra}`}>
           <div className="px-3 d-flex flex-column justify-content-center">
             <div className={`${styles.mobileSection}`}>
               <h3 className={styles.aboutSectionTitle}>About Breathe</h3>
@@ -72,10 +72,10 @@ const page = () => {
 
 
         <YellowBackSection
-        title="Why Choose Us"
-        description="Lorem ipsum dolor sit amet consectetur. Ac arcu auctor non imperdiet laoreet morbi tristique metus. Bibendum enim ut non ac aenean malesuada eget lectus. Vitae amet at amet diam. Massa porttitor mi scelerisque praesent auctor pharetra eget ut. Augue elementum consequat lacus sit. Suspendisse ipsum odio eu sagittis semper tincidunt. Sit ultrices egestas arcu odio tristique amet interdum montes. Cras vel sed cursus vulputate viverra mauris. Pellentesque quam ultricies adipiscing quam nunc purus lectus. Vitae amet velit at ut. Adipiscing amet eleifend duis a augue. Maecenas vulputate sed tellus imperdiet dictum imperdiet etiam quis. Blandit consectetur placerat imperdiet in purus amet. Eget posuere ac commodo ultrices tristique dolor turpis interdum semper. Arcu ut ornare placerat dolor scelerisque tincidunt commodo duis egestas. Euismod amet scelerisque nullam purus duis velit. Augue sit aliquet auctor aliquam. Mauris egestas dolor egestas consectetur. Blandit eget egestas mauris sit. Feugiat neque consequat sit lorem mattis enim nibh. Neque odio quis ultrices morbi sit augue ut eget. Bibendum enim proin dui ut in. Ac placerat quisque iaculis rhoncus ut sit. Leo a vulputate purus et."
-        image="/about2.png"
-        buttonText="EXPLORE OUR SERVICES"
+          title="Why Choose Us"
+          description="Lorem ipsum dolor sit amet consectetur. Ac arcu auctor non imperdiet laoreet morbi tristique metus. Bibendum enim ut non ac aenean malesuada eget lectus. Vitae amet at amet diam. Massa porttitor mi scelerisque praesent auctor pharetra eget ut. Augue elementum consequat lacus sit. Suspendisse ipsum odio eu sagittis semper tincidunt. Sit ultrices egestas arcu odio tristique amet interdum montes. Cras vel sed cursus vulputate viverra mauris. Pellentesque quam ultricies adipiscing quam nunc purus lectus. Vitae amet velit at ut. Adipiscing amet eleifend duis a augue. Maecenas vulputate sed tellus imperdiet dictum imperdiet etiam quis. Blandit consectetur placerat imperdiet in purus amet. Eget posuere ac commodo ultrices tristique dolor turpis interdum semper. Arcu ut ornare placerat dolor scelerisque tincidunt commodo duis egestas. Euismod amet scelerisque nullam purus duis velit. Augue sit aliquet auctor aliquam. Mauris egestas dolor egestas consectetur. Blandit eget egestas mauris sit. Feugiat neque consequat sit lorem mattis enim nibh. Neque odio quis ultrices morbi sit augue ut eget. Bibendum enim proin dui ut in. Ac placerat quisque iaculis rhoncus ut sit. Leo a vulputate purus et."
+          image="/about2.png"
+          buttonText="EXPLORE OUR SERVICES"
         />
 
         {/* <div className={`mx-0 px-0 ${styles.baseSection}, ${styles.mobileHide}`}>
@@ -125,9 +125,9 @@ const page = () => {
                   nextEl: '.testimonial-next',
                   prevEl: '.testimonial-prev',
                 }}
-                pagination={{
-                  clickable: true,
-                }}
+                // pagination={{
+                //   clickable: true,
+                // }}
                 spaceBetween={30}
                 className={styles.testimonialSwiper}
               >
@@ -170,20 +170,20 @@ const page = () => {
 
 
 
-                              
+
                             </div>
                             <div className={styles.arrowDiv}>
-                                <button className={`testimonial-prev ${styles.customPrev}`}>
-                                  <svg width="40" height="40" viewBox="0 0 16 16" fill="currentColor">
-                                    <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
-                                  </svg>
-                                </button>
-                                <button className={`testimonial-next ${styles.customNext}`}>
-                                  <svg width="40" height="40" viewBox="0 0 16 16" fill="currentColor">
-                                    <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
-                                  </svg>
-                                </button>
-                              </div>
+                              <button className={`testimonial-prev ${styles.customPrev}`}>
+                                <svg width="40" height="40" viewBox="0 0 16 16" fill="currentColor">
+                                  <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
+                                </svg>
+                              </button>
+                              <button className={`testimonial-next ${styles.customNext}`}>
+                                <svg width="40" height="40" viewBox="0 0 16 16" fill="currentColor">
+                                  <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                                </svg>
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -198,16 +198,45 @@ const page = () => {
         </div>
 
         {/* Team Swiper */}
-        <div className={`mx-0 px-0 mt-2 ${styles.baseSection}`}>
+        {/* <div className={`mx-0 px-0 mt-2 ${styles.baseSection}`}>
           <div className={`position-relative ${styles.relativeBack}`}>
             <Image className={styles.ethosBackgorund} src="/Group1000003149(1).png" height={368} width={620} alt="Team background" />
-            <div className={`position-absolute col-12 ${styles.breatheTeamDiv}`}>
+            <div className={` col-12 ${styles.breatheTeamDiv}`}>
               <div className="d-flex flex-column align-items-center justify-content-center">
                 <h3 className={styles.aboutSectionTitle}>Team of Breathe</h3>
-              </div>
+              </div> */}
 
+        <div className={`d-flex position-relative flex-column justify-content-center align-items-center ${styles.mobileHeightOnMobile}`} style={{ width: "100%", overflow: "hidden" }}>
+
+          <svg
+            className={`${styles.YellowBackMobileHide} ${style.shapedBg}`}
+            width="100%"
+            height="100%"
+            viewBox="0 0 1440 1196"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1032V0C1 0 460.614 94.4288 746.5 94.5C1032.74 94.5713 1449 0 1449 0V1032H1Z" fill="#F3EEE7" />
+            <path d="M376.779 1075.03C219.86 1081.32 0 1134.23 0 1134.23V962H1440V1134.23C1440 1134.23 1382.81 1153.97 1302.06 1171.14C1246.98 1182.85 1180.93 1193.36 1114.6 1195.59C848.186 1204.53 643.086 1064.34 376.779 1075.03Z" fill="#F3EEE7" />
+          </svg>
+
+
+
+          <div className={`container ${styles.yellowAbsoluteDiv}`}>
+            <div className="d-flex flex-column align-items-center justify-content-center">
+              <h3 className={styles.aboutSectionTitle}>Team of Breathe</h3>
+            </div>
+            <div className="d-block d-lg-flex d-xl-flex gap-5">
+
+
+              {/* Left Column - Text */}
               <CardSlider />
-              {/*
+
+            </div>
+          </div>
+        </div>
+
+
+        {/*
               <div className="position-relative mt-5">
                 <Swiper
                   modules={[Navigation]}
@@ -264,9 +293,9 @@ const page = () => {
               </div>
             </div>
           </div>*/}
-            </div>
+        {/* </div>
           </div>
-        </div>
+        </div> */}
 
         {/* <CardSlider /> */}
       </div>

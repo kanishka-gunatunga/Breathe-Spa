@@ -1,3 +1,5 @@
+"use client";
+
 import Button from "@/components/ReusableComponents/Button";
 import styles from "@/styles/page.module.css";
 import Image from "next/image";
@@ -7,12 +9,52 @@ import style from '@/styles/services.module.css'
 import DescriptionSection from '@/components/servicesComponents/DescriptionSection'
 import YellowBackSection from "@/components/ReusableComponents/YellowBackSection";
 
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination, Autoplay } from 'swiper/modules';
+
 export default function Home() {
   return (
 
     <>
       <div className={`d-flex ${style.imageContainer}`}>
-        <Image src={"/Vector12.png"} alt='services hero image' width={1920} height={1080} style={{ width: "100vw", height: "auto", objectFit: 'cover' }} />
+        <Swiper
+
+          modules={[Pagination, Autoplay]}
+          pagination={{  el: '.swiper-pagination', clickable: true, dynamicBullets: true }}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+
+
+        >
+          <SwiperSlide>
+            <Image
+              src={'/Vector12.png'}
+              alt='home hero image'
+              width={1920}
+              height={1080}
+              style={{ width: '100vw', height: 'auto', objectFit: 'cover', objectPosition: 'bottom' }}
+            />
+
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <Image
+              src={'/Vector12.png'}
+              alt='home hero image'
+              width={1920}
+              height={1080}
+              style={{ width: '100vw', height: 'auto', objectFit: 'cover', objectPosition: 'bottom' }}
+            />
+
+          </SwiperSlide>
+          
+        </Swiper>
+        <div className="swiper-pagination position-absolute"></div>
       </div>
       <div className="container section pb-0">
         <div className="d-block d-md-block d-lg-flex justify-content-center gap-5">
@@ -203,7 +245,7 @@ export default function Home() {
       <DescriptionSection title="Our Ethos" description=" We are passionately committed to providing our clients with the most professional, customized, and hygienic wellness experience." />
 
 
-      <div className="container section py-3">
+      <div className={`container section py-3 ${styles.OnDesktopHideExtra}`}>
 
         {/* proffesionalism */}
         <div className="d-block d-md-block d-lg-flex gap-5 mb-5">
@@ -273,6 +315,81 @@ export default function Home() {
         </div>
       </div>
 
+      <div className={`container section py-3 ${styles.OnmobileHideExtra}`}>
+
+        {/* proffesionalism */}
+        <div className="d-block d-md-block d-lg-flex gap-5 mb-5">
+          <div className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-between">
+
+            <div className="row">
+              <h3 className={styles.sectionTitle}>Professionalism</h3>
+              <p className={styles.sectionDescription}>
+                We understand that for our clients, a visit to Breathe Day Spa is an investment in their wellbeing.
+                Our specialist therapists are trained and certified internationally to ensure the highest quality treatments, and their craft is as much an art as it is a talent.
+                Our treatments entail high attention to detail so our appointments run to time. We value our clients’ time and appreciate punctual arrival for treatments.
+              </p>
+            </div>
+            <div>
+            <Image className={`img-fluid ${styles.leftBoxShadow}`} src="/Rectangle4431.png" height={368} width={624} alt="" />
+             
+            </div>
+
+          </div>
+          <div className="col-12 col-md-12 col-lg-6 col-xl-6">
+          <Button text="EXPLORE MORE" href="#" />
+          </div>
+
+        </div>
+
+
+        {/* hygene */}
+        <div className="row mb-5">
+          <div className="d-block d-md-block d-lg-flex gap-5 pb-5">
+            <div className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-between">
+              <div className="row">
+                <h3 className={styles.sectionTitle}>Hygiene</h3>
+                <p className={styles.sectionDescription}>
+                  We are obsessed with hygiene and maintain surgery-grade sterilization standards at all times. We use hospital-grade, EPA-approved disinfectants to sanitize all metal instruments, followed by sterilization in an Autoclave, ensuring surgical-grade standards. We also use high quality metal foot files & crystal foot files which allows us to safely and gently remove calluses. The files are then sanitized and sterilized. We use podiatrist approved products such as Gehwol and Footlogix to treat various nail and skin conditions. Our strict sanitization procedures ensure a safe and hygienic experience for every guest.
+                </p>
+              </div>
+              <div>
+              <Image className={`img-fluid ${styles.rightBoxShadow}`} src="/hygen.png" height={368} width={624} alt="" />
+                
+              </div>
+            </div>
+
+            <div className="col-12 col-md-12 col-lg-6 col-xl-6">
+            <Button text="EXPLORE MORE" href="#" />
+            </div>
+          </div>
+        </div>
+
+
+        {/* Personalized Care */}
+        <div className="row">
+          <div className="d-block d-md-block d-lg-flex gap-5 pb-5">
+            <div className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-between">
+
+              <div className="row">
+                <h3 className={styles.sectionTitle}>Personalized Care</h3>
+                <p className={styles.sectionDescription}>
+                  We understand that each client’s wellness and beauty needs are unique. From a simple manicure to a customized massage treatment to help you melt into relaxation, to curating the ultimate Spa Day for your valuable “me-time”, our team will help personalize each experience for you.
+                </p>
+              </div>
+              <div>
+                
+                <Image className={`img-fluid ${styles.leftBoxShadow}`} src="/person.png" height={368} width={624} alt="" />
+              </div>
+
+            </div>
+            <div className="col-12 col-md-12 col-lg-6 col-xl-6">
+            <Button text="EXPLORE MORE" href="#" />
+            </div>
+
+          </div>
+        </div>
+      </div>
+
 
 
       <YellowBackSection
@@ -281,10 +398,10 @@ export default function Home() {
           image="/interior.png"
         buttonText="Discover Our Location"
         />
-
+      
 
         <div className="container position-relative mt-4">
-        <div className={styles.articleDiv}>
+      <div className={styles.articleDiv}>
           <div className="d-md-flex d-lg-flex d-block justify-content-between">
             <div className="col-12 col-md-8 col-lg-8">
               <div>
@@ -332,7 +449,7 @@ export default function Home() {
         </div>
       </div>
        
-      <ExclusiveDeals />
+<ExclusiveDeals />
     </>
 
   );
