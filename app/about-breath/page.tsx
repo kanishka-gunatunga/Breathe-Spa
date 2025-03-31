@@ -42,8 +42,8 @@ const page = () => {
           <Image src={"/banner-about.png"} alt='services hero image' width={1920} height={1080} style={{ width: "100vw", height: "auto", objectFit: 'cover' }} />
         </div>
         {/* section 3  about brehte for desktop and mobile hide*/}
-        <div className={` ${styles.baseSection}, ${styles.mobileHide}`}>
-          <div className={`d-block d-lg-flex justify-content-center gap-md-5 gap-lg-0 px-3 px-md-0 px-lg-0 ${styles.headSection}`}>
+        <div className={` container ${styles.OnmobileHide}`}>
+          <div className={`d-block d-lg-flex justify-content-center gap-5 mt-5 ${styles.headSection}`}>
             <div className={`col-12 col-lg-5 my-5 my-md-0 my-lg-0 `}>
               <Image className={`img-fluid ${styles.locationImg1}`} src="/about1.png" height={650} width={548} alt="" />
             </div>
@@ -58,7 +58,7 @@ const page = () => {
         </div>
 
         {/* about breathe mobile view desktop hide */}
-        <div className={`${styles.baseSection}, ${styles.DesktopHide}`}>
+        <div className={`${styles.baseSection}, ${styles.OnDesktopHide}`}>
           <div className="px-3 d-flex flex-column justify-content-center">
             <div className={`${styles.mobileSection}`}>
               <h3 className={styles.aboutSectionTitle}>About Breathe</h3>
@@ -102,9 +102,9 @@ const page = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className={`mx-0 px-0 ${styles.baseSection}, ${styles.DesktopHide}`}>
+        {/* <div className={`mx-0 px-0 ${styles.baseSection}, ${styles.DesktopHide}`}>
           <div className={` ${styles.location}, ${styles.mobileSection}`}>
             <h3 className={styles.locationDivTitle}>Why Choose Us</h3>
             <p className={styles.locationDivP}>
@@ -173,20 +173,20 @@ const page = () => {
 
 
 
-                              
+
                             </div>
                             <div className={styles.arrowDiv}>
-                                <button className={`testimonial-prev ${styles.customPrev}`}>
-                                  <svg width="40" height="40" viewBox="0 0 16 16" fill="currentColor">
-                                    <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
-                                  </svg>
-                                </button>
-                                <button className={`testimonial-next ${styles.customNext}`}>
-                                  <svg width="40" height="40" viewBox="0 0 16 16" fill="currentColor">
-                                    <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
-                                  </svg>
-                                </button>
-                              </div>
+                              <button className={`testimonial-prev ${styles.customPrev}`}>
+                                <svg width="40" height="40" viewBox="0 0 16 16" fill="currentColor">
+                                  <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
+                                </svg>
+                              </button>
+                              <button className={`testimonial-next ${styles.customNext}`}>
+                                <svg width="40" height="40" viewBox="0 0 16 16" fill="currentColor">
+                                  <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                                </svg>
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -201,6 +201,8 @@ const page = () => {
         </div>
 
         {/* Team Swiper */}
+        <div className={`mx-0 px-0 mt-2 ${styles.baseSection}`}>
+          <div className={`position-relative ${styles.relativeBack}`}>
         <div className={`mx-0 px-0 mt-2 ${styles.baseSection}`}>
           <div className={`position-relative ${styles.relativeBack}`}>
             <Image className={styles.ethosBackgorund} src="/Group1000003149(1).png" height={368} width={620} alt="Team background" />
@@ -274,6 +276,7 @@ const page = () => {
         {/* <CardSlider /> */}
       </div>
       <ExclusiveDeals />
+    </div>
     </div>
   )
 }
