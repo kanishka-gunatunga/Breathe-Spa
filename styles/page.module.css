@@ -21,16 +21,40 @@
 }
 
 @font-face {
-    font-family: 'AwesomeSerif R';
-    src: url('/fonts/AwesomeSerif-Regular.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+font-family: 'AwesomeSerif Semi Bold Extra Tall';
+src: url('/fonts/AwesomeSerif-SemBdExtraTall.otf') format('opentype');
+font-weight: normal;
+font-style: normal;
+}
+
+
+
+@font-face {
+  font-family: 'AwesomeSerif Extra Tall';
+  src: url('/fonts/AwesomeSerif-ExtraTall.otf') format('opentype');
+  /* font-weight: normal; */
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'AwesomeSerif Light Extra Tall';
+  src: url('/fonts/AwesomeSerif-LightExtraTall.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AwesomeSerif R';
+  src: url('/fonts/AwesomeSerif-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
-    font-family: 'AwesomeSerif R';
-    src: url('/fonts/AwesomeSerif-Regular.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Coefficient DEMO';
+  src: url('/fonts/Coefficient-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
@@ -47,8 +71,8 @@
 }
 
 .ethosContainer {
-    top: 41%;
-    right: 20%;
+  top: 41%;
+  right: 20%;
 }
 
 
@@ -61,413 +85,556 @@
 } */
 
 .DesktopHide {
-    display: none;
+  display: none;
 }
 
 .baseSection {
-    margin: 80px 50px 20px 50px;
+  margin: 48px 50px 20px 50px;
 }
 
 .bespokeDiv {
-    display: flex;
+  display: flex;
 }
-
-.bespokeDivTitle {
-    font-family: 'Coefficient DEMO', sans-serif;
-    font-weight: 400;
-    font-size: 50px;
-    line-height: 65px;
-    letter-spacing: 5%;
-
-}
-
-/* .bespokeDiv1,
-.bespokeDiv2 {
-  width: 50%;
-} */
 
 
 .bespokeDivP {
-    font-family: "Work Sans", sans-serif;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 26px;
-    letter-spacing: 5%;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 5%;
 
 }
 
-.card1 {
-    background-color: #F3EEE7 !important;
-    width: fit-content;
-    border: none;
-    padding-inline: 50px;
+
+.bespokeDivTitle {
+  font-family: 'Coefficient DEMO', sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 65px;
+  letter-spacing: 5%;
+
 }
 
-.borderedRow {
-    border-bottom: 1px dashed #BDBDBD;
-    margin-top: 20px;
-}
+
+
 
 .captionTop {
-    font-family: 'AwesomeSerif', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 100%;
-    letter-spacing: 5%;
+  font-family: 'AwesomeSerif Light Extra Tall', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 5%;
+  color: #313131 !important;
+  margin-top: 30px;
+  border-bottom: 0.5px solid #BDBDBD;
+  padding-bottom: 10px;
 
 
 }
 
+
+
+
 .column1 {
-    font-family: 'AwesomeSerif', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 100%;
-    letter-spacing: 5%;
+  font-family: 'AwesomeSerif Light Extra Tall', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 5%;
+  color: #313131 !important;
+  margin: 15px 0 !important;
 
 }
 
 .column2 {
-    font-family: "Work Sans", sans-serif;
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 18px;
-    letter-spacing: 5%;
-    text-transform: capitalize;
-    text-align: justify;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 5%;
+  text-transform: capitalize;
+  text-align: justify;
+  color: #313131 !important;
+  margin: 15px 0 !important;
+}
+
+.bottomBorder{
+  border-bottom: 1px dashed #BDBDBD;
+  display: flex;
+  align-items: center;
+}
+
+.card1 {
+  background-color: #F3EEE7 !important;
+  border: none;
+  padding-inline: 30px;
+}
+
+
+.cardtitle {
+  font-family: 'AwesomeSerif Semi Bold Extra Tall', sans-serif;
+  font-weight: 300;
+  font-size: 25px;
+  /* line-height: 50px;
+  letter-spacing: 5%; */
 
 }
 
+
+
 .privacyPRow {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 30px;
-    border-top: 1px solid #BDBDBD;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  border-top: 1px solid #BDBDBD;
 
 }
 
 .privacyPRow p {
-    font-size: 10px;
-    margin-bottom: 0;
-    font-family: "Work Sans", sans-serif;
-    font-weight: 300;
-    line-height: 150%;
-    letter-spacing: 0%;
-    text-align: center;
+  font-size: 10px;
+  margin-bottom: 0;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-align: center;
 
 }
 
-.ourEthos,
-.relativeSection {
-    display: flex;
-    flex-direction: column;
-    /* background-color: #F3EEE7;
-    background-image: url(/Group1000003148.png);
-    background-repeat: no-repeat;
-    height: 500px;
-    width: 100%; */
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
 
-.fullWidth {
-    width: 100% !important;
-}
-
-.ethosTitle {
-    font-family: 'Coefficient DEMO', sans-serif;
-    font-weight: 400;
-    font-size: 60px;
-    line-height: 48px;
-    letter-spacing: 0.2px;
-    text-align: center;
-    vertical-align: middle;
-
-}
-
-.ethosText {
-    font-family: "Work Sans", sans-serif;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 26px;
-    letter-spacing: 0%;
-    text-align: center;
-
-}
 
 .sectionDescription {
-    font-family: "Work Sans", sans-serif;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 30px;
-    letter-spacing: 0%;
-    text-align: justify;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 0%;
+  text-align: justify;
 
 }
 
 .sectionTitle {
-      font-family: 'Coefficient DEMO', sans-serif;
-      font-weight: 400;
-      font-size: 40px;
-      line-height: 100%;
-      letter-spacing: 0%;
-      vertical-align: middle;
+  font-family: 'Coefficient DEMO', sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+
 }
 
 .leftBoxShadow {
-    box-shadow: -31px -26px #F3EEE7;
-    border-radius: 15px;
+  box-shadow: -31px -26px #F3EEE7;
+  border-radius: 15px;
+  width: 100%;
 }
 
 .rightBoxShadow {
-    box-shadow: 31px -26px #F3EEE7;
-    border-radius: 15px;
-    border-top-left-radius: 100px;
+  box-shadow: 31px -26px #F3EEE7;
+  border-radius: 15px;
+  border-top-left-radius: 100px;
+  width: 100%;
 }
 
-.marginBottom {
-    margin-bottom: 100px;
-}
 
-.locationDiv {
-    top: 10%;
-}
-
-.locationDivP {
-    font-family: "Work Sans", sans-serif;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 30px;
-    letter-spacing: 5%;
-    text-align: justify;
-    margin-top: 50px;
-}
 
 .locationDivTitle {
 
 
-    font-family: 'Coefficient DEMO', sans-serif;
-    font-weight: 400;
-    font-size: 60px;
-    line-height: 70px;
-    letter-spacing: 0.2px;
-    vertical-align: middle;
+  font-family: 'Coefficient DEMO', sans-serif;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 70px;
+  letter-spacing: 0.2px;
+  vertical-align: middle;
 
 }
 
 .locationDiv Button {
-    padding-inline: 50px;
-    font-family: 'AwesomeSerif', sans-serif;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 100%;
-    letter-spacing: 10%;
-    text-transform: uppercase;
+  padding-inline: 50px;
+  font-family: 'AwesomeSerif', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 10%;
+  text-transform: uppercase;
 
 }
 
-.articleDiv {
-    padding-inline: 100px;
+.locationDivP {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 5%;
+  text-align: justify;
+  margin-top: 50px;
 }
+
+.locationContainer Button{
+  padding-inline: 50px;
+}
+
+
 
 .viewAll Button {
-    padding: 20px 50px;
-    font-size: 18px;
+  padding-inline: 50px;
+  font-size: 18px;
 }
 
 .articleCard1,
 .articleCard2,
 .articleCard3 {
-    border-radius: 16px;
-    border: none;
-    height: 434px;
-    width: auto;
-    margin-right: 50px;
-    background-repeat: no-repeat;
-    object-fit: cover;
-    background-size: cover;
-    background-position: center;
+  border-radius: 16px;
+  border: none;
+  height: 434px;
+  width: auto;
+  margin-right: 50px;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
 }
 
 .articleCard1 {
-    background-image: url('../public/articleCard1.png');
+  background-image: url('../public/articleCard1.png');
 }
 
 .articleCard2 {
-    background-image: url('../public/articleCard2.png');
+  background-image: url('../public/articleCard2.png');
 }
 
 .articleCard3 {
-    background-image: url('../public/articleCard3.png');
-    margin-right: 0 !important;
+  background-image: url('../public/articleCard3.png');
+  margin-right: 0 !important;
 }
 
-.cardtitle {
-    font-family: 'AwesomeSerif', sans-serif;
-    font-weight: 300;
-    font-size: 25px;
-    line-height: 50px;
-    letter-spacing: 5%;
 
-}
 
 .articleCardTitle {
-    font-family: 'AwesomeSerif', sans-serif;
-    font-weight: 400;
-    font-size: 26px;
-    line-height: 30px;
-    letter-spacing: 0px;
-    vertical-align: middle;
-    color: #FFFFFF;
-    margin-left: 20px;
+  font-family: 'AwesomeSerif', sans-serif;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 30px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  color: #FFFFFF;
+  margin-left: 20px;
 }
 
+
+
 .exclusiveDeals {
-    border-top: 2px solid #BDBDBD;
-    border-bottom: 2px solid #BDBDBD;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 50px 50px 0 50px;
-    padding: 60px 0;
+  border-top: 2px solid #BDBDBD;
+  border-bottom: 2px solid #BDBDBD;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 50px 0 50px;
+  padding: 60px 0;
 
 }
 
 .exclusiveDescription {
-    font-family: "Work Sans", sans-serif;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 22px;
-    letter-spacing: 5%;
-    text-align: center;
-    text-align: center;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 5%;
+  text-align: center;
+  text-align: center;
 }
 
 .exclusiveTitle {
-    font-family: 'Coefficient DEMO', sans-serif;
-    font-weight: 400;
-    font-size: 50px;
-    line-height: 48px;
-    letter-spacing: 0.2px;
+  font-family: 'Coefficient DEMO', sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 48px;
+  letter-spacing: 0.2px;
 
 }
 
 .exclusiveDeals Button {
-    padding-inline: 50px;
+  padding-inline: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.aboutSectionTitle {
+  font-family: 'Coefficient DEMO', sans-serif;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 48px;
+  letter-spacing: 0.2px;
+  vertical-align: middle;
+  margin-bottom: 40px;
+}
+
+
+
+
+.aboutPage .mobileHide {
+  margin-top: 80px;
+}
+
+.testimonialCard {
+  width: 100%;
+  background-color: #F3EEE7;
+  border: none;
+  padding: 20px;
+  border-radius: 10px;
+
+}
+
+.testimonialPic {
+  background-color: #FFFFFF;
+}
+
+.TestimonialCardText {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 5%;
+
+}
+
+.testimonialCardJob {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+
+}
+
+.testimonialCardName {
+  font-family: 'AwesomeSerif', sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+
+}
+
+.arrowDiv {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  position: absolute;
+  right: 43px;
+  bottom: 24px;
+}
+
+.breatheTeamDiv {
+  top: 200px;
+}
+
+.customNext,
+.customPrev {
+  border: none;
+  border-radius: 50%;
+  padding: 5px;
+  background-color: #FFFFFF;
 }
 
 .section_title {
-    font-family: 'Coefficient DEMO', sans-serif;
-    font-size: 48px;
-    font-weight: 700;
-    color: #171A31;
-    text-align: left;
+  font-family: 'Coefficient DEMO', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #171A31;
+  text-align: left;
 }
 
 .sectionSubTitle {
-    font-family: 'AwesomeSerif', sans-serif;
-    font-weight: 400;
-    font-size: 26px;
-    color: #171A31B2;
+  font-family: 'AwesomeSerif', sans-serif;
+  font-weight: 400;
+  font-size: 26px;
+  color: #171A31B2;
 }
 
+
+.OnDesktopHide{
+  display: none;
+}
+
+.OnmobileHide{
+  display: block;
+}
+
+
+
+/* 
+
+
+
+
+
+.borderedRow {
+  border-bottom: 1px dashed #BDBDBD;
+  margin-top: 20px;
+}
+
+
+
+
+
+.ourEthos,
+.relativeSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.fullWidth {
+  width: 100% !important;
+}
+
+.ethosTitle {
+  font-family: 'Coefficient DEMO', sans-serif;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 48px;
+  letter-spacing: 0.2px;
+  text-align: center;
+  vertical-align: middle;
+
+}
+
+.ethosText {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  text-align: center;
+
+}
+
+
+.marginBottom {
+  margin-bottom: 50px;
+}
+
+.locationDiv {
+  top: 10%;
+}
+
+
+
+.articleDiv {
+  padding-inline: 50px;
+}
+
+
+
+ */
+
 .form_label {
-    font-family: 'AwesomeSerif R', sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-    color: #344054;
-    line-height: 20px;
-    margin-bottom: 0.1rem;
-    letter-spacing: 1px;
+  font-family: 'AwesomeSerif R', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #344054;
+  line-height: 20px;
+  margin-bottom: 0.1rem;
+  letter-spacing: 1px;
 }
 
 .form_control {
-    border-radius: 0;
-    border: 1px solid #ddd;
-    padding: 10px;
+  border-radius: 0;
+  border: 1px solid #ddd;
+  padding: 10px;
 }
 
 .form_control:focus {
-    box-shadow: none;
-    border-color: #333;
+  box-shadow: none;
+  border-color: #333;
 }
 
 .submit_button {
-    border-radius: 8px;
-    padding: 10px;
-    font-weight: 600;
-    font-family: 'AwesomeSerif', sans-serif;
-    font-size: 17px;
-    color: #FFFFFF;
-    background-color: #313131;
-    letter-spacing: 2px;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: 600;
+  font-family: 'AwesomeSerif', sans-serif;
+  font-size: 17px;
+  color: #FFFFFF;
+  background-color: #313131;
+  letter-spacing: 2px;
 }
 
 .map_hours_desc {
-    font-size: 16px;
-    color: #313131;
-    font-family: "Work Sans", sans-serif;
-    letter-spacing: 1px;
-    font-weight: 300;
-    text-align: start;
-    line-height: 30px;
-    padding: 1rem 0;
+  font-size: 16px;
+  color: #313131;
+  font-family: "Work Sans", sans-serif;
+  letter-spacing: 1px;
+  font-weight: 300;
+  text-align: justify;
 }
 
 .map_hours_title {
-    font-family: 'AwesomeSerif', sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-    color: #313131;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-align: left;
-    margin-bottom: 1.5rem;
+  font-family: 'AwesomeSerif', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #313131;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: left;
 }
 
 .map_hours_section ul {
-    font-size: 0.9rem;
-    color: #666;
+  font-size: 0.9rem;
+  color: #666;
 }
 
 .map_hours_section ul li {
-    font-size: 0.9rem;
-    color: #666;
+  font-size: 0.9rem;
+  color: #666;
 }
 
 .map_hours_days {
-    font-family: 'AwesomeSerif', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    letter-spacing: 1px;
-    color: #313131;
+  font-family: 'AwesomeSerif', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: #313131;
 }
 
 .map_hours_time {
-    font-family: "Work Sans", sans-serif;
-    font-weight: 300;
-    font-size: 16px;
-    color: #313131;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: #313131;
 }
 
 .sectionBackground {
-    width: 100vw;
-    height: 90%;
-    object-fit: cover;
+  width: 100vw;
+  height: 90%;
+  object-fit: cover;
 }
 
 .map_hours_section p {
-    font-size: 0.9rem;
-    color: #666;
+  font-size: 0.9rem;
+  color: #666;
 }
 
 .map_hours_section a {
-    color: #666;
-    text-decoration: none;
+  color: #666;
+  text-decoration: none;
 }
 
 .contact_info_container {
@@ -475,32 +642,32 @@
 }
 
 .contact_info {
-    font-family: "Work Sans", sans-serif;
-    font-weight: 300;
-    font-size: 17px;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  font-size: 17px;
 }
 
 .map_hours_section a:hover {
-    color: #333;
+  color: #333;
 }
 
 .map_hours_container {
-    top: 20%;
-    left: 3%;
-    padding: 20px;
+  top: 20%;
+  left: 3%;
+  padding: 20px;
 }
 
 .map_container {
-    border-radius: 20px;
-    overflow: hidden;
-    border: solid 1px #B9B9B9;
-    height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  border: solid 1px #B9B9B9;
+  height: 100%;
 }
 
 .map_hours_bg {
-    width: 100vw;
-    height: auto;
-    object-fit: cover;
+  width: 100vw;
+  height: auto;
+  object-fit: cover;
 }
 
 .map_hours_bg_container {
@@ -626,6 +793,67 @@ a.text-decoration-none {
     justify-content: center;
     align-items: center;
     width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: center;
+}
+
+.blogCardDate {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  color: #999999;
+}
+
+.blogCardTitle {
+  font-family: 'AwesomeSerif', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  color: #313131;
+}
+
+.blogCardDesc {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  color: #313131;
+  line-height: 30px;
+  padding-top: 2px;
+  margin-top: 10px;
+}
+
+.blogCardRead {
+  font-family: 'AwesomeSerif', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+  text-decoration-line: underline;
+  color: #313131;
+  cursor: pointer;
+}
+
+.mapHouContainer {
+  min-height: 100%;
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../public/map_bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.mapMain {
+  padding: 5rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .imageContainer {
@@ -664,259 +892,295 @@ a.text-decoration-none {
 }
 
 @media (max-width: 576px) {
-    .mapMain {
-        padding: 5rem 0;
-    }
+  .mapMain {
+    padding: 5rem 0;
+  }
 
-    .mapHouContainer {
-        padding: 0 1rem;
-    }
+  .mapHouContainer {
+    padding: 3rem 0.5rem;
+  }
 
-    .mapHouContainer {
-        background-size: 100% 100%;
-        background-image: url(../public/map_bg_mobile.png);
-    }
+  .section_title {
+    font-size: 28px;
+  }
 
-    .contact_info_container {
-        padding: 0;
-    }
+  .map_container {
+    height: 250px;
+  }
 
-    .contact_info {
-        font-size: 16px;
-    }
+  .map_hours_title {
+    font-size: 14px;
+  }
 
-    .submit_button {
-        font-size: 13px;
-        letter-spacing: 2px;
-    }
+  .map_hours_days {
+    font-size: 14px;
+  }
 
-    .formWrapper {
-        padding-left: 0;
-        margin-top: 20px;
-    }
-
-    .formSection {
-        padding-bottom: 0;
-    }
-
-    .section_title {
-        font-size: 28px;
-    }
-
-    .map_container {
-        height: 250px;
-    }
-
-    .map_hours_title {
-        font-size: 14px;
-    }
-
-    .map_hours_days {
-        font-size: 14px;
-    }
 }
+
+
+
 
 @media (max-width: 768px) {
-    .section_title {
-        font-size: 32px;
-    }
+  .section_title {
+    font-size: 32px;
+  }
 
-    .mapMain {
-        padding: 5rem 0;
-    }
+  .mapMain {
+    padding: 8rem 0;
+  }
 
-    .contact_info_container {
-        padding: 2rem 1rem 0 0;
-    }
+  .sectionSubTitle {
+    font-size: 16px;
+  }
 
-    .contact_info {
-        font-size: 16px;
-    }
+  .formSection {
+    margin-top: 24px;
+  }
 
-    .formWrapper {
-        padding-left: 0;
-        margin-top: 20px;
-    }
+  .form_label {
+    font-size: 16px;
+  }
 
-    .formSection {
-        padding-bottom: 0;
-    }
+  .map_container {
+    height: 300px;
+  }
 
-    .mapHouContainer {
-        background-size: 100% 100%;
-        background-image: url(../public/map_bg_mobile.png);
-    }
+  .map_hours_title {
+    font-size: 16px;
+  }
 
-    .sectionSubTitle {
-        font-size: 16px;
-    }
-
-    .form_label {
-        font-size: 16px;
-    }
-
-    .map_container {
-        height: 300px;
-    }
-
-    .map_hours_title {
-        font-size: 16px;
-    }
-
-    .map_hours_days {
-        font-size: 15px;
-    }
-
-    .formContainer {
-        padding: 0 1rem 0 1rem;
-    }
-
-    .imageContainer {
-        height: 400px;
-    }
-
-    .equalHeightRow {
-        padding: 0 1rem 0 1rem;
-    }
-
+  .map_hours_days {
+    font-size: 15px;
+  }
+  
 }
 
-@media screen and (max-width: 968px) {
-    .baseSection {
-        margin-inline: 10px;
-    }
+@media screen and (max-width: 992px){
+  .sectionTitle , .leftBoxShadow{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .sectionDescription{
+    margin-bottom: 20px;
+  }
+  .rightBoxShadow{
+    margin-top: 50px;
+  }
 
-    .card1 {
-        margin-top: 20px;
-        margin-bottom: 20px;
-        padding-inline: 10px;
-    }
+  .yellowSvg{
+    height: 1600px;
+  }
 
-    .marginBottom {
-        margin-bottom: 20px;
-    }
+  .articleCard1,
+  .articleCard2,
+  .articleCard3 {
+    width: auto;
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
 
-    .location {
-        margin: 15px;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-    }
+  .articleDiv {
+    padding-inline: 10px;
+  }
 
-    .locationDiv .rightBoxShadow {
-        box-shadow: none;
-        padding: 20px;
-    }
+  .viewAll {
+    margin-bottom: 30px;
+  }
 
-    .ethosImageContainer {
-        height: 250px;
-        display: flex;
-        align-items: center;
-    }
+  .locationContainer Button {
+    margin-bottom: 30px;
+  }
+  .OnDesktopHide{
+    display: block;
+  }
 
-    .ethosBackgorund {
-        height: revert-layer;
-    }
+  .OnmobileHide{
+    display: none;
+  }
 
-    .ethosContainer {
-        top: 20%;
-        right: 0;
-        padding-inline: 10px;
-    }
+  .aboutSectionTitle {
 
-    .mobileHide {
-        display: none;
-    }
-
-    .DesktopHide {
-        display: block;
-    }
-
-    .sectionTitle {
-        font-size: 30px;
-    }
-
-    .articleCard1,
-    .articleCard2,
-    .articleCard3 {
-        width: auto;
-        margin-bottom: 20px;
-        margin-right: 0;
-    }
-
-    .articleDiv {
-        padding-inline: 10px;
-    }
-
-    .viewAll {
-        margin-bottom: 30px;
-    }
-
-    .locationDivTitle {
-        font-size: 30px;
-        line-height: 30px;
-    }
-
-    .rightBoxShadow,
-    .leftBoxShadow {
-        border-radius: 0;
-        box-shadow: none;
-    }
-
-    /*.exclusiveTitle {*/
-    /*    text-align: center;*/
-    /*}*/
-    .bespokeDivTitle, .ethosTitle, .exclusiveTitle {
-        font-size: 35px;
-        line-height: 50px;
-    }
-
-
+    text-align: center;
+    margin-top: 30px;
+  }
+  
 }
 
 
-@media screen and (max-width: 1300px) and (min-width: 800px) {
-    .articleDiv {
-        padding-inline: 10px;
-    }
+/* 
+@media screen and (max-width: 800px) {
+  .baseSection {
+    margin-inline: 10px;
+  }
+
+  .card1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-inline: 10px;
+  }
+
+  .marginBottom {
+    margin-bottom: 20px;
+  }
+
+  .location {
+    margin: 15px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .locationDiv .rightBoxShadow {
+    box-shadow: none;
+    padding: 20px;
+  }
+
+  .ethosImageContainer {
+    height: 250px;
+    display: flex;
+    align-items: center;
+  }
+
+  .ethosBackgorund {
+    height: revert-layer;
+  }
+
+  .ethosContainer {
+    top: 20%;
+    right: 0;
+    padding-inline: 10px;
+  }
+
+  .mobileHide {
+    display: none;
+  }
+
+  .DesktopHide {
+    display: block;
+  }
+
+  .sectionTitle {
+    font-size: 30px;
+  }
+
+
+
+  .locationDivTitle {
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  .rightBoxShadow,
+  .leftBoxShadow {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .exclusiveTitle {
+    text-align: center;
+  }
+
+
+  .bespokeDivTitle,
+  .ethosTitle,
+  .exclusiveTitle {
+    font-size: 35px;
+    line-height: 50px;
+  }
+
+  .aboutPage .locationDivTitle {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .mobileSection .locationDivP {
+    text-align: justify;
+    padding-inline: 20px;
+  }
+
+  .teamCardImageDiv {
+    background-color: #F3EEE7;
+  }
+
+  .aboutPage .ethosBackgorund {
+    height: 1200px;
+  }
+
+  
+
+
+
+} */
+
+/* ipad air */
+/* 
+@media screen and (max-width: 900px) and (min-width:800) {
+  .aboutPage .mobileHide {
+    display: none !important;
+  }
+
+  .mobileSection .aboutSectionTitle {
+    text-align: center;
+  }
+
+  .yellow .ethosBackgorund {
+    height: 1200px !important;
+  }
+
+  .rightBoxShadow {
+    height: 635px !important;
+    object-fit: cover;
+  }
+
+  .aboutPage .DesktopHide {
+    display: block !important;
+  }
+
+  .articleDiv {
+    padding-inline: 10px;
+  }
 
   .aboutPage .baseSection {
     padding-inline: 20px;
   }
 
-      .articleCard1,
-      .articleCard2,
-      .articleCard3 {
-            margin-inline: 10px;
-            height: 300px;
-      }
+  .articleCard1,
+  .articleCard2,
+  .articleCard3 {
+    margin-inline: 10px;
+    height: 300px;
+  }
 
   .footer-backg {
     height: revert-layer;
   }
 
   .aboutPage .ethosBackgorund {
-    height: 1600px !important;
+    height: 1200px !important;
   }
 
-  .aboutBreathDescriptionMobile{
+
+  .aboutBreathDescriptionMobile {
     padding-inline: 20px;
     padding-top: 50px;
   }
-  .mobileSection .aboutSectionTitle ,  .mobileSection .locationDivTitle{
+
+  .mobileSection .aboutSectionTitle,
+  .mobileSection .locationDivTitle {
     text-align: center;
     margin-top: 50px;
   }
-  
-  .mobileSection .locationDivP{
+
+  .mobileSection .locationDivP {
     padding-inline: 20px;
   }
 
 
-  .mobileSection .choosUsImg{
+  .mobileSection .choosUsImg {
     width: 100%;
-    margin-inline: 20px;
+    margin-inline: 20px !important;
     margin-top: 30px;
   }
 
@@ -925,67 +1189,74 @@ a.text-decoration-none {
     font-size: 24px;
   }
 
-  .testimonialCard{
+  .testimonialCard {
     width: 100%;
   }
-/* .teamCard{
-  width: auto !important;
+
+  .card1 {
+    padding-inline: 10px !important;
+  }
+
+
+
+
 } */
-
-
-}
 
 
 /* ipad pro */
 
-
+/* 
 @media screen and (max-width: 1025px) and (min-width:900px) {
 
 
-  
-  .aboutPage .mobileHide{
+
+  .aboutPage .mobileHide {
     display: none !important;
   }
 
-  .mobileSection .aboutSectionTitle ,  .mobileSection .locationDivTitle{
+  .mobileSection .aboutSectionTitle,
+  .mobileSection .locationDivTitle {
     text-align: center;
     margin-top: 50px;
   }
 
-  .aboutPage .DesktopHide{
+
+
+  .aboutPage .DesktopHide {
     display: block !important;
   }
 
-  .articleDiv {
-    margin-top: 300px !important;
-  }
 
   .ethosContainer {
     top: 32%;
     right: 0%;
   }
 
+  .aboutPage .ethosBackgorund {
+    height: 1090px;
+  }
+
   .headSection {
     display: block !important;
-    /* background-color: black; */
+    
   }
 
-  .mobileSection{
+  .mobileSection {
     width: 100%;
-    /* background-color: blue !important; */
+   
   }
 
-  .aboutBreathDescriptionMobile{
+  .aboutBreathDescriptionMobile {
     padding-inline: 20px;
     padding-top: 50px;
   }
 
-  .mobileSection .locationDivP{
+  .mobileSection .locationDivP {
     padding-inline: 20px;
   }
 
 
-  .mobileSection .choosUsImg{
+  .mobileSection .choosUsImg {
     width: 100%;
     margin-inline: 20px;
     margin-top: 30px;
@@ -996,7 +1267,7 @@ a.text-decoration-none {
     font-size: 24px;
   }
 
-  .testimonialCard{
+  .testimonialCard {
     width: 100%;
   }
 
@@ -1004,923 +1275,95 @@ a.text-decoration-none {
 
 
 
-}
-
+} */
+/* 
 
 @media screen and (max-width: 1090px) and (min-width:1025px) {
-  .aboutPage .ethosBackgorund{
-    height: 1600px;
+  .aboutPage .ethosBackgorund {
+    height: 1200px;
   }
 }
 
-.contactContainer {
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 0;
-    width: 90%;
-    padding-right: calc(var(--bs-gutter-x) * 0.5);
-    padding-left: calc(var(--bs-gutter-x) * 0.5);
-    margin-right: auto;
-    margin-left: auto;
+
+@media screen and (max-width: 1490px) and (min-width:1090px) {
+  .aboutPage .ethosBackgorund {
+    height: 1200px;
+  }
 }
 
-.formControl {
-    display: block;
-    width: 100%;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 2px solid #dee2e6;
-    border-radius: 10px;;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+@media screen and (max-width: 1290px) and (min-width:1040px) {
+  .yellow .ethosBackgorund {
+    height: 1000px !important;
+
+  }
+
+  .whyChooseUsBackg .ethosBackgorund {
+    height: 1200px;
+  }
 }
 
-.contactFormDiv {
-    margin-bottom: 1rem !important
+
+
+@media screen and (max-width: 1200px) and (min-width:900px) {
+  .rightBoxShadow {
+    height: 450px !important;
+    object-fit: cover;
+  }
+
+
+
+  .bespokeDivTitle {
+    font-size: 40px;
+  }
+
+  .card1 {
+    padding-inline: 10px !important;
+  }
 }
 
-.formCheckBox {
-    flex-shrink: 0;
-    width: 1em;
-    height: 1em;
-    margin-top: 0.25em;
-    vertical-align: top;
-    background-color: #fff;
-    background-position: center;
-    background-size: contain;
-    border: 2px solid #dee2e6;
+
+@media screen and (max-width: 1040px) and (min-width:901px) {
+  .yellow .ethosBackgorund {
+    height: 1200px !important;
+  }
 }
 
-.formCheck {
-    padding-left: 1rem;
+
+@media screen and (min-width:1400px) {
+  .articleDiv {
+    padding-inline: 100px;
+  }
 }
 
-@media screen and (min-width: 1920px) {
-    .exclusiveTitle {
-        font-size: 70px;
-    }
+@media screen and (max-width: 1350px) and (min-width:1025px) {
 
-    .exclusiveDescription {
-        font-size: 20px;
-        line-height: 28px;
-    }
 
-    .contactFormDiv {
-        margin-bottom: 2rem !important
-    }
+  .headSection .locationImg1 {
+    height: 700px;
+  }
 
-    .contactContainer {
-        max-width: 1900px;
-        padding: 0 2rem;
-    }
+  .aboutBreatheContainer {
+    margin-inline: 30px;
+  }
 
-    .section_title {
-        font-size: 4rem;
-        line-height: 1.2;
-        margin-bottom: 2rem;
-    }
-
-    .sectionSubTitle {
-        font-size: 2.5rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .form_label {
-        font-size: 32px;
-        margin-bottom: 1rem;
-    }
-
-    .formControl {
-        font-size: 28px;
-        padding: 1rem 1.5rem;
-        height: auto;
-    }
-
-    .formCheck {
-        font-size: 24px;
-        padding-left: 1.5rem;
-    }
-
-    .formCheckBox {
-        width: 2em;
-        height: 2em;
-    }
-
-    .submit_button {
-        font-size: 1.5rem;
-        padding: 1.25rem 2rem;
-        letter-spacing: 3px;
-    }
-
-    .sectionTitle {
-        font-size: 4rem;
-    }
-
-    .blogCard {
-        transition: all 0.3s ease;
-    }
-
-    .blogCardTitle {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-    }
-
-    .blogCardDesc {
-        margin-top: 28px;
-        font-size: 1.8rem;
-        line-height: 1.6;
-    }
-
-    .blogCardDate {
-        font-size: 2rem;
-    }
-
-    .blogCardRead {
-        font-size: 30px;
-        margin-top: 24px;
-    }
-
-    .blogContent {
-        font-size: 2.1rem;
-        line-height: 1.8;
-        max-width: 1600px;
-        margin: 0 auto;
-    }
-
-    .blogContent h2 {
-        font-size: 2.8rem;
-        margin: 2.5rem 0 1.8rem;
-    }
-
-    /*.blogImageContainer {*/
-    /*    max-width: 1200px;*/
-    /*    margin: 2rem auto;*/
-    /*}*/
-
-    .imageContainer {
-        height: 100%;
-    }
-
-    .mapHouContainer {
-        padding: 4rem 2rem;
-    }
-
-    .contact_info {
-        font-size: 26px;
-    }
-
-    .map_hours_title {
-        font-size: 28px;
-        margin-bottom: 2rem;
-    }
-
-    .map_hours_days {
-        font-size: 24px;
-    }
-
-    .map_hours_time {
-        font-size: 24px;
-    }
-
-    .map_hours_desc {
-        font-size: 24px;
-    }
 }
 
-@media screen and (min-width: 2560px) and (max-width: 3839px) {
-    .contactContainer {
-        max-width: 2300px;
-        padding: 0 3rem;
-    }
-
-    .section_title {
-        font-size: 5rem;
-        line-height: 1.1;
-        margin-bottom: 2.5rem;
-    }
-
-    .sectionSubTitle {
-        font-size: 2.75rem;
-        margin-bottom: 2rem;
-    }
-
-    .form_label {
-        font-size: 36px;
-        margin-bottom: 1.5rem;
-    }
-
-    .formControl {
-        font-size: 32px;
-        padding: 1rem 1.5rem;
-    }
-
-    .submit_button {
-        font-size: 1.75rem;
-        padding: 1.25rem 2.5rem;
-        letter-spacing: 4px;
-    }
-
-    .sectionTitle {
-        font-size: 4.25rem;
-    }
-
-    .contactFormDiv {
-        margin-bottom: 2.5rem !important;
-    }
-
-    .formCheck {
-        font-size: 28px;
-        padding-left: 1.75rem;
-    }
-
-    .formCheckBox {
-        width: 2.5em;
-        height: 2.5em;
-    }
-
-    .blogCardTitle {
-        font-size: 3rem;
-        margin-bottom: 1.25rem;
-    }
-
-    .blogCardDesc {
-        font-size: 2rem;
-        line-height: 1.6;
-        margin-top: 20px;
-    }
-
-    .blogCardDate {
-        font-size: 2.25rem;
-    }
-
-    .blogCardRead {
-        font-size: 32px;
-        margin-top: 20px;
-    }
-
-    .blogContent {
-        font-size: 2.3rem;
-        line-height: 1.7;
-        max-width: 1800px;
-        margin: 0 auto;
-    }
-
-    .blogContent h2 {
-        font-size: 3rem;
-        margin: 2rem 0 1.5rem;
-    }
-
-    /*.blogImageContainer {*/
-    /*    max-width: 1000px; !* Between 700px (992px+) and 1200px (1920px/3840px) *!*/
-    /*    margin: 2rem auto;*/
-    /*}*/
-
-    .mapHouContainer {
-        padding: 6rem 1rem;
-    }
-
-    .mapMain {
-        padding: 10rem 0;
-    }
-
-    .contact_info {
-        font-size: 32px;
-    }
-
-    .map_hours_title {
-        font-size: 36px;
-        margin-bottom: 2rem;
-    }
-
-    .map_hours_days {
-        font-size: 28px;
-    }
-
-    .map_hours_time {
-        font-size: 28px;
-    }
-
-    .map_hours_desc {
-        font-size: 28px;
-        line-height: 36px;
-        padding: 2rem 0;
-    }
-
-    .exclusiveTitle {
-        font-size: 60px;
-        padding-top: 2rem;
-    }
-
-    .exclusiveDescription {
-        font-size: 24px;
-        line-height: 32px;
-        padding: 2rem 0;
-    }
-
-    .imageContainer {
-        height: 100%;
-    }
-
-    .responsiveImage {
-        border-radius: 20px;
-    }
-}
-
-@media screen and (min-width: 3840px) {
-    .exclusiveTitle {
-        font-size: 90px;
-        padding-top: 3rem;
-    }
-
-    .exclusiveDescription {
-        font-size: 36px;
-        line-height: 28px;
-        padding: 3rem 0;
-    }
-
-    .contactFormDiv {
-        margin-bottom: 3.5rem !important
-    }
-
-    .contactContainer {
-        max-width: 3100px;
-        padding: 0 4rem;
-    }
-
-    .section_title {
-        font-size: 6rem;
-        line-height: 1.2;
-        margin-bottom: 1.5rem;
-    }
-
-    .sectionSubTitle {
-        font-size: 3rem;
-        margin-bottom: 3rem;
-    }
-
-    .form_label {
-        font-size: 42px;
-        margin-bottom: 2rem;
-    }
-
-    .formControl {
-        font-size: 38px;
-        padding: 1rem 1.5rem;
-        height: auto;
-    }
-
-    .formCheck {
-        font-size: 36px;
-        padding-left: 2rem;
-    }
-
-    .submit_button {
-        font-size: 42px;
-        padding: 1.25rem 2rem;
-        letter-spacing: 5px;
-    }
-
-    .sectionTitle {
-        font-size: 4.5rem;
-    }
-
-    .formCheckBox {
-        width: 3em;
-        height: 3em;
-    }
-
-    .blogCard {
-        transition: all 0.3s ease;
-    }
-
-    .blogCardTitle {
-        font-size: 3.5rem;
-        margin-bottom: 1rem;
-    }
-
-    .blogCardDesc {
-        font-size: 2.1rem;
-        line-height: 1.6;
-    }
-
-    .blogCardDate {
-        font-size: 2.5rem;
-    }
-
-    .blogCardRead {
-        font-size: 36px;
-        margin-top: 30px;
-    }
-
-    .blogContent {
-        font-size: 2.5rem;
-        line-height: 1.8;
-        max-width: 2000px;
-        margin: 0 auto;
-    }
-
-    .blogContent h2 {
-        font-size: 3.5rem;
-        margin: 3rem 0 2.5rem;
-    }
-
-    /*.blogImageContainer {*/
-    /*    max-width: 1200px;*/
-    /*    margin: 2rem auto;*/
-    /*}*/
-
-    .imageContainer {
-        height: 100%;
-    }
-
-    .mapHouContainer {
-        padding: 8rem 0;
-    }
-
-    .contact_info {
-        font-size: 42px;
-    }
-
-    .map_hours_title {
-        font-size: 46px;
-        margin-bottom: 2.5rem;
-    }
-
-    .map_hours_days {
-        font-size: 38px;
-    }
-
-    .map_hours_time {
-        font-size: 36px;
-    }
-
-    .map_hours_desc {
-        font-size: 38px;
-        letter-spacing: 3px;
-        text-align: start;
-        line-height: 42px;
-        padding: 3rem 0;
-    }
-}
-
-.contactContainer {
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 0;
-    width: 90%;
-    padding-right: calc(var(--bs-gutter-x) * 0.5);
-    padding-left: calc(var(--bs-gutter-x) * 0.5);
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.formControl {
-    display: block;
-    width: 100%;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 2px solid #dee2e6;
-    border-radius: 10px;;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.contactFormDiv {
-    margin-bottom: 1rem !important
-}
-
-.formCheckBox {
-    flex-shrink: 0;
-    width: 1em;
-    height: 1em;
-    margin-top: 0.25em;
-    vertical-align: top;
-    background-color: #fff;
-    background-position: center;
-    background-size: contain;
-    border: 2px solid #dee2e6;
-}
-
-.formCheck {
-    padding-left: 1rem;
-}
-
-@media screen and (min-width: 1920px) {
-    .exclusiveTitle {
-        font-size: 70px;
-    }
-
-    .exclusiveDescription {
-        font-size: 20px;
-        line-height: 28px;
-    }
-
-    .contactFormDiv {
-        margin-bottom: 2rem !important
-    }
-
-    .contactContainer {
-        max-width: 1900px;
-        padding: 0 2rem;
-    }
-
-    .section_title {
-        font-size: 4rem;
-        line-height: 1.2;
-        margin-bottom: 2rem;
-    }
-
-    .sectionSubTitle {
-        font-size: 2.5rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .form_label {
-        font-size: 32px;
-        margin-bottom: 1rem;
-    }
-
-    .formControl {
-        font-size: 28px;
-        padding: 1rem 1.5rem;
-        height: auto;
-    }
-
-    .formCheck {
-        font-size: 24px;
-        padding-left: 1.5rem;
-    }
-
-    .formCheckBox {
-        width: 2em;
-        height: 2em;
-    }
-
-    .submit_button {
-        font-size: 1.5rem;
-        padding: 1.25rem 2rem;
-        letter-spacing: 3px;
-    }
-
-    .sectionTitle {
-        font-size: 4rem;
-    }
-
-    .blogCard {
-        transition: all 0.3s ease;
-    }
-
-    .blogCardTitle {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-    }
-
-    .blogCardDesc {
-        margin-top: 28px;
-        font-size: 1.8rem;
-        line-height: 1.6;
-    }
-
-    .blogCardDate {
-        font-size: 2rem;
-    }
-
-    .blogCardRead {
-        font-size: 30px;
-        margin-top: 24px;
-    }
-
-    .blogContent {
-        font-size: 2.1rem;
-        line-height: 1.8;
-        max-width: 1600px;
-        margin: 0 auto;
-    }
-
-    .blogContent h2 {
-        font-size: 2.8rem;
-        margin: 2.5rem 0 1.8rem;
-    }
-
-    /*.blogImageContainer {*/
-    /*    max-width: 1200px;*/
-    /*    margin: 2rem auto;*/
-    /*}*/
-
-    .imageContainer {
-        height: 100%;
-    }
-
-    .mapHouContainer {
-        padding: 4rem 2rem;
-    }
-
-    .contact_info {
-        font-size: 26px;
-    }
-
-    .map_hours_title {
-        font-size: 28px;
-        margin-bottom: 2rem;
-    }
-
-    .map_hours_days {
-        font-size: 24px;
-    }
-
-    .map_hours_time {
-        font-size: 24px;
-    }
-
-    .map_hours_desc {
-        font-size: 24px;
-    }
-}
-
-@media screen and (min-width: 2560px) and (max-width: 3839px) {
-    .contactContainer {
-        max-width: 2300px;
-        padding: 0 3rem;
-    }
-
-    .section_title {
-        font-size: 5rem;
-        line-height: 1.1;
-        margin-bottom: 2.5rem;
-    }
-
-    .sectionSubTitle {
-        font-size: 2.75rem;
-        margin-bottom: 2rem;
-    }
-
-    .form_label {
-        font-size: 36px;
-        margin-bottom: 1.5rem;
-    }
-
-    .formControl {
-        font-size: 32px;
-        padding: 1rem 1.5rem;
-    }
-
-    .submit_button {
-        font-size: 1.75rem;
-        padding: 1.25rem 2.5rem;
-        letter-spacing: 4px;
-    }
-
-    .sectionTitle {
-        font-size: 4.25rem;
-    }
-
-    .contactFormDiv {
-        margin-bottom: 2.5rem !important;
-    }
-
-    .formCheck {
-        font-size: 28px;
-        padding-left: 1.75rem;
-    }
-
-    .formCheckBox {
-        width: 2.5em;
-        height: 2.5em;
-    }
-
-    .blogCardTitle {
-        font-size: 3rem;
-        margin-bottom: 1.25rem;
-    }
-
-    .blogCardDesc {
-        font-size: 2rem;
-        line-height: 1.6;
-        margin-top: 20px;
-    }
-
-    .blogCardDate {
-        font-size: 2.25rem;
-    }
-
-    .blogCardRead {
-        font-size: 32px;
-        margin-top: 20px;
-    }
-
-    .blogContent {
-        font-size: 2.3rem;
-        line-height: 1.7;
-        max-width: 1800px;
-        margin: 0 auto;
-    }
-
-    .blogContent h2 {
-        font-size: 3rem;
-        margin: 2rem 0 1.5rem;
-    }
-
-    /*.blogImageContainer {*/
-    /*    max-width: 1000px; !* Between 700px (992px+) and 1200px (1920px/3840px) *!*/
-    /*    margin: 2rem auto;*/
-    /*}*/
-
-    .mapHouContainer {
-        padding: 6rem 1rem;
-    }
-
-    .mapMain {
-        padding: 10rem 0;
-    }
-
-    .contact_info {
-        font-size: 32px;
-    }
-
-    .map_hours_title {
-        font-size: 36px;
-        margin-bottom: 2rem;
-    }
-
-    .map_hours_days {
-        font-size: 28px;
-    }
-
-    .map_hours_time {
-        font-size: 28px;
-    }
-
-    .map_hours_desc {
-        font-size: 28px;
-        line-height: 36px;
-        padding: 2rem 0;
-    }
-
-    .exclusiveTitle {
-        font-size: 60px;
-        padding-top: 2rem;
-    }
-
-    .exclusiveDescription {
-        font-size: 24px;
-        line-height: 32px;
-        padding: 2rem 0;
-    }
-
-    .imageContainer {
-        height: 100%;
-    }
-
-    .responsiveImage {
-        border-radius: 20px;
-    }
-}
-
-@media screen and (min-width: 3840px) {
-    .exclusiveTitle {
-        font-size: 90px;
-        padding-top: 3rem;
-    }
-
-    .exclusiveDescription {
-        font-size: 36px;
-        line-height: 28px;
-        padding: 3rem 0;
-    }
-
-    .contactFormDiv {
-        margin-bottom: 3.5rem !important
-    }
-
-    .contactContainer {
-        max-width: 3100px;
-        padding: 0 4rem;
-    }
-
-    .section_title {
-        font-size: 6rem;
-        line-height: 1.2;
-        margin-bottom: 1.5rem;
-    }
-
-    .sectionSubTitle {
-        font-size: 3rem;
-        margin-bottom: 3rem;
-    }
-
-    .form_label {
-        font-size: 42px;
-        margin-bottom: 2rem;
-    }
-
-    .formControl {
-        font-size: 38px;
-        padding: 1rem 1.5rem;
-        height: auto;
-    }
-
-    .formCheck {
-        font-size: 36px;
-        padding-left: 2rem;
-    }
-
-    .submit_button {
-        font-size: 42px;
-        padding: 1.25rem 2rem;
-        letter-spacing: 5px;
-    }
-
-    .sectionTitle {
-        font-size: 4.5rem;
-    }
-
-    .formCheckBox {
-        width: 3em;
-        height: 3em;
-    }
-
-    .blogCard {
-        transition: all 0.3s ease;
-    }
-
-    .blogCardTitle {
-        font-size: 3.5rem;
-        margin-bottom: 1rem;
-    }
-
-    .blogCardDesc {
-        font-size: 2.1rem;
-        line-height: 1.6;
-    }
-
-    .blogCardDate {
-        font-size: 2.5rem;
-    }
-
-    .blogCardRead {
-        font-size: 36px;
-        margin-top: 30px;
-    }
-
-    .blogContent {
-        font-size: 2.5rem;
-        line-height: 1.8;
-        max-width: 2000px;
-        margin: 0 auto;
-    }
-
-    .blogContent h2 {
-        font-size: 3.5rem;
-        margin: 3rem 0 2.5rem;
-    }
-
-    /*.blogImageContainer {*/
-    /*    max-width: 1200px;*/
-    /*    margin: 2rem auto;*/
-    /*}*/
-
-    .imageContainer {
-        height: 100%;
-    }
-
-    .mapHouContainer {
-        padding: 8rem 0;
-    }
-
-    .contact_info {
-        font-size: 42px;
-    }
-
-    .map_hours_title {
-        font-size: 46px;
-        margin-bottom: 2.5rem;
-    }
-
-    .map_hours_days {
-        font-size: 38px;
-    }
-
-    .map_hours_time {
-        font-size: 36px;
-    }
-
-    .map_hours_desc {
-        font-size: 38px;
-        letter-spacing: 3px;
-        text-align: start;
-        line-height: 42px;
-        padding: 3rem 0;
-    }
-}
+@media screen and (min-width:1920px) {
+
+  .breatheTeamDiv {
+    top: 25%;
+  }
+
+  .baseSection {
+    max-width: 1500px;
+  }
+
+  .aboutBreatheContainer {
+    margin-inline: 30px;
+  }
+
+  .locationDiv {
+    right: 30%;
+    top: 30%;
+  }
+} */
