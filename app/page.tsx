@@ -14,7 +14,7 @@ export default function Home() {
       <div className={`d-flex ${style.imageContainer}`}>
         <Image src={"/Vector12.png"} alt='services hero image' width={1920} height={1080} style={{ width: "100vw", height: "auto", objectFit: 'cover' }} />
       </div>
-      <div className="container section">
+      <div className="container section pb-0">
         <div className="d-block d-md-block d-lg-flex justify-content-center gap-5">
           <div className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-between">
             <div>
@@ -203,7 +203,7 @@ export default function Home() {
       <DescriptionSection title="Our Ethos" description=" We are passionately committed to providing our clients with the most professional, customized, and hygienic wellness experience." />
 
 
-      <div className="container section">
+      <div className="container section py-3">
 
         {/* proffesionalism */}
         <div className="d-block d-md-block d-lg-flex gap-5 mb-5">
@@ -283,7 +283,7 @@ export default function Home() {
         />
 
 
-        <div className="container position-relative">
+        <div className="container position-relative mt-4">
         <div className={styles.articleDiv}>
           <div className="d-md-flex d-lg-flex d-block justify-content-between">
             <div className="col-12 col-md-8 col-lg-8">

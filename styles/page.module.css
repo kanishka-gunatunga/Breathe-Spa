@@ -145,7 +145,7 @@
   margin: 15px 0 !important;
 }
 
-.bottomBorder{
+.bottomBorder {
   border-bottom: 1px dashed #BDBDBD;
   display: flex;
   align-items: center;
@@ -260,7 +260,7 @@
   margin-top: 50px;
 }
 
-.locationContainer Button{
+.locationContainer Button {
   padding-inline: 50px;
 }
 
@@ -320,7 +320,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 50px 50px 0 50px;
+  margin: 70px 50px 0 50px;
   padding: 60px 0;
 
 }
@@ -453,11 +453,11 @@
 }
 
 
-.OnDesktopHide{
+.OnDesktopHide {
   display: none;
 }
 
-.OnmobileHide{
+.OnmobileHide {
   display: block;
 }
 
@@ -778,22 +778,26 @@
   .map_hours_days {
     font-size: 15px;
   }
-  
+
 }
 
-@media screen and (max-width: 992px){
-  .sectionTitle , .leftBoxShadow{
+@media screen and (max-width: 992px) {
+
+  .sectionTitle,
+  .leftBoxShadow {
     margin-top: 20px;
     margin-bottom: 20px;
   }
-  .sectionDescription{
+
+  .sectionDescription {
     margin-bottom: 20px;
   }
-  .rightBoxShadow{
+
+  .rightBoxShadow {
     margin-top: 50px;
   }
 
-  .yellowSvg{
+  .yellowSvg {
     height: 1600px;
   }
 
@@ -816,11 +820,12 @@
   .locationContainer Button {
     margin-bottom: 30px;
   }
-  .OnDesktopHide{
+
+  .OnDesktopHide {
     display: block;
   }
 
-  .OnmobileHide{
+  .OnmobileHide {
     display: none;
   }
 
@@ -829,8 +834,14 @@
     text-align: center;
     margin-top: 30px;
   }
-  
+
+  .mobileHeight {
+    height: 70vh;
+  }
+
+
 }
+
 
 
 /* 
