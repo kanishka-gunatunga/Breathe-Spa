@@ -43,7 +43,7 @@ console.log("services: ", servicesMainData[0]?.title);
         </div>
       </div>
 
-      <DescriptionSection title="Discover the Best in Beauty & Care" description="Our services blend quality and hygiene, ensuring you receive only the best. Explore our range of treatments below and find your perfect match." />
+      <DescriptionSection title={servicesMainData[0]?.tagLine} description={servicesMainData[0]?.tagdescription} />
 
       <div className="scroll-sections ">
         {services.map((category, index) => (

@@ -46,4 +46,6 @@ export interface ServiceCategory {
     mainImage?: Image
     servicesHeroImage?: Image
     description: string
+    tagLine: string
+    tagdescription: string
   }

@@ -53,7 +53,8 @@ export const GET_SERVICE_MAIN_PAGE_DATA = `
         title,
         mainImage,
         servicesHeroImage,
-        categoryTitle,
-        description
+        description,
+        tagLine,
+        tagdescription
       }
 `;
