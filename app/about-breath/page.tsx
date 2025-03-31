@@ -1,11 +1,9 @@
 'use client';
 import Button from "@/components/ReusableComponents/Button";
 import styles from "@/styles/page.module.css";
-import AboutStyles from "@/styles/about.module.css";
 import Image from "next/image";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ExclusiveDeals from "@/components/ReusableComponents/ExclusiveDeals";
-import Link from "next/link";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -17,13 +15,13 @@ import YellowBackSection from "@/components/ReusableComponents/YellowBackSection
 
 
 
-const teamMembers = [
-  { id: 1, name: "David Miller", position: "Senior Beautician", image: "/teamImg1.png" },
-  { id: 2, name: "Sarah Johnson", position: "Senior Beautician", image: "/teamImg2.png" },
-  { id: 3, name: "Michael Chen", position: "Spa Director", image: "/teamImg3.png" },
-  { id: 4, name: "Emma Wilson", position: "Massage Specialist", image: "/teamImg4.png" },
-  { id: 5, name: "James Brown", position: "Aesthetician", image: "/teamImg5.png" },
-];
+// const teamMembers = [
+//   { id: 1, name: "David Miller", position: "Senior Beautician", image: "/teamImg1.png" },
+//   { id: 2, name: "Sarah Johnson", position: "Senior Beautician", image: "/teamImg2.png" },
+//   { id: 3, name: "Michael Chen", position: "Spa Director", image: "/teamImg3.png" },
+//   { id: 4, name: "Emma Wilson", position: "Massage Specialist", image: "/teamImg4.png" },
+//   { id: 5, name: "James Brown", position: "Aesthetician", image: "/teamImg5.png" },
+// ];
 const page = () => {
   return (
     <div>
@@ -149,7 +147,7 @@ const page = () => {
                           </div>
                           <div className="d-flex flex-column justify-content-between pt-5">
                             <p className={styles.TestimonialCardText}>
-                              "Lorem ipsum dolor sit amet consectetur. Nisl in dictum viverra in sagittis tincidunt. Ut aenean id mattis quis consectetur at cras accumsan. Maecenas pulvinar tortor ligula aliquam scelerisque pharetra."
+                              &quot;Lorem ipsum dolor sit amet consectetur. Nisl in dictum viverra in sagittis tincidunt. Ut aenean id mattis quis consectetur at cras accumsan. Maecenas pulvinar tortor ligula aliquam scelerisque pharetra.&quot;
                             </p>
                             <div>
                               <h5 className={styles.testimonialCardName}>David Miller</h5>
