@@ -74,10 +74,10 @@ const page = () => {
 
 
         <YellowBackSection
-        title="Why Choose Us"
-        description="Lorem ipsum dolor sit amet consectetur. Ac arcu auctor non imperdiet laoreet morbi tristique metus. Bibendum enim ut non ac aenean malesuada eget lectus. Vitae amet at amet diam. Massa porttitor mi scelerisque praesent auctor pharetra eget ut. Augue elementum consequat lacus sit. Suspendisse ipsum odio eu sagittis semper tincidunt. Sit ultrices egestas arcu odio tristique amet interdum montes. Cras vel sed cursus vulputate viverra mauris. Pellentesque quam ultricies adipiscing quam nunc purus lectus. Vitae amet velit at ut. Adipiscing amet eleifend duis a augue. Maecenas vulputate sed tellus imperdiet dictum imperdiet etiam quis. Blandit consectetur placerat imperdiet in purus amet. Eget posuere ac commodo ultrices tristique dolor turpis interdum semper. Arcu ut ornare placerat dolor scelerisque tincidunt commodo duis egestas. Euismod amet scelerisque nullam purus duis velit. Augue sit aliquet auctor aliquam. Mauris egestas dolor egestas consectetur. Blandit eget egestas mauris sit. Feugiat neque consequat sit lorem mattis enim nibh. Neque odio quis ultrices morbi sit augue ut eget. Bibendum enim proin dui ut in. Ac placerat quisque iaculis rhoncus ut sit. Leo a vulputate purus et."
-        image="/about2.png"
-        buttonText="EXPLORE OUR SERVICES"
+          title="Why Choose Us"
+          description="Lorem ipsum dolor sit amet consectetur. Ac arcu auctor non imperdiet laoreet morbi tristique metus. Bibendum enim ut non ac aenean malesuada eget lectus. Vitae amet at amet diam. Massa porttitor mi scelerisque praesent auctor pharetra eget ut. Augue elementum consequat lacus sit. Suspendisse ipsum odio eu sagittis semper tincidunt. Sit ultrices egestas arcu odio tristique amet interdum montes. Cras vel sed cursus vulputate viverra mauris. Pellentesque quam ultricies adipiscing quam nunc purus lectus. Vitae amet velit at ut. Adipiscing amet eleifend duis a augue. Maecenas vulputate sed tellus imperdiet dictum imperdiet etiam quis. Blandit consectetur placerat imperdiet in purus amet. Eget posuere ac commodo ultrices tristique dolor turpis interdum semper. Arcu ut ornare placerat dolor scelerisque tincidunt commodo duis egestas. Euismod amet scelerisque nullam purus duis velit. Augue sit aliquet auctor aliquam. Mauris egestas dolor egestas consectetur. Blandit eget egestas mauris sit. Feugiat neque consequat sit lorem mattis enim nibh. Neque odio quis ultrices morbi sit augue ut eget. Bibendum enim proin dui ut in. Ac placerat quisque iaculis rhoncus ut sit. Leo a vulputate purus et."
+          image="/about2.png"
+          buttonText="EXPLORE OUR SERVICES"
         />
 
         {/* <div className={`mx-0 px-0 ${styles.baseSection}, ${styles.mobileHide}`}>
@@ -127,9 +127,9 @@ const page = () => {
                   nextEl: '.testimonial-next',
                   prevEl: '.testimonial-prev',
                 }}
-                pagination={{
-                  clickable: true,
-                }}
+                // pagination={{
+                //   clickable: true,
+                // }}
                 spaceBetween={30}
                 className={styles.testimonialSwiper}
               >
@@ -172,20 +172,20 @@ const page = () => {
 
 
 
-                              
+
                             </div>
                             <div className={styles.arrowDiv}>
-                                <button className={`testimonial-prev ${styles.customPrev}`}>
-                                  <svg width="40" height="40" viewBox="0 0 16 16" fill="currentColor">
-                                    <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
-                                  </svg>
-                                </button>
-                                <button className={`testimonial-next ${styles.customNext}`}>
-                                  <svg width="40" height="40" viewBox="0 0 16 16" fill="currentColor">
-                                    <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
-                                  </svg>
-                                </button>
-                              </div>
+                              <button className={`testimonial-prev ${styles.customPrev}`}>
+                                <svg width="40" height="40" viewBox="0 0 16 16" fill="currentColor">
+                                  <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
+                                </svg>
+                              </button>
+                              <button className={`testimonial-next ${styles.customNext}`}>
+                                <svg width="40" height="40" viewBox="0 0 16 16" fill="currentColor">
+                                  <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                                </svg>
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </div>

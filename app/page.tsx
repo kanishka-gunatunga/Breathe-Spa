@@ -1,3 +1,5 @@
+"use client";
+
 import Button from "@/components/ReusableComponents/Button";
 import styles from "@/styles/page.module.css";
 import Image from "next/image";
@@ -7,12 +9,51 @@ import style from '@/styles/services.module.css'
 import DescriptionSection from '@/components/servicesComponents/DescriptionSection'
 import YellowBackSection from "@/components/ReusableComponents/YellowBackSection";
 
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination, Autoplay } from 'swiper/modules';
+
 export default function Home() {
   return (
 
     <>
       <div className={`d-flex ${style.imageContainer}`}>
-        <Image src={"/Vector12.png"} alt='services hero image' width={1920} height={1080} style={{ width: "100vw", height: "auto", objectFit: 'cover' }} />
+        <Swiper
+
+          modules={[Pagination, Autoplay]}
+          pagination={{ clickable: true, dynamicBullets: true }}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+        }}
+
+
+        >
+          <SwiperSlide>
+            <Image
+              src={'/Vector12.png'}
+              alt='services hero image'
+              width={1920}
+              height={1080}
+              style={{ width: '100vw', height: 'auto', objectFit: 'cover', objectPosition: 'bottom' }}
+            />
+
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <Image
+              src={'/Vector12.png'}
+              alt='services hero image'
+              width={1920}
+              height={1080}
+              style={{ width: '100vw', height: 'auto', objectFit: 'cover', objectPosition: 'bottom' }}
+            />
+
+          </SwiperSlide>
+          {/* Add more slides if needed */}
+        </Swiper>
       </div>
       <div className="container section pb-0">
         <div className="d-block d-md-block d-lg-flex justify-content-center gap-5">
@@ -279,12 +320,12 @@ export default function Home() {
         title="Conveniently Located in Central Colombo"
         description="Breathe is within a 15-minute drive from all prominent Hotels in the heart of Colombo. Our neighborhood is in Cinnamon Gardens –  where the old-world charm of tree-lined streets, parks, and large gardens of beautifully preserved colonial homes – is a repository of heritage and beauty within the rapidly evolving urban dynamics of Colombo.  We choose a beautiful old bungalow down a leafy, residential cul-de-sac. It is one of the most tranquil quarters of Colombo and ideally suited for Breathe’s bespoke and private experience style. The Spa blends in to the neighborhood with minimal external signage – partly to preserve the serene, residential ambiance, but also to enhance its ‘hidden refuge in Cinnamon Gardens’ vibe."
           image="/interior.png"
-        buttonText="Discover Our Location"
+        ttonText="Discover Our Location"
         />
-
+      
 
         <div className="container position-relative mt-4">
-        <div className={styles.articleDiv}>
+      <div className={styles.articleDiv}>
           <div className="d-md-flex d-lg-flex d-block justify-content-between">
             <div className="col-12 col-md-8 col-lg-8">
               <div>
@@ -332,7 +373,7 @@ export default function Home() {
         </div>
       </div>
        
-      <ExclusiveDeals />
+ExclusiveDeals />
     </>
 
   );

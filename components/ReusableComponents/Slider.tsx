@@ -83,13 +83,13 @@ const CardSlider: React.FC = () => {
                 modules={[Navigation, Pagination, Autoplay]}
                 spaceBetween={20}
                 slidesPerView={1}
-                navigation
-                pagination={{ clickable: true }}
-                autoplay={false}
-                // autoplay={{
-                //     delay: 3000,
-                //     disableOnInteraction: false,
-                // }}
+                // navigation
+                // pagination={{ clickable: true }}
+                // autoplay={false}
+                autoplay={{
+                    delay: 3000,
+                    disableOnInteraction: false,
+                }}
                 breakpoints={{
                     576: {
                         slidesPerView: 1,
