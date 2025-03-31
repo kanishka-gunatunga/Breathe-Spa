@@ -114,7 +114,7 @@ a {
 
 
 /* animations */
-@keyframes fadeInUp {
+/* @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -157,5 +157,9 @@ a {
 
 .fade-in-left {
   animation: fadeInLeft 1.5s ease-in-out;
-}
+} */
 
+.stickyImage {
+  position: sticky;
+  top: 0;
+}

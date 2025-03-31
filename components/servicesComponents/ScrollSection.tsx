@@ -1,10 +1,12 @@
+"use client";
 import { urlFor } from '@/sanity/libs/sanity';
 import { ServiceCategory } from '@/sanity/types';
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect } from 'react';
 import style from '@/styles/services.module.css'
 import DarkButton from './DarkButton';
-
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 interface Image {
     _type: 'image';
@@ -16,15 +18,29 @@ interface Image {
 
 interface ServiceCategoryCardProps {
     category: ServiceCategory;
+    categoryId: number
 }
+gsap.registerPlugin(ScrollTrigger);
 
-const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category }) => {
+const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category, categoryId }) => {
 
+    useEffect(() => {
+        category.services.forEach((service, index) => {
+            const imageId = `service-image-${category.slug.current}-${index}`;
+
+            ScrollTrigger.create({
+                trigger: `#${`section-${categoryId}`}`,
+                start: 'top 0px',
+                end: 'bottom +=430',
+                pin: `#${imageId}`,
+            });
+        });
+    }, [category]);
 
     return (
-        <div className="container section">
-            <div className="d-flex flex-column-reverse flex-lg-row">
-                <div className="col-12 col-lg-6 pe-lg-2 mt-3 mt-lg-0" data-aos="fade-up">
+        <div className="container section " id={`section-${categoryId}`}>
+            <div className="d-none d-lg-flex flex-column-reverse flex-lg-row">
+                <div className="col-12 col-lg-6 pe-lg-2 mt-3 mt-lg-0">
                     <h3 className={`fade-in-up ${style.serviceTitle}`}>{category.title}</h3>
                     <p className={`${style.paragraph} mb-3 mb-lg-4`}>{category.description}</p>
                     <div className={`${style.servicesList} row p-0 row-cols-1 row-cols-md-2`}>
@@ -45,19 +61,60 @@ const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category }) =
                             </div>
                         ))}
                     </div>
-
                 </div>
                 <div className="col-12 col-lg-6 ps-lg-2 d-flex justify-content-lg-end align-items-start">
                     {category.mainImage && (
-                        <div className="position-relative" data-aos="fade-up">
-                            <Image
-                                src={urlFor(category.mainImage).url()}
-                                alt={category.title}
-                                className={`${style.serviceImage} img-fluid`}
-                                height={600}
-                                width={500}
-                            />
-                            <div className={`${style.darkRectangleServiceMain}`}></div>
+                        <div id={`service-image-${category.slug.current}-${categoryId}`} className="stickyImageContainer" data-aos="fade-up">
+                            <div className='position-relative'>
+                                <Image
+                                    src={urlFor(category.mainImage).url()}
+                                    alt={category.title}
+                                    className={`${style.serviceImage} img-fluid`}
+                                    height={600}
+                                    width={500}
+                                />
+                                <div className={`${style.darkRectangleServiceMain}`}></div>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            </div>
+            <div className="d-flex d-lg-none flex-column-reverse flex-lg-row">
+                <div className="col-12 col-lg-6 pe-lg-2 mt-3 mt-lg-0">
+                    <h3 className={`fade-in-up ${style.serviceTitle}`}>{category.title}</h3>
+                    <p className={`${style.paragraph} mb-3 mb-lg-4`}>{category.description}</p>
+                    <div className={`${style.servicesList} row p-0 row-cols-1 row-cols-md-2`}>
+                        {category.services.map((service, index) => (
+                            <div key={index} className={`${style.serviceItem} d-flex flex-column`}>
+                                <div>
+                                    <h4>{service.serviceName}</h4>
+                                    <h5>{service.serviceDescription?.title}</h5>
+                                    <ul>
+                                        {service.pricing.map((pricing, idx) => (
+                                            <li key={idx}>
+                                                {pricing.duration} | Rs.{pricing.price}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                                <DarkButton text="View More" link={`/services/${category.slug.current}`} />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <div className="col-12 col-lg-6 ps-lg-2 d-flex justify-content-lg-end align-items-start">
+                    {category.mainImage && (
+                        <div id={`service-image-${category.slug.current}-${categoryId}`} className="stickyImageContainer" data-aos="fade-up">
+                            <div className='position-relative'>
+                                <Image
+                                    src={urlFor(category.mainImage).url()}
+                                    alt={category.title}
+                                    className={`${style.serviceImage} img-fluid`}
+                                    height={600}
+                                    width={500}
+                                />
+                                <div className={`${style.darkRectangleServiceMain}`}></div>
+                            </div>
                         </div>
                     )}
                 </div>
