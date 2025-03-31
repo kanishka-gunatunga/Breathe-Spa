@@ -25,6 +25,7 @@ const Contact = () => {
         }));
     };
 
+    //handle submit button
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setSubmissionStatus(null);
