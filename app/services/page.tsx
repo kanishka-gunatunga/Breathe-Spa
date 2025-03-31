@@ -26,6 +26,7 @@ console.log("services: ", servicesMainData[0]?.title);
         {servicesMainData[0].servicesHeroImage && (
            <Image src={urlFor(servicesMainData[0]?.servicesHeroImage).url()} alt='services hero image' width={1920} height={1080} style={{ width: "100vw", height: "auto", objectFit: 'cover' }} />
           )}
+          
       </div>
 
       {/* services description page */}
