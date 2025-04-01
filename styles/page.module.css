@@ -277,7 +277,7 @@
 .articleCard2,
 .articleCard3 {
   border-radius: 16px;
-  border: none;
+  border: none !important;
   height: 434px;
   width: auto;
   margin-right: 50px;
@@ -290,15 +290,15 @@
 }
 
 .articleCard1 {
-  background-image: url('../public/articleCard1.png');
+  /* background-image: url('../public/articleCard1.png'); */
 }
 
 .articleCard2 {
-  background-image: url('../public/articleCard2.png');
+  /* background-image: url('../public/articleCard2.png'); */
 }
 
 .articleCard3 {
-  background-image: url('../public/articleCard3.png');
+  /* background-image: url('../public/articleCard3.png'); */
   margin-right: 0 !important;
 }
 

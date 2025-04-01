@@ -423,7 +423,8 @@ export default function Home() {
           <div className="d-md-flex d-lg-flex d-block justify-content-between">
             <div className={`card ${styles.articleCard1}`}>
               <div className="card-body d-flex align-items-end">
-                <p className={styles.articleCardTitle}>
+                <Image className={`img-fluid `} src="/articleCard1.png" height={368} width={624} alt="" />
+                <p className={seStyles.se_26_card_txt}>
                   Scarlet Spy tries a Copper Room treatment
                 </p>
               </div>
@@ -431,8 +432,9 @@ export default function Home() {
 
 
             <div className={`card ${styles.articleCard2}`}>
-              <div className="card-body d-flex align-items-end ">
-                <p className={styles.articleCardTitle}>
+              <div className="card-body d-flex align-items-end">
+                <Image className={`img-fluid `} src="/articleCard2.png" height={368} width={624} alt="" />
+                <p className={seStyles.se_26_card_txt}>
                   Scarlet Spy tries a Copper Room treatment
                 </p>
               </div>
@@ -441,12 +443,13 @@ export default function Home() {
 
             <div className={`card ${styles.articleCard3}`}>
               <div className="card-body d-flex align-items-end">
-                <p className={styles.articleCardTitle}>
+                <Image className={`img-fluid `} src="/articleCard3.png" height={368} width={624} alt="" />
+                <p className={seStyles.se_26_card_txt}>
                   Scarlet Spy tries a Copper Room treatment
                 </p>
               </div>
             </div>
-          </div>
+            </div>
         </div>
       </div>
        

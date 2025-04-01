@@ -551,6 +551,23 @@
     font-family: "Work Sans", sans-serif;
     font-weight: 300;
 }
+.se_26_card_txt {
+    font-family: 'AwesomeSerif', sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+    color: #FFFFFF;
+    position: absolute;
+    padding: 20px;
+    margin-bottom: 0px;
+  }
+
+  .articleCard1 .card-body, .articleCard2 .card-body, .articleCard3 .card-body{
+    /* background-image: url('../public/Overlay.svg'); */
+    background: linear-gradient(180deg, rgba(24, 59, 86, 8.5e-05) 0%, rgba(21, 37, 50, 0.85) 100%);
+    /* background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+  }
 @media screen and (min-width: 1920px) {
     .se_title_60 {
         font-size: 64px;
@@ -609,6 +626,9 @@
 
     .se_txt_10_work_sans {
         font-size: 12px;
+    }
+    .se_26_card_txt {
+        font-size: 32px;
     }
 }
 
@@ -669,6 +689,9 @@
     }
     .se_txt_10_work_sans {
         font-size: 14px;
+    }
+    .se_26_card_txt {
+        font-size: 38px;
     }
 }
 
@@ -732,5 +755,8 @@
     }
     .se_txt_16_work_sans_dark {
         font-size: 38px;
+    }
+    .se_26_card_txt {
+        font-size: 42px;
     }
 }
