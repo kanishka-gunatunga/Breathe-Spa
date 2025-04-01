@@ -83,18 +83,6 @@
 }
 
 
-:global(.swiper-pagination-bullet) {
-  position: absolute;
-  /* top: 50%; */
-  background-color: transparent !important;
-  border: 2px solid white !important;
-  padding: 5px;
-}
-
-:global(.swiper-pagination-bullet-active) {
-  border: 2px solid white !important;
-  background-color: white !important
-}
 
 
 
