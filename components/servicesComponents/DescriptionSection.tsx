@@ -1,5 +1,7 @@
 import React from 'react'
 import style from '@/styles/services.module.css'
+import pageStyle from '@/styles/page.module.css'
+
 
 interface MainTitleProps {
     title: string;
@@ -22,11 +24,11 @@ const DescriptionSection: React.FC<MainTitleProps> = (props) => {
             </svg>
 
             <div
-                className={`${style.sectionShaped} d-flex flex-column justify-content-center align-items-center w-100 text-center fade-in-up`}
+                className={`${style.sectionShaped} ${pageStyle.contactContainer} d-flex flex-column justify-content-center align-items-center w-100 text-center fade-in-up`}
                 style={{ zIndex: 2, position: "absolute", top: 0, left: 0, height: "100%", color: "#333" }} 
             >
-                <h2 className={style.mainTitleStyleTwo}>{props.title}</h2>
-                <p className={style.paragraph}>{props.description}</p>
+                <h2 className={style.se_title_60}>{props.title}</h2>
+                <p className={style.se_txt_15}>{props.description}</p>
             </div>
         </div>
 

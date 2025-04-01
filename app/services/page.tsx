@@ -2,6 +2,7 @@ import { getServiceCategories, getServiceMainPageData } from '@/sanity/libs/api'
 import Image from 'next/image'
 import React from 'react'
 import style from '@/styles/services.module.css'
+import pageStyle from '@/styles/page.module.css'
 import MainTitle from '@/components/servicesComponents/MainTitle'
 import Paragraph from '@/components/servicesComponents/Paragraph'
 import DescriptionSection from '@/components/servicesComponents/DescriptionSection'
@@ -22,7 +23,6 @@ console.log("services: ", servicesMainData[0]?.title);
     <div className='d-flex flex-column'>
       {/* hero section */}
       <div className={`d-flex ${style.imageContainer}`}>
-        
         {servicesMainData[0].servicesHeroImage && (
            <Image src={urlFor(servicesMainData[0]?.servicesHeroImage).url()} alt='services hero image' width={1920} height={1080} style={{ width: "100vw", height: "auto", objectFit: 'cover' }} />
           )}
@@ -30,8 +30,8 @@ console.log("services: ", servicesMainData[0]?.title);
       </div>
 
       {/* services description page */}
-      <div className="container section pb-3">
-        <div className="d-flex flex-column flex-lg-row">
+      <div className={`section py-3 ${pageStyle.contactContainer}`}>
+        <div className="d-flex flex-column flex-lg-row w-100">
           <div className="col-12 col-lg-5 d-flex">
           {servicesMainData[0].mainImage && (
             <Image src={urlFor(servicesMainData[0]?.mainImage).url()} alt='services description image' width={600} height={800} className={`${style.imgHeight} fade-in`} />
@@ -46,7 +46,7 @@ console.log("services: ", servicesMainData[0]?.title);
 
       <DescriptionSection title={servicesMainData[0]?.tagLine} description={servicesMainData[0]?.tagdescription} />
 
-      <div className="scroll-sections ">
+      <div className="scroll-sections mt-5">
         {services.map((category, index) => (
           <ServiceCategoryCard key={index} category={category} categoryId={index} />
         ))}

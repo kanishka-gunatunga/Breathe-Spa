@@ -1,5 +1,5 @@
 import React from 'react'
-import style from '@/styles/services.module.css'
+import pageStyle from '@/styles/page.module.css'
 
 interface MainTitleProps {
   title: string;
@@ -7,7 +7,7 @@ interface MainTitleProps {
 
 const MainTitle: React.FC<MainTitleProps> = (props) => {
   return (
-    <h2 className={style.mainTitle}>{props.title}</h2>
+    <h2 className={pageStyle.section_title}>{props.title}</h2>
   )
 }
 

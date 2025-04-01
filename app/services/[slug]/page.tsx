@@ -1,6 +1,7 @@
 // import { urlFor } from '@/sanity/libs/sanity';
 import Image from 'next/image';
 import style from '@/styles/services.module.css';
+import pageStyle from '@/styles/page.module.css'
 import { fetchServiceCategory } from '@/sanity/libs/api';
 import MainTitle from '@/components/servicesComponents/MainTitle';
 import Paragraph from '@/components/servicesComponents/Paragraph';
@@ -53,7 +54,7 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
       </div>
 
 
-      <div className="container section pb-0">
+      <div className={`section pb-0 ${pageStyle.contactContainer}`}>
         <div className="d-flex flex-column flex-lg-row">
           <div className="col-12 col-lg-5 d-flex">
 
@@ -77,7 +78,7 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
                 title={title}
                 description={groupedServices[title][0].serviceDescription?.description}
               />
-              <div className="my-3 my-lg-0 container section pb-0">
+              <div className={`my-3 my-lg-0 section pb-0 ${pageStyle.contactContainer}`}>
                 {groupedServices[title].map((service, index) => (
                   <div
                     key={service.serviceName + index}
@@ -89,12 +90,12 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
                       <div className="d-flex flex-column flex-md-row">
                         <div className="col-12 col-lg-12 d-flex flex-column align-items-start">
                           <div className="d-flex w-100 justify-content-between align-items-top">
-                          <h4>{service.serviceName}</h4>
+                          <h4 className={`${style.se_txt_40}`}>{service.serviceName}</h4>
                           <div className="d-none d-md-flex">
-                          <Link href={"/contact"}>Learn More</Link>
+                          <Link href={"/contact"} className={`${style.se_link_a_20}`}>Learn More</Link>
                           </div>
                           </div>
-                          <ul className={`${style.pricingList } `}>
+                          <ul className={`${style.pricingList } ${style.se_li_26} `}>
                             {service.pricing.map((price, priceIndex) => (
                               <li key={priceIndex} className={`${style.pricingItem} me-5`}>
                                 {price.duration} | Rs.{price.price}.00

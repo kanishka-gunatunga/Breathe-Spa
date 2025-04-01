@@ -7,6 +7,8 @@ import style from '@/styles/services.module.css'
 import DarkButton from './DarkButton';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import pageStyle from '@/styles/page.module.css'
+
 
 interface Image {
     _type: 'image';
@@ -30,7 +32,7 @@ const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category, cat
 
             ScrollTrigger.create({
                 trigger: `#${`section-${categoryId}`}`,
-                start: 'top 0px',
+                start: 'top 20px',
                 end: 'bottom +=430',
                 pin: `#${imageId}`,
             });
@@ -38,20 +40,20 @@ const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category, cat
     }, [category]);
 
     return (
-        <div className="container section " id={`section-${categoryId}`}>
+        <div className={`section ${pageStyle.contactContainer}`}  id={`section-${categoryId}`}>
             <div className="d-none d-lg-flex flex-column-reverse flex-lg-row">
                 <div className="col-12 col-lg-6 pe-lg-2 mt-3 mt-lg-0">
-                    <h3 className={`fade-in-up ${style.serviceTitle}`}>{category.title}</h3>
-                    <p className={`${style.paragraph} mb-3 mb-lg-4`}>{category.description}</p>
+                    <h3 className={`fade-in-up ${style.se_txt_40}`}>{category.title}</h3>
+                    <p className={`${style.se_txt_15} mb-3 mb-lg-4`}>{category.description}</p>
                     <div className={`${style.servicesList} row p-0 row-cols-1 row-cols-md-2`}>
                         {category.services.map((service, index) => (
-                            <div key={index} className={`${style.serviceItem} d-flex flex-column`}>
+                            <div key={index} className={`${style.serviceItem} d-flex flex-column mt-4`}>
                                 <div>
-                                    <h4>{service.serviceName}</h4>
-                                    <h5>{service.serviceDescription?.title}</h5>
-                                    <ul>
+                                    <h4 className={`${style.se_txt_18}`}>{service.serviceName}</h4>
+                                    <h5 className={`${style.se_txt_12}`}>{service.serviceDescription?.title}</h5>
+                                    <ul className={`${style.se_txt_14} pb-3`}>
                                         {service.pricing.map((pricing, idx) => (
-                                            <li key={idx}>
+                                            <li key={idx} className={`${style.se_txt_14}`}>
                                                 {pricing.duration} | Rs.{pricing.price}
                                             </li>
                                         ))}
@@ -81,17 +83,17 @@ const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category, cat
             </div>
             <div className="d-flex d-lg-none flex-column-reverse flex-lg-row">
                 <div className="col-12 col-lg-6 pe-lg-2 mt-3 mt-lg-0">
-                    <h3 className={`fade-in-up ${style.serviceTitle}`}>{category.title}</h3>
-                    <p className={`${style.paragraph} mb-3 mb-lg-4`}>{category.description}</p>
+                    <h3 className={`fade-in-up ${style.se_txt_40}`}>{category.title}</h3>
+                    <p className={`${style.se_txt_15} mb-3 mb-lg-4`}>{category.description}</p>
                     <div className={`${style.servicesList} row p-0 row-cols-1 row-cols-md-2`}>
                         {category.services.map((service, index) => (
                             <div key={index} className={`${style.serviceItem} d-flex flex-column`}>
                                 <div>
-                                    <h4>{service.serviceName}</h4>
-                                    <h5>{service.serviceDescription?.title}</h5>
-                                    <ul>
+                                    <h4 className={`${style.se_txt_18}`}>{service.serviceName}</h4>
+                                    <h5 className={`${style.se_txt_12}`}>{service.serviceDescription?.title}</h5>
+                                    <ul  className={`${style.se_txt_14} pb-3`}>
                                         {service.pricing.map((pricing, idx) => (
-                                            <li key={idx}>
+                                            <li key={idx}  className={`${style.se_txt_14}`}>
                                                 {pricing.duration} | Rs.{pricing.price}
                                             </li>
                                         ))}

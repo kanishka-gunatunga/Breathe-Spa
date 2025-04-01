@@ -1,5 +1,5 @@
 import React from 'react'
-import style from '@/styles/services.module.css'
+import pageStyle from '@/styles/page.module.css'
 
 interface MainTitleProps {
   text: string;
@@ -7,7 +7,7 @@ interface MainTitleProps {
 
 const Paragraph: React.FC<MainTitleProps> = (props) => {
   return (
-    <h2 className={`${style.paragraph} mb-0`}>{props.text}</h2>
+    <h2 className={`${pageStyle.map_hours_desc} mb-0`}>{props.text}</h2>
   )
 }
 
