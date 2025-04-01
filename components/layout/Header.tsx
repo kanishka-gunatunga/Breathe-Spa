@@ -5,12 +5,14 @@ import Image from 'next/image';
 import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import Container from 'react-bootstrap/Container';
+// import Container from 'react-bootstrap/Container';
+import pageStyles from "@/styles/page.module.css"
 
 const Header = () => {
   return (
-    <Navbar bg="light" expand="lg" className="p-3">
-      <Container>
+    <div className={`${pageStyles.contactContainer}`}>
+      <Navbar bg="white" expand="lg" className="p-3" style={{backgroundColor: "#fff !important"}}>
+      {/* <Container className='mx-0 w-100' > */}
         <Navbar.Brand href="/">
           <Image src="/BreatheLogo25Black.png" alt="Breathe Logo" width={317} height={33} />
         </Navbar.Brand>
@@ -25,8 +27,9 @@ const Header = () => {
             <Nav.Link className='nav-item' href="#">T & C</Nav.Link>
           </Nav>
         </Navbar.Collapse>
-      </Container>
+      {/* </Container> */}
     </Navbar>
+    </div>
   );
 };
 

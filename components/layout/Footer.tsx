@@ -7,7 +7,7 @@ import Button from "@/components/ReusableComponents/Button";
 
 const Footer = () => {
   return (
-    <div className="footer position-relative mt-5" style={{backgroundColor: "#F2EDE6"}}>
+    <div className="footer position-relative mt-5" style={{ backgroundColor: "#F2EDE6" }}>
 
       {/* <svg width="100%" height="100%" viewBox="0 0 1200 500" fill="none" xmlns="http://www.w3.org/2000/svg" className='footer-backg'>
         <g clipPath="url(#clip0_711_4869)">
@@ -21,8 +21,8 @@ const Footer = () => {
         </defs>
       </svg> */}
       <svg width="100%" height="100%" viewBox="0 0 1440 151" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M376.779 30.0272C219.86 36.3225 0 89.2316 0 89.2316V-83H1440V89.2316C1440 89.2316 1382.81 108.974 1302.06 126.14C1246.98 137.852 1180.93 148.364 1114.6 150.59C848.186 159.529 643.086 19.3437 376.779 30.0272Z" fill="white"/>
-</svg>
+        <path d="M376.779 30.0272C219.86 36.3225 0 89.2316 0 89.2316V-83H1440V89.2316C1440 89.2316 1382.81 108.974 1302.06 126.14C1246.98 137.852 1180.93 148.364 1114.6 150.59C848.186 159.529 643.086 19.3437 376.779 30.0272Z" fill="white" />
+      </svg>
 
       <div className='col-12 position-relative footer-content'>
         <div className='row footer-row'>
@@ -35,8 +35,8 @@ const Footer = () => {
 
           <div className='col-12 col-md-4 col-lg-4 d-flex justify-content-end gap-3'>
             <Form action="/search" className='d-flex search-form'>
-              <input name="query" className='form-control' placeholder='Join a Newsletter'/>
-              <Button text="Subscribe" href=""/>
+              <input name="query" className='form-control' placeholder='Join a Newsletter' />
+              <Button text="Subscribe" href="" />
             </Form>
           </div>
         </div>
