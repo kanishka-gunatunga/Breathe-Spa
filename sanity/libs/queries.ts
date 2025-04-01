@@ -58,3 +58,66 @@ export const GET_SERVICE_MAIN_PAGE_DATA = `
         tagdescription
       }
 `;
+
+
+export const GET_ABOUT_PAGE_DATA = `
+   *[_type == "aboutMainPage"] {
+        _id,
+        AboutsHeroImage,
+        sectionOneTitle,
+        sectionOneImage,
+        sectionOneDescription,
+        sectionOneButton,
+        sectionOneButtonLink,
+        secTwoTitle,
+        sectionTwoImage,
+        sectionTwoDescription,
+        sectionTwoButton,
+        sectionTwoButtonLink
+      }
+`;
+
+
+export const GET_TEAM_DATA = `
+   *[_type == "aboutMainPage"] {
+        _id,
+        title,
+        teamArray[]{
+        name,
+        description,
+        mainImage
+        },
+       
+      }
+`;
+
+export const GET_TESTIMONIAL_DATA = `
+   *[_type == "testimonials"] {
+        _id,
+        title,
+        testimonialsArray[]{
+        name,
+        position,
+        rate,
+        description,
+        mainImage
+        },
+       
+      }
+`;
+
+export const GET_ETHOS_DATA = `
+   *[_type == "ethos"] {
+        _id,
+        title,
+        description,
+        ethosArray[]{
+          name,
+          description,
+          mainImage,
+          button,
+          link
+        },
+       
+      }
+`;
