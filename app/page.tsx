@@ -64,7 +64,6 @@ export default function Home() {
               <h1 className={seStyles.se_txt_50_coe}>
                 Bespoke Wellness for Relaxation, Rejuvenation, & Personalized Care
               </h1>
-
               <p className={seStyles.se_txt_14_work_sans}>
                 At Breathe Day Spa’s calm and elegant space, we help you look, feel, and be your best. We provide luxurious massages, bespoke manicures and pedicures, and HydraFacial treatments. Our therapists are internationally trained and certified, and we are obsessed with hygiene.
               </p>

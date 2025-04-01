@@ -80,6 +80,7 @@ a {
   padding: 40px 16px;
   /* max-width: 1400px;   */
   margin: 0 auto; 
+  
 }
 
 @media (min-width: 768px) {

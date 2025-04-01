@@ -30,14 +30,14 @@ console.log("services: ", servicesMainData[0]?.title);
       </div>
 
       {/* services description page */}
-      <div className={`section py-3 ${pageStyle.contactContainer}`}>
+      <div className={`section w-100 py-3 ${pageStyle.contactContainer}`}>
         <div className="d-flex flex-column flex-lg-row w-100">
           <div className="col-12 col-lg-5 d-flex">
           {servicesMainData[0].mainImage && (
             <Image src={urlFor(servicesMainData[0]?.mainImage).url()} alt='services description image' width={600} height={800} className={`${style.imgHeight} fade-in`} />
           )}
           </div>
-          <div className="col-12 col-lg-7 ps-lg-5 d-flex flex-column align-items-stretch" data-aos="fade-left">
+          <div className="col-12 col-lg-7 ps-lg-5 d-flex flex-column align-items-stretch pt-4 p-lg-0" data-aos="fade-left">
             <MainTitle title={servicesMainData[0]?.title} />
             <Paragraph text={servicesMainData[0]?.description} />
           </div>

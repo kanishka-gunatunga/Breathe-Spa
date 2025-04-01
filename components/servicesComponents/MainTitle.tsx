@@ -7,7 +7,7 @@ interface MainTitleProps {
 
 const MainTitle: React.FC<MainTitleProps> = (props) => {
   return (
-    <h2 className={pageStyle.section_title}>{props.title}</h2>
+    <h2 className={`${pageStyle.section_title} mb-0`}>{props.title}</h2>
   )
 }
 
