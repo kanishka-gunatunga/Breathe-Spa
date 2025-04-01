@@ -1,6 +1,8 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
+import pageStyle from '@/styles/services.module.css'
+
 
 
 interface ButtonProps {
@@ -10,7 +12,7 @@ interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({ text, href }) => {
     const buttonElement = (
-        <button type="button" className="brownButton">
+        <button type="button" className={`${pageStyle.darkButton}`}>
             {text}
         </button>
     );
