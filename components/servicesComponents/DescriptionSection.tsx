@@ -10,7 +10,7 @@ interface MainTitleProps {
 
 const DescriptionSection: React.FC<MainTitleProps> = (props) => {
     return (
-        <div className={`d-flex position-relative flex-column justify-content-center align-items-center ${style.mobileHeight}`} style={{ width: "100%", overflow: "hidden" }}>
+        <div className={`d-flex position-relative flex-column justify-content-center align-items-center ${style.mobileHeight} mb-5`} style={{ width: "100%", overflow: "hidden" }}>
             <svg
                 className={style.shapedBg}
                 width="100%"
