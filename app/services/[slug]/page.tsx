@@ -54,7 +54,7 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
       </div>
 
 
-      <div className={`section pb-0 ${pageStyle.contactContainer}`}>
+      <div className={`w-100 pt-5 pb-0 ${pageStyle.contactContainer}`}>
         <div className="d-flex flex-column flex-lg-row">
           <div className="col-12 col-lg-5 d-flex">
 
@@ -62,7 +62,7 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
               <Image src={urlFor(category.servicesImage).url()} alt='services description image' width={600} height={800} className={style.imgHeight} />
             )}
           </div>
-          <div className="col-12 col-lg-7 ps-lg-5 d-flex flex-column align-items-streach">
+          <div className="col-12 col-lg-7 ps-lg-5 d-flex flex-column align-items-streach pt-4 pt-lg-0">
             <MainTitle title={category.title} />
             <Paragraph text={category.categoryDescription} />
           </div>
@@ -78,7 +78,7 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
                 title={title}
                 description={groupedServices[title][0].serviceDescription?.description}
               />
-              <div className={`my-3 my-lg-0 section pb-0 ${pageStyle.contactContainer}`}>
+              <div className={`my-3 my-lg-0 w-100 pb-0 ${pageStyle.contactContainer}`}>
                 {groupedServices[title].map((service, index) => (
                   <div
                     key={service.serviceName + index}
@@ -105,7 +105,7 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
                           </ul>
                           <Paragraph text={service.serviceItemDescription} />
                           <div className="d-flex d-md-none my-3">
-                          <Link href={"/contact"}>Learn More</Link>
+                          <Link href={"/contact"} className={`${style.se_link_a_20}`}>Learn More</Link>
                           </div>
                         </div>
                       </div>
