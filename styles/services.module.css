@@ -504,6 +504,19 @@
     font-family: "Work Sans", sans-serif;
     font-weight: 300;
 }
+.se_txt_35_awsome {
+    font-size: 35px;
+    color: #313131;
+    font-family: 'AwesomeSerif', sans-serif;
+    font-weight: 400;
+}
+.se_txt_20_work_sans {
+    font-size: 20px;
+    color: #211E1E;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 300;
+    text-align: center;
+}
 @media screen and (min-width: 1920px) {
     .se_title_60 {
         font-size: 64px;
@@ -540,6 +553,12 @@
     }
     .se_txt_16_work_sans {
         font-size: 20px;
+    }
+    .se_txt_35_awsome {
+        font-size: 40px;
+    }
+    .se_txt_20_work_sans {
+        font-size: 28px;
     }
 }
 
@@ -580,6 +599,12 @@
     .se_txt_16_work_sans {
         font-size: 28px;
     }
+    .se_txt_35_awsome {
+        font-size: 46px;
+    }
+    .se_txt_20_work_sans {
+        font-size: 36px;
+    }
 }
 
 @media screen and (min-width: 3840px) {
@@ -618,5 +643,11 @@
     }
     .se_txt_16_work_sans {
         font-size: 36px;
+    }
+    .se_txt_35_awsome {
+        font-size: 50px;
+    }
+    .se_txt_20_work_sans {
+        font-size: 42px;
     }
 }

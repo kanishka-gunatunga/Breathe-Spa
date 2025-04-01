@@ -12,6 +12,7 @@ import 'swiper/css/pagination';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import AboutStyles from "@/styles/about.module.css";
+import styles from "@/styles/services.module.css";
 
 interface CardItem {
     id: number;
@@ -23,52 +24,51 @@ interface CardItem {
 }
 
 const CardSlider: React.FC = () => {
-    // Sample card data with local image paths
     const cards: CardItem[] = [
         {
             id: 1,
-            title: 'Team Member 1',
-            description: 'Description of team member 1 and their role.',
-            imageUrl: '/teamImg.png', // Path from public folder
+            title: 'David Miller',
+            description: 'Senior Beautician',
+            imageUrl: '/teamImg.png',
             buttonText: 'View Profile',
             buttonLink: '#'
         },
         {
             id: 2,
-            title: 'Team Member 2',
-            description: 'Description of team member 2 and their role.',
+            title: 'David Miller',
+            description: 'Senior Beautician',
             imageUrl: '/teamImg.png',
             buttonText: 'View Profile',
             buttonLink: '#'
         },
         {
             id: 3,
-            title: 'Team Member 3',
-            description: 'Description of team member 3 and their role.',
+            title: 'David Miller',
+            description: 'Senior Beautician',
             imageUrl: '/teamImg.png',
             buttonText: 'View Profile',
             buttonLink: '#'
         },
         {
             id: 4,
-            title: 'Team Member 4',
-            description: 'Description of team member 4 and their role.',
+            title: 'David Miller',
+            description: 'Senior Beautician',
             imageUrl: '/teamImg.png',
             buttonText: 'View Profile',
             buttonLink: '#'
         },
         {
             id: 5,
-            title: 'Team Member 5',
-            description: 'Description of team member 5 and their role.',
+            title: 'David Miller',
+            description: 'Senior Beautician',
             imageUrl: '/teamImg.png',
             buttonText: 'View Profile',
             buttonLink: '#'
         },
         {
             id: 6,
-            title: 'Team Member 6',
-            description: 'Description of team member 6 and their role.',
+            title: 'David Miller',
+            description: 'Senior Beautician',
             imageUrl: '/teamImg.png',
             buttonText: 'View Profile',
             buttonLink: '#'
@@ -121,8 +121,8 @@ const CardSlider: React.FC = () => {
 
                             </div>
                             <div className={`card-body d-flex flex-column ${AboutStyles.cardBody}`}>
-                                <h5 className={`card-title ${AboutStyles.title}`}>{card.title}</h5>
-                                <p className={`card-text flex-grow-1${AboutStyles.description}`}>{card.description}</p>
+                                <h5 className={`card-title ${styles.se_txt_35_awsome}`}>{card.title}</h5>
+                                <p className={`card-text flex-grow-1 ${styles.se_txt_20_work_sans}`}>{card.description}</p>
                                 {/* {card.buttonText && (
                                     <a href={card.buttonLink} className="btn btn-primary mt-auto align-self-start">
                                         {card.buttonText}
