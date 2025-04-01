@@ -13,6 +13,8 @@
     font-style: normal;
 }
 
+
+
 .nav-item {
     font-family: 'AwesomeSerif', sans-serif;
     font-weight: 700;
@@ -139,7 +141,7 @@
 
 @media screen and (max-width: 968px) {
 
-    .navbar-nav{
+    /* .navbar-nav{
     display: none !important;
     }
 
@@ -149,7 +151,7 @@
 
     .navbar-collapse{
         justify-content: end !important;
-    }
+    } */
     .footer-content {
         padding-inline: 10px;
         background-color: #F2EDE6 !important;

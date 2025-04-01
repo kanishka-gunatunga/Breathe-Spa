@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Inria_Sans, Scheherazade_New } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
-// import Footer from "@/components/layout/Footer";
+// import CollapsibleExample from "@/components/layout/CollapsibleExample";
+import Footer from "@/components/layout/Footer";
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import ClientWrapper from "@/components/servicesComponents/ClientWrapper";
 
@@ -32,11 +33,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${scheherazadeNew.variable} ${inriaSans.variable}`}>
+        {/* <CollapsibleExample/> */}
         <Header />
         {/* <ClientWrapper> */}
           {children}
           {/* </ClientWrapper> */}
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );
