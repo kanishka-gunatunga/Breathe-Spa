@@ -11,10 +11,10 @@ import pageStyles from "@/styles/page.module.css"
 const Header = () => {
   return (
     <div className={`${pageStyles.contactContainer}`}>
-      <Navbar bg="white" expand="lg" className="p-3" style={{backgroundColor: "#fff !important"}}>
+      <Navbar bg="white" expand="lg" className="p-3 navStyleMobile" style={{backgroundColor: "#fff !important"}}>
       {/* <Container className='mx-0 w-100' > */}
         <Navbar.Brand href="/">
-          <Image src="/BreatheLogo25Black.png" alt="Breathe Logo" width={317} height={33} />
+          <Image src="/BreatheLogo25Black.png" alt="Breathe Logo" width={317} height={33} className='img-fluid' />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">

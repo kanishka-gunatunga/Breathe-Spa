@@ -177,3 +177,19 @@ a {
   border: 2px solid white !important;
   background-color: white !important
 }
+
+@media screen and (max-width: 600px) {
+  .navbar{
+    padding: 0px !important;
+    display: flex !important;
+    flex-direction: row  !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+  }
+  .navStyleMobile{
+    padding: 0px !important;
+  }
+  .navbar img{
+    max-width: 150px;
+  }
+}
