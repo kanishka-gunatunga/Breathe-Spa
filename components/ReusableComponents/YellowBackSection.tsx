@@ -17,7 +17,7 @@ interface YellowBackSectionProps {
 const YellowBackSection: React.FC<YellowBackSectionProps> = ({ title, description, image, buttonText }) => {
     return (
 
-        <div className={`d-flex position-relative flex-column justify-content-center align-items-center ${styles.mobileHeightOnMobile}`} style={{ width: "100%", overflow: "hidden" }}>
+        <div className={`d-flex position-relative flex-column justify-content-center align-items-center`} style={{ width: "100%", overflow: "hidden" }}>
             {/* <svg
                 className={`${styles.YellowBackMobileHide}`}
                 width="100%"
@@ -32,22 +32,18 @@ const YellowBackSection: React.FC<YellowBackSectionProps> = ({ title, descriptio
 
 
             <div className={`${styles.shapedBg}`}>
-                <div className={`${styles.contactContainer} `}>
-                    <div >
-                        <div className="d-block d-lg-flex d-xl-flex gap-5 w-100 py-5">
+                <div className={`${styles.contactContainer} w-100`}>
+                    <div className='w-100'>
+                        <div className="d-flex d-lg-flex d-xl-flex flex-column-reverse flex-lg-row gap-5 w-100 py-5">
 
-                            {/* Left Column - Text */}
                             <div className={`col-12 col-lg-6 d-flex flex-column justify-content-between ${styles.locationContainer}`}>
                                 <div>
-                                    {/* <h3 className={styles.locationDivTitle}>{title}</h3>
-                                    <p className={styles.locationDivP}>{description}</p> */}
                                     <MainTitle title={title} />
                                     <Paragraph text={description} />
                                 </div>
                                 <Button text={buttonText} href="#" ></Button>
                             </div>
 
-                            {/* Right Column - Image */}
                             <div className="col-12 col-lg-6 d-flex justify-content-center ">
                                 <Image src={image} alt="Location" width={640} height={731} className="img-fluid rounded" />
                             </div>

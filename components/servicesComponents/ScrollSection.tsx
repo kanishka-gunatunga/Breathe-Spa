@@ -40,9 +40,9 @@ const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category, cat
     }, [category]);
 
     return (
-        <div className={`section ${pageStyle.contactContainer}`}  id={`section-${categoryId}`}>
+        <div className={` w-100 ${pageStyle.contactContainer}`}  id={`section-${categoryId}`}>
             <div className="d-none d-lg-flex flex-column-reverse flex-lg-row">
-                <div className="col-12 col-lg-6 pe-lg-2 mt-3 mt-lg-0">
+                <div className="col-12 col-lg-6 pe-lg-2 mt-0 mt-lg-0">
                     <h3 className={`fade-in-up ${style.se_txt_40}`}>{category.title}</h3>
                     <p className={`${style.se_txt_15} mb-3 mb-lg-4`}>{category.description}</p>
                     <div className={`${style.servicesList} row p-0 row-cols-1 row-cols-md-2`}>
@@ -85,7 +85,7 @@ const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category, cat
                 <div className="col-12 col-lg-6 pe-lg-2 mt-3 mt-lg-0">
                     <h3 className={`fade-in-up ${style.se_txt_40}`}>{category.title}</h3>
                     <p className={`${style.se_txt_15} mb-3 mb-lg-4`}>{category.description}</p>
-                    <div className={`${style.servicesList} row p-0 row-cols-1 row-cols-md-2`}>
+                    <div className={`${style.servicesList} mb-0 row p-0 row-cols-1 row-cols-md-2`}>
                         {category.services.map((service, index) => (
                             <div key={index} className={`${style.serviceItem} d-flex flex-column`}>
                                 <div>

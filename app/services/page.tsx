@@ -32,7 +32,7 @@ console.log("services: ", servicesMainData[0]?.title);
       {/* services description page */}
       <div className={`section w-100 py-3 ${pageStyle.contactContainer}`}>
         <div className="d-flex flex-column flex-lg-row w-100">
-          <div className="col-12 col-lg-5 d-flex">
+          <div className="col-12 col-lg-5 d-flex pt-3 pt-lg-0">
           {servicesMainData[0].mainImage && (
             <Image src={urlFor(servicesMainData[0]?.mainImage).url()} alt='services description image' width={600} height={800} className={`${style.imgHeight} fade-in`} />
           )}
@@ -46,7 +46,7 @@ console.log("services: ", servicesMainData[0]?.title);
 
       <DescriptionSection title={servicesMainData[0]?.tagLine} description={servicesMainData[0]?.tagdescription} />
 
-      <div className="scroll-sections mt-5">
+      <div className="scroll-sections mt-lg-5">
         {services.map((category, index) => (
           <ServiceCategoryCard key={index} category={category} categoryId={index} />
         ))}
