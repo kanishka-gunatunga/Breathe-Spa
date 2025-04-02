@@ -29,7 +29,7 @@ const Footer = () => {
 </svg> */}
           
 
-          <div className='col-12 position-relative footer-content'>
+          <div className='col-12 position-relative footer-content px-0'>
             <div className='row footer-row'>
               <div className='col-12 col-md-8 col-lg-8 d-flex justify-content-start mb-5 mb-md-0 mb-lg-0'>
                 <a className="navbar-brand" href="#">
