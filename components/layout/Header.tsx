@@ -4,7 +4,6 @@ import Image from 'next/image';
 import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-// import Container from 'react-bootstrap/Container';
 import pageStyles from "@/styles/page.module.css"
 
 const Header = () => {
