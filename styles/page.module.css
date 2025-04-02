@@ -1605,4 +1605,10 @@ a.text-decoration-none {
     margin-left: 15px !important;
     margin-right: 15px !important;
   }
+
+
+  .arrowDiv {
+    right: 15px;
+    bottom: 10px;
+  }
 }

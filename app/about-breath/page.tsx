@@ -28,9 +28,9 @@ const page = () => {
         
         {/* section 3  about brehte for desktop and mobile hide*/}
         <div className={` ${styles.contactContainer} section`}>
-          <div className={`d-block d-lg-flex justify-content-center gap-5 mt-5 ${styles.headSection}`}>
-            <div className={`col-12 col-lg-5 my-5 my-md-0 my-lg-0 `}>
-              <Image className={`${pageStyle.imgHeight}`} src="/about1.png" height={650} width={548} alt="" />
+          <div className={`d-block d-lg-flex justify-content-center gap-5 mt-5 ${styles.headSection} `}>
+            <div className={`col-12 col-lg-5 my-5 my-md-0 my-lg-0 position-relative`}>
+              <Image className={`${pageStyle.imgHeight} `} src="/about1.png" height={650} width={548} alt="" />
             </div>
             <div className={`col-12 col-lg-5 d-flex flex-column pt-4 pt-lg-0 about ${styles.aboutBreatheContainer}`}>
               <MainTitle title={"About Breathe"} />
@@ -81,7 +81,7 @@ const page = () => {
                 {[1, 2, 3].map((testimonial) => (
                   <SwiperSlide key={testimonial}>
                     <div className={`card ${styles.testimonialCard}`}>
-                      <div className="card-body">
+                      <div className="card-body p-0 p-lg-2">
                         <div className="d-block d-md-flex d-lg-flex gap-5">
                           <div>
                             <Image
@@ -138,7 +138,7 @@ const page = () => {
           </div>
         </div>
 
-        <div className={`d-flex position-relative flex-column justify-content-center align-items-center ${styles.mobileHeightOnMobile}  ${styles.shapedBg}`} style={{ width: "100%", overflow: "hidden" }}>
+        <div className={`d-flex position-relative  py-5 pb-0 pb-md-5  flex-column justify-content-center align-items-center ${styles.mobileHeightOnMobile}  ${styles.shapedBg}`} style={{ width: "100%", overflow: "hidden" }}>
           <div className={`${styles.contactContainer} section py-0 py-lg-5`}>
             <div className="d-flex flex-column align-items-center justify-content-center">
               <MainTitle title={"Team of Breathe"} />
