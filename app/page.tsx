@@ -32,7 +32,7 @@ export default function Home() {
           }}
           effect="fade"
           fadeEffect={{ crossFade: true }}
-          loop={true} 
+          loop={true}
         >
           <SwiperSlide>
             <Image
@@ -268,7 +268,7 @@ export default function Home() {
 
             <div className="row">
               <h3 className={seStyles.se_txt_40}>Professionalism</h3>
-              <p className={seStyles.se_txt_16_work_sans_dark}  style={{textAlign: "justify"}}>
+              <p className={seStyles.se_txt_16_work_sans_dark} style={{ textAlign: "justify" }}>
                 We understand that for our clients, a visit to Breathe Day Spa is an investment in their wellbeing.
                 Our specialist therapists are trained and certified internationally to ensure the highest quality treatments, and their craft is as much an art as it is a talent.
                 Our treatments entail high attention to detail so our appointments run to time. We value our clients’ time and appreciate punctual arrival for treatments.
@@ -288,7 +288,7 @@ export default function Home() {
             <div className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start">
               <div className="row">
                 <h3 className={seStyles.se_txt_40}>Hygiene</h3>
-                <p className={seStyles.se_txt_16_work_sans_dark}  style={{textAlign: "justify"}}>
+                <p className={seStyles.se_txt_16_work_sans_dark} style={{ textAlign: "justify" }}>
                   We are obsessed with hygiene and maintain surgery-grade sterilization standards at all times. We use hospital-grade, EPA-approved disinfectants to sanitize all metal instruments, followed by sterilization in an Autoclave, ensuring surgical-grade standards. We also use high quality metal foot files & crystal foot files which allows us to safely and gently remove calluses. The files are then sanitized and sterilized. We use podiatrist approved products such as Gehwol and Footlogix to treat various nail and skin conditions. Our strict sanitization procedures ensure a safe and hygienic experience for every guest.
                 </p>
               </div>
@@ -314,7 +314,7 @@ export default function Home() {
 
               <div className="row">
                 <h3 className={seStyles.se_txt_40}>Personalized Care</h3>
-                <p className={`${seStyles.se_txt_16_work_sans_dark}`} style={{textAlign: "justify"}}>
+                <p className={`${seStyles.se_txt_16_work_sans_dark}`} style={{ textAlign: "justify" }}>
                   We understand that each client’s wellness and beauty needs are unique. From a simple manicure to a customized massage treatment to help you melt into relaxation, to curating the ultimate Spa Day for your valuable “me-time”, our team will help personalize each experience for you.
                 </p>
               </div>
@@ -406,15 +406,15 @@ export default function Home() {
 
       <YellowBackSection
         title="Conveniently Located in Central Colombo"
-        description="Breathe is within a 15-minute drive from all prominent Hotels in the heart of Colombo. Our neighborhood is in Cinnamon Gardens –  where the old-world charm of tree-lined streets, parks, and large gardens of beautifully preserved colonial homes – is a repository of heritage and beauty within the rapidly evolving urban dynamics of Colombo.  We choose a beautiful old bungalow down a leafy, residential cul-de-sac. It is one of the most tranquil quarters of Colombo and ideally suited for Breathe’s bespoke and private experience style. The Spa blends in to the neighborhood with minimal external signage – partly to preserve the serene, residential ambiance, but also to enhance its ‘hidden refuge in Cinnamon Gardens’ vibe."
-          image="/interior.png"
-        buttonText="Discover Our Location"
-        />
-      
+        description="Breathe is within a 15-minute drive from all prominent Hotels in the heart of Colombo. Our neighborhood is in Cinnamon Gardens –  where the old-world charm of tree-lined streets, parks, and large gardens of beautifully preserved colonial homes – is a repository of heritage and beauty within the rapidly evolving urban dynamics of Colombo. We choose a beautiful old bungalow down a leafy, residential cul-de-sac. It is one of the most tranquil quarters of Colombo and ideally suited for Breathe’s bespoke and private experience style. The Spa blends in to the neighborhood with minimal external signage – partly to preserve the serene, residential ambiance, but also to enhance its ‘hidden refuge in Cinnamon Gardens’ vibe."
+        image="/interior.png"
+        buttonText="Discover Our Location" 
+        buttonLink={""}      />
 
-        <div className={`position-relative mt-0 mt-lg-4 ${styles.contactContainer} section`}>
-         <div className={`${styles.articleDiv}`}>
-            <div className="d-md-flex d-lg-flex d-block justify-content-between">
+
+      <div className={`position-relative mt-0 mt-lg-4 ${styles.contactContainer} section`}>
+        <div className={`${styles.articleDiv}`}>
+          <div className="d-md-flex d-lg-flex d-block justify-content-between">
             <div className="col-12 col-md-8 col-lg-8">
               <div>
                 <h3 className={`${styles.locationDivTitle} text-center text-md-start`}>Recent Articles</h3>
@@ -425,7 +425,7 @@ export default function Home() {
             </div>
 
 
-          <div className={`col-12 col-md-4 col-lg-4 mb-5 mb-lg-0  d-flex justify-content-center  justify-content-lg-end justify-content-md-end ${styles.viewAll}`}>
+            <div className={`col-12 col-md-4 col-lg-4 mb-5 mb-lg-0  d-flex justify-content-center  justify-content-lg-end justify-content-md-end ${styles.viewAll}`}>
               <Button text="View All" href="#" />
             </div>
           </div>
@@ -460,12 +460,12 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            </div>
+          </div>
         </div>
       </div>
-       
+
       <ExclusiveDeals />
-            
-</>
+
+    </>
   );
 }
