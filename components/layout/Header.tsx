@@ -10,7 +10,7 @@ import pageStyles from "@/styles/page.module.css"
 
 const Header = () => {
   return (
-    <div className={`${pageStyles.contactContainer} mobile-width`}>
+    <div className={`${pageStyles.contactContainer} ${pageStyles.mobile_width}`}>
       <Navbar bg="white" expand="lg" className="p-3 navStyleMobile" style={{backgroundColor: "#fff !important"}}>
       {/* <Container className='mx-0 w-100' > */}
         <Navbar.Brand href="/">

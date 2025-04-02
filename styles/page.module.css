@@ -1611,4 +1611,7 @@ a.text-decoration-none {
     right: 15px;
     bottom: 10px;
   }
+  .mobile_width{
+    width: 100% !important;
+  }
 }

@@ -225,6 +225,12 @@ a {
 .navbar-nav a{
   margin-left: 0px !important;
 }
+
+.swiper-pagination{
+  /* bottom: 180px !important; */
+  bottom: 16% !important;
+}
+
 @media screen and (max-width: 600px) {
   .navbar{
     padding: 0px !important;
@@ -262,7 +268,7 @@ a {
     left: -20px;
     border-radius: 100px 20px 100px 20px;
   }
-  .mobile-width{
+  .mobile_width{
     width: 100% !important;
 
   }

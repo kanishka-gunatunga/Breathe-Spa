@@ -14,23 +14,25 @@ import YellowBackSection from "@/components/ReusableComponents/YellowBackSection
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css/effect-fade'
+import { Pagination, Autoplay, EffectFade } from 'swiper/modules';
 
 export default function Home() {
   return (
 
     <>
-      <div className={`d-flex ${style.imageContainer}`}>
+      <div className={`d-flex ${style.imageContainer} position-relative`}>
         <Swiper
 
-          modules={[Pagination, Autoplay]}
+          modules={[Pagination, Autoplay, EffectFade]}
           pagination={{ el: '.swiper-pagination', clickable: true, dynamicBullets: true }}
           autoplay={{
             delay: 3000,
             disableOnInteraction: false,
           }}
-
-
+          effect="fade"
+          fadeEffect={{ crossFade: true }}
+          loop={true} 
         >
           <SwiperSlide>
             <Image
@@ -45,7 +47,17 @@ export default function Home() {
 
           <SwiperSlide>
             <Image
-              src={'/Vector12.png'}
+              src={'/contact_hero.png'}
+              alt='home hero image'
+              width={1920}
+              height={1080}
+              style={{ width: '100vw', height: 'auto', objectFit: 'cover', objectPosition: 'bottom' }}
+            />
+
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              src={'/blog_banner.png'}
               alt='home hero image'
               width={1920}
               height={1080}
