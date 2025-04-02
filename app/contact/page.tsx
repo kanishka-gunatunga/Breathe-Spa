@@ -63,9 +63,9 @@ const Contact = () => {
                 />
             </div>
 
-            <section className={`${styles.contactContainer} pt-5 ${styles.formSection}`}>
-                <div className={`row align-items-stretch ${styles.equalHeightRow}`}>
-                    <div className="col-md-6 mb-4 mb-md-0">
+            <section className={`${styles.contactContainer} section pt-5 ${styles.formSection}`}>
+                <div className={`row align-items-stretch mobile_padding_15 ${styles.equalHeightRow}`}>
+                    <div className="col-md-6 mb-4 mb-md-0 mobile_padding_remove">
                         <div className={styles.imageContainer}>
                             <Image
                                 src="/spa_contact.png"
@@ -76,8 +76,8 @@ const Contact = () => {
                             />
                         </div>
                     </div>
-                    <div className={`col-md-6 ${styles.formWrapper}`}>
-                        <div className={styles.formContainer}>
+                    <div className={`col-md-6 mobile_padding_remove ${styles.formWrapper}`}>
+                        <div className={`${styles.formContainer} mobile_padding_remove`}>
                             <h2 className={styles.section_title}>Schedule your in Haus presence</h2>
                             <p className={`text-muted ${styles.sectionSubTitle}`}>Get in touch with us</p>
 
@@ -94,7 +94,7 @@ const Contact = () => {
 
                             <form onSubmit={handleSubmit} className="mt-4">
                                 <div className="row">
-                                    <div className={`col-md-6 ${styles.contactFormDiv}`}>
+                                    <div className={`col-md-6  ${styles.contactFormDiv}`}>
                                         <label htmlFor="firstName" className={styles.form_label}>
                                             First name
                                         </label>
@@ -204,9 +204,9 @@ const Contact = () => {
 
             <div className={styles.mapHouContainer}>
                 <div className={styles.mapMain}>
-                    <div className={`${styles.contactContainer} p-4`}>
+                    <div className={`${styles.contactContainer} section p-md-4 mobile_padding_remove`}>
                         <div className="row">
-                            <div className={`col-lg-6 col-md-12 mb-4 ${styles.contact_info_container}`}>
+                            <div className={`col-lg-6 col-md-12 mb-4 ${styles.contact_info_container} mobile_padding_remove`}>
                                 <h1 className={styles.sectionTitle}>Schedule your in-Haus presence</h1>
                                 <p className={styles.map_hours_desc}>
                                     Lorem ipsum dolor sit amet consectetur. Amet ultricies pulvinar
@@ -247,7 +247,7 @@ const Contact = () => {
                                 </div>
                             </div>
 
-                            <div className="col-lg-6 col-md-12">
+                            <div className="col-lg-6 col-md-12 mobile_padding_remove">
                                 <div className={styles.map_container}>
                                     <iframe
                                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.847711096713!2d79.85992937481267!3d6.90880641856629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2594fe67ad047%3A0x958aa9f666117ab1!2sBreathe%20Day%20Spa!5e0!3m2!1sen!2slk!4v1742980011520!5m2!1sen!2slk"

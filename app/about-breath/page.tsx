@@ -79,8 +79,9 @@ const page = async () => {
                 spaceBetween={30}
                 className={styles.testimonialSwiper}
               >
-                {[1, 2, 3].map((testimonial) => (
-                  <SwiperSlide key={testimonial}>
+                {/* {[1, 2, 3].map((testimonial) => ( */}
+                {testimonials[0]?.testimonialsArray.map((testimonial, index) => (
+                  <SwiperSlide key={index}>
                     <div className={`card ${styles.testimonialCard}`}>
                       <div className="card-body p-0 p-lg-2">
                         <div className="d-block d-md-flex d-lg-flex gap-5">
@@ -133,7 +134,7 @@ const page = async () => {
                       </div>
                     </div>
                   </SwiperSlide>
-                ))}
+                 ))} 
               </Swiper>
             </div>
           </div>

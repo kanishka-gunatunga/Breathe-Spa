@@ -23,7 +23,7 @@ const BlogPost = () => {
     };
 
     return (
-        <div className={`${styles.contactContainer} py-5 px-4 px-lg-5`}>
+        <div className={`${styles.contactContainer} section py-5 px-lg-5 mobile_padding_remove`}>
             <div className="text-center mb-5">
                 <h1 className={`${styles.sectionTitle} mb-3`}>{blogPost.title}</h1>
                 <p className={`text-[14px] ${styles.blogCardDate}`}>{blogPost.date}</p>
