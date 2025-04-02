@@ -272,4 +272,12 @@ a {
     width: 100% !important;
 
   }
+  .mobile_padding_remove{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .mobile_padding_15{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
 }
