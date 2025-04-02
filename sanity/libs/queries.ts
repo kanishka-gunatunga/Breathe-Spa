@@ -121,3 +121,12 @@ export const GET_ETHOS_DATA = `
        
       }
 `;
+
+export const GET_TERMS_DATA = `
+   *[_type == "termsAndConditions"] {
+        _id,
+        title,
+        subTitle,
+        body,
+      }
+`;

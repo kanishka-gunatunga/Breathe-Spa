@@ -562,12 +562,32 @@
   }
 
   .articleCard1 .card-body, .articleCard2 .card-body, .articleCard3 .card-body{
-    /* background-image: url('../public/Overlay.svg'); */
     background: linear-gradient(180deg, rgba(24, 59, 86, 8.5e-05) 0%, rgba(21, 37, 50, 0.85) 100%);
-    /* background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
   }
+
+  .se_txt_40_awsome {
+    font-size: 40px;
+    color: #000;
+    font-family: 'AwesomeSerif', sans-serif;
+    font-weight: 500;
+}
+
+.blockContent p {
+    font-size: 20px;
+    color: #000;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 300;
+    margin-bottom: 0px;
+}
+.blockContent ul {
+    font-size: 20px;
+    color: #000;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 300;
+}
+.blockContent strong {
+    font-weight: 500;
+}
 @media screen and (min-width: 1920px) {
     .se_title_60 {
         font-size: 64px;
@@ -629,6 +649,15 @@
     }
     .se_26_card_txt {
         font-size: 32px;
+    }
+    .se_txt_40_awsome {
+        font-size: 46px;
+    }
+    .blockContent p {
+        font-size: 28px;
+    }
+    .blockContent ul {
+        font-size: 28px;
     }
 }
 
@@ -692,6 +721,15 @@
     }
     .se_26_card_txt {
         font-size: 38px;
+    }
+    .se_txt_40_awsome {
+        font-size: 52px;
+    }
+    .blockContent p {
+        font-size: 36px;
+    }
+    .blockContent ul {
+        font-size: 36px;
     }
 }
 
@@ -759,6 +797,15 @@
     .se_26_card_txt {
         font-size: 42px;
     }
+    .se_txt_40_awsome {
+        font-size: 56px;
+    }
+    .blockContent p {
+        font-size: 42px;
+    }
+    .blockContent ul {
+        font-size: 42px;
+    }
 }
 
 @media screen and (max-width: 600px){
@@ -767,5 +814,14 @@
     }
     .se_title_60 {
         font-size: 50px;
+    }
+    .se_txt_40_awsome {
+        font-size: 24px;
+    }
+    .blockContent p {
+        font-size: 16px;
+    }
+    .blockContent ul {
+        font-size: 16px;
     }
 }

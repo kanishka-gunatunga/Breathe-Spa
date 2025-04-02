@@ -1,3 +1,5 @@
+import { TypedObject } from "@portabletext/types";
+
 export interface ServiceCategory {
   _id: string
   _type: 'serviceCategory'
@@ -92,4 +94,11 @@ export interface Client {
   rate: string
   description: string
   mainImage?: Image
+}
+
+export interface Terms {
+  _id: string
+  title: string
+  subTitle: string
+  body: TypedObject[];
 }
