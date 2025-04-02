@@ -85,7 +85,7 @@ export interface Member {
 export interface TestimonialData {
   _id: string
   title: string,
-  teamArray: Client[]
+  testimonialsArray: Client[]
 }
 
 export interface Client {

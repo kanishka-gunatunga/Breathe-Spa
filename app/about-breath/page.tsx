@@ -16,56 +16,56 @@ import style from '@/styles/services.module.css'
 import YellowBackSection from "@/components/ReusableComponents/YellowBackSection";
 import Paragraph from "@/components/servicesComponents/Paragraph";
 import MainTitle from "@/components/servicesComponents/MainTitle";
+import { getAboutMainPageData, getTestimonialData } from "@/sanity/libs/api";
+import { urlFor } from "@/sanity/libs/sanity";
 
 
-const page = () => {
+const page = async () => {
+
+  const about = await getAboutMainPageData()
+  const testimonials = await getTestimonialData()
+  console.log("testimonials: ", testimonials);
+
   return (
     <div>
       <div className={styles.aboutPage}>
         <div className={`d-flex ${style.imageContainer}`}>
-          <Image src={"/banner-about.png"} alt='services hero image' width={1920} height={1080} style={{ width: "100vw", height: "auto", objectFit: 'cover' }} />
+          {about[0].AboutsHeroImage && (
+            <Image src={urlFor(about[0]?.AboutsHeroImage).url() || "/banner-about.png"} alt='services hero image' width={1920} height={1080} style={{ width: "100vw", height: "auto", objectFit: 'cover' }} />
+          )}
+
         </div>
 
-        {/* section 3  about brehte for desktop and mobile hide*/}
         <div className={` ${styles.contactContainer} section`}>
           <div className={`d-block d-lg-flex justify-content-center gap-5 mt-5 ${styles.headSection} `}>
             <div className="col-12 col-lg-5 my-5 my-md-0 my-lg-0 position-relative imgShapeContainer">
               <div className="bgShapeImage"></div>
               <div className="imageWrapper">
-                <Image className={`${pageStyle.imgHeight}`} src="/about1.png" height={650} width={548} alt="" />
+                {about[0].sectionOneImage && (
+                  <Image className={`${pageStyle.imgHeight}`} src={urlFor(about[0]?.sectionOneImage).url() || "/about1.png"} height={650} width={548} alt="" />
+                )}
               </div>
             </div>
 
             <div className={`col-12 col-lg-5 d-flex flex-column pt-4 pt-lg-0 about ${styles.aboutBreatheContainer}`}>
-              <MainTitle title={"About Breathe"} />
-              <Paragraph text={"Lorem ipsum dolor sit amet consectetur. Sed curabitur non adipiscing varius ut ullamcorper elementum duis. Sodales sem ultrices non diam diam rhoncus. Cursus ac odio purus consequat ac consequat tortor euismod viverra. Dignissim integer molestie dictum aliquet est quam. Augue viverra sed ullamcorper amet faucibus ipsum et. Amet vulputate morbi morbi euismod aliquam egestas sem tellus. Quisque et tincidunt tincidunt cras amet nulla vestibulum. Est quisque sed vel pretium nam pharetra. Nunc viverra pretium ultricies in ultrices. Velit orci a interdum odio vitae eu non lorem. Quisque velit pharetra nascetur id sagittis facilisis nam morbi. Egestas at sed sed fermentum ornare. Aenean pharetra amet vivamus nec. Viverra diam ac nec turpis cursus. Fringilla scelerisque malesuada sapien egestas et. Risus mi natoque sed ac varius semper. Nulla laoreet in tortor ac augue. Sit cursus id commodo enim. Nullam semper id porttitor non vitae tincidunt. Lectus in habitasse aliquam sed pellentesque. Ligula lectus dignissim ac consequat eleifend massa quam dictumst. Mi mi tortor aliquam sed ut dolor pellentesque dolor."} />
-              <Button text="BOOK A TREATMENT" href="#" />
+              <MainTitle title={about[0]?.sectionOneTitle} />
+              <Paragraph text={about[0]?.sectionOneDescription} />
+              <Button text={about[0]?.sectionOneButton} href={about[0]?.sectionOneButtonLink || "/contact"} />
             </div>
           </div>
         </div>
 
+        {about[0].sectionTwoImage && (
+          <YellowBackSection
+            title={about[0]?.secTwoTitle}
+            description={about[0]?.sectionTwoDescription}
+            image={urlFor(about[0]?.sectionTwoImage).url() || "/about2.png"}
+            buttonText={about[0]?.sectionTwoButton}
+            buttonLink={about[0]?.sectionTwoButtonLink || "/services"}
+          />
+        )}
 
-        {/* about breathe mobile view desktop hide */}
-        {/* <div className={`${style.contactContainer} ${styles.OnmobileHideExtra}`}>
-          <div className="px-3 d-flex flex-column justify-content-center">
-            <div className={`${styles.mobileSection} pt-5`}>
-              <Image className={`img-fluid ${styles.locationImg1}`} src="/about1.png" height={650} width={"100"} alt="" style={{ width: '100%' }} />
-              <div className={`${styles.aboutBreathDescriptionMobile} pb-5 pt-4`}>
-                <MainTitle title={"About Breathe"} />
-                <Paragraph text={"Lorem ipsum dolor sit amet consectetur. Sed curabitur non adipiscing varius ut ullamcorper elementum duis. Sodales sem ultrices non diam diam rhoncus. Cursus ac odio purus consequat ac consequat tortor euismod viverra. Dignissim integer molestie dictum aliquet est quam. Augue viverra sed ullamcorper amet faucibus ipsum et. Amet vulputate morbi morbi euismod aliquam egestas sem tellus. Quisque et tincidunt tincidunt cras amet nulla vestibulum. Est quisque sed vel pretium nam pharetra. Nunc viverra pretium ultricies in ultrices. Velit orci a interdum odio vitae eu non lorem. Quisque velit pharetra nascetur id sagittis facilisis nam morbi. Egestas at sed sed fermentum ornare. Aenean pharetra amet vivamus nec. Viverra diam ac nec turpis cursus. Fringilla scelerisque malesuada sapien egestas et. Risus mi natoque sed ac varius semper. Nulla laoreet in tortor ac augue. Sit cursus id commodo enim. Nullam semper id porttitor non vitae tincidunt. Lectus in habitasse aliquam sed pellentesque. Ligula lectus dignissim ac consequat eleifend massa quam dictumst. Mi mi tortor aliquam sed ut dolor pellentesque dolor."} />
-              </div>
-            </div>
-          </div>
-        </div> */}
 
-        <YellowBackSection
-          title="Why Choose Us"
-          description="Lorem ipsum dolor sit amet consectetur. Ac arcu auctor non imperdiet laoreet morbi tristique metus. Bibendum enim ut non ac aenean malesuada eget lectus. Vitae amet at amet diam. Massa porttitor mi scelerisque praesent auctor pharetra eget ut. Augue elementum consequat lacus sit. Suspendisse ipsum odio eu sagittis semper tincidunt. Sit ultrices egestas arcu odio tristique amet interdum montes. Cras vel sed cursus vulputate viverra mauris. Pellentesque quam ultricies adipiscing quam nunc purus lectus. Vitae amet velit at ut. Adipiscing amet eleifend duis a augue. Maecenas vulputate sed tellus imperdiet dictum imperdiet etiam quis. Blandit consectetur placerat imperdiet in purus amet. Eget posuere ac commodo ultrices tristique dolor turpis interdum semper. Arcu ut ornare placerat dolor scelerisque tincidunt commodo duis egestas. Euismod amet scelerisque nullam purus duis velit. Augue sit aliquet auctor aliquam. Mauris egestas dolor egestas consectetur. Blandit eget egestas mauris sit. Feugiat neque consequat sit lorem mattis enim nibh. Neque odio quis ultrices morbi sit augue ut eget. Bibendum enim proin dui ut in. Ac placerat quisque iaculis rhoncus ut sit. Leo a vulputate purus et."
-          image="/about2.png"
-          buttonText="EXPLORE OUR SERVICES"
-        />
-
-        {/* Testimonials Swiper */}
         <div className={`${styles.baseSection}`}>
           <div className="d-flex flex-column align-items-center justify-content-center">
             <MainTitle title={"Testimonials"} />
@@ -76,9 +76,6 @@ const page = () => {
                   nextEl: '.testimonial-next',
                   prevEl: '.testimonial-prev',
                 }}
-                // pagination={{
-                //   clickable: true,
-                // }}
                 spaceBetween={30}
                 className={styles.testimonialSwiper}
               >

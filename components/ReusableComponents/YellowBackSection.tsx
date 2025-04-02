@@ -12,9 +12,11 @@ interface YellowBackSectionProps {
     description: string;
     image: string;
     buttonText: string;
+    buttonLink: string;
 }
 
-const YellowBackSection: React.FC<YellowBackSectionProps> = ({ title, description, image, buttonText }) => {
+const YellowBackSection: React.FC<YellowBackSectionProps> = ({ title, description, image, buttonText, buttonLink }) => {
+    
     return (
 
         <div className={`d-flex position-relative flex-column justify-content-center align-items-center`} style={{ width: "100%", overflow: "hidden" }}>
@@ -41,7 +43,7 @@ const YellowBackSection: React.FC<YellowBackSectionProps> = ({ title, descriptio
                                     <MainTitle title={title} />
                                     <Paragraph text={description} />
                                 </div>
-                                <Button text={buttonText} href="#" ></Button>
+                                <Button text={buttonText} href={buttonLink} ></Button>
                             </div>
 
                             <div className="col-12 col-lg-6 d-flex justify-content-center ">
