@@ -69,7 +69,7 @@ const page = () => {
         <div className={`${styles.baseSection}`}>
           <div className="d-flex flex-column align-items-center justify-content-center">
             <MainTitle title={"Testimonials"} />
-            <div className="col-12 col-md-12 col-lg-8 position-relative">
+            <div className="col-12 col-md-12 col-lg-8 position-relative mb-5">
               <Swiper
                 modules={[Navigation, Pagination]}
                 navigation={{
