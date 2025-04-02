@@ -167,6 +167,8 @@ a {
 
 
 
+
+
 .swiper-pagination-bullet {
   position: absolute;
   background-color: transparent !important;
@@ -178,7 +180,9 @@ a {
   border: 2px solid white !important;
   background-color: white !important
 }
-
+.card-body{
+  box-shadow: none;
+}
 @media screen and (max-width: 600px) {
   .navbar{
     padding: 0px !important;
@@ -193,4 +197,23 @@ a {
   .navbar img{
     max-width: 150px;
   }
+
+  .logo_footer{
+    width: 250px !important;
+    height: auto !important;
+  }
+
+  .section{
+    width: 100% !important;
+  }
+
+  .articleCard1 .card-body , .articleCard2 .card-body, .articleCard3 .card-body{
+    padding: 0px !important;
+  }
+  
+  .starRate svg{
+    width: 16px !important;
+    height: 16px !important;
+  }
 }
+

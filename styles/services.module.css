@@ -760,3 +760,9 @@
         font-size: 42px;
     }
 }
+
+@media screen and (max-width: 600px){
+    .se_txt_50_coe{
+        font-size: 40px;
+    }
+}

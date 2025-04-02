@@ -1592,4 +1592,17 @@ a.text-decoration-none {
     padding-left: 15px !important;
     padding-right: 15px !important;
   }
+  .articleDiv{
+    width: 100% !important;
+  }
+  .exclusiveDeals{
+    margin-top: 0px;
+  }
+  .articleCard1 .card-body , .articleCard2 .card-body, .articleCard3 .card-body{
+    padding: 0px !important;
+  }
+  .exclusiveDeals{
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+  }
 }

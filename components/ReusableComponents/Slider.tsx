@@ -86,10 +86,10 @@ const CardSlider: React.FC = () => {
                 // navigation
                 // pagination={{ clickable: true }}
                 // autoplay={false}
-                autoplay={{
-                    delay: 3000,
-                    disableOnInteraction: false,
-                }}
+                // autoplay={{
+                //     delay: 3000,
+                //     disableOnInteraction: false,
+                // }}
                 breakpoints={{
                     576: {
                         slidesPerView: 1,
@@ -105,17 +105,17 @@ const CardSlider: React.FC = () => {
                 
             >
                 {cards.map((card) => (
-                    <SwiperSlide key={card.id} style={{paddingTop:'48px'}}>
-                        <div className={`card h-100 shadow-sm ${AboutStyles.teamMemberCard}`}>
-                            <div style={{ position: 'relative', height: '440px' }}>
-                                <div className={`position-absolute ${AboutStyles.positionAbDiv}}`} style={{ height: '350px' }}>
+                    <SwiperSlide key={card.id} style={{paddingTop:'48px',backgroundColor: "transparent !important"}}>
+                        <div className={`card h-100 ${AboutStyles.teamMemberCard}`} style={{ borderRadius: "30px !important"}}>
+                            <div className='shadow-sm' style={{ position: 'relative', height: '440px',borderRadius: "30px !important",backgroundColor: "transparent !important", }}>
+                                <div className={`position-absolute  ${AboutStyles.positionAbDiv}}`} style={{ height: '350px', borderRadius: "30px !important"}}>
                                     <Image
                                         src={card.imageUrl}
                                         alt={card.title}
                                         fill
-                                        style={{ objectFit: 'cover' }}
+                                        style={{ objectFit: 'cover', borderRadius: "30px !important", backgroundColor: "transparent !important" }}
                                         // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                        className={`${AboutStyles.TeamImg}`}
+                                        className={`${AboutStyles.TeamImg} `}
                                     />
                                 </div>
 

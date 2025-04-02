@@ -245,7 +245,7 @@ export default function Home() {
       <DescriptionSection title="Our Ethos" description=" We are passionately committed to providing our clients with the most professional, customized, and hygienic wellness experience." />
 
 
-      <div className={`section py-3 ${styles.OnDesktopHideExtra}  ${styles.contactContainer}`}>
+      <div className={`section py-3 ${styles.OnDesktopHideExtra}  ${styles.contactContainer} `}>
 
         {/* proffesionalism */}
         <div className="d-block d-md-block d-lg-flex gap-5 mb-5">
@@ -344,7 +344,7 @@ export default function Home() {
 
         {/* hygene */}
         <div className="row mb-5">
-          <div className="d-block d-md-block d-lg-flex gap-5 pb-5">
+          <div className="d-block d-md-block d-lg-flex gap-5 pb-lg-5">
             <div className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start">
               <div className="row">
                 <h3 className={seStyles.se_txt_40}>Hygiene</h3>
@@ -367,7 +367,7 @@ export default function Home() {
 
         {/* Personalized Care */}
         <div className="row">
-          <div className="d-block d-md-block d-lg-flex gap-5 pb-5">
+          <div className="d-block d-md-block d-lg-flex gap-5 pb-lg-5">
             <div className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start">
 
               <div className="row">
@@ -400,20 +400,20 @@ export default function Home() {
         />
       
 
-        <div className={`position-relative mt-4 ${styles.contactContainer}`}>
-      <div className={`${styles.articleDiv}`}>
+        <div className={`position-relative mt-0 mt-lg-4 ${styles.contactContainer} section`}>
+         <div className={`${styles.articleDiv}`}>
             <div className="d-md-flex d-lg-flex d-block justify-content-between">
             <div className="col-12 col-md-8 col-lg-8">
               <div>
-                <h3 className={styles.locationDivTitle}>Recent Articles</h3>
-                <p className={`mt-0 ${styles.locationDivP}`}>
+                <h3 className={`${styles.locationDivTitle} text-center text-md-start`}>Recent Articles</h3>
+                <p className={`mt-0 ${styles.locationDivP} text-center text-md-start`}>
                   Here’s what we&apos;ve been up to recently.
                 </p>
               </div>
             </div>
 
 
-            <div className={`col-12 col-md-4 col-lg-4  d-flex justify-content-start justify-content-lg-end justify-content-md-end ${styles.viewAll}`}>
+          <div className={`col-12 col-md-4 col-lg-4 mb-5 mb-lg-0  d-flex justify-content-center  justify-content-lg-end justify-content-md-end ${styles.viewAll}`}>
               <Button text="View All" href="#" />
             </div>
           </div>
@@ -421,7 +421,7 @@ export default function Home() {
 
           <div className="d-md-flex d-lg-flex d-block justify-content-between">
             <div className={`card ${styles.articleCard1}`}>
-              <div className="card-body d-flex align-items-end">
+              <div className="card-body p-0 p-md-2 d-flex align-items-end">
                 <Image className={`img-fluid `} src="/articleCard1.png" height={368} width={624} alt="" />
                 <p className={seStyles.se_26_card_txt}>
                   Scarlet Spy tries a Copper Room treatment
@@ -431,7 +431,7 @@ export default function Home() {
 
 
             <div className={`card ${styles.articleCard2}`}>
-              <div className="card-body d-flex align-items-end">
+              <div className="card-body p-0 p-md-2 d-flex align-items-end">
                 <Image className={`img-fluid `} src="/articleCard2.png" height={368} width={624} alt="" />
                 <p className={seStyles.se_26_card_txt}>
                   Scarlet Spy tries a Copper Room treatment
@@ -441,7 +441,7 @@ export default function Home() {
 
 
             <div className={`card ${styles.articleCard3}`}>
-              <div className="card-body d-flex align-items-end">
+              <div className="card-body p-0 p-md-2 d-flex align-items-end">
                 <Image className={`img-fluid `} src="/articleCard3.png" height={368} width={624} alt="" />
                 <p className={seStyles.se_26_card_txt}>
                   Scarlet Spy tries a Copper Room treatment

@@ -40,7 +40,7 @@ const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category, cat
     }, [category]);
 
     return (
-        <div className={` w-100 ${pageStyle.contactContainer}`}  id={`section-${categoryId}`}>
+        <div className={` ${pageStyle.contactContainer}`}  id={`section-${categoryId}`}>
             <div className="d-none d-lg-flex flex-column-reverse flex-lg-row">
                 <div className="col-12 col-lg-6 pe-lg-2 mt-0 mt-lg-0">
                     <h3 className={`fade-in-up ${style.se_txt_40}`}>{category.title}</h3>

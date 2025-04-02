@@ -24,10 +24,10 @@ const DescriptionSection: React.FC<MainTitleProps> = (props) => {
             </svg> */}
 
             <div
-                className={`${pageStyle.shapedBg} ${pageStyle.contactContainer} d-flex flex-column justify-content-center align-items-center w-100 text-center fade-in-up py-5 `}
+                className={`${pageStyle.shapedBg}  d-flex flex-column justify-content-center align-items-center w-100 text-center fade-in-up py-5 `}
                
             >
-                <div className="py-5">
+                <div className={`py-5 section ${pageStyle.contactContainer}`}>
                     <h2 className={style.se_title_60}>{props.title}</h2>
                     <p className={style.se_txt_15}>{props.description}</p>
                 </div>

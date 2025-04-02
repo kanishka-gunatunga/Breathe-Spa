@@ -12,7 +12,7 @@ const Footer = () => {
     <>
 
       <div className="footer position-relative mt-5" style={{ backgroundColor: "#F2EDE6" }}>
-      <svg width="100%" height="100%" viewBox="0 0 1440 151" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="100%" height="100%" viewBox="0 0 1440 151" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M376.779 30.0272C219.86 36.3225 0 89.2316 0 89.2316V-83H1440V89.2316C1440 89.2316 1382.81 108.974 1302.06 126.14C1246.98 137.852 1180.93 148.364 1114.6 150.59C848.186 159.529 643.086 19.3437 376.779 30.0272Z" fill="white" />
           </svg>
         <div className={` ${styles.contactContainer} section`}>
@@ -33,7 +33,7 @@ const Footer = () => {
             <div className='row footer-row'>
               <div className='col-12 col-md-8 col-lg-8 d-flex justify-content-start mb-5 mb-md-0 mb-lg-0'>
                 <a className="navbar-brand" href="#">
-                  <Image src="/BreatheLogo25Black.png" alt="Breathe Logo" width={317} height={33} />
+                  <Image src="/BreatheLogo25Black.png" alt="Breathe Logo" width={317} height={33} className='logo_footer' />
                 </a>
               </div>
 

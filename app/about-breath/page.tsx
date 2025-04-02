@@ -85,7 +85,7 @@ const page = () => {
                         <div className="d-block d-md-flex d-lg-flex gap-5">
                           <div>
                             <Image
-                              className={styles.testimonialPic}
+                              className={`${styles.testimonialPic} rounded`}
                               src="/testimonialPic.png"
                               alt="Testimonial"
                               width={289}
@@ -93,13 +93,13 @@ const page = () => {
                             />
                           </div>
                           <div className="d-flex flex-column justify-content-between pt-5">
-                            <p className={pageStyle.se_txt_20_work_sans}>
+                            <p className={`${pageStyle.se_txt_20_work_sans} text-start text-md-start`}>
                               &quot;Lorem ipsum dolor sit amet consectetur. Nisl in dictum viverra in sagittis tincidunt. Ut aenean id mattis quis consectetur at cras accumsan. Maecenas pulvinar tortor ligula aliquam scelerisque pharetra.&quot;
                             </p>
                             <div>
                               <h5 className={pageStyle.se_txt_25_awesome}>David Miller</h5>
                               <p className={pageStyle.se_txt_16_work_sans}>Marketing Envato Pvt Ltd.</p>
-                              <div className="d-flex">
+                              <div className="d-flex starRate">
                                 {[...Array(5)].map((_, i) => (
                                   <svg
                                     key={i}
@@ -139,7 +139,7 @@ const page = () => {
         </div>
 
         <div className={`d-flex position-relative flex-column justify-content-center align-items-center ${styles.mobileHeightOnMobile}  ${styles.shapedBg}`} style={{ width: "100%", overflow: "hidden" }}>
-          <div className={`${styles.contactContainer} py-0 py-lg-5`}>
+          <div className={`${styles.contactContainer} section py-0 py-lg-5`}>
             <div className="d-flex flex-column align-items-center justify-content-center">
               <MainTitle title={"Team of Breathe"} />
             </div>

@@ -139,7 +139,7 @@ const page = () => {
                             <div>
                               <h5 className={styles.testimonialCardName}>David Miller</h5>
                               <p className={styles.testimonialCardJob}>Marketing Envato Pvt Ltd.</p>
-                              <div className="d-flex">
+                              <div className="d-flex starRate">
                                 {[...Array(5)].map((_, i) => (
                                   <svg
                                     key={i}
