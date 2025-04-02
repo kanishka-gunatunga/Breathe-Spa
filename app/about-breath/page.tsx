@@ -93,6 +93,9 @@ const page = async () => {
                               width={289}
                               height={343}
                             />
+                            {about[0].sectionOneImage && (
+                  <Image className={`${pageStyle.imgHeight}`} src={urlFor(about[0]?.sectionOneImage).url() || "/about1.png"} height={650} width={548} alt="" />
+                )}
                           </div>
                           <div className="d-flex flex-column justify-content-between pt-5">
                             <p className={`${pageStyle.se_txt_20_work_sans} text-start text-md-start`}>
