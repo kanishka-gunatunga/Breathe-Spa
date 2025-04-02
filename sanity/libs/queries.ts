@@ -79,7 +79,7 @@ export const GET_ABOUT_PAGE_DATA = `
 
 
 export const GET_TEAM_DATA = `
-   *[_type == "aboutMainPage"] {
+   *[_type == "team"] {
         _id,
         title,
         teamArray[]{

@@ -17,24 +17,29 @@ import style from '@/styles/services.module.css'
 import YellowBackSection from "@/components/ReusableComponents/YellowBackSection";
 import Paragraph from "@/components/servicesComponents/Paragraph";
 import MainTitle from "@/components/servicesComponents/MainTitle";
-import { getAboutMainPageData, getTestimonialData } from "@/sanity/libs/api";
+import { getAboutMainPageData, getTeamData, getTestimonialData } from "@/sanity/libs/api";
 import { urlFor } from "@/sanity/libs/sanity";
 import { useEffect, useState } from "react";
-import { AboutMainData, TestimonialData } from "@/sanity/types";
+import { AboutMainData, TeamData, TestimonialData } from "@/sanity/types";
+
 
 
 const page = () => {
 
   const [about, setAbout] = useState<AboutMainData[] | null>(null);
   const [testimonials, setTestimonials] = useState<TestimonialData[] | null>(null);
+  const [team, setTeam] = useState<TeamData[] | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const aboutData = await getAboutMainPageData();
         const testimonialData = await getTestimonialData();
+        const teamData = await getTeamData();
         setAbout(aboutData);
         setTestimonials(testimonialData);
+        setTeam(teamData)
+        console.log(teamData)
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -97,7 +102,6 @@ const page = () => {
                 spaceBetween={30}
                 className={styles.testimonialSwiper}
               >
-                {/* {[1, 2, 3].map((testimonial) => ( */}
                 {testimonials[0]?.testimonialsArray.map((testimonial, index) => (
                   <SwiperSlide key={index}>
                     <div className={`card ${styles.testimonialCard}`}>
@@ -165,10 +169,10 @@ const page = () => {
         <div className={`d-flex position-relative  py-5 pb-0 pb-md-5  flex-column justify-content-center align-items-center ${styles.mobileHeightOnMobile}  ${styles.shapedBg}`} style={{ width: "100%", overflow: "hidden" }}>
           <div className={`${styles.contactContainer} section py-0 py-lg-5`}>
             <div className="d-flex flex-column align-items-center justify-content-center">
-              <MainTitle title={"Team of Breathe"} />
+              <MainTitle title={team?.[0]?.title || "Team of Breathe"} />
             </div>
             <div className="d-block d-lg-flex d-xl-flex gap-5">
-              <CardSlider />
+              <CardSlider team={team?.[0]?.teamArray || []} />
             </div>
           </div>
         </div>
