@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 'use client';
 import Button from "@/components/ReusableComponents/Button";
 import styles from "@/styles/page.module.css";
@@ -18,14 +19,31 @@ import Paragraph from "@/components/servicesComponents/Paragraph";
 import MainTitle from "@/components/servicesComponents/MainTitle";
 import { getAboutMainPageData, getTestimonialData } from "@/sanity/libs/api";
 import { urlFor } from "@/sanity/libs/sanity";
+import { useEffect, useState } from "react";
+import { AboutMainData, TestimonialData } from "@/sanity/types";
 
 
-const page = async () => {
+const page = () => {
 
-  const about = await getAboutMainPageData()
-  const testimonials = await getTestimonialData()
-  console.log("testimonials: ", testimonials);
+  const [about, setAbout] = useState<AboutMainData[] | null>(null);
+  const [testimonials, setTestimonials] = useState<TestimonialData[] | null>(null);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const aboutData = await getAboutMainPageData();
+        const testimonialData = await getTestimonialData();
+        setAbout(aboutData);
+        setTestimonials(testimonialData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (!about || !testimonials) return <p>Loading...</p>;
   return (
     <div>
       <div className={styles.aboutPage}>
@@ -86,21 +104,25 @@ const page = async () => {
                       <div className="card-body p-0 p-lg-2">
                         <div className="d-block d-md-flex d-lg-flex gap-5">
                           <div>
-                            <Image
-                              className={`${styles.testimonialPic} rounded`}
-                              src="/testimonialPic.png"
-                              alt="Testimonial"
-                              width={289}
-                              height={343}
-                            />
+                            {testimonial.mainImage && (
+                              <Image
+                                className={`${styles.testimonialPic} rounded`}
+                                src={urlFor(testimonial?.mainImage).url() || "/testimonialPic.png"}
+                                alt="Testimonial"
+                                width={289}
+                                height={343}
+                              />
+                            )}
+
+
                           </div>
                           <div className="d-flex flex-column justify-content-between pt-5">
                             <p className={`${pageStyle.se_txt_20_work_sans} text-start text-md-start`}>
-                              &quot;Lorem ipsum dolor sit amet consectetur. Nisl in dictum viverra in sagittis tincidunt. Ut aenean id mattis quis consectetur at cras accumsan. Maecenas pulvinar tortor ligula aliquam scelerisque pharetra.&quot;
+                              &quot;{testimonial.description}&quot;
                             </p>
                             <div>
-                              <h5 className={pageStyle.se_txt_25_awesome}>David Miller</h5>
-                              <p className={pageStyle.se_txt_16_work_sans}>Marketing Envato Pvt Ltd.</p>
+                              <h5 className={pageStyle.se_txt_25_awesome}>{testimonial.name}</h5>
+                              <p className={pageStyle.se_txt_16_work_sans}>{testimonial.position}</p>
                               <div className="d-flex starRate">
                                 {[...Array(5)].map((_, i) => (
                                   <svg
@@ -108,7 +130,7 @@ const page = async () => {
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="26"
                                     height="26"
-                                    fill="#ffc404"
+                                    fill={i < Number(testimonial.rate) ? "#ffc404" : "#d3d3d3"}
                                     className="bi bi-star-fill mx-1"
                                     viewBox="0 0 16 16"
                                   >
@@ -134,7 +156,7 @@ const page = async () => {
                       </div>
                     </div>
                   </SwiperSlide>
-                 ))} 
+                ))}
               </Swiper>
             </div>
           </div>
