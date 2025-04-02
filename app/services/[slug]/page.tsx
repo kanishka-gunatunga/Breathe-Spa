@@ -54,7 +54,7 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
       </div>
 
 
-      <div className={`pt-5 pb-0 ${pageStyle.contactContainer}`}>
+      <div className={`pt-5 pb-0 ${pageStyle.contactContainer} section`}>
         <div className="d-flex flex-column flex-lg-row">
           <div className="col-12 col-lg-5 d-flex">
 
