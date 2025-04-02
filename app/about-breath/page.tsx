@@ -79,8 +79,9 @@ const page = async () => {
                 spaceBetween={30}
                 className={styles.testimonialSwiper}
               >
-                {[1, 2, 3].map((testimonial) => (
-                  <SwiperSlide key={testimonial}>
+                {/* {[1, 2, 3].map((testimonial) => ( */}
+                {testimonials[0]?.testimonialsArray.map((testimonial, index) => (
+                  <SwiperSlide key={index}>
                     <div className={`card ${styles.testimonialCard}`}>
                       <div className="card-body p-0 p-lg-2">
                         <div className="d-block d-md-flex d-lg-flex gap-5">
@@ -92,6 +93,9 @@ const page = async () => {
                               width={289}
                               height={343}
                             />
+                            {about[0].sectionOneImage && (
+                  <Image className={`${pageStyle.imgHeight}`} src={urlFor(about[0]?.sectionOneImage).url() || "/about1.png"} height={650} width={548} alt="" />
+                )}
                           </div>
                           <div className="d-flex flex-column justify-content-between pt-5">
                             <p className={`${pageStyle.se_txt_20_work_sans} text-start text-md-start`}>
@@ -133,7 +137,7 @@ const page = async () => {
                       </div>
                     </div>
                   </SwiperSlide>
-                ))}
+                 ))} 
               </Swiper>
             </div>
           </div>
