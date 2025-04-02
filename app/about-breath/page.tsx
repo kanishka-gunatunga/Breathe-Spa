@@ -25,23 +25,24 @@ const page = () => {
         <div className={`d-flex ${style.imageContainer}`}>
           <Image src={"/banner-about.png"} alt='services hero image' width={1920} height={1080} style={{ width: "100vw", height: "auto", objectFit: 'cover' }} />
         </div>
+        
         {/* section 3  about brehte for desktop and mobile hide*/}
-        <div className={` ${style.contactContainer} ${styles.OnDesktopHideExtra}`}>
+        <div className={` ${styles.contactContainer} section`}>
           <div className={`d-block d-lg-flex justify-content-center gap-5 mt-5 ${styles.headSection}`}>
             <div className={`col-12 col-lg-5 my-5 my-md-0 my-lg-0 `}>
               <Image className={`${pageStyle.imgHeight}`} src="/about1.png" height={650} width={548} alt="" />
             </div>
-            <div className={`col-12 col-lg-5 d-flex flex-column about ${styles.aboutBreatheContainer}`}>
+            <div className={`col-12 col-lg-5 d-flex flex-column pt-4 pt-lg-0 about ${styles.aboutBreatheContainer}`}>
               <MainTitle title={"About Breathe"} />
               <Paragraph text={"Lorem ipsum dolor sit amet consectetur. Sed curabitur non adipiscing varius ut ullamcorper elementum duis. Sodales sem ultrices non diam diam rhoncus. Cursus ac odio purus consequat ac consequat tortor euismod viverra. Dignissim integer molestie dictum aliquet est quam. Augue viverra sed ullamcorper amet faucibus ipsum et. Amet vulputate morbi morbi euismod aliquam egestas sem tellus. Quisque et tincidunt tincidunt cras amet nulla vestibulum. Est quisque sed vel pretium nam pharetra. Nunc viverra pretium ultricies in ultrices. Velit orci a interdum odio vitae eu non lorem. Quisque velit pharetra nascetur id sagittis facilisis nam morbi. Egestas at sed sed fermentum ornare. Aenean pharetra amet vivamus nec. Viverra diam ac nec turpis cursus. Fringilla scelerisque malesuada sapien egestas et. Risus mi natoque sed ac varius semper. Nulla laoreet in tortor ac augue. Sit cursus id commodo enim. Nullam semper id porttitor non vitae tincidunt. Lectus in habitasse aliquam sed pellentesque. Ligula lectus dignissim ac consequat eleifend massa quam dictumst. Mi mi tortor aliquam sed ut dolor pellentesque dolor."} />
-
               <Button text="BOOK A TREATMENT" href="#" />
             </div>
           </div>
         </div>
 
+
         {/* about breathe mobile view desktop hide */}
-        <div className={`${styles.baseSection}, ${styles.OnmobileHideExtra}`}>
+        {/* <div className={`${style.contactContainer} ${styles.OnmobileHideExtra}`}>
           <div className="px-3 d-flex flex-column justify-content-center">
             <div className={`${styles.mobileSection} pt-5`}>
               <Image className={`img-fluid ${styles.locationImg1}`} src="/about1.png" height={650} width={"100"} alt="" style={{ width: '100%' }} />
@@ -51,7 +52,7 @@ const page = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <YellowBackSection
           title="Why Choose Us"
@@ -61,7 +62,7 @@ const page = () => {
         />
 
         {/* Testimonials Swiper */}
-        <div className={styles.baseSection}>
+        <div className={`${styles.baseSection}`}>
           <div className="d-flex flex-column align-items-center justify-content-center">
             <MainTitle title={"Testimonials"} />
             <div className="col-12 col-md-12 col-lg-8 position-relative">
@@ -138,7 +139,7 @@ const page = () => {
         </div>
 
         <div className={`d-flex position-relative flex-column justify-content-center align-items-center ${styles.mobileHeightOnMobile}  ${styles.shapedBg}`} style={{ width: "100%", overflow: "hidden" }}>
-          <div className={`${styles.contactContainer} py-5`}>
+          <div className={`${styles.contactContainer} py-0 py-lg-5`}>
             <div className="d-flex flex-column align-items-center justify-content-center">
               <MainTitle title={"Team of Breathe"} />
             </div>
@@ -147,6 +148,7 @@ const page = () => {
             </div>
           </div>
         </div>
+        
       </div>
       <ExclusiveDeals />
     </div>

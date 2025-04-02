@@ -54,7 +54,7 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
       </div>
 
 
-      <div className={`w-100 pt-5 pb-0 ${pageStyle.contactContainer}`}>
+      <div className={`pt-5 pb-0 ${pageStyle.contactContainer}`}>
         <div className="d-flex flex-column flex-lg-row">
           <div className="col-12 col-lg-5 d-flex">
 
@@ -78,7 +78,7 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
                 title={title}
                 description={groupedServices[title][0].serviceDescription?.description}
               />
-              <div className={`my-3 my-lg-0 w-100 pb-0 ${pageStyle.contactContainer}`}>
+              <div className={`my-3 my-lg-0 pb-0 ${pageStyle.contactContainer}`}>
                 {groupedServices[title].map((service, index) => (
                   <div
                     key={service.serviceName + index}

@@ -30,7 +30,7 @@ console.log("services: ", servicesMainData[0]?.title);
       </div>
 
       {/* services description page */}
-      <div className={`section w-100 py-3 ${pageStyle.contactContainer}`}>
+      <div className={`section py-3 ${pageStyle.contactContainer}`}>
         <div className="d-flex flex-column flex-lg-row w-100">
           <div className="col-12 col-lg-5 d-flex pt-3 pt-lg-0">
           {servicesMainData[0].mainImage && (

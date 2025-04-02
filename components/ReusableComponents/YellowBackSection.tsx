@@ -31,10 +31,10 @@ const YellowBackSection: React.FC<YellowBackSectionProps> = ({ title, descriptio
 
 
 
-            <div className={`${styles.shapedBg}`}>
-                <div className={`${styles.contactContainer} w-100`}>
+            <div className={`${styles.shapedBg} py-5`}>
+                <div className={`${styles.contactContainer} `}>
                     <div className='w-100'>
-                        <div className="d-flex d-lg-flex d-xl-flex flex-column-reverse flex-lg-row gap-5 w-100 py-5">
+                        <div className="d-flex d-lg-flex d-xl-flex flex-column-reverse flex-lg-row gap-5 w-100 py-0 py-lg-5">
 
                             <div className={`col-12 col-lg-6 d-flex flex-column justify-content-between ${styles.locationContainer}`}>
                                 <div>

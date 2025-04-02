@@ -335,7 +335,7 @@ export default function Home() {
             </div>
 
           </div>
-          <div className="col-12 col-md-12 col-lg-6 col-xl-6">
+          <div className="col-12 col-md-12 col-lg-6 col-xl-6 mt-4 mt-lg-0">
             <Button text="EXPLORE MORE" href="#" />
           </div>
 
@@ -358,7 +358,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="col-12 col-md-12 col-lg-6 col-xl-6">
+            <div className="col-12 col-md-12 col-lg-6 col-xl-6  mt-4 mt-lg-0">
               <Button text="EXPLORE MORE" href="#" />
             </div>
           </div>
@@ -382,7 +382,7 @@ export default function Home() {
               </div>
 
             </div>
-            <div className="col-12 col-md-12 col-lg-6 col-xl-6">
+            <div className="col-12 col-md-12 col-lg-6 col-xl-6  mt-4 mt-lg-0">
               <Button text="EXPLORE MORE" href="#" />
             </div>
 
@@ -413,7 +413,7 @@ export default function Home() {
             </div>
 
 
-            <div className={`col-12 col-md-4 col-lg-4 d-flex justify-content-start justify-content-lg-end justify-content-md-end ${styles.viewAll}`}>
+            <div className={`col-12 col-md-4 col-lg-4  d-flex justify-content-start justify-content-lg-end justify-content-md-end ${styles.viewAll}`}>
               <Button text="View All" href="#" />
             </div>
           </div>
