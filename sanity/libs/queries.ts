@@ -177,6 +177,7 @@ export const GET_BLOG_DATA = `
       title,
       slug,
       feturedText,
+      feturedImage,
       mainImage,
       publishedAt,
       body

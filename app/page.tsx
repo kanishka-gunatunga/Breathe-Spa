@@ -17,14 +17,16 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-fade'
 import { Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import { useEffect, useState } from "react";
-import { getEthosData, getHomeData, getSiteData } from "@/sanity/libs/api";
-import { Ethos, HomeData, SiteData } from "@/sanity/types";
+import { getBlogData, getEthosData, getHomeData, getSiteData } from "@/sanity/libs/api";
+import { BlogData, Ethos, HomeData, SiteData } from "@/sanity/types";
 import { urlFor } from "@/sanity/libs/sanity";
+import Link from "next/link";
 
 export default function Home() {
   const [ethos, setEthos] = useState<Ethos[] | null>(null);
   const [home, setHome] = useState<HomeData[] | null>(null);
   const [site, setSite] = useState<SiteData[] | null>(null);
+  const [blogs, setBlogs] = useState<BlogData[] | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,9 +34,12 @@ export default function Home() {
         const ethosData = await getEthosData();
         const homeData = await getHomeData();
         const siteData = await getSiteData();
+        const blogData = await getBlogData();
+
         setEthos(ethosData);
         setHome(homeData)
         setSite(siteData)
+        setBlogs(blogData);
         console.log("siteData : ", siteData)
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -44,7 +49,7 @@ export default function Home() {
     fetchData();
   }, []);
 
-  if (!ethos || !home || !site) return <p>Loading...</p>;
+  if (!ethos || !home || !site || !blogs) return <p>Loading...</p>;
 
   return (
 
@@ -226,7 +231,7 @@ export default function Home() {
                       </div>
 
                       <div className={`col-6  border-0 ${styles.bottomBorder}`}>
-                      {site[0]?.emailArray.map((item, index) => (
+                        {site[0]?.emailArray.map((item, index) => (
                           <p key={index} className={seStyles.se_txt_12_work_sans}>
                             {item.email}
                           </p>
@@ -364,23 +369,53 @@ export default function Home() {
 
 
             <div className={`col-12 col-md-4 col-lg-4 mb-5 mb-lg-0  d-flex justify-content-center  justify-content-lg-end justify-content-md-end ${styles.viewAll}`}>
-              <Button text="View All" href="#" />
+              <Button text="View All" href="/blog" />
             </div>
           </div>
 
 
           <div className="d-md-flex d-lg-flex d-block justify-content-between">
-            <div className={`card ${styles.articleCard1}`}>
-              <div className="card-body p-0 p-md-2 d-flex align-items-end">
-                <Image className={`img-fluid `} src="/articleCard1.png" height={368} width={624} alt="" />
-                <p className={seStyles.se_26_card_txt}>
-                  Scarlet Spy tries a Copper Room treatment
-                </p>
+
+            {blogs.map((post) => (
+              <div key={post._id} className={`card ${styles.articleCard1}`}>
+
+                <div className="card-body p-0 p-md-2 d-flex align-items-end position-relative">
+                  <div style={{
+                    position: "relative",
+                    width: "100%",
+                    height: "100%"
+                  }}>
+                    {post?.feturedImage && (
+                    <Image className={`img-fluid `} src={urlFor(post?.feturedImage).url()} height={368} width={624} alt="" />
+                  )}
+
+                    <div style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      borderRadius: "20px",
+                      background: "linear-gradient(180deg, rgba(24, 59, 86, 0.000085) 0%, rgba(21, 37, 50, 0.85) 100%)"
+                    }} />
+                  </div>
+
+                  <Link
+                    href={typeof post.slug === "string" ? post.slug : post.slug.current}
+                    className={seStyles.se_26_card_txt}
+                    style={{ textDecoration: "none", position: "absolute", bottom: "10px", left: "10px", color: "white" }}
+                  >
+                    {post.title}
+                  </Link>
+                </div>
+
+
               </div>
-            </div>
+            ))}
 
 
-            <div className={`card ${styles.articleCard2}`}>
+
+            {/* <div className={`card ${styles.articleCard2}`}>
               <div className="card-body p-0 p-md-2 d-flex align-items-end">
                 <Image className={`img-fluid `} src="/articleCard2.png" height={368} width={624} alt="" />
                 <p className={seStyles.se_26_card_txt}>
@@ -397,7 +432,7 @@ export default function Home() {
                   Scarlet Spy tries a Copper Room treatment
                 </p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
