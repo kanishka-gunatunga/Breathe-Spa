@@ -170,3 +170,15 @@ export const GET_SITE_DATA = `
       },
     }
 `;
+
+export const GET_BLOG_DATA = `
+   *[_type == "post"] {
+        _id,
+      title,
+      slug,
+      feturedText,
+      mainImage,
+      publishedAt,
+      body
+    }
+`;

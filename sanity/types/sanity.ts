@@ -137,17 +137,15 @@ export interface HeroImage {
   mainImage ?: Image
 }
 
-
 export interface SiteData {
   _id: string
-  logo: Image
+  logo?: Image
   emailArray: Email[]
   phoneNumberArray: PhoneNumber[]
   openDays: OpenItem[]
   address: string,
   socialMedia: SocialMediaItem[]
 }
-
 
 export interface Email {
   email: string
@@ -165,4 +163,14 @@ export interface OpenItem {
 export interface SocialMediaItem {
   link: string
   icon ?: Image
+}
+
+export interface BlogData {
+  _id: string
+  slug: string
+  feturedText: string
+  mainImage: string
+  title: string
+  publishedAt: string
+  body: TypedObject[];
 }

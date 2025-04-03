@@ -1,52 +1,30 @@
+"use client";
+
 import styles from "@/styles/page.module.css";
 import Image from "next/image";
 import BlogCard from "@/components/ReusableComponents/BlogCard";
+import { useEffect, useState } from "react";
+import { BlogData } from "@/sanity/types";
+import { getBlogData } from "@/sanity/libs/api";
 
 const Blog = () => {
-    const blogPosts = [
-        {
-            id: 1,
-            title: 'Unwind & Glow: Your Guide To Ultimate Relaxation',
-            date: '6 January 2025',
-            imageUrl: '/blog_card.png',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-        },
-        {
-            id: 2,
-            title: 'The Benefits of Deep Tissue Massage',
-            date: '6 January 2025',
-            imageUrl: '/blog_card.png',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-        },
-        {
-            id: 3,
-            title: 'Aromatherapy: Healing Through Scent',
-            date: '6 January 2025',
-            imageUrl: '/blog_card.png',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-        },
-        {
-            id: 4,
-            title: 'Mindfulness and Meditation for Stress Relief',
-            date: '6 January 2025',
-            imageUrl: '/blog_card.png',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-        },
-        {
-            id: 5,
-            title: 'Healthy Skin Starts from Within',
-            date: '6 January 2025',
-            imageUrl: '/blog_card.png',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-        },
-        {
-            id: 6,
-            title: 'Top 10 Spa Treatments for Rejuvenation',
-            date: '6 January 2025',
-            imageUrl: '/blog_card.png',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-        },
-    ];
+    const [blogs, setBlogs] = useState<BlogData[] | null>(null);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const blogData = await getBlogData();
+                setBlogs(blogData);
+                console.log("blogData : ", blogData)
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    if (!blogs) return <p>Loading...</p>;
 
     return (
         <div>
@@ -57,7 +35,7 @@ const Blog = () => {
                     width={0}
                     height={0}
                     sizes="100%"
-                    style={{width: '100%', height: 'auto'}}
+                    style={{ width: '100%', height: 'auto' }}
                     alt="Blog Banner"
                 />
             </div>
@@ -65,9 +43,17 @@ const Blog = () => {
             <div className={`${styles.contactContainer} section py-5 px-4 px-lg-5`}>
                 <h3 className={`${styles.section_title} mb-5 text-start`}>Our Recent Posts</h3>
                 <div className="row g-4">
-                    {blogPosts.map((post) => (
-                        <div key={post.id} className="col-md-4 mobile_padding_remove">
-                            <BlogCard post={post}/>
+                    {blogs.map((post) => (
+                        <div key={post._id} className="col-md-4 mobile_padding_remove">
+                            {/* <BlogCard post={post}/> */}
+                            <BlogCard
+                                title={post.title}
+                                slug={post.slug}
+                                feturedText={post.feturedText}
+                                mainImage={post.mainImage}
+                                body={post.body}
+                                publishedAt={post.publishedAt} _id={post._id} />
+
                         </div>
                     ))}
                 </div>

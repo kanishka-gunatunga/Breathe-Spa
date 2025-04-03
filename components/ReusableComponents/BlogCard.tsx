@@ -1,29 +1,40 @@
 import Image from "next/image";
 import styles from "@/styles/page.module.css";
 import Link from "next/link";
+import { BlogData } from "@/sanity/types";
+import { urlFor } from "@/sanity/libs/sanity";
 
-const BlogCard = ({post}: {
-    post: { id: number; title: string; date: string; imageUrl: string; description: string }
-}) => {
+const BlogCard: React.FC<BlogData> = ({ title, slug, mainImage, publishedAt, feturedText }) => {
     return (
-        <Link href={`/blog/${post.id}`} className="text-decoration-none">
+        <Link href={slug} className="text-decoration-none">
             <div
-                className={`bg-white rounded-3 shadow-sm overflow-hidden transition-all duration-300 ease-in-out hover:shadow-md hover:scale-[1.02] cursor-pointer ${styles.blogCard}`}
+                className={`bg-white blogCardBody rounded-3 shadow-sm overflow-hidden transition-all duration-300 ease-in-out hover:shadow-md hover:scale-[1.02] cursor-pointer ${styles.blogCard}`}
             >
-                <Image
-                    src={post.imageUrl}
-                    alt={post.title}
-                    layout="responsive"
-                    width={500}
-                    height={300}
-                    className="w-full h-auto object-cover rounded-top-3"
-                />
+                {mainImage && (
+                    <Image
+                        src={urlFor(mainImage).url()}
+                        alt={title}
+                        layout="responsive"
+                        width={500}
+                        height={300}
+                        className="w-full h-auto object-cover rounded-top-3"
+                    />
+                )}
+
                 <div className="p-4">
-                    <p className={`text-[14px] ${styles.blogCardDate}`}>{post.date}</p>
+                    <p className={`text-[14px] ${styles.blogCardDate}`}>
+                        {new Date(publishedAt).toLocaleDateString("en-GB", {
+                            day: "numeric",
+                            month: "long",
+                            year: "numeric"
+                        })}
+                    </p>
+
                     <h3 className={`mb-2 ${styles.blogCardTitle}`}>
-                        {post.title}
+                        {title}
                     </h3>
-                    <p className={styles.blogCardDesc}>{post.description}</p>
+                    <p className={styles.blogCardDesc}>{feturedText}</p>
+                    {/* <PortableText value={body} /> */}
                     <p className={`${styles.blogCardRead}`}>
                         Read More...
                     </p>
