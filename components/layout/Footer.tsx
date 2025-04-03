@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import "./header-footer.css";
@@ -18,7 +19,7 @@ const Footer = () => {
       try {
         const siteData = await getSiteData();
         setSite(siteData)
-        console.log("siteData : ", siteData)
+        // console.log("siteData : ", siteData)
       } catch (error) {
         console.error("Error fetching data:", error);
       }
