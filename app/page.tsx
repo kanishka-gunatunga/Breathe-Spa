@@ -361,7 +361,7 @@ export default function Home() {
             <div className="col-12 col-md-8 col-lg-8">
               <div>
                 <h3 className={`${styles.locationDivTitle} text-center text-md-start`}>Recent Articles</h3>
-                <p className={`mt-0 ${styles.locationDivP} text-center text-md-start`}>
+                <p className={`mt-0 ${seStyles.se_txt_16_work_sans_dark} text-center text-md-start`}>
                   Here’s what we&apos;ve been up to recently.
                 </p>
               </div>

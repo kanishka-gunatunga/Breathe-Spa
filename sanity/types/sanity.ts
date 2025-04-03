@@ -175,3 +175,10 @@ export interface BlogData {
   publishedAt: string
   body: TypedObject[];
 }
+
+export interface ExclusiveDetails {
+  title: string
+  description: string
+  link: string
+  buttonTxt: string
+}

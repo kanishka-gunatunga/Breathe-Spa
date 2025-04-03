@@ -196,3 +196,13 @@ export const GET_BLOG_BY_SLUG = `
     body
   }
 `;
+
+export const GET_EXCLUSIVE_DATA = `
+   *[_type == "exclusiveDeals"] {
+      _id,
+      title,
+      description,
+      buttonTxt,
+      link,
+    }
+`;
