@@ -117,3 +117,52 @@ export interface EthosItem {
   button: string
   link: string
 }
+
+export interface HomeData {
+  _id: string
+  heroArray: HeroImage[]
+  sectionOneTitle: string,
+  sectionOneImage?: Image
+  sectionOneDescription: string
+  sectionOneButton: string
+  sectionOneButtonLink: string
+  secTwoTitle: string,
+  sectionTwoImage?: Image,
+  sectionTwoDescription: string,
+  sectionTwoButton: string,
+  sectionTwoButtonLink: string
+}
+
+export interface HeroImage {
+  mainImage ?: Image
+}
+
+
+export interface SiteData {
+  _id: string
+  logo: Image
+  emailArray: Email[]
+  phoneNumberArray: PhoneNumber[]
+  openDays: OpenItem[]
+  address: string,
+  socialMedia: SocialMediaItem[]
+}
+
+
+export interface Email {
+  email: string
+}
+
+export interface PhoneNumber {
+  number: string
+}
+
+export interface OpenItem {
+  day: string
+  time: string
+}
+
+export interface SocialMediaItem {
+  link: string
+  icon ?: Image
+}

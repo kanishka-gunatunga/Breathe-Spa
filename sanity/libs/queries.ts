@@ -130,3 +130,43 @@ export const GET_TERMS_DATA = `
         body,
       }
 `;
+
+
+export const GET_HOME_DATA = `
+   *[_type == "home"] {
+        _id,
+      heroArray,
+      sectionOneTitle,
+      sectionOneImage,
+      sectionOneDescription,
+      sectionOneButton,
+      sectionOneButtonLink,
+      secTwoTitle,
+      sectionTwoImage,
+      sectionTwoDescription,
+      sectionTwoButton,
+      sectionTwoButtonLink,
+      }
+`;
+
+export const GET_SITE_DATA = `
+   *[_type == "siteData"] {
+        _id,
+      logo,
+      emailArray[]{
+        email,
+      },
+      phoneNumberArray[]{
+        number,
+      },
+      openDays[]{
+        day,
+        time
+      },
+      address,
+      socialMedia[]{
+        link,
+        icon
+      },
+    }
+`;

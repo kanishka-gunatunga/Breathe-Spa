@@ -17,19 +17,25 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-fade'
 import { Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import { useEffect, useState } from "react";
-import { getEthosData } from "@/sanity/libs/api";
-import { Ethos } from "@/sanity/types";
+import { getEthosData, getHomeData, getSiteData } from "@/sanity/libs/api";
+import { Ethos, HomeData, SiteData } from "@/sanity/types";
 import { urlFor } from "@/sanity/libs/sanity";
 
 export default function Home() {
   const [ethos, setEthos] = useState<Ethos[] | null>(null);
+  const [home, setHome] = useState<HomeData[] | null>(null);
+  const [site, setSite] = useState<SiteData[] | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const ethosData = await getEthosData();
+        const homeData = await getHomeData();
+        const siteData = await getSiteData();
         setEthos(ethosData);
-        console.log(ethosData)
+        setHome(homeData)
+        setSite(siteData)
+        console.log("siteData : ", siteData)
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -38,14 +44,13 @@ export default function Home() {
     fetchData();
   }, []);
 
-  if (!ethos) return <p>Loading...</p>;
+  if (!ethos || !home || !site) return <p>Loading...</p>;
 
   return (
 
     <>
       <div className={`d-flex ${style.imageContainer} position-relative`}>
         <Swiper
-
           modules={[Pagination, Autoplay, EffectFade]}
           pagination={{ el: '.swiper-pagination', clickable: true, dynamicBullets: true }}
           autoplay={{
@@ -56,38 +61,16 @@ export default function Home() {
           fadeEffect={{ crossFade: true }}
           loop={true}
         >
-          <SwiperSlide>
-            <Image
-              src={'/Vector12.png'}
-              alt='home hero image'
-              width={1920}
-              height={1080}
-              style={{ width: '100vw', height: 'auto', objectFit: 'cover', objectPosition: 'bottom' }}
-            />
-
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <Image
-              src={'/contact_hero.png'}
-              alt='home hero image'
-              width={1920}
-              height={1080}
-              style={{ width: '100vw', height: 'auto', objectFit: 'cover', objectPosition: 'bottom' }}
-            />
-
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image
-              src={'/blog_banner.png'}
-              alt='home hero image'
-              width={1920}
-              height={1080}
-              style={{ width: '100vw', height: 'auto', objectFit: 'cover', objectPosition: 'bottom' }}
-            />
-
-          </SwiperSlide>
-
+          {home[0]?.heroArray.map((hero, index) => (
+            <SwiperSlide key={index}>
+              {hero.mainImage && (
+                <Image src={urlFor(hero.mainImage).url() || "/Vector12.png"} alt='home hero image'
+                  width={1920}
+                  height={1080}
+                  style={{ width: '100vw', height: 'auto', objectFit: 'cover', objectPosition: 'bottom' }} />
+              )}
+            </SwiperSlide>
+          ))}
         </Swiper>
         <div className="swiper-pagination position-absolute"></div>
       </div>
@@ -96,16 +79,19 @@ export default function Home() {
           <div className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start">
             <div>
               <h1 className={seStyles.se_txt_50_coe}>
-                Bespoke Wellness for Relaxation, Rejuvenation, & Personalized Care
+                {home[0]?.sectionOneTitle}
               </h1>
               <p className={seStyles.se_txt_14_work_sans}>
-                At Breathe Day Spa’s calm and elegant space, we help you look, feel, and be your best. We provide luxurious massages, bespoke manicures and pedicures, and HydraFacial treatments. Our therapists are internationally trained and certified, and we are obsessed with hygiene.
+                {home[0]?.sectionOneDescription}
               </p>
-              <Image className="img-fluid" src="/Rectangle4422.png" height={400} width={655} alt="" />
+              {home[0]?.sectionOneImage && (
+                <Image className="img-fluid" src={urlFor(home[0]?.sectionOneImage).url() || "/Vector12.png"} height={400} width={655} alt="" />
+              )}
+
             </div>
 
             <div className="mb-md-4 pt-4">
-              <Button href="#" text="Book a Treatment" />
+              <Button href={home[0]?.sectionOneButtonLink} text={home[0]?.sectionOneButton} />
             </div>
           </div>
 
@@ -190,36 +176,21 @@ export default function Home() {
                   <div className={`${seStyles.line_border} mt-5 px-0`}>
                     <h3 className={seStyles.se_txt_18}>HOURS</h3>
                   </div>
+                  {site[0]?.openDays.map((item, index) => (
+                    <div key={index} className="row  py-3 px-0 w-100">
+                      <div className="d-flex">
+                        <div className={`col-6 ${styles.bottomBorder}`}>
+                          <p className={seStyles.se_txt_18}>{item.day}</p>
+                        </div>
 
-                  <div className="row  py-3 px-0 w-100">
-                    <div className="d-flex">
-                      <div className={`col-6 ${styles.bottomBorder}`}>
-                        <p className={seStyles.se_txt_18}>Tuesday to Saturday</p>
-                      </div>
-
-                      <div className={`col-6 ${styles.bottomBorder}`}>
-                        <p className={seStyles.se_txt_12_work_sans}>
-                          9.00am - 8.00pm
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-
-
-                  <div className="row  pb-3 px-0 w-100">
-                    <div className="d-flex ">
-                      <div className={`col-6 ${styles.bottomBorder}`}>
-                        <p className={seStyles.se_txt_18}>Monday</p>
-                      </div>
-
-                      <div className={`col-6 ${styles.bottomBorder}`}>
-                        <p className={seStyles.se_txt_12_work_sans}>
-                          Closed
-                        </p>
+                        <div className={`col-6 ${styles.bottomBorder}`}>
+                          <p className={seStyles.se_txt_12_work_sans}>
+                            {item.time}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  ))}
                 </div>
 
 
@@ -236,9 +207,12 @@ export default function Home() {
                       </div>
 
                       <div className={`col-6 ${styles.bottomBorder}`}>
-                        <p className={seStyles.se_txt_12_work_sans}>
-                          +94  77 244  4888
-                        </p>
+                        {site[0]?.phoneNumberArray.map((item, index) => (
+                          <p key={index} className={seStyles.se_txt_12_work_sans}>
+                            {item.number}
+                          </p>
+                        ))}
+
                       </div>
                     </div>
                   </div>
@@ -252,9 +226,11 @@ export default function Home() {
                       </div>
 
                       <div className={`col-6  border-0 ${styles.bottomBorder}`}>
-                        <p className={seStyles.se_txt_12_work_sans}>
-                          shout@breathe-spa.com
-                        </p>
+                      {site[0]?.emailArray.map((item, index) => (
+                          <p key={index} className={seStyles.se_txt_12_work_sans}>
+                            {item.email}
+                          </p>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -276,7 +252,7 @@ export default function Home() {
         </div>
       </div>
 
-      <DescriptionSection title={ethos[0]?.title || "Our Ethos"} description={ethos[0]?.title || "We are passionately committed to providing our clients with the most professional, customized, and hygienic wellness experience."} />
+      <DescriptionSection title={ethos[0]?.title || "Our Ethos"} description={ethos[0]?.description || "We are passionately committed to providing our clients with the most professional, customized, and hygienic wellness experience."} />
 
       <div className={`section py-3 ${styles.OnDesktopHideExtra} ${styles.contactContainer}`}>
         {ethos[0]?.ethosArray.map((item, index) => (
@@ -332,44 +308,46 @@ export default function Home() {
 
       <div className={`container section py-3 ${styles.OnmobileHideExtra}`}>
         {ethos[0]?.ethosArray.map((item, index) => (
-            <div key={index} className="d-block d-md-block d-lg-flex gap-5 mb-5">
-              <div className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start">
+          <div key={index} className="d-block d-md-block d-lg-flex gap-5 mb-5">
+            <div className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start">
 
-                <div className="row">
-                  <h3 className={seStyles.se_txt_40}>{item.name}</h3>
-                  <p className={seStyles.se_txt_16_work_sans_dark}>
-                    {item.description}
-                  </p>
-                </div>
-                <div>
-                  {item.mainImage && (
-                    <Image
-                      className={`img-fluid ${styles.leftBoxShadow}`}
-                      src={urlFor(item?.mainImage).url() || "/banner-about.png"}
-                      height={368}
-                      width={624}
-                      alt={item.name}
-                    />
-                  )}
-                </div>
-
+              <div className="row">
+                <h3 className={seStyles.se_txt_40}>{item.name}</h3>
+                <p className={seStyles.se_txt_16_work_sans_dark}>
+                  {item.description}
+                </p>
               </div>
-              <div className="col-12 col-md-12 col-lg-6 col-xl-6 mt-4 mt-lg-0">
-                <Button text={item.button} href={item.link || "/contact"} />
+              <div>
+                {item.mainImage && (
+                  <Image
+                    className={`img-fluid ${styles.leftBoxShadow}`}
+                    src={urlFor(item?.mainImage).url() || "/banner-about.png"}
+                    height={368}
+                    width={624}
+                    alt={item.name}
+                  />
+                )}
               </div>
 
             </div>
+            <div className="col-12 col-md-12 col-lg-6 col-xl-6 mt-4 mt-lg-0">
+              <Button text={item.button} href={item.link || "/contact"} />
+            </div>
+
+          </div>
         ))}
       </div>
 
 
+      {home[0]?.sectionTwoImage && (
+        <YellowBackSection
+          title={home[0]?.secTwoTitle}
+          description={home[0]?.sectionTwoDescription}
+          image={urlFor(home[0]?.sectionTwoImage).url() || "/interior.png"}
+          buttonText={home[0]?.sectionTwoButton}
+          buttonLink={home[0]?.sectionTwoButtonLink} />
+      )}
 
-      <YellowBackSection
-        title="Conveniently Located in Central Colombo"
-        description="Breathe is within a 15-minute drive from all prominent Hotels in the heart of Colombo. Our neighborhood is in Cinnamon Gardens –  where the old-world charm of tree-lined streets, parks, and large gardens of beautifully preserved colonial homes – is a repository of heritage and beauty within the rapidly evolving urban dynamics of Colombo. We choose a beautiful old bungalow down a leafy, residential cul-de-sac. It is one of the most tranquil quarters of Colombo and ideally suited for Breathe’s bespoke and private experience style. The Spa blends in to the neighborhood with minimal external signage – partly to preserve the serene, residential ambiance, but also to enhance its ‘hidden refuge in Cinnamon Gardens’ vibe."
-        image="/interior.png"
-        buttonText="Discover Our Location"
-        buttonLink={""} />
 
 
       <div className={`position-relative mt-0 mt-lg-4 ${styles.contactContainer} section`}>
