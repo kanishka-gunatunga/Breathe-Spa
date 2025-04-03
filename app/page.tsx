@@ -376,9 +376,8 @@ export default function Home() {
 
           <div className="d-md-flex d-lg-flex d-block justify-content-between">
 
-            {blogs.map((post) => (
+            {blogs.slice(0, 3).map((post) => (
               <div key={post._id} className={`card ${styles.articleCard1}`}>
-
                 <div className="card-body p-0 p-md-2 d-flex align-items-end position-relative">
                   <div style={{
                     position: "relative",
@@ -386,9 +385,8 @@ export default function Home() {
                     height: "100%"
                   }}>
                     {post?.feturedImage && (
-                    <Image className={`img-fluid `} src={urlFor(post?.feturedImage).url()} height={368} width={624} alt="" />
-                  )}
-
+                      <Image className={`img-fluid `} src={urlFor(post?.feturedImage).url()} height={368} width={624} alt="" />
+                    )}
                     <div style={{
                       position: "absolute",
                       top: 0,
@@ -399,7 +397,6 @@ export default function Home() {
                       background: "linear-gradient(180deg, rgba(24, 59, 86, 0.000085) 0%, rgba(21, 37, 50, 0.85) 100%)"
                     }} />
                   </div>
-
                   <Link
                     href={typeof post.slug === "string" ? post.slug : post.slug.current}
                     className={seStyles.se_26_card_txt}
@@ -408,31 +405,9 @@ export default function Home() {
                     {post.title}
                   </Link>
                 </div>
-
-
               </div>
             ))}
 
-
-
-            {/* <div className={`card ${styles.articleCard2}`}>
-              <div className="card-body p-0 p-md-2 d-flex align-items-end">
-                <Image className={`img-fluid `} src="/articleCard2.png" height={368} width={624} alt="" />
-                <p className={seStyles.se_26_card_txt}>
-                  Scarlet Spy tries a Copper Room treatment
-                </p>
-              </div>
-            </div>
-
-
-            <div className={`card ${styles.articleCard3}`}>
-              <div className="card-body p-0 p-md-2 d-flex align-items-end">
-                <Image className={`img-fluid `} src="/articleCard3.png" height={368} width={624} alt="" />
-                <p className={seStyles.se_26_card_txt}>
-                  Scarlet Spy tries a Copper Room treatment
-                </p>
-              </div>
-            </div> */}
           </div>
         </div>
       </div>
