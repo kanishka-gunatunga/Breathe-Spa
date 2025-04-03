@@ -167,9 +167,10 @@ export interface SocialMediaItem {
 
 export interface BlogData {
   _id: string
-  slug: string
+  slug: string | { current: string };
   feturedText: string
-  mainImage: string
+  feturedImage?: Image
+  mainImage?: Image
   title: string
   publishedAt: string
   body: TypedObject[];

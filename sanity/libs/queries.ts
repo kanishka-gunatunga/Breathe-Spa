@@ -182,3 +182,16 @@ export const GET_BLOG_DATA = `
       body
     }
 `;
+
+export const GET_BLOG_BY_SLUG = `
+  *[_type == "post" && slug.current == $slug][0] {
+    _id,
+    title,
+    slug,
+    feturedText,
+    feturedImage,
+    mainImage,
+    publishedAt,
+    body
+  }
+`;

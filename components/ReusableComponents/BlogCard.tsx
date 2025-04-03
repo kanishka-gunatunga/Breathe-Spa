@@ -6,7 +6,7 @@ import { urlFor } from "@/sanity/libs/sanity";
 
 const BlogCard: React.FC<BlogData> = ({ title, slug, mainImage, publishedAt, feturedText }) => {
     return (
-        <Link href={slug} className="text-decoration-none">
+        <Link href={`/blog/${slug}`} className="text-decoration-none">
             <div
                 className={`bg-white blogCardBody rounded-3 shadow-sm overflow-hidden transition-all duration-300 ease-in-out hover:shadow-md hover:scale-[1.02] cursor-pointer ${styles.blogCard}`}
             >

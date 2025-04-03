@@ -48,9 +48,9 @@ const Blog = () => {
                             {/* <BlogCard post={post}/> */}
                             <BlogCard
                                 title={post.title}
-                                slug={post.slug}
+                                slug={typeof post.slug === "string" ? post.slug : post.slug.current}
                                 feturedText={post.feturedText}
-                                mainImage={post.mainImage}
+                                mainImage={post.feturedImage}
                                 body={post.body}
                                 publishedAt={post.publishedAt} _id={post._id} />
 

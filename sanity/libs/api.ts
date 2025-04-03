@@ -1,5 +1,5 @@
 import { sanityClient } from './sanity'
-import { GET_ABOUT_PAGE_DATA, GET_BLOG_DATA, GET_ETHOS_DATA, GET_HOME_DATA, GET_SERVICE_CATEGORIES, GET_SERVICE_CATEGORY_BY_SLUG, GET_SERVICE_MAIN_PAGE_DATA, GET_SITE_DATA, GET_TEAM_DATA, GET_TERMS_DATA, GET_TESTIMONIAL_DATA } from './queries'
+import { GET_ABOUT_PAGE_DATA, GET_BLOG_BY_SLUG, GET_BLOG_DATA, GET_ETHOS_DATA, GET_HOME_DATA, GET_SERVICE_CATEGORIES, GET_SERVICE_CATEGORY_BY_SLUG, GET_SERVICE_MAIN_PAGE_DATA, GET_SITE_DATA, GET_TEAM_DATA, GET_TERMS_DATA, GET_TESTIMONIAL_DATA } from './queries'
 import { AboutMainData, BlogData, Ethos, HomeData, ServiceCategory, ServiceMainData, SiteData, TeamData, Terms, TestimonialData } from '@/sanity/types'
 
 export async function getServiceCategories(): Promise<ServiceCategory[]> {
@@ -45,3 +45,7 @@ export async function getSiteData(): Promise<SiteData[]> {
 export async function getBlogData(): Promise<BlogData[]> {
   return sanityClient.fetch(GET_BLOG_DATA)
 }
+
+export const fetchBlogData = async (slug: string): Promise<BlogData | null> => {
+  return await sanityClient.fetch(GET_BLOG_BY_SLUG, { slug });
+};

@@ -29,8 +29,8 @@ const Header = () => {
   if (!site) return <p>Loading...</p>;
   return (
     <>
-      <div className='w-100' style={{ backgroundColor: "#F3EEE7 !important" }}>
-        <div className={`${pageStyles.contactContainer} ${pageStyles.mobile_width}`} style={{ backgroundColor: "#F3EEE7 !important" }}>
+      <div className='w-100 navColor' style={{ backgroundColor: "#F3EEE7 !important" }}>
+        <div className={`${pageStyles.contactContainer} ${pageStyles.mobile_width} navColor`} style={{ backgroundColor: "#F3EEE7 !important" }}>
           <Navbar expand="lg" className="p-3 navStyleMobile" style={{ backgroundColor: "#F3EEE7 !important" }} >
             <Navbar.Brand href="/">
               {site[0]?.logo && (
