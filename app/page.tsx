@@ -16,8 +16,30 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade'
 import { Pagination, Autoplay, EffectFade } from 'swiper/modules';
+import { useEffect, useState } from "react";
+import { getEthosData } from "@/sanity/libs/api";
+import { Ethos } from "@/sanity/types";
+import { urlFor } from "@/sanity/libs/sanity";
 
 export default function Home() {
+  const [ethos, setEthos] = useState<Ethos[] | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const ethosData = await getEthosData();
+        setEthos(ethosData);
+        console.log(ethosData)
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (!ethos) return <p>Loading...</p>;
+
   return (
 
     <>
@@ -254,152 +276,90 @@ export default function Home() {
         </div>
       </div>
 
-      <DescriptionSection title="Our Ethos" description=" We are passionately committed to providing our clients with the most professional, customized, and hygienic wellness experience." />
+      <DescriptionSection title={ethos[0]?.title || "Our Ethos"} description={ethos[0]?.title || "We are passionately committed to providing our clients with the most professional, customized, and hygienic wellness experience."} />
 
+      <div className={`section py-3 ${styles.OnDesktopHideExtra} ${styles.contactContainer}`}>
+        {ethos[0]?.ethosArray.map((item, index) => (
+          <div key={index} className="d-block d-md-block d-lg-flex gap-5 mb-5">
+            {index % 2 === 0 ? (
+              <>
+                <div className="col-12 col-md-12 col-lg-6 col-xl-6">
 
-      <div className={`section py-3 ${styles.OnDesktopHideExtra}  ${styles.contactContainer} `}>
+                  {item.mainImage && (
+                    <Image
+                      className={`img-fluid ${styles.leftBoxShadow}`}
+                      src={urlFor(item?.mainImage).url() || "/banner-about.png"}
+                      height={368}
+                      width={624}
+                      alt={item.name}
+                    />
+                  )}
 
-        {/* proffesionalism */}
-        <div className="d-block d-md-block d-lg-flex gap-5 mb-5">
-          <div className="col-12 col-md-12 col-lg-6 col-xl-6">
-            <Image className={`img-fluid ${styles.leftBoxShadow}`} src="/Rectangle4431.png" height={368} width={624} alt="" />
+                </div>
+                <div className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start">
+                  <h3 className={seStyles.se_txt_40}>{item.name}</h3>
+                  <p className={seStyles.se_txt_16_work_sans_dark} style={{ textAlign: "justify" }}>
+                    {item.description}
+                  </p>
+                  <Button text={item.button} href={item.link || "/contact"} />
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start">
+                  <h3 className={seStyles.se_txt_40}>{item.name}</h3>
+                  <p className={seStyles.se_txt_16_work_sans_dark} style={{ textAlign: "justify" }}>
+                    {item.description}
+                  </p>
+                  <Button text={item.button} href={item.link || "/contact"} />
+                </div>
+                <div className="col-12 col-md-12 col-lg-6 col-xl-6">
+                  {item.mainImage && (
+                    <Image
+                      className={`img-fluid ${styles.rightBoxShadow}`}
+                      src={urlFor(item?.mainImage).url() || "/banner-about.png"}
+                      height={368}
+                      width={624}
+                      alt={item.name}
+                    />
+                  )}
+                </div>
+              </>
+            )}
           </div>
-          <div className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start">
-
-            <div className="row">
-              <h3 className={seStyles.se_txt_40}>Professionalism</h3>
-              <p className={seStyles.se_txt_16_work_sans_dark} style={{ textAlign: "justify" }}>
-                We understand that for our clients, a visit to Breathe Day Spa is an investment in their wellbeing.
-                Our specialist therapists are trained and certified internationally to ensure the highest quality treatments, and their craft is as much an art as it is a talent.
-                Our treatments entail high attention to detail so our appointments run to time. We value our clients’ time and appreciate punctual arrival for treatments.
-              </p>
-            </div>
-            <div>
-              <Button text="EXPLORE MORE" href="#" />
-            </div>
-
-          </div>
-        </div>
-
-
-        {/* hygene */}
-        <div className="row mb-5">
-          <div className="d-block d-md-block d-lg-flex gap-5 pb-5">
-            <div className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start">
-              <div className="row">
-                <h3 className={seStyles.se_txt_40}>Hygiene</h3>
-                <p className={seStyles.se_txt_16_work_sans_dark} style={{ textAlign: "justify" }}>
-                  We are obsessed with hygiene and maintain surgery-grade sterilization standards at all times. We use hospital-grade, EPA-approved disinfectants to sanitize all metal instruments, followed by sterilization in an Autoclave, ensuring surgical-grade standards. We also use high quality metal foot files & crystal foot files which allows us to safely and gently remove calluses. The files are then sanitized and sterilized. We use podiatrist approved products such as Gehwol and Footlogix to treat various nail and skin conditions. Our strict sanitization procedures ensure a safe and hygienic experience for every guest.
-                </p>
-              </div>
-              <div>
-                <Button text="EXPLORE MORE" href="#" />
-              </div>
-            </div>
-
-            <div className="col-12 col-md-12 col-lg-6 col-xl-6">
-              <Image className={`img-fluid ${styles.rightBoxShadow}`} src="/hygen.png" height={368} width={624} alt="" />
-            </div>
-          </div>
-        </div>
-
-
-        {/* Personalized Care */}
-        <div className="row">
-          <div className="d-block d-md-block d-lg-flex gap-5 pb-5">
-            <div className="col-12 col-md-12 col-lg-6 col-xl-6">
-              <Image className={`img-fluid ${styles.leftBoxShadow}`} src="/person.png" height={368} width={624} alt="" />
-            </div>
-            <div className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start">
-
-              <div className="row">
-                <h3 className={seStyles.se_txt_40}>Personalized Care</h3>
-                <p className={`${seStyles.se_txt_16_work_sans_dark}`} style={{ textAlign: "justify" }}>
-                  We understand that each client’s wellness and beauty needs are unique. From a simple manicure to a customized massage treatment to help you melt into relaxation, to curating the ultimate Spa Day for your valuable “me-time”, our team will help personalize each experience for you.
-                </p>
-              </div>
-              <div>
-                <Button text="EXPLORE MORE" href="#" />
-              </div>
-
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
 
       <div className={`container section py-3 ${styles.OnmobileHideExtra}`}>
+        {ethos[0]?.ethosArray.map((item, index) => (
+            <div key={index} className="d-block d-md-block d-lg-flex gap-5 mb-5">
+              <div className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start">
 
-        {/* proffesionalism */}
-        <div className="d-block d-md-block d-lg-flex gap-5 mb-5">
-          <div className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start">
-
-            <div className="row">
-              <h3 className={seStyles.se_txt_40}>Professionalism</h3>
-              <p className={seStyles.se_txt_16_work_sans_dark}>
-                We understand that for our clients, a visit to Breathe Day Spa is an investment in their wellbeing.
-                Our specialist therapists are trained and certified internationally to ensure the highest quality treatments, and their craft is as much an art as it is a talent.
-                Our treatments entail high attention to detail so our appointments run to time. We value our clients’ time and appreciate punctual arrival for treatments.
-              </p>
-            </div>
-            <div>
-              <Image className={`img-fluid ${styles.leftBoxShadow}`} src="/Rectangle4431.png" height={368} width={624} alt="" />
-
-            </div>
-
-          </div>
-          <div className="col-12 col-md-12 col-lg-6 col-xl-6 mt-4 mt-lg-0">
-            <Button text="EXPLORE MORE" href="#" />
-          </div>
-
-        </div>
-
-
-        {/* hygene */}
-        <div className="row mb-5">
-          <div className="d-block d-md-block d-lg-flex gap-5 pb-lg-5">
-            <div className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start">
-              <div className="row">
-                <h3 className={seStyles.se_txt_40}>Hygiene</h3>
-                <p className={seStyles.se_txt_16_work_sans_dark}>
-                  We are obsessed with hygiene and maintain surgery-grade sterilization standards at all times. We use hospital-grade, EPA-approved disinfectants to sanitize all metal instruments, followed by sterilization in an Autoclave, ensuring surgical-grade standards. We also use high quality metal foot files & crystal foot files which allows us to safely and gently remove calluses. The files are then sanitized and sterilized. We use podiatrist approved products such as Gehwol and Footlogix to treat various nail and skin conditions. Our strict sanitization procedures ensure a safe and hygienic experience for every guest.
-                </p>
-              </div>
-              <div>
-                <Image className={`img-fluid ${styles.rightBoxShadow}`} src="/hygen.png" height={368} width={624} alt="" />
+                <div className="row">
+                  <h3 className={seStyles.se_txt_40}>{item.name}</h3>
+                  <p className={seStyles.se_txt_16_work_sans_dark}>
+                    {item.description}
+                  </p>
+                </div>
+                <div>
+                  {item.mainImage && (
+                    <Image
+                      className={`img-fluid ${styles.leftBoxShadow}`}
+                      src={urlFor(item?.mainImage).url() || "/banner-about.png"}
+                      height={368}
+                      width={624}
+                      alt={item.name}
+                    />
+                  )}
+                </div>
 
               </div>
-            </div>
-
-            <div className="col-12 col-md-12 col-lg-6 col-xl-6  mt-4 mt-lg-0">
-              <Button text="EXPLORE MORE" href="#" />
-            </div>
-          </div>
-        </div>
-
-
-        {/* Personalized Care */}
-        <div className="row">
-          <div className="d-block d-md-block d-lg-flex gap-5 pb-lg-5">
-            <div className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start">
-
-              <div className="row">
-                <h3 className={seStyles.se_txt_40}>Personalized Care</h3>
-                <p className={seStyles.se_txt_16_work_sans_dark}>
-                  We understand that each client’s wellness and beauty needs are unique. From a simple manicure to a customized massage treatment to help you melt into relaxation, to curating the ultimate Spa Day for your valuable “me-time”, our team will help personalize each experience for you.
-                </p>
-              </div>
-              <div>
-
-                <Image className={`img-fluid ${styles.leftBoxShadow}`} src="/person.png" height={368} width={624} alt="" />
+              <div className="col-12 col-md-12 col-lg-6 col-xl-6 mt-4 mt-lg-0">
+                <Button text={item.button} href={item.link || "/contact"} />
               </div>
 
             </div>
-            <div className="col-12 col-md-12 col-lg-6 col-xl-6  mt-4 mt-lg-0">
-              <Button text="EXPLORE MORE" href="#" />
-            </div>
-
-          </div>
-        </div>
+        ))}
       </div>
 
 
@@ -408,8 +368,8 @@ export default function Home() {
         title="Conveniently Located in Central Colombo"
         description="Breathe is within a 15-minute drive from all prominent Hotels in the heart of Colombo. Our neighborhood is in Cinnamon Gardens –  where the old-world charm of tree-lined streets, parks, and large gardens of beautifully preserved colonial homes – is a repository of heritage and beauty within the rapidly evolving urban dynamics of Colombo. We choose a beautiful old bungalow down a leafy, residential cul-de-sac. It is one of the most tranquil quarters of Colombo and ideally suited for Breathe’s bespoke and private experience style. The Spa blends in to the neighborhood with minimal external signage – partly to preserve the serene, residential ambiance, but also to enhance its ‘hidden refuge in Cinnamon Gardens’ vibe."
         image="/interior.png"
-        buttonText="Discover Our Location" 
-        buttonLink={""}      />
+        buttonText="Discover Our Location"
+        buttonLink={""} />
 
 
       <div className={`position-relative mt-0 mt-lg-4 ${styles.contactContainer} section`}>

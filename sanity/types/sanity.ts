@@ -102,3 +102,18 @@ export interface Terms {
   subTitle: string
   body: TypedObject[];
 }
+
+export interface Ethos {
+  _id: string
+  title: string
+  description: string
+  ethosArray: EthosItem[];
+}
+
+export interface EthosItem {
+  name: string
+  description: string
+  mainImage ?: Image
+  button: string
+  link: string
+}
