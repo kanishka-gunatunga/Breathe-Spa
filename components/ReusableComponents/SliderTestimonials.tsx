@@ -23,7 +23,7 @@ interface TestimonialSliderProps {
 }
 const TestimonialSlider: React.FC<TestimonialSliderProps> = ({ testimonials }) =>{
   return (
-    <div className="col-12 col-md-12 col-lg-8 position-relative mb-5">
+    <div className="col-12 col-md-12 col-lg-10 col-xl-10 position-relative mb-5">
       <Swiper
         modules={[Navigation, Pagination]}
         navigation={{

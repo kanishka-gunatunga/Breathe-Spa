@@ -42,9 +42,11 @@ const AboutPage = async () => {
               </div>
             </div>
 
-            <div className={`col-12 col-lg-5 d-flex flex-column pt-4 pt-lg-0 about ${styles.aboutBreatheContainer}`}>
+            <div className={`col-12 col-lg-5 d-flex flex-column pt-4 pt-lg-0 about ${styles.aboutBreatheContainer} justify-content-between`}>
+              <div>
               <MainTitle title={about[0]?.sectionOneTitle} />
               <Paragraph text={about[0]?.sectionOneDescription} />
+              </div>
               <Button text={about[0]?.sectionOneButton} href={about[0]?.sectionOneButtonLink || "/contact"} />
             </div>
           </div>
