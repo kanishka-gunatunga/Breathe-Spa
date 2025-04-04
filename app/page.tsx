@@ -14,12 +14,12 @@ import HeroSlider from "@/components/ReusableComponents/HeroSlider";
 export default async function Home() {
 
   const ethos = await getEthosData();
-        const home = await getHomeData();
-        const site = await getSiteData();
-        const blogs = await getBlogData();
-        const service = await getServiceCategories()
+  const home = await getHomeData();
+  const site = await getSiteData();
+  const blogs = await getBlogData();
+  const service = await getServiceCategories()
 
-        console.log("home[0]?.heroArray : ", home[0]?.heroArray)
+  console.log("home[0]?.heroArray : ", home[0]?.heroArray)
 
   return (
 
@@ -65,31 +65,31 @@ export default async function Home() {
                   <div className="row py-3 px-0">
                     {service?.map((item, index) => (
                       <Link key={index} href={`/services/${item.slug.current}`} className="linkUnderlineNone" >
-                      <div  className="d-flex pt-1">
-                        
-                        <div className={`col-6 ${styles.bottomBorder} `}>
-                          <p className={`${seStyles.se_txt_18} scaleTxt`}>{item.title}</p>
-                        </div>
+                        <div className="d-flex pt-1">
 
-                        <div className={`col-6 ${styles.bottomBorder}`}>
-                          <p className={seStyles.se_txt_12_work_sans}>
-                            {item.homeDescription}
-                          </p>
+                          <div className={`col-6 ${styles.bottomBorder} `}>
+                            <p className={`${seStyles.se_txt_18} scaleTxt`}>{item.title}</p>
+                          </div>
+
+                          <div className={`col-6 ${styles.bottomBorder}`}>
+                            <p className={seStyles.se_txt_12_work_sans}>
+                              {item.homeDescription}
+                            </p>
+                          </div>
                         </div>
-                      </div>
                       </Link>
                     ))}
-                    <div  className="d-flex pt-1">
-                        <div className={`col-6 ${styles.bottomBorder}`}>
-                          <p className={seStyles.se_txt_18}>Gift Vouchers</p>
-                        </div>
-
-                        <div className={`col-6 ${styles.bottomBorder}`}>
-                          <p className={seStyles.se_txt_12_work_sans}>
-                          Stylish gift cards to share the benefits of wellness, relaxation, and pampering
-                          </p>
-                        </div>
+                    <div className="d-flex pt-1">
+                      <div className={`col-6 ${styles.bottomBorder}`}>
+                        <p className={seStyles.se_txt_18}>Gift Vouchers</p>
                       </div>
+
+                      <div className={`col-6 ${styles.bottomBorder}`}>
+                        <p className={seStyles.se_txt_12_work_sans}>
+                          Stylish gift cards to share the benefits of wellness, relaxation, and pampering
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -179,7 +179,7 @@ export default async function Home() {
 
       <div className={`section py-3 ${styles.OnDesktopHideExtra} ${styles.contactContainer}`}>
         {ethos[0]?.ethosArray.map((item, index) => (
-          <div key={index} className="d-block d-md-block d-lg-flex gap-5 mb-5">
+          <div key={index} className="d-block d-md-block d-lg-flex gap-5 my-5">
             {index % 2 === 0 ? (
               <>
                 <div className="col-12 col-md-12 col-lg-6 col-xl-6">
@@ -195,21 +195,25 @@ export default async function Home() {
                   )}
 
                 </div>
-                <div className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start">
-                  <h3 className={seStyles.se_txt_40}>{item.name}</h3>
-                  <p className={seStyles.se_txt_16_work_sans_dark} style={{ textAlign: "justify" }}>
-                    {item.description}
-                  </p>
+                <div className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start justify-content-lg-between mb-5">
+                  <div className="mb-3">
+                    <h3 className={seStyles.se_txt_40}>{item.name}</h3>
+                    <p className={seStyles.se_txt_16_work_sans_dark} style={{ textAlign: "justify" }}>
+                      {item.description}
+                    </p>
+                  </div>
                   <Button text={item.button} href={item.link || "/contact"} />
                 </div>
               </>
             ) : (
               <>
-                <div className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start">
-                  <h3 className={seStyles.se_txt_40}>{item.name}</h3>
-                  <p className={seStyles.se_txt_16_work_sans_dark} style={{ textAlign: "justify" }}>
-                    {item.description}
-                  </p>
+                <div className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start justify-content-lg-between mb-5">
+                  <div className="mb-3">
+                    <h3 className={seStyles.se_txt_40}>{item.name}</h3>
+                    <p className={seStyles.se_txt_16_work_sans_dark} style={{ textAlign: "justify" }}>
+                      {item.description}
+                    </p>
+                  </div>
                   <Button text={item.button} href={item.link || "/contact"} />
                 </div>
                 <div className="col-12 col-md-12 col-lg-6 col-xl-6">
@@ -233,7 +237,6 @@ export default async function Home() {
         {ethos[0]?.ethosArray.map((item, index) => (
           <div key={index} className="d-block d-md-block d-lg-flex gap-5 mb-5">
             <div className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start">
-
               <div className="row">
                 <h3 className={seStyles.se_txt_40}>{item.name}</h3>
                 <p className={seStyles.se_txt_16_work_sans_dark}>
@@ -251,7 +254,6 @@ export default async function Home() {
                   />
                 )}
               </div>
-
             </div>
             <div className="col-12 col-md-12 col-lg-6 col-xl-6 mt-4 mt-lg-0">
               <Button text={item.button} href={item.link || "/contact"} />
@@ -268,7 +270,7 @@ export default async function Home() {
           description={home[0]?.sectionTwoDescription}
           image={urlFor(home[0]?.sectionTwoImage).url() || "/interior.png"}
           buttonText={home[0]?.sectionTwoButton}
-          buttonLink={home[0]?.sectionTwoButtonLink } />
+          buttonLink={home[0]?.sectionTwoButtonLink} />
       )}
 
 
