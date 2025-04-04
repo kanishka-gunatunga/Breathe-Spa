@@ -312,7 +312,7 @@ export default function Home() {
           description={home[0]?.sectionTwoDescription}
           image={urlFor(home[0]?.sectionTwoImage).url() || "/interior.png"}
           buttonText={home[0]?.sectionTwoButton}
-          buttonLink={home[0]?.sectionTwoButtonLink || '/contact'} />
+          buttonLink={home[0]?.sectionTwoButtonLink } />
       )}
 
 
