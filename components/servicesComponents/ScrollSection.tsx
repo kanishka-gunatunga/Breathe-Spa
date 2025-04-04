@@ -191,7 +191,7 @@ const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category, cat
                     )}
                 </div>
             </div>
-            <div className="d-flex d-lg-none flex-column-reverse flex-lg-row">
+            <div className="d-flex d-lg-none flex-column-reverse flex-lg-row" id={`${category.slug.current}`}>
                 <div className="col-12 col-lg-6 pe-lg-2 mt-3 mt-lg-0">
                     <h3 className={`fade-in-up ${style.se_txt_40}`}>{category.title}</h3>
                     <p className={`${style.se_txt_15} mb-3 mb-lg-4`}>{category.description}</p>
