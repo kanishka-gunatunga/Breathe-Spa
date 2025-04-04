@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { ContactData, SiteData } from "@/sanity/types";
 import { getContactData, getSiteData } from "@/sanity/libs/api";
 
+
 interface FormData {
     firstName: string,
     lastName: string,
@@ -31,7 +32,7 @@ const Contact = () => {
     const [contact, setContact] = useState<ContactData[] | null>(null);
     const [site, setSite] = useState<SiteData[] | null>(null);
 
-
+    
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value, type } = e.target;
         const checked = "checked" in e.target ? (e.target as HTMLInputElement).checked : false;
@@ -103,6 +104,8 @@ const Contact = () => {
     };
 
 
+    
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -138,7 +141,7 @@ const Contact = () => {
                 />
             </div>
 
-            <section className={`${styles.contactContainer} pt-5 ${styles.formSection}`}>
+            <section className={`${styles.contactContainer} pt-5 ${styles.formSection}`} id="contactForm">
                 <div className={`row align-items-stretch ${styles.equalHeightRow}`}>
                     <div className="col-md-6 mb-4 mb-md-0">
                         <div className={styles.imageContainer}>
