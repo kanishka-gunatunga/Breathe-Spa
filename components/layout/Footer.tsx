@@ -1,39 +1,20 @@
-'use client'
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
+import React, { } from 'react';
 import "./header-footer.css";
 import Form from 'next/form'
 import Button from "@/components/ReusableComponents/Button";
 import styles from "@/styles/page.module.css";
-import { ServiceCategory, SiteData } from '@/sanity/types';
-import { getServiceCategories, getSiteData } from '@/sanity/libs/api';
 import Link from 'next/link';
 import { urlFor } from '@/sanity/libs/sanity';
+import { ServiceCategory, SiteData } from '@/sanity/types';
 
+interface FooterProps {
+  site: SiteData[];
+  service: ServiceCategory[];
+}
+const Footer = ({ site, service }: FooterProps) => {
 
-const Footer = () => {
-  const [site, setSite] = useState<SiteData[] | null>(null);
-    const [service, setServices] = useState<ServiceCategory[] | null>(null);
-  
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const siteData = await getSiteData();
-        const services = await getServiceCategories()
-
-        setSite(siteData)
-        setServices(services);
-        // console.log("siteData : ", siteData)
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  if (!site || !service) return <p>Loading...</p>;
+        
   return (
 
     <>

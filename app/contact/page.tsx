@@ -1,8 +1,9 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+/* eslint-disable @next/next/no-async-client-component */
 "use client";
 import Image from "next/image";
 import styles from "@/styles/page.module.css";
-import React, { useEffect, useState } from "react";
-import { ContactData, SiteData } from "@/sanity/types";
+import React, {  useState } from "react";
 import { getContactData, getSiteData } from "@/sanity/libs/api";
 
 interface FormData {
@@ -15,7 +16,7 @@ interface FormData {
     privacyPolicy: boolean
 }
 
-const Contact = () => {
+const Contact = async () => {
     const [formData, setFormData] = useState<FormData>({
         firstName: "",
         lastName: "",
@@ -28,8 +29,6 @@ const Contact = () => {
 
     const [submissionStatus, setSubmissionStatus] = useState<"success" | "error" | null>(null);
     const [isLoading, setIsLoading] = useState(false);
-    const [contact, setContact] = useState<ContactData[] | null>(null);
-    const [site, setSite] = useState<SiteData[] | null>(null);
 
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -102,27 +101,8 @@ const Contact = () => {
         }
     };
 
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const contactData = await getContactData();
-                const siteData = await getSiteData();
-
-                setContact(contactData);
-                setSite(siteData)
-
-                console.log("contactData : ", contactData)
-
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            }
-        };
-
-        fetchData();
-    }, []);
-    // const metaData = getMetadata();
-    // console.log("---------meta :",metaData);
+    const contact = await getContactData();
+    const site = await getSiteData();
 
     return (
         <div>
