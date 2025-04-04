@@ -127,7 +127,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category, categoryId }) => {
     useEffect(() => {
-        // Ensure category.services is not null/undefined before mapping
         if (category.services) {
             category.services.forEach((service, index) => {
                 const imageId = `service-image-${category.slug.current}-${index}`;
@@ -149,7 +148,6 @@ const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category, cat
         }
     }, [category]);
 
-    // Ensure services is always an array
     const services = category.services || [];
 
     return (
