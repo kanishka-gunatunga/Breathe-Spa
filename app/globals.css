@@ -321,3 +321,9 @@ img {
 .alert-success{
   /* background-color: #fff !important; */
 }
+
+.footer-row {
+  padding-top: 50px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid #C1C7CD;
+}

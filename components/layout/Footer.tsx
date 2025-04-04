@@ -123,7 +123,7 @@ const Footer = ({ site, service }: FooterProps) => {
               </div>
             </div>
 
-            <div className='footer-row d-block d-md-flex d-lg-flex justify-content-between'>
+            <div className='footer-row d-block d-md-flex d-lg-flex justify-content-between py-3 mt-2'>
               <p className='bottom-p'>Copyright @ Breathe. All rights reserved.</p>
               <p className='bottom-p'>Terms & Conditions</p>
             </div>
