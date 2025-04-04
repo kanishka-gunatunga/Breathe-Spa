@@ -3,9 +3,8 @@
 import Image from "next/image";
 import styles from "@/styles/page.module.css";
 import pageStyles from "@/styles/page.module.css";
-import React, {  useEffect, useState } from "react";
-import { getContactData, getSiteData } from "@/sanity/libs/api";
-import { ContactData, SiteData } from "@/sanity/types";
+import React, {   useState } from "react";
+import ContactLocation from "@/components/servicesComponents/ContactLocation";
 
 interface FormData {
     firstName: string,
@@ -31,8 +30,8 @@ const Contact = () => {
     const [submissionStatus, setSubmissionStatus] = useState<"success" | "error" | null>(null);
     const [isLoading, setIsLoading] = useState(false);
 
-    const [contactData, setContactData] = useState<ContactData[] | null>(null);
-    const [siteData, setSiteData] = useState<SiteData[] | null>(null);
+    // const [contactData, setContactData] = useState<ContactData[] | null>(null);
+    // const [siteData, setSiteData] = useState<SiteData[] | null>(null);
 
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -105,21 +104,20 @@ const Contact = () => {
         }
     };
 
-    
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         const contact = await getContactData();
+    //         const site = await getSiteData();
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const contact = await getContactData();
-            const site = await getSiteData();
-            setContactData(contact);
-            setSiteData(site);
+    //         setContactData(contact);
+    //         setSiteData(site);
 
-            console.log("contact : ", contact)
-            console.log("site : ", site)
+    //         console.log("contact : ", contact)
+    //         console.log("site : ", site)
 
-        };
-        fetchData();
-    }, []);
+    //     };
+    //     fetchData();
+    // }, []);
 
     // const contact = await getContactData();
     // const site = await getSiteData();
@@ -291,84 +289,8 @@ const Contact = () => {
                     </div>
                 </div>
             </section>
-
-            <div className={styles.mapHouContainer} >
-                <div className={styles.mapMain}>
-                    <div className={`${styles.contactContainer} p-4`}>
-                        <div className="row">
-                            <div className={`col-lg-6 col-md-12 mb-4 ${styles.contact_info_container}`}>
-                                <h1 className={styles.sectionTitle}>
-                                    {contactData?.[0]?.title ?? 'Default Title'}
-                                </h1>
-                                <p className={styles.map_hours_desc}>
-                                    {contactData?.[0]?.description ?? 'No description available.'}
-                                </p>
-
-
-                                <h3 className={`${styles.map_hours_title}`}>OPENING
-                                    HOURS</h3>
-                                    <div className="">
-                                    {siteData?.[0]?.openDays.map((item, index) => (
-                                        <div key={index}
-                                        className="d-flex justify-content-between border-top border-1 border-secondary py-2">
-                                        <span className={styles.map_hours_days}>{item.day}</span>
-                                        <span className={styles.map_hours_time}>{item.time}</span>
-                                    </div>
-                                    ))}
-                                
-                                    {/* <div
-                                        className="d-flex justify-content-between border-top border-1 border-secondary py-2">
-                                        <span className={styles.map_hours_days}>TUESDAY TO SATURDAY</span>
-                                        <span className={styles.map_hours_time}>9:00am - 8:00pm</span>
-                                    </div>
-                                    <div className="d-flex justify-content-between border-top py-2">
-                                        <span className={styles.map_hours_days}>MONDAY</span>
-                                        <span className={styles.map_hours_time}>Closed</span>
-                                    </div> */}
-                                </div>
-
-                                <h3 className={`mt-4 border-bottom border-1 border-secondary py-4 ${styles.map_hours_title}`}>CONTACT
-                                    US</h3>
-                                <div className="">
-                                    <p className={`d-flex align-items-center gap-4 ${styles.contact_info}`}>
-                                        <Image src="/location.png" alt="location icon" width={24} height={24} />
-                                        {siteData?.[0]?.address}
-                                        {/* 14 Albert Cres, Colombo 007 */}
-                                    </p>
-                                    <p className={`d-flex align-items-center gap-4 ${styles.contact_info}`}>
-                                        <Image src="/email.png" alt="email icon" width={24} height={24} />
-                                        
-                                        {siteData?.[0]?.emailArray.map((item, index) => (
-                          <span key={index}>{item?.email}</span>
-                        ))}
-                                    </p>
-                                    <p className={`d-flex align-items-center gap-4 ${styles.contact_info}`}>
-                                        <Image src="/call.png" alt="phone icon" width={24} height={24} />
-                                        {/* <span>+94 77 231 4888</span> */}
-                                        {siteData?.[0]?.phoneNumberArray.map((item, index) => (
-                          <span key={index}>{item?.number}</span>
-                        ))}
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="col-lg-6 col-md-12">
-                                <div className={styles.map_container}>
-                                    <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.847711096713!2d79.85992937481267!3d6.90880641856629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2594fe67ad047%3A0x958aa9f666117ab1!2sBreathe%20Day%20Spa!5e0!3m2!1sen!2slk!4v1742980011520!5m2!1sen!2slk"
-                                        width="100%"
-                                        height="100%"
-                                        style={{ border: 0, borderRadius: '15px' }}
-                                        allowFullScreen
-                                        loading="lazy"
-                                        referrerPolicy="no-referrer-when-downgrade"
-                                    ></iframe>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<ContactLocation />
+            
             <div>
                 <div className={`${styles.exclusiveDeals} mt-6`}>
                     <h3 className={styles.exclusiveTitle}>Exclusive Deals</h3>
