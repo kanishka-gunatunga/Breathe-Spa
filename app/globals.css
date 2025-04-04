@@ -316,3 +316,8 @@ a {
 img {
   object-fit: cover;
 }
+
+
+.alert-success{
+  /* background-color: #fff !important; */
+}

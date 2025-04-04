@@ -43,15 +43,15 @@ const Contact = () => {
         }));
     };
 
-    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files?.[0] || null;
-        setFormData((prev) => ({
-            ...prev,
-            attachment: file
-        }));
+    // const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    //     const file = e.target.files?.[0] || null;
+    //     setFormData((prev) => ({
+    //         ...prev,
+    //         attachment: file
+    //     }));
 
-        console.log("-----file :", file);
-    };
+    //     console.log("-----file :", file);
+    // };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -221,7 +221,7 @@ const Contact = () => {
                                         onChange={handleChange}
                                     />
                                 </div>
-                                <div className={styles.contactFormDiv}>
+                                {/* <div className={styles.contactFormDiv}>
                                     <label htmlFor="file" className={styles.form_label}>
                                         Attachment
                                     </label>
@@ -233,7 +233,7 @@ const Contact = () => {
                                         onChange={handleFileChange}
                                         accept=".pdf, .jpg, .jpeg, .png"
                                     />
-                                </div>
+                                </div> */}
                                 <div className={styles.contactFormDiv}>
                                     <label htmlFor="message" className={styles.form_label}>
                                         Message
@@ -251,6 +251,7 @@ const Contact = () => {
                                 <div className={`flex flex-row align-content-center ${styles.contactFormDiv}`}>
                                     <input
                                         type="checkbox"
+                                        required
                                         className={styles.formCheckBox}
                                         id="privacyPolicy"
                                         name="privacyPolicy"
@@ -258,7 +259,7 @@ const Contact = () => {
                                         onChange={handleChange}
                                     />
                                     <label className={`form-check-label ${styles.formCheck}`} htmlFor="privacyPolicy">
-                                        I agree to our friendly <a href="#">Privacy Policy</a>.
+                                        You agree to our friendly  <a href="#">Booking Policy</a>.
                                     </label>
                                 </div>
                                 <button
