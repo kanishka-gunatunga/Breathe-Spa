@@ -304,3 +304,11 @@ a {
 .scaleTxt:hover {
   transform: scale(1.05);
 }
+
+
+.recentArticleImage{
+  min-height: 450px;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+}
