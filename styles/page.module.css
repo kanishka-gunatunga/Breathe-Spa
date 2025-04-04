@@ -1171,11 +1171,24 @@ a.text-decoration-none {
   background-color: #fff;
   background-position: center;
   background-size: contain;
-  border: 2px solid #dee2e6;
+  border-radius: 8px !important;
+  border: 2px solid #dee2e6 !important;
 }
 
 .formCheck {
   padding-left: 1rem;
+}
+
+.agree_text{
+  font-family: "Work Sans", sans-serif !important;
+  font-weight: 300 ;
+  font-size: 15px ;
+}
+.agree_text a{
+  color: #1530FFB2  !important;
+  text-decoration: none  !important;
+  font-weight: 500 ;
+
 }
 
 @media screen and (min-width: 1920px) {
@@ -1307,6 +1320,9 @@ a.text-decoration-none {
 
   .map_hours_desc {
     font-size: 24px;
+  }
+  .agree_text{
+    font-size: 20px;
   }
 }
 
@@ -1446,6 +1462,9 @@ a.text-decoration-none {
 
   .responsiveImage {
     border-radius: 20px;
+  }
+  .agree_text{
+    font-size: 26px;
   }
 }
 
@@ -1651,5 +1670,4 @@ a.text-decoration-none {
   border-radius: 20px;
   position: relative;
 }
-
 

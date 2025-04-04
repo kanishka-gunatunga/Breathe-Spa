@@ -2,6 +2,7 @@
 "use client";
 import Image from "next/image";
 import styles from "@/styles/page.module.css";
+import pageStyles from "@/styles/page.module.css";
 import React, {  useEffect, useState } from "react";
 import { getContactData, getSiteData } from "@/sanity/libs/api";
 import { ContactData, SiteData } from "@/sanity/types";
@@ -112,6 +113,10 @@ const Contact = () => {
             const site = await getSiteData();
             setContactData(contact);
             setSiteData(site);
+
+            console.log("contact : ", contact)
+            console.log("site : ", site)
+
         };
         fetchData();
     }, []);
@@ -248,17 +253,18 @@ const Contact = () => {
                                         onChange={handleChange}
                                     ></textarea>
                                 </div>
-                                <div className={`flex flex-row align-content-center ${styles.contactFormDiv}`}>
+                                <div className={`d-flex flex-row align-content-center  ${styles.contactFormDiv}`}>
                                     <input
                                         type="checkbox"
                                         required
-                                        className={styles.formCheckBox}
+                                        className={`${styles.formCheckBox} mt-0`}
                                         id="privacyPolicy"
                                         name="privacyPolicy"
                                         checked={formData.privacyPolicy}
                                         onChange={handleChange}
+                                        style={{border: "2px solid #dee2e6 !important", borderRadius: "6px !important"}}
                                     />
-                                    <label className={`form-check-label ${styles.formCheck}`} htmlFor="privacyPolicy">
+                                    <label className={`form-check-label ${styles.formCheck} ${pageStyles.agree_text}`} htmlFor="privacyPolicy">
                                         You agree to our friendly  <a href="#">Booking Policy</a>.
                                     </label>
                                 </div>

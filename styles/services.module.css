@@ -588,6 +588,7 @@
 .blockContent strong {
     font-weight: 500;
 }
+
 @media screen and (min-width: 1920px) {
     .se_title_60 {
         font-size: 64px;
