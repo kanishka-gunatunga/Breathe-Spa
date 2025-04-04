@@ -25,18 +25,18 @@ export default async function Home() {
 
     <>
       <HeroSlider home={home || []} />
-      <div className={`${styles.contactContainer} section pb-0 pt-5`}>
+      <div className={`${styles.contactContainer} section pb-5 pt-5`}>
         <div className="d-block d-md-block d-lg-flex justify-content-center gap-5">
-          <div className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start">
+          <div className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start justify-content-lg-between">
             <div>
-              <h1 className={seStyles.se_txt_50_coe}>
+              <h1 className={`${seStyles.se_txt_50_coe} mb-3 mb-lg-3`}>
                 {home[0]?.sectionOneTitle}
               </h1>
-              <p className={seStyles.se_txt_14_work_sans}>
+              <p className={`${seStyles.se_txt_14_work_sans} mb-3 `}>
                 {home[0]?.sectionOneDescription}
               </p>
               {home[0]?.sectionOneImage && (
-                <Image className="img-fluid" src={urlFor(home[0]?.sectionOneImage).url() || "/Vector12.png"} height={400} width={655} alt="" />
+                <Image className="img-fluid mt-3" src={urlFor(home[0]?.sectionOneImage).url() || "/Vector12.png"} height={400} width={655} alt="" />
               )}
 
             </div>
@@ -51,22 +51,24 @@ export default async function Home() {
             <div className={`card ${styles.card1}`}>
               <div className="card-body">
                 {/* main topic our services */}
-                <div className="row mb-4">
+                <div className="row mb-0">
                   <h3 className={seStyles.se_txt_25_awesome}>OUR SERVICES</h3>
                 </div>
 
 
                 {/* treatments */}
                 <div className="row px-2">
-                  <div className={`${seStyles.line_border} mt-5 px-0`}>
+                  <div className={`${seStyles.line_border} mt-4 px-0`}>
                     <h3 className={seStyles.se_txt_18}>TREATMENTS</h3>
                   </div>
 
                   <div className="row py-3 px-0">
                     {service?.map((item, index) => (
-                      <div key={index} className="d-flex py-2">
-                        <div className={`col-6 ${styles.bottomBorder}`}>
-                          <p className={seStyles.se_txt_18}>{item.title}</p>
+                      <Link key={index} href={`/services/${item.slug.current}`} className="linkUnderlineNone" >
+                      <div  className="d-flex pt-1">
+                        
+                        <div className={`col-6 ${styles.bottomBorder} `}>
+                          <p className={`${seStyles.se_txt_18} scaleTxt`}>{item.title}</p>
                         </div>
 
                         <div className={`col-6 ${styles.bottomBorder}`}>
@@ -75,18 +77,30 @@ export default async function Home() {
                           </p>
                         </div>
                       </div>
+                      </Link>
                     ))}
+                    <div  className="d-flex pt-1">
+                        <div className={`col-6 ${styles.bottomBorder}`}>
+                          <p className={seStyles.se_txt_18}>Gift Vouchers</p>
+                        </div>
+
+                        <div className={`col-6 ${styles.bottomBorder}`}>
+                          <p className={seStyles.se_txt_12_work_sans}>
+                          Stylish gift cards to share the benefits of wellness, relaxation, and pampering
+                          </p>
+                        </div>
+                      </div>
                   </div>
                 </div>
 
 
                 {/* Hours */}
                 <div className="row px-2">
-                  <div className={`${seStyles.line_border} mt-5 px-0`}>
+                  <div className={`${seStyles.line_border} mt-4 px-0`}>
                     <h3 className={seStyles.se_txt_18}>HOURS</h3>
                   </div>
                   {site[0]?.openDays.map((item, index) => (
-                    <div key={index} className="row  py-3 px-0 w-100">
+                    <div key={index} className="row  pt-3 px-0 w-100">
                       <div className="d-flex">
                         <div className={`col-6 ${styles.bottomBorder}`}>
                           <p className={seStyles.se_txt_18}>{item.day}</p>
