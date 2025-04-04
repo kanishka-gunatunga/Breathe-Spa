@@ -17,7 +17,7 @@ function ExclusiveDeals() {
                 const exclusiveData = await getExclusiveData();
 
                 seExclusive(exclusiveData);
-                console.log("exclusive : ", exclusiveData)
+                // console.log("exclusive : ", exclusiveData)
             } catch (error) {
                 console.error("Error fetching data:", error);
             }

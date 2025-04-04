@@ -1,23 +1,39 @@
 "use client";
 import Image from "next/image";
 import styles from "@/styles/page.module.css";
-import React, {useState} from "react";
+import React, { useEffect, useState } from "react";
+import { ContactData, SiteData } from "@/sanity/types";
+import { getContactData, getSiteData } from "@/sanity/libs/api";
+
+interface FormData {
+    firstName: string,
+    lastName: string,
+    email: string,
+    phone: string,
+    message: string,
+    attachment: File | null,
+    privacyPolicy: boolean
+}
 
 const Contact = () => {
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState<FormData>({
         firstName: "",
         lastName: "",
         email: "",
         phone: "",
         message: "",
         privacyPolicy: false,
+        attachment: null,
     });
 
     const [submissionStatus, setSubmissionStatus] = useState<"success" | "error" | null>(null);
     const [isLoading, setIsLoading] = useState(false);
+    const [contact, setContact] = useState<ContactData[] | null>(null);
+    const [site, setSite] = useState<SiteData[] | null>(null);
+
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const {name, value, type} = e.target;
+        const { name, value, type } = e.target;
         const checked = "checked" in e.target ? (e.target as HTMLInputElement).checked : false;
         setFormData((prev) => ({
             ...prev,
@@ -25,13 +41,49 @@ const Contact = () => {
         }));
     };
 
-    //handle submit button
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0] || null;
+        setFormData((prev) => ({
+            ...prev,
+            attachment: file
+        }));
+
+        console.log("-----file :", file);
+    };
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        if (!formData.privacyPolicy) {
+            alert("Please agree to the privacy policy.");
+            return;
+        }
+
         setSubmissionStatus(null);
         setIsLoading(true);
+
+        const data = new FormData();
+        data.append("firstName", formData.firstName);
+        data.append("lastName", formData.lastName);
+        data.append("email", formData.email);
+        data.append("phone", formData.phone);
+        data.append("message", formData.message);
+        data.append("privacyPolicy", String(formData.privacyPolicy));
+        data.append("submittedAt", new Date().toISOString());
+        if (formData.attachment) {
+            data.append("attachment", formData.attachment);
+        }
+
         try {
-            console.log("Form submitted:", formData);
+            const response = await fetch("/api/submit-contact", {
+                method: "POST",
+                body: data as BodyInit,
+            });
+
+
+            if (!response.ok) {
+                throw new Error("Failed to submit form");
+            }
+
             setSubmissionStatus("success");
             setFormData({
                 firstName: "",
@@ -40,14 +92,37 @@ const Contact = () => {
                 phone: "",
                 message: "",
                 privacyPolicy: false,
+                attachment: null
             });
         } catch (error) {
+            console.error("Error submitting form:", error);
             setSubmissionStatus("error");
-            console.log(error);
         } finally {
             setIsLoading(false);
         }
     };
+
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const contactData = await getContactData();
+                const siteData = await getSiteData();
+
+                setContact(contactData);
+                setSite(siteData)
+
+                console.log("contactData : ", contactData)
+
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
+
+        fetchData();
+    }, []);
+    // const metaData = getMetadata();
+    // console.log("---------meta :",metaData);
 
     return (
         <div>
@@ -58,26 +133,26 @@ const Contact = () => {
                     width={0}
                     height={0}
                     sizes="100%"
-                    style={{width: "100%", height: "auto"}}
+                    style={{ width: "100%", height: "auto" }}
                     alt=""
                 />
             </div>
 
-            <section className={`${styles.contactContainer} section pt-5 ${styles.formSection}`}>
-                <div className={`row align-items-stretch mobile_padding_15 ${styles.equalHeightRow}`}>
-                    <div className="col-md-6 mb-4 mb-md-0 mobile_padding_remove">
+            <section className={`${styles.contactContainer} pt-5 ${styles.formSection}`}>
+                <div className={`row align-items-stretch ${styles.equalHeightRow}`}>
+                    <div className="col-md-6 mb-4 mb-md-0">
                         <div className={styles.imageContainer}>
                             <Image
                                 src="/spa_contact.png"
                                 alt="Spa treatment"
                                 fill
                                 className={`img-fluid ${styles.responsiveImage}`}
-                                style={{objectFit: 'cover'}}
+                                style={{ objectFit: 'cover' }}
                             />
                         </div>
                     </div>
-                    <div className={`col-md-6 mobile_padding_remove ${styles.formWrapper}`}>
-                        <div className={`${styles.formContainer} mobile_padding_remove`}>
+                    <div className={`col-md-6 ${styles.formWrapper}`}>
+                        <div className={styles.formContainer}>
                             <h2 className={styles.section_title}>Schedule your in Haus presence</h2>
                             <p className={`text-muted ${styles.sectionSubTitle}`}>Get in touch with us</p>
 
@@ -94,7 +169,7 @@ const Contact = () => {
 
                             <form onSubmit={handleSubmit} className="mt-4">
                                 <div className="row">
-                                    <div className={`col-md-6  ${styles.contactFormDiv}`}>
+                                    <div className={`col-md-6 ${styles.contactFormDiv}`}>
                                         <label htmlFor="firstName" className={styles.form_label}>
                                             First name
                                         </label>
@@ -152,6 +227,19 @@ const Contact = () => {
                                     />
                                 </div>
                                 <div className={styles.contactFormDiv}>
+                                    <label htmlFor="file" className={styles.form_label}>
+                                        Attachment
+                                    </label>
+                                    <input
+                                        type="file"
+                                        className={styles.formControl}
+                                        id="file"
+                                        name="attachment"
+                                        onChange={handleFileChange}
+                                        accept=".pdf, .jpg, .jpeg, .png"
+                                    />
+                                </div>
+                                <div className={styles.contactFormDiv}>
                                     <label htmlFor="message" className={styles.form_label}>
                                         Message
                                     </label>
@@ -185,11 +273,11 @@ const Contact = () => {
                                 >
                                     {isLoading ? (
                                         <>
-                    <span
-                        className="spinner-border spinner-border-sm me-2"
-                        role="status"
-                        aria-hidden="true"
-                    ></span>
+                                            <span
+                                                className="spinner-border spinner-border-sm me-2"
+                                                role="status"
+                                                aria-hidden="true"
+                                            ></span>
                                             Sending...
                                         </>
                                     ) : (
@@ -204,16 +292,16 @@ const Contact = () => {
 
             <div className={styles.mapHouContainer}>
                 <div className={styles.mapMain}>
-                    <div className={`${styles.contactContainer} section p-md-4 mobile_padding_remove`}>
+                    <div className={`${styles.contactContainer} p-4`}>
                         <div className="row">
-                            <div className={`col-lg-6 col-md-12 mb-4 ${styles.contact_info_container} mobile_padding_remove`}>
-                                <h1 className={styles.sectionTitle}>Schedule your in-Haus presence</h1>
+                            <div className={`col-lg-6 col-md-12 mb-4 ${styles.contact_info_container}`}>
+                                <h1 className={styles.sectionTitle}>
+                                    {contact?.[0]?.title ?? 'Default Title'}
+                                </h1>
                                 <p className={styles.map_hours_desc}>
-                                    Lorem ipsum dolor sit amet consectetur. Amet ultricies pulvinar
-                                    amet aliquet consequat lectus tortor. Felis consectetur tempus
-                                    luctus habitasse lacus elit vel sapien. Magna massa sed tempus
-                                    sagittis lorem. Velit sit neque interdum nisl.
+                                    {contact?.[0]?.description ?? 'No description available.'}
                                 </p>
+
 
                                 <h3 className={`${styles.map_hours_title}`}>OPENING
                                     HOURS</h3>
@@ -233,27 +321,34 @@ const Contact = () => {
                                     US</h3>
                                 <div className="">
                                     <p className={`d-flex align-items-center gap-4 ${styles.contact_info}`}>
-                                        <Image src="/location.png" alt="location icon" width={24} height={24}/>
-                                        14 Albert Cres, Colombo 007
+                                        <Image src="/location.png" alt="location icon" width={24} height={24} />
+                                        {site?.[0]?.address}
+                                        {/* 14 Albert Cres, Colombo 007 */}
                                     </p>
                                     <p className={`d-flex align-items-center gap-4 ${styles.contact_info}`}>
-                                        <Image src="/email.png" alt="email icon" width={24} height={24}/>
-                                        <span>breathe@gmail.com</span>
+                                        <Image src="/email.png" alt="email icon" width={24} height={24} />
+                                        
+                                        {site?.[0]?.emailArray.map((item, index) => (
+                          <span key={index}>{item?.email}</span>
+                        ))}
                                     </p>
                                     <p className={`d-flex align-items-center gap-4 ${styles.contact_info}`}>
-                                        <Image src="/call.png" alt="phone icon" width={24} height={24}/>
-                                        <span>+94 77 231 4888</span>
+                                        <Image src="/call.png" alt="phone icon" width={24} height={24} />
+                                        {/* <span>+94 77 231 4888</span> */}
+                                        {site?.[0]?.phoneNumberArray.map((item, index) => (
+                          <span key={index}>{item?.number}</span>
+                        ))}
                                     </p>
                                 </div>
                             </div>
 
-                            <div className="col-lg-6 col-md-12 mobile_padding_remove">
+                            <div className="col-lg-6 col-md-12">
                                 <div className={styles.map_container}>
                                     <iframe
                                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.847711096713!2d79.85992937481267!3d6.90880641856629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2594fe67ad047%3A0x958aa9f666117ab1!2sBreathe%20Day%20Spa!5e0!3m2!1sen!2slk!4v1742980011520!5m2!1sen!2slk"
                                         width="100%"
                                         height="100%"
-                                        style={{border: 0, borderRadius: '15px'}}
+                                        style={{ border: 0, borderRadius: '15px' }}
                                         allowFullScreen
                                         loading="lazy"
                                         referrerPolicy="no-referrer-when-downgrade"

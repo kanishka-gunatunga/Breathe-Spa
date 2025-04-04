@@ -15,7 +15,7 @@ const page = async () => {
 
   const services = await getServiceCategories()
   const servicesMainData = await getServiceMainPageData();
-console.log("services: ", servicesMainData[0]?.title); 
+console.log("services: ", servicesMainData); 
 
 
 

@@ -1,6 +1,6 @@
 import { sanityClient } from './sanity'
-import { GET_ABOUT_PAGE_DATA, GET_BLOG_BY_SLUG, GET_BLOG_DATA, GET_ETHOS_DATA, GET_EXCLUSIVE_DATA, GET_HOME_DATA, GET_SERVICE_CATEGORIES, GET_SERVICE_CATEGORY_BY_SLUG, GET_SERVICE_MAIN_PAGE_DATA, GET_SITE_DATA, GET_TEAM_DATA, GET_TERMS_DATA, GET_TESTIMONIAL_DATA } from './queries'
-import { AboutMainData, BlogData, Ethos, ExclusiveDetails, HomeData, ServiceCategory, ServiceMainData, SiteData, TeamData, Terms, TestimonialData } from '@/sanity/types'
+import { GET_ABOUT_PAGE_DATA, GET_BLOG_BY_SLUG, GET_BLOG_DATA, GET_CONTACT_PAGE_DATA, GET_ETHOS_DATA, GET_EXCLUSIVE_DATA, GET_HOME_DATA, GET_SERVICE_CATEGORIES, GET_SERVICE_CATEGORY_BY_SLUG, GET_SERVICE_MAIN_PAGE_DATA, GET_SITE_DATA, GET_TEAM_DATA, GET_TERMS_DATA, GET_TESTIMONIAL_DATA } from './queries'
+import { AboutMainData, BlogData, ContactData, Ethos, ExclusiveDetails, HomeData, ServiceCategory, ServiceMainData, SiteData, TeamData, Terms, TestimonialData } from '@/sanity/types'
 
 export async function getServiceCategories(): Promise<ServiceCategory[]> {
   return sanityClient.fetch(GET_SERVICE_CATEGORIES)
@@ -52,4 +52,8 @@ export const fetchBlogData = async (slug: string): Promise<BlogData | null> => {
 
 export async function getExclusiveData(): Promise<ExclusiveDetails[]> {
   return sanityClient.fetch(GET_EXCLUSIVE_DATA)
+}
+
+export async function getContactData(): Promise<ContactData[]> {
+  return sanityClient.fetch(GET_CONTACT_PAGE_DATA)
 }

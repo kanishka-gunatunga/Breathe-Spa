@@ -5,6 +5,7 @@ export const GET_SERVICE_CATEGORIES = `
     slug,
     mainImage,
     description,
+    homeDescription,
     "services": services[] {
       serviceName,
       serviceDescription->{
@@ -204,5 +205,13 @@ export const GET_EXCLUSIVE_DATA = `
       description,
       buttonTxt,
       link,
+    }
+`;
+
+export const GET_CONTACT_PAGE_DATA = `
+   *[_type == "contactMain"] {
+      _id,
+      title,
+      description,
     }
 `;

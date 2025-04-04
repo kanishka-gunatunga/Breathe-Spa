@@ -14,6 +14,7 @@ export interface ServiceCategory {
   categoryTitle: string
   description: string
   categoryDescription: string
+  homeDescription: string
   services: Service[]
 }
 
@@ -181,4 +182,11 @@ export interface ExclusiveDetails {
   description: string
   link: string
   buttonTxt: string
+}
+
+
+export interface ContactData {
+  _id: string
+  title: string
+  description: string
 }

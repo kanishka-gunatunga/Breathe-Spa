@@ -17,8 +17,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-fade'
 import { Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import { useEffect, useState } from "react";
-import { getBlogData, getEthosData, getHomeData, getSiteData } from "@/sanity/libs/api";
-import { BlogData, Ethos, HomeData, SiteData } from "@/sanity/types";
+import { getBlogData, getEthosData, getHomeData, getServiceCategories, getSiteData } from "@/sanity/libs/api";
+import { BlogData, Ethos, HomeData, ServiceCategory, SiteData } from "@/sanity/types";
 import { urlFor } from "@/sanity/libs/sanity";
 import Link from "next/link";
 
@@ -27,6 +27,7 @@ export default function Home() {
   const [home, setHome] = useState<HomeData[] | null>(null);
   const [site, setSite] = useState<SiteData[] | null>(null);
   const [blogs, setBlogs] = useState<BlogData[] | null>(null);
+  const [service, setServices] = useState<ServiceCategory[] | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,12 +36,15 @@ export default function Home() {
         const homeData = await getHomeData();
         const siteData = await getSiteData();
         const blogData = await getBlogData();
+        const services = await getServiceCategories()
 
         setEthos(ethosData);
         setHome(homeData)
         setSite(siteData)
         setBlogs(blogData);
-        console.log("siteData : ", siteData)
+        setServices(services);
+        console.log("services : ", services)
+
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -117,61 +121,19 @@ export default function Home() {
                   </div>
 
                   <div className="row py-3 px-0">
-                    <div className="d-flex">
-                      <div className={`col-6 ${styles.bottomBorder}`}>
-                        <p className={seStyles.se_txt_18}>Massages</p>
+                    {service?.map((item, index) => (
+                      <div key={index} className="d-flex py-2">
+                        <div className={`col-6 ${styles.bottomBorder}`}>
+                          <p className={seStyles.se_txt_18}>{item.title}</p>
+                        </div>
+
+                        <div className={`col-6 ${styles.bottomBorder}`}>
+                          <p className={seStyles.se_txt_12_work_sans}>
+                            {item.homeDescription}
+                          </p>
+                        </div>
                       </div>
-
-                      <div className={`col-6 ${styles.bottomBorder}`}>
-                        <p className={seStyles.se_txt_12_work_sans}>
-                          Easing you into relaxation, with multiple tissue techniques, aromatherapy, body scrubs and wraps.
-                        </p>
-                      </div>
-                    </div>
-
-
-
-
-                    <div className="d-flex  py-3">
-                      <div className={`col-6 ${styles.bottomBorder}`}>
-                        <p className={seStyles.se_txt_18}>Nail Treatments</p>
-                      </div>
-
-                      <div className={`col-6 ${styles.bottomBorder}`}>
-                        <p className={seStyles.se_txt_12_work_sans}>
-                          Your concierce for clean, hygenic, and glossy nails. Mani’s, Pedi’s and more.
-                        </p>
-                      </div>
-                    </div>
-
-
-
-                    <div className="d-flex ">
-                      <div className={`col-6 ${styles.bottomBorder}`}>
-                        <p className={seStyles.se_txt_18}>Facial Treatments</p>
-                      </div>
-
-                      <div className={`col-6 ${styles.bottomBorder}`}>
-                        <p className={seStyles.se_txt_12_work_sans}>
-                          The HydraFacial Glow is a signature Breathe Day Spa experience
-                        </p>
-                      </div>
-                    </div>
-
-
-
-
-                    <div className="d-flex py-3">
-                      <div className={`col-6 ${styles.bottomBorder}`}>
-                        <p className={seStyles.se_txt_18}>Gift Vouchers</p>
-                      </div>
-
-                      <div className={`col-6 ${styles.bottomBorder}`}>
-                        <p className={seStyles.se_txt_12_work_sans}>
-                          Stylish gift cards to share the benefits of wellness, relaxation, and pampering
-                        </p>
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
 
