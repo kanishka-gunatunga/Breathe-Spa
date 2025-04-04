@@ -278,7 +278,7 @@
 .articleCard3 {
   border-radius: 16px;
   border: none !important;
-  height: 434px;
+  /* height: 434px; */
   width: auto;
   margin-right: 50px;
   background-repeat: no-repeat;

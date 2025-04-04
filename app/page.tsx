@@ -299,31 +299,53 @@ export default async function Home() {
             {blogs.slice(0, 3).map((post) => (
               <div key={post._id} className={`card ${styles.articleCard1}`}>
                 <div className="card-body p-0 p-md-2 d-flex align-items-end position-relative">
-                  <div style={{
-                    position: "relative",
-                    width: "100%",
-                    height: "100%"
-                  }}>
-                    {post?.feturedImage && (
-                      <Image className={`img-fluid `} src={urlFor(post?.feturedImage).url()} height={368} width={624} alt="" />
-                    )}
-                    <div style={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
+                {post?.feturedImage && (
+                  <div
+                    style={{
+                      position: "relative",
                       width: "100%",
-                      height: "100%",
-                      borderRadius: "20px",
-                      background: "linear-gradient(180deg, rgba(24, 59, 86, 0.000085) 0%, rgba(21, 37, 50, 0.85) 100%)"
-                    }} />
+                      aspectRatio: "8 / 9",
+                      overflow: "hidden",
+                      borderRadius: "20px"
+                    }}
+                  >
+                   
+                      <Image
+                        className="object-cover"
+                        src={urlFor(post?.feturedImage).url()}
+                        alt={post.title || ""}
+                        fill
+                      />
+                      <Image className={`img-fluid object-cover`} src={urlFor(post?.feturedImage).url()} height={368} width={624} alt="" />
+                    
+                    <div
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: "20px",
+                        background: "linear-gradient(180deg, rgba(24, 59, 86, 0.000085) 0%, rgba(21, 37, 50, 0.85) 100%)"
+                      }}
+                    />
                   </div>
+                  )}
+
                   <Link
                     href={typeof post.slug === "string" ? post.slug : post.slug.current}
                     className={seStyles.se_26_card_txt}
-                    style={{ textDecoration: "none", position: "absolute", bottom: "10px", left: "10px", color: "white" }}
+                    style={{
+                      textDecoration: "none",
+                      position: "absolute",
+                      bottom: "16px",
+                      left: "16px",
+                      color: "white"
+                    }}
                   >
                     {post.title}
                   </Link>
+
                 </div>
               </div>
             ))}
