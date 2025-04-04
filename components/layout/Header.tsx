@@ -19,7 +19,15 @@ const Header = ({ site }: HeaderProps) => {
     return null;
   }
 
-  const isActive = (path: string) => pathname?.startsWith(path) ? 'active-link' : '';
+  // const isActive = (path: string) => pathname?.startsWith(path) ? 'active-link' : '';
+
+  const isActive = (path: string) => {
+    if (path === '/') {
+      return pathname === '/' ? 'active-link' : '';
+    }
+    return pathname?.startsWith(path) ? 'active-link' : '';
+  };
+  
 
   return (
     <>

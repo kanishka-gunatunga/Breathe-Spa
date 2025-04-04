@@ -327,3 +327,10 @@ img {
   padding-bottom: 30px;
   border-bottom: 2px solid #C1C7CD;
 }
+
+.alert-dismissible{
+  position: absolute !important;
+  top: -40px;
+  right: 0px;
+  width: 100%;
+}

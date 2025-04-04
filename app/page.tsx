@@ -289,7 +289,7 @@ export default async function Home() {
 
 
             <div className={`col-12 col-md-4 col-lg-4 mb-5 mb-lg-0  d-flex justify-content-center  justify-content-lg-end justify-content-md-end ${styles.viewAll}`}>
-              <Button text="View All" href="/blog" />
+              <Button text="View All" href="/blog/#blogArticles" />
             </div>
           </div>
 

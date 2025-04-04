@@ -1,30 +1,11 @@
-"use client";
-
 import styles from "@/styles/page.module.css";
 import Image from "next/image";
 import BlogCard from "@/components/ReusableComponents/BlogCard";
-import { useEffect, useState } from "react";
-import { BlogData } from "@/sanity/types";
 import { getBlogData } from "@/sanity/libs/api";
 
-const Blog = () => {
-    const [blogs, setBlogs] = useState<BlogData[] | null>(null);
+const Blog = async () => {
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const blogData = await getBlogData();
-                setBlogs(blogData);
-                // console.log("blogData : ", blogData)
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            }
-        };
-
-        fetchData();
-    }, []);
-
-    if (!blogs) return <p>Loading...</p>;
+    const blogs = await getBlogData();
 
     return (
         <div>
@@ -40,7 +21,7 @@ const Blog = () => {
                 />
             </div>
 
-            <div className={`${styles.contactContainer} section py-5 px-4 px-lg-5`}>
+            <div className={`${styles.contactContainer} section py-5 px-4 px-lg-5`} id="blogArticles">
                 <h3 className={`${styles.section_title} mb-5 text-start`}>Our Recent Posts</h3>
                 <div className="row g-4">
                     {blogs.map((post) => (
