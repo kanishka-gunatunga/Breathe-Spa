@@ -64,7 +64,7 @@ export default async function Home() {
 
                   <div className="row py-3 px-0">
                     {service?.map((item, index) => (
-                      <Link key={index} href={`/services/${item.slug.current}`} className="linkUnderlineNone" >
+                      <Link key={index} href={`/services#${item.slug.current}`} className="linkUnderlineNone" >
                         <div className="d-flex pt-1">
 
                           <div className={`col-6 ${styles.bottomBorder} `}>
