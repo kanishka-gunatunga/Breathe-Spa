@@ -15,7 +15,8 @@ const page = async () => {
 
   const services = await getServiceCategories()
   const servicesMainData = await getServiceMainPageData();
-console.log("services: ", servicesMainData); 
+  console.log("services: ", services);
+  console.log("services main: ", servicesMainData);
 
 
 
@@ -24,17 +25,17 @@ console.log("services: ", servicesMainData);
       {/* hero section */}
       <div className={`d-flex ${style.imageContainer}`}>
         {servicesMainData[0].servicesHeroImage && (
-           <Image src={urlFor(servicesMainData[0]?.servicesHeroImage).url()} alt='services hero image' width={1920} height={1080} style={{ width: "100vw", height: "auto", objectFit: 'cover' }} />
-          )}
+          <Image src={urlFor(servicesMainData[0]?.servicesHeroImage).url()} alt='services hero image' width={1920} height={1080} style={{ width: "100vw", height: "auto", objectFit: 'cover' }} />
+        )}
       </div>
 
       {/* services description page */}
       <div className={`section py-3 ${pageStyle.contactContainer}`}>
         <div className="d-flex flex-column flex-lg-row w-100">
           <div className="col-12 col-lg-5 d-flex pt-3 pt-lg-0">
-          {servicesMainData[0].mainImage && (
-            <Image src={urlFor(servicesMainData[0]?.mainImage).url()} alt='services description image' width={600} height={800} className={`${style.imgHeight} fade-in`} />
-          )}
+            {servicesMainData[0].mainImage && (
+              <Image src={urlFor(servicesMainData[0]?.mainImage).url()} alt='services description image' width={600} height={800} className={`${style.imgHeight} fade-in`} />
+            )}
           </div>
           <div className="col-12 col-lg-7 ps-lg-5 d-flex flex-column align-items-stretch pt-4 p-lg-0" data-aos="fade-left">
             <MainTitle title={servicesMainData[0]?.title} />
@@ -46,9 +47,10 @@ console.log("services: ", servicesMainData);
       <DescriptionSection title={servicesMainData[0]?.tagLine} description={servicesMainData[0]?.tagdescription} />
 
       <div className="scroll-sections mt-lg-5">
-        {services.map((category, index) => (
+        {services && services.map((category, index) => (
           <ServiceCategoryCard key={index} category={category} categoryId={index} />
         ))}
+
       </div>
     </div>
   )
