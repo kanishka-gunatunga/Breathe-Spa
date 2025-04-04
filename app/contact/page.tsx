@@ -1,10 +1,10 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-/* eslint-disable @next/next/no-async-client-component */
+
 "use client";
 import Image from "next/image";
 import styles from "@/styles/page.module.css";
-import React, {  useState } from "react";
+import React, {  useEffect, useState } from "react";
 import { getContactData, getSiteData } from "@/sanity/libs/api";
+import { ContactData, SiteData } from "@/sanity/types";
 
 interface FormData {
     firstName: string,
@@ -16,7 +16,7 @@ interface FormData {
     privacyPolicy: boolean
 }
 
-const Contact = async () => {
+const Contact = () => {
     const [formData, setFormData] = useState<FormData>({
         firstName: "",
         lastName: "",
@@ -29,6 +29,9 @@ const Contact = async () => {
 
     const [submissionStatus, setSubmissionStatus] = useState<"success" | "error" | null>(null);
     const [isLoading, setIsLoading] = useState(false);
+
+    const [contactData, setContactData] = useState<ContactData[] | null>(null);
+    const [siteData, setSiteData] = useState<SiteData[] | null>(null);
 
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -101,8 +104,19 @@ const Contact = async () => {
         }
     };
 
-    const contact = await getContactData();
-    const site = await getSiteData();
+    
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const contact = await getContactData();
+            const site = await getSiteData();
+            setContactData(contact);
+            setSiteData(site);
+        };
+        fetchData();
+    }, []);
+    // const contact = await getContactData();
+    // const site = await getSiteData();
 
     return (
         <div>
@@ -276,10 +290,10 @@ const Contact = async () => {
                         <div className="row">
                             <div className={`col-lg-6 col-md-12 mb-4 ${styles.contact_info_container}`}>
                                 <h1 className={styles.sectionTitle}>
-                                    {contact?.[0]?.title ?? 'Default Title'}
+                                    {contactData?.[0]?.title ?? 'Default Title'}
                                 </h1>
                                 <p className={styles.map_hours_desc}>
-                                    {contact?.[0]?.description ?? 'No description available.'}
+                                    {contactData?.[0]?.description ?? 'No description available.'}
                                 </p>
 
 
@@ -302,20 +316,20 @@ const Contact = async () => {
                                 <div className="">
                                     <p className={`d-flex align-items-center gap-4 ${styles.contact_info}`}>
                                         <Image src="/location.png" alt="location icon" width={24} height={24} />
-                                        {site?.[0]?.address}
+                                        {siteData?.[0]?.address}
                                         {/* 14 Albert Cres, Colombo 007 */}
                                     </p>
                                     <p className={`d-flex align-items-center gap-4 ${styles.contact_info}`}>
                                         <Image src="/email.png" alt="email icon" width={24} height={24} />
                                         
-                                        {site?.[0]?.emailArray.map((item, index) => (
+                                        {siteData?.[0]?.emailArray.map((item, index) => (
                           <span key={index}>{item?.email}</span>
                         ))}
                                     </p>
                                     <p className={`d-flex align-items-center gap-4 ${styles.contact_info}`}>
                                         <Image src="/call.png" alt="phone icon" width={24} height={24} />
                                         {/* <span>+94 77 231 4888</span> */}
-                                        {site?.[0]?.phoneNumberArray.map((item, index) => (
+                                        {siteData?.[0]?.phoneNumberArray.map((item, index) => (
                           <span key={index}>{item?.number}</span>
                         ))}
                                     </p>
