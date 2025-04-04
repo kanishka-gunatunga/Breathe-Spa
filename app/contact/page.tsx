@@ -138,7 +138,7 @@ const Contact = () => {
                 />
             </div>
 
-            <section  className={`${styles.contactContainer} pt-5 ${styles.formSection}`}>
+            <section  className={`${styles.contactContainer} section pt-5 ${styles.formSection}`}>
                 <div id="contactForm" className={`row align-items-stretch ${styles.equalHeightRow}`}>
                     <div className="col-md-6 mb-4 mb-md-0">
                         <div className={styles.imageContainer}>
