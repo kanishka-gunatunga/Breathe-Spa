@@ -294,7 +294,7 @@ export default async function Home() {
           </div>
 
 
-          <div className="d-md-flex d-lg-flex d-block justify-content-between mb-3">
+          <div className="d-md-flex d-lg-flex d-block justify-content-between">
 
             {blogs.slice(0, 3).map((post) => (
               <div key={post._id} className={`card ${styles.articleCard1}`}>
@@ -305,7 +305,7 @@ export default async function Home() {
                     height: "100%"
                   }}>
                     {post?.feturedImage && (
-                      <Image className={`img-fluid recentArticleImage`} src={urlFor(post?.feturedImage).url()} height={368} width={624} alt="" />
+                      <Image className={`img-fluid `} src={urlFor(post?.feturedImage).url()} height={368} width={624} alt="" />
                     )}
                     <div style={{
                       position: "absolute",

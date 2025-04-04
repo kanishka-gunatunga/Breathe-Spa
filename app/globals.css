@@ -307,8 +307,7 @@ a {
 
 
 .recentArticleImage{
-  min-height: 450px;
-  max-height: 500px;
+  /* max-height: 500px; */
   object-fit: cover;
   border-radius: 20px;
 }
