@@ -253,7 +253,7 @@ const Contact = () => {
                                         onChange={handleChange}
                                     ></textarea>
                                 </div>
-                                <div className={`d-flex flex-row align-content-center  ${styles.contactFormDiv}`}>
+                                <div className={`d-flex flex-row align-items-center  ${styles.contactFormDiv}`}>
                                     <input
                                         type="checkbox"
                                         required

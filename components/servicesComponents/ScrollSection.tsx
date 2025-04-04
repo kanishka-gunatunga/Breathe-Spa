@@ -133,7 +133,7 @@ const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category, cat
                 const imageId = `service-image-${category.slug.current}-${index}`;
 
                 ScrollTrigger.create({
-                    trigger: `#${`section-${categoryId}`}`,
+                    trigger: `#${`${category.slug.current}`}`,
                     start: 'top 20px',
                     end: 'bottom +=430',
                     pin: `#${imageId}`,
@@ -146,7 +146,7 @@ const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category, cat
     const services = category.services || [];
 
     return (
-        <div className={`${pageStyle.contactContainer} section`} id={`section-${categoryId}`}>
+        <div className={`${pageStyle.contactContainer} section`} id={`${category.slug.current}`}>
             <div className="d-none d-lg-flex flex-column-reverse flex-lg-row">
                 <div className="col-12 col-lg-6 pe-lg-2 mt-0 mt-lg-0">
                     <h3 className={`fade-in-up ${style.se_txt_40}`}>{category.title}</h3>
