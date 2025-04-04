@@ -115,6 +115,7 @@ const Contact = () => {
         };
         fetchData();
     }, []);
+
     // const contact = await getContactData();
     // const site = await getSiteData();
 
@@ -299,8 +300,16 @@ const Contact = () => {
 
                                 <h3 className={`${styles.map_hours_title}`}>OPENING
                                     HOURS</h3>
-                                <div className="">
-                                    <div
+                                    <div className="">
+                                    {siteData?.[0]?.openDays.map((item, index) => (
+                                        <div key={index}
+                                        className="d-flex justify-content-between border-top border-1 border-secondary py-2">
+                                        <span className={styles.map_hours_days}>{item.day}</span>
+                                        <span className={styles.map_hours_time}>{item.time}</span>
+                                    </div>
+                                    ))}
+                                
+                                    {/* <div
                                         className="d-flex justify-content-between border-top border-1 border-secondary py-2">
                                         <span className={styles.map_hours_days}>TUESDAY TO SATURDAY</span>
                                         <span className={styles.map_hours_time}>9:00am - 8:00pm</span>
@@ -308,7 +317,7 @@ const Contact = () => {
                                     <div className="d-flex justify-content-between border-top py-2">
                                         <span className={styles.map_hours_days}>MONDAY</span>
                                         <span className={styles.map_hours_time}>Closed</span>
-                                    </div>
+                                    </div> */}
                                 </div>
 
                                 <h3 className={`mt-4 border-bottom border-1 border-secondary py-4 ${styles.map_hours_title}`}>CONTACT
