@@ -1615,3 +1615,41 @@ a.text-decoration-none {
     width: 100% !important;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+.blogCardTitle {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.blogCardDesc {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.blogCardImageWrapper {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  position: relative;
+}
+
+
