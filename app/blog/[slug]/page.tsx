@@ -1,8 +1,13 @@
+
+
 import Image from "next/image";
 import styles from "@/styles/page.module.css";
 import { fetchBlogData } from "@/sanity/libs/api";
 import { urlFor } from "@/sanity/libs/sanity";
 import { PortableText } from "next-sanity";
+// import { useLocation } from "react-router-dom";
+// import { useEffect } from "react";
+// import { useRouter } from "next/router";
 
 
 
@@ -19,7 +24,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     }
 
 
-
+    
     return (
         <div className={`${styles.contactContainer} section py-5 px-lg-5 mobile_padding_remove`}>
             <div className="text-center mb-5">

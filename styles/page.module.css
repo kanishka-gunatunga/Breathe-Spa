@@ -61,7 +61,15 @@
   right: 20%;
 }
 
+.popUpRow{
+  transition: all 0.3s ease-in;
+  transition: all 0.3s ease-out;
+}
 
+.popUpRow :hover{
+  transition: all 0.3s ease-in;
+  transform: scaleX(1.005);
+}
 /*
 .headingImage {
   width: 100vw;

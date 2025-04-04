@@ -9,7 +9,7 @@ import ExclusiveDeals from "@/components/ReusableComponents/ExclusiveDeals";
 import style from '@/styles/services.module.css'
 import DescriptionSection from '@/components/servicesComponents/DescriptionSection'
 import YellowBackSection from "@/components/ReusableComponents/YellowBackSection";
-import groupedServices from './services/page';
+import { useRouter } from "next/router";
 
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -29,6 +29,8 @@ export default function Home() {
   const [site, setSite] = useState<SiteData[] | null>(null);
   const [blogs, setBlogs] = useState<BlogData[] | null>(null);
   const [service, setServices] = useState<ServiceCategory[] | null>(null);
+
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -121,11 +123,11 @@ export default function Home() {
                     <h3 className={`${seStyles.se_txt_18}`}>TREATMENTS</h3>
                   </div>
 
-                  <div className="row py-3 px-0">
+                  <div className={`row py-3 px-0 ${styles.popUpRow}`}>
                     {service?.map((item, index) => (
                       <div key={index} className="d-flex py-2">
                         <div className={`col-6 ${styles.bottomBorder}`}>
-                          <Link href={''} className="text-decoration-none">
+                          <Link href={`/services#${item.slug.current}`} className="text-decoration-none">
                             <p className={seStyles.se_txt_18}>{item.title}</p>
                           </Link>
 
@@ -335,7 +337,10 @@ export default function Home() {
 
 
             <div className={`col-12 col-md-4 col-lg-4 mb-5 mb-lg-0  d-flex justify-content-center  justify-content-lg-end justify-content-md-end ${styles.viewAll}`}>
-              <Button text="View All" href="/blog#ourRecentPosts" />
+              <Link href='/blog#ourRecentPosts'>
+                <Button text="View All" href="" />
+              </Link>
+
             </div>
           </div>
 
