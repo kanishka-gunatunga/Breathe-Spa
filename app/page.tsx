@@ -1,88 +1,30 @@
-"use client";
-
 import Button from "@/components/ReusableComponents/Button";
 import styles from "@/styles/page.module.css";
 import seStyles from "@/styles/services.module.css";
 import Image from "next/image";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ExclusiveDeals from "@/components/ReusableComponents/ExclusiveDeals";
-import style from '@/styles/services.module.css'
 import DescriptionSection from '@/components/servicesComponents/DescriptionSection'
 import YellowBackSection from "@/components/ReusableComponents/YellowBackSection";
-
-
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-fade'
-import { Pagination, Autoplay, EffectFade } from 'swiper/modules';
-import { useEffect, useState } from "react";
 import { getBlogData, getEthosData, getHomeData, getServiceCategories, getSiteData } from "@/sanity/libs/api";
-import { BlogData, Ethos, HomeData, ServiceCategory, SiteData } from "@/sanity/types";
 import { urlFor } from "@/sanity/libs/sanity";
 import Link from "next/link";
+import HeroSlider from "@/components/ReusableComponents/HeroSlider";
 
-export default function Home() {
-  const [ethos, setEthos] = useState<Ethos[] | null>(null);
-  const [home, setHome] = useState<HomeData[] | null>(null);
-  const [site, setSite] = useState<SiteData[] | null>(null);
-  const [blogs, setBlogs] = useState<BlogData[] | null>(null);
-  const [service, setServices] = useState<ServiceCategory[] | null>(null);
+export default async function Home() {
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const ethosData = await getEthosData();
-        const homeData = await getHomeData();
-        const siteData = await getSiteData();
-        const blogData = await getBlogData();
-        const services = await getServiceCategories()
+  const ethos = await getEthosData();
+        const home = await getHomeData();
+        const site = await getSiteData();
+        const blogs = await getBlogData();
+        const service = await getServiceCategories()
 
-        setEthos(ethosData);
-        setHome(homeData)
-        setSite(siteData)
-        setBlogs(blogData);
-        setServices(services);
-        console.log("services : ", services)
-
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  if (!ethos || !home || !site || !blogs) return <p>Loading...</p>;
+        console.log("home[0]?.heroArray : ", home[0]?.heroArray)
 
   return (
 
     <>
-      <div className={`d-flex ${style.imageContainer} position-relative`}>
-        <Swiper
-          modules={[Pagination, Autoplay, EffectFade]}
-          pagination={{ el: '.swiper-pagination', clickable: true, dynamicBullets: true }}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
-          effect="fade"
-          fadeEffect={{ crossFade: true }}
-          loop={true}
-        >
-          {home[0]?.heroArray.map((hero, index) => (
-            <SwiperSlide key={index}>
-              {hero.mainImage && (
-                <Image src={urlFor(hero.mainImage).url() || "/Vector12.png"} alt='home hero image'
-                  width={1920}
-                  height={1080}
-                  style={{ width: '100vw', height: 'auto', objectFit: 'cover', objectPosition: 'bottom' }} />
-              )}
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <div className="swiper-pagination position-absolute"></div>
-      </div>
+      <HeroSlider home={home || []} />
       <div className={`${styles.contactContainer} section pb-0 pt-5`}>
         <div className="d-block d-md-block d-lg-flex justify-content-center gap-5">
           <div className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start">
