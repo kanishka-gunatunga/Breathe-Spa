@@ -3,6 +3,7 @@
 import { useState } from "react";
 import pageStyles from "@/styles/page.module.css";
 import styles from "@/styles/page.module.css";
+import pageStyle from '@/styles/services.module.css'
 import Image from "next/image";
 
 
@@ -221,7 +222,8 @@ const ContactForm = () => {
                         </div>
                         <button
                             type="submit"
-                            className={`btn btn-dark w-100 ${styles.submit_button}`}
+                            className={`btn btn-dark w-100 ${pageStyle.darkButton} ${pageStyle.darkButtonWidth}`}
+                            style={{maxWidth: "100% !important", width: "100% !important"}}
                             disabled={isLoading}
                         >
                             {isLoading ? (

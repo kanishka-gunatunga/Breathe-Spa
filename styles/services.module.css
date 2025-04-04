@@ -426,7 +426,11 @@
     outline: none;
     box-shadow: none;
 }
-
+.darkButtonWidth {
+    
+    max-width: 100% !important;
+   
+}
 .se_title_60 {
     font-size: 54px;
     color: #313131;
