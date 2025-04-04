@@ -2,12 +2,13 @@
 import React from 'react';
 import Link from 'next/link';
 import pageStyle from '@/styles/services.module.css'
+import { Url } from 'next/dist/shared/lib/router/router';
 
 
 
 interface ButtonProps {
     text: string;
-    href?: string;
+    href?: any;
 }
 
 const Button: React.FC<ButtonProps> = ({ text, href }) => {

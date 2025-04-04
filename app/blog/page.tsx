@@ -40,9 +40,9 @@ const Blog = () => {
                 />
             </div>
 
-            <div className={`${styles.contactContainer} section py-5 px-4 px-lg-5`}>
-                <h3 className={`${styles.section_title} mb-5 text-start`}>Our Recent Posts</h3>
-                <div className="row g-4">
+            <div className={`${styles.contactContainer} section py-5 px-4 px-lg-5`} id="ourRecentPosts">
+                <h3 className={`${styles.section_title} mb-5 text-start`} >Our Recent Posts</h3>
+                <div className="row g-4" id="ourRecentPosts">
                     {blogs.map((post) => (
                         <div key={post._id} className="col-md-4 mobile_padding_remove">
                             {/* <BlogCard post={post}/> */}

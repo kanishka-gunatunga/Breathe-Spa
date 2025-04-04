@@ -105,7 +105,7 @@ const Contact = () => {
 
 
     
-
+    
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -293,7 +293,7 @@ const Contact = () => {
                 </div>
             </section>
 
-            <div className={styles.mapHouContainer} >
+            <div className={styles.mapHouContainer} id="locationContainer">
                 <div className={styles.mapMain}>
                     <div className={`${styles.contactContainer} p-4`}>
                         <div className="row">

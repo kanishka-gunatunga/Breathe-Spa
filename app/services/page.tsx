@@ -46,7 +46,7 @@ const page = async () => {
 
       <DescriptionSection title={servicesMainData[0]?.tagLine} description={servicesMainData[0]?.tagdescription} />
 
-      <div className="scroll-sections mt-lg-5">
+      <div className="scroll-sections mt-lg-5" >
         {services && services.map((category, index) => (
           <ServiceCategoryCard key={index} category={category} categoryId={index} />
         ))}

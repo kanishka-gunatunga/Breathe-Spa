@@ -13,8 +13,8 @@ import { urlFor } from '@/sanity/libs/sanity';
 
 const Footer = () => {
   const [site, setSite] = useState<SiteData[] | null>(null);
-    const [service, setServices] = useState<ServiceCategory[] | null>(null);
-  
+  const [service, setServices] = useState<ServiceCategory[] | null>(null);
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -79,10 +79,10 @@ const Footer = () => {
                 <div className='quick-links-container'>
                   <h5 className='footer-h5'>SERVICES</h5>
                   {service?.map((item, index) => (
-                      <Link key={index} href={`/services/${item.slug.current}`} className='footer-link-tag'>
-                        <p className='footer-quick-links'>{item?.title}</p>
-                      </Link>
-                    ))}
+                    <Link key={index} href={`/services/${item.slug.current}`} className='footer-link-tag'>
+                      <p className='footer-quick-links'>{item?.title}</p>
+                    </Link>
+                  ))}
                 </div>
               </div>
 
@@ -132,7 +132,7 @@ const Footer = () => {
                             height={30}
                             className=""
                             objectFit='contain'
-                            style={{width: '30px !important', height: '30px !important', objectFit: 'contain'}}
+                            style={{ width: '30px !important', height: '30px !important', objectFit: 'contain' }}
                           />
                         </Link>
                       ) : null;
@@ -144,7 +144,14 @@ const Footer = () => {
 
             <div className='footer-row d-block d-md-flex d-lg-flex justify-content-between'>
               <p className='bottom-p'>Copyright @ Breathe. All rights reserved.</p>
-              <p className='bottom-p'>Terms & Conditions</p>
+              <Link style={{
+                color:'unset',
+                textDecoration:'none'
+              }} className='bottom-p' href={'/terms'}>Terms & Conditions</Link>
+              {/* <a className='text-decoration-none' href="/terms">
+                <p className='bottom-p'>Terms & Conditions</p>
+              </a> */}
+
             </div>
           </div>
         </div>

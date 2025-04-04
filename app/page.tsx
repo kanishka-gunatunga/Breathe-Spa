@@ -9,6 +9,7 @@ import ExclusiveDeals from "@/components/ReusableComponents/ExclusiveDeals";
 import style from '@/styles/services.module.css'
 import DescriptionSection from '@/components/servicesComponents/DescriptionSection'
 import YellowBackSection from "@/components/ReusableComponents/YellowBackSection";
+import groupedServices from './services/page';
 
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -117,14 +118,17 @@ export default function Home() {
                 {/* treatments */}
                 <div className="row px-2">
                   <div className={`${seStyles.line_border} mt-5 px-0`}>
-                    <h3 className={seStyles.se_txt_18}>TREATMENTS</h3>
+                    <h3 className={`${seStyles.se_txt_18}`}>TREATMENTS</h3>
                   </div>
 
                   <div className="row py-3 px-0">
                     {service?.map((item, index) => (
                       <div key={index} className="d-flex py-2">
                         <div className={`col-6 ${styles.bottomBorder}`}>
-                          <p className={seStyles.se_txt_18}>{item.title}</p>
+                          <Link href={''} className="text-decoration-none">
+                            <p className={seStyles.se_txt_18}>{item.title}</p>
+                          </Link>
+
                         </div>
 
                         <div className={`col-6 ${styles.bottomBorder}`}>
@@ -244,7 +248,7 @@ export default function Home() {
                   <p className={seStyles.se_txt_16_work_sans_dark} style={{ textAlign: "justify" }}>
                     {item.description}
                   </p>
-                  <Button text={item.button} href={item.link || "/contact"} />
+                  <Button text={item.button} href={item.link || "/about-breath"} />
                 </div>
               </>
             ) : (
@@ -254,7 +258,7 @@ export default function Home() {
                   <p className={seStyles.se_txt_16_work_sans_dark} style={{ textAlign: "justify" }}>
                     {item.description}
                   </p>
-                  <Button text={item.button} href={item.link || "/contact"} />
+                  <Button text={item.button} href={item.link || "/about-breath"} />
                 </div>
                 <div className="col-12 col-md-12 col-lg-6 col-xl-6">
                   {item.mainImage && (
@@ -298,7 +302,7 @@ export default function Home() {
 
             </div>
             <div className="col-12 col-md-12 col-lg-6 col-xl-6 mt-4 mt-lg-0">
-              <Button text={item.button} href={item.link || "/contact"} />
+              <Button text={item.button} href={item.link || "/about-breath"} />
             </div>
 
           </div>
@@ -312,7 +316,7 @@ export default function Home() {
           description={home[0]?.sectionTwoDescription}
           image={urlFor(home[0]?.sectionTwoImage).url() || "/interior.png"}
           buttonText={home[0]?.sectionTwoButton}
-          buttonLink={home[0]?.sectionTwoButtonLink } />
+          buttonLink={home[0]?.sectionTwoButtonLink} />
       )}
 
 
@@ -331,7 +335,7 @@ export default function Home() {
 
 
             <div className={`col-12 col-md-4 col-lg-4 mb-5 mb-lg-0  d-flex justify-content-center  justify-content-lg-end justify-content-md-end ${styles.viewAll}`}>
-              <Button text="View All" href="/blog" />
+              <Button text="View All" href="/blog#ourRecentPosts" />
             </div>
           </div>
 
@@ -360,7 +364,7 @@ export default function Home() {
                     }} />
                   </div>
                   <Link
-                    href={typeof post.slug === "string" ? post.slug : post.slug.current}
+                    href={`/blog/${typeof post.slug === "string" ? post.slug : post.slug.current}`}
                     className={seStyles.se_26_card_txt}
                     style={{ textDecoration: "none", position: "absolute", bottom: "10px", left: "10px", color: "white" }}
                   >
