@@ -5,20 +5,25 @@ import "./header-footer.css";
 import Form from 'next/form'
 import Button from "@/components/ReusableComponents/Button";
 import styles from "@/styles/page.module.css";
-import { SiteData } from '@/sanity/types';
-import { getSiteData } from '@/sanity/libs/api';
+import { ServiceCategory, SiteData } from '@/sanity/types';
+import { getServiceCategories, getSiteData } from '@/sanity/libs/api';
 import Link from 'next/link';
 import { urlFor } from '@/sanity/libs/sanity';
 
 
 const Footer = () => {
   const [site, setSite] = useState<SiteData[] | null>(null);
+    const [service, setServices] = useState<ServiceCategory[] | null>(null);
+  
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const siteData = await getSiteData();
+        const services = await getServiceCategories()
+
         setSite(siteData)
+        setServices(services);
         // console.log("siteData : ", siteData)
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -28,7 +33,7 @@ const Footer = () => {
     fetchData();
   }, []);
 
-  if (!site) return <p>Loading...</p>;
+  if (!site || !service) return <p>Loading...</p>;
   return (
 
     <>
@@ -61,10 +66,10 @@ const Footer = () => {
               <div className="col-12 col-md-2 col-lg-2 footer-row-2">
                 <div className='quick-links-container'>
                   <h5 className='footer-h5'>Quick Links</h5>
-                  <a href="" className='footer-link-tag'><p className='footer-quick-links'>Home</p></a>
-                  <a href="" className='footer-link-tag'><p className='footer-quick-links'>About Breathe </p></a>
-                  <a href="" className='footer-link-tag'><p className='footer-quick-links'>Our Services </p></a>
-                  <a href="" className='footer-link-tag'><p className='footer-quick-links'>Blog</p></a>
+                  <Link href="/" className='footer-link-tag'><p className='footer-quick-links'>Home</p></Link>
+                  <Link href="/about-breath" className='footer-link-tag'><p className='footer-quick-links'>About Breathe </p></Link>
+                  <Link href="/services" className='footer-link-tag'><p className='footer-quick-links'>Our Services </p></Link>
+                  <Link href="/blog" className='footer-link-tag'><p className='footer-quick-links'>Blog</p></Link>
                 </div>
 
               </div>
@@ -73,10 +78,11 @@ const Footer = () => {
               <div className="col-12 col-md-2 col-lg-2 footer-row-2">
                 <div className='quick-links-container'>
                   <h5 className='footer-h5'>SERVICES</h5>
-                  <a href="" className='footer-link-tag'><p className='footer-quick-links'>Nails</p></a>
-                  <a href="" className='footer-link-tag'><p className='footer-quick-links'>Body</p></a>
-                  <a href="" className='footer-link-tag'><p className='footer-quick-links'>Facial</p></a>
-                  <a href="" className='footer-link-tag'><p className='footer-quick-links'>Add - Ons</p></a>
+                  {service?.map((item, index) => (
+                      <Link key={index} href={`/services/${item.slug.current}`} className='footer-link-tag'>
+                        <p className='footer-quick-links'>{item?.title}</p>
+                      </Link>
+                    ))}
                 </div>
               </div>
 
