@@ -1,5 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-'use client';
 import Button from "@/components/ReusableComponents/Button";
 import styles from "@/styles/page.module.css";
 import pageStyle from '@/styles/services.module.css'
@@ -7,11 +5,6 @@ import pageStyle from '@/styles/services.module.css'
 import Image from "next/image";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ExclusiveDeals from "@/components/ReusableComponents/ExclusiveDeals";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import { Navigation, Pagination } from 'swiper/modules';
 import CardSlider from "@/components/ReusableComponents/Slider";
 import style from '@/styles/services.module.css'
 import YellowBackSection from "@/components/ReusableComponents/YellowBackSection";
@@ -19,36 +12,15 @@ import Paragraph from "@/components/servicesComponents/Paragraph";
 import MainTitle from "@/components/servicesComponents/MainTitle";
 import { getAboutMainPageData, getTeamData, getTestimonialData } from "@/sanity/libs/api";
 import { urlFor } from "@/sanity/libs/sanity";
-import { useEffect, useState } from "react";
-import { AboutMainData, TeamData, TestimonialData } from "@/sanity/types";
+import TestimonialSlider from "@/components/ReusableComponents/SliderTestimonials";
 
 
 
-const page = () => {
+const AboutPage = async () => {
+  const about = await getAboutMainPageData();
+  const testimonials = await getTestimonialData();
+  const team = await getTeamData();
 
-  const [about, setAbout] = useState<AboutMainData[] | null>(null);
-  const [testimonials, setTestimonials] = useState<TestimonialData[] | null>(null);
-  const [team, setTeam] = useState<TeamData[] | null>(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const aboutData = await getAboutMainPageData();
-        const testimonialData = await getTestimonialData();
-        const teamData = await getTeamData();
-        setAbout(aboutData);
-        setTestimonials(testimonialData);
-        setTeam(teamData)
-        console.log(teamData)
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  if (!about || !testimonials) return <p>Loading...</p>;
   return (
     <div>
       <div className={styles.aboutPage}>
@@ -70,9 +42,11 @@ const page = () => {
               </div>
             </div>
 
-            <div className={`col-12 col-lg-5 d-flex flex-column pt-4 pt-lg-0 about ${styles.aboutBreatheContainer}`}>
+            <div className={`col-12 col-lg-5 d-flex flex-column pt-4 pt-lg-0 about ${styles.aboutBreatheContainer} justify-content-between`}>
+              <div>
               <MainTitle title={about[0]?.sectionOneTitle} />
               <Paragraph text={about[0]?.sectionOneDescription} />
+              </div>
               <Button text={about[0]?.sectionOneButton} href={about[0]?.sectionOneButtonLink || "/contact"} />
             </div>
           </div>
@@ -92,7 +66,8 @@ const page = () => {
         <div className={`${styles.baseSection}`}>
           <div className="d-flex flex-column align-items-center justify-content-center">
             <MainTitle title={"Testimonials"} />
-            <div className="col-12 col-md-12 col-lg-8 position-relative mb-5">
+            <TestimonialSlider testimonials={testimonials[0]?.testimonialsArray || []} />
+            {/* <div className="col-12 col-md-12 col-lg-8 position-relative mb-5">
               <Swiper
                 modules={[Navigation, Pagination]}
                 navigation={{
@@ -162,7 +137,7 @@ const page = () => {
                   </SwiperSlide>
                 ))}
               </Swiper>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -183,4 +158,4 @@ const page = () => {
   )
 }
 
-export default page;
+export default AboutPage;

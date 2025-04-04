@@ -285,3 +285,39 @@ a {
 .navColor{
   background-color: #F3EEE7 !important;
 }
+
+
+.active-link .nav-link {
+  text-decoration: underline;
+  font-weight: bold;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 2px;
+}
+
+.linkUnderlineNone{
+  text-decoration: none !important;
+}
+.scaleTxt {
+  transition: transform 0.3s ease;
+}
+
+.scaleTxt:hover {
+  transform: scale(1.05);
+}
+
+
+.recentArticleImage{
+  /* max-height: 500px; */
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+
+img {
+  object-fit: cover;
+}
+
+
+.alert-success{
+  /* background-color: #fff !important; */
+}

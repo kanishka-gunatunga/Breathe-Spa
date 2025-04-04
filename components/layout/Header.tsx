@@ -1,41 +1,81 @@
 
-'use client'
+"use client";
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
 import pageStyles from "@/styles/page.module.css"
-import { SiteData } from '@/sanity/types';
-import { getSiteData } from '@/sanity/libs/api';
 import { urlFor } from '@/sanity/libs/sanity';
+import { SiteData } from '@/sanity/types';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
-const Header = () => {
-  const [site, setSite] = useState<SiteData[] | null>(null);
+interface HeaderProps {
+  site: SiteData[];
+}
+const Header = ({ site }: HeaderProps) => {
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const siteData = await getSiteData();
-        setSite(siteData)
-        // console.log("siteData : ", siteData)
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+  const pathname = usePathname();
 
-    fetchData();
-  }, []);
+  if (!site || !site[0]) {
+    console.error("Invalid site data:", site);
+    return null;
+  }
 
-  if (!site) return <p>Loading...</p>;
+  const isActive = (path: string) => pathname === path ? 'active-link' : '';
+
   return (
     <>
-      <div className='w-100 navColor' style={{ backgroundColor: "#F3EEE7 !important" }}>
+     
+      <div className="w-100 navColor py-3" style={{ backgroundColor: "#F3EEE7 !important" }}>
+        <div className={`${pageStyles.contactContainer} ${pageStyles.mobile_width} navColor`} style={{ backgroundColor: "#F3EEE7 !important" }}>
+          <nav className="navbar navbar-expand-lg navbar-light" style={{ backgroundColor: "#F3EEE7 !important" }}>
+            <Link className="navbar-brand" href="/">
+              {site[0]?.logo && (
+                <Image src={urlFor(site[0]?.logo).url() || "/interior.png"} alt="Breathe Logo" width={317} height={33} className='img-fluid ' />
+              )}
+            </Link>
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className={`nav-item px-lg-3 ${isActive('/')}`}>
+                <Link className="nav-link" href="/">Home</Link>
+              </li>
+              <li className={`nav-item px-lg-3 ${isActive('/services')}`}>
+                <Link className="nav-link" href="/services">Our Services</Link>
+              </li>
+              <li className={`nav-item px-lg-3 ${isActive('/about-breath')}`}>
+                <Link className="nav-link" href="/about-breath">About Breathe</Link>
+              </li>
+              <li className={`nav-item px-lg-3 ${isActive('/blog')}`}>
+                <Link className="nav-link" href="/blog">Blog</Link>
+              </li>
+              <li className={`nav-item px-lg-3 ${isActive('/contact')}`}>
+                <Link className="nav-link" href="/contact">Contact Us</Link>
+              </li>
+              <li className={`nav-item px-lg-3 ${isActive('/terms')}`}>
+                <Link className="nav-link" href="/terms">T & C</Link>
+              </li>
+            </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Header;
+
+
+
+ {/* <div className='w-100 navColor' style={{ backgroundColor: "#F3EEE7 !important" }}>
         <div className={`${pageStyles.contactContainer} ${pageStyles.mobile_width} navColor`} style={{ backgroundColor: "#F3EEE7 !important" }}>
           <Navbar expand="lg" className="p-3 navStyleMobile" style={{ backgroundColor: "#F3EEE7 !important" }} >
             <Navbar.Brand href="/">
               {site[0]?.logo && (
                 <Image src={urlFor(site[0]?.logo).url() || "/interior.png"} alt="Breathe Logo" width={317} height={33} className='img-fluid ' />
               )}
+              
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
@@ -50,9 +90,4 @@ const Header = () => {
             </Navbar.Collapse>
           </Navbar>
         </div>
-      </div>
-    </>
-  );
-};
-
-export default Header;
+      </div> */}

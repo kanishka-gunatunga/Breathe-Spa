@@ -1,32 +1,13 @@
-'use client';
-import React, { useEffect, useState } from 'react';
+import React, {  } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "@/styles/page.module.css";
 import Button from './Button';
-import { ExclusiveDetails } from '@/sanity/types';
 import { getExclusiveData } from '@/sanity/libs/api';
 
 
-function ExclusiveDeals() {
+async function ExclusiveDeals() {
 
-    const [exclusive, seExclusive] = useState<ExclusiveDetails[] | null>(null);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const exclusiveData = await getExclusiveData();
-
-                seExclusive(exclusiveData);
-                // console.log("exclusive : ", exclusiveData)
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            }
-        };
-
-        fetchData();
-    }, []);
-
-    if (!exclusive) return <p>Loading...</p>;
+    const exclusive = await getExclusiveData();
 
     return (
         <div>

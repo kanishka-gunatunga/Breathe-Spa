@@ -1,9 +1,11 @@
+
 "use client";
 import Image from "next/image";
 import styles from "@/styles/page.module.css";
-import React, { useEffect, useState } from "react";
-import { ContactData, SiteData } from "@/sanity/types";
+import pageStyles from "@/styles/page.module.css";
+import React, {  useEffect, useState } from "react";
 import { getContactData, getSiteData } from "@/sanity/libs/api";
+import { ContactData, SiteData } from "@/sanity/types";
 
 
 interface FormData {
@@ -29,8 +31,9 @@ const Contact = () => {
 
     const [submissionStatus, setSubmissionStatus] = useState<"success" | "error" | null>(null);
     const [isLoading, setIsLoading] = useState(false);
-    const [contact, setContact] = useState<ContactData[] | null>(null);
-    const [site, setSite] = useState<SiteData[] | null>(null);
+
+    const [contactData, setContactData] = useState<ContactData[] | null>(null);
+    const [siteData, setSiteData] = useState<SiteData[] | null>(null);
 
     
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -42,15 +45,15 @@ const Contact = () => {
         }));
     };
 
-    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files?.[0] || null;
-        setFormData((prev) => ({
-            ...prev,
-            attachment: file
-        }));
+    // const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    //     const file = e.target.files?.[0] || null;
+    //     setFormData((prev) => ({
+    //         ...prev,
+    //         attachment: file
+    //     }));
 
-        console.log("-----file :", file);
-    };
+    //     console.log("-----file :", file);
+    // };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -103,29 +106,26 @@ const Contact = () => {
         }
     };
 
+    
 
     
     
     useEffect(() => {
         const fetchData = async () => {
-            try {
-                const contactData = await getContactData();
-                const siteData = await getSiteData();
+            const contact = await getContactData();
+            const site = await getSiteData();
+            setContactData(contact);
+            setSiteData(site);
 
-                setContact(contactData);
-                setSite(siteData)
+            console.log("contact : ", contact)
+            console.log("site : ", site)
 
-                console.log("contactData : ", contactData)
-
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            }
         };
-
         fetchData();
     }, []);
-    // const metaData = getMetadata();
-    // console.log("---------meta :",metaData);
+
+    // const contact = await getContactData();
+    // const site = await getSiteData();
 
     return (
         <div>
@@ -229,7 +229,7 @@ const Contact = () => {
                                         onChange={handleChange}
                                     />
                                 </div>
-                                <div className={styles.contactFormDiv}>
+                                {/* <div className={styles.contactFormDiv}>
                                     <label htmlFor="file" className={styles.form_label}>
                                         Attachment
                                     </label>
@@ -241,7 +241,7 @@ const Contact = () => {
                                         onChange={handleFileChange}
                                         accept=".pdf, .jpg, .jpeg, .png"
                                     />
-                                </div>
+                                </div> */}
                                 <div className={styles.contactFormDiv}>
                                     <label htmlFor="message" className={styles.form_label}>
                                         Message
@@ -256,17 +256,19 @@ const Contact = () => {
                                         onChange={handleChange}
                                     ></textarea>
                                 </div>
-                                <div className={`flex flex-row align-content-center ${styles.contactFormDiv}`}>
+                                <div className={`d-flex flex-row align-items-center  ${styles.contactFormDiv}`}>
                                     <input
                                         type="checkbox"
-                                        className={styles.formCheckBox}
+                                        required
+                                        className={`${styles.formCheckBox} mt-0`}
                                         id="privacyPolicy"
                                         name="privacyPolicy"
                                         checked={formData.privacyPolicy}
                                         onChange={handleChange}
+                                        style={{border: "2px solid #dee2e6 !important", borderRadius: "6px !important"}}
                                     />
-                                    <label className={`form-check-label ${styles.formCheck}`} htmlFor="privacyPolicy">
-                                        I agree to our friendly <a href="#">Privacy Policy</a>.
+                                    <label className={`form-check-label ${styles.formCheck} ${pageStyles.agree_text}`} htmlFor="privacyPolicy">
+                                        You agree to our friendly  <a href="#">Booking Policy</a>.
                                     </label>
                                 </div>
                                 <button
@@ -299,17 +301,25 @@ const Contact = () => {
                         <div className="row">
                             <div className={`col-lg-6 col-md-12 mb-4 ${styles.contact_info_container}`}>
                                 <h1 className={styles.sectionTitle}>
-                                    {contact?.[0]?.title ?? 'Default Title'}
+                                    {contactData?.[0]?.title ?? 'Default Title'}
                                 </h1>
                                 <p className={styles.map_hours_desc}>
-                                    {contact?.[0]?.description ?? 'No description available.'}
+                                    {contactData?.[0]?.description ?? 'No description available.'}
                                 </p>
 
 
                                 <h3 className={`${styles.map_hours_title}`}>OPENING
                                     HOURS</h3>
-                                <div className="">
-                                    <div
+                                    <div className="">
+                                    {siteData?.[0]?.openDays.map((item, index) => (
+                                        <div key={index}
+                                        className="d-flex justify-content-between border-top border-1 border-secondary py-2">
+                                        <span className={styles.map_hours_days}>{item.day}</span>
+                                        <span className={styles.map_hours_time}>{item.time}</span>
+                                    </div>
+                                    ))}
+                                
+                                    {/* <div
                                         className="d-flex justify-content-between border-top border-1 border-secondary py-2">
                                         <span className={styles.map_hours_days}>TUESDAY TO SATURDAY</span>
                                         <span className={styles.map_hours_time}>9:00am - 8:00pm</span>
@@ -317,7 +327,7 @@ const Contact = () => {
                                     <div className="d-flex justify-content-between border-top py-2">
                                         <span className={styles.map_hours_days}>MONDAY</span>
                                         <span className={styles.map_hours_time}>Closed</span>
-                                    </div>
+                                    </div> */}
                                 </div>
 
                                 <h3 className={`mt-4 border-bottom border-1 border-secondary py-4 ${styles.map_hours_title}`}>CONTACT
@@ -325,20 +335,20 @@ const Contact = () => {
                                 <div className="">
                                     <p className={`d-flex align-items-center gap-4 ${styles.contact_info}`}>
                                         <Image src="/location.png" alt="location icon" width={24} height={24} />
-                                        {site?.[0]?.address}
+                                        {siteData?.[0]?.address}
                                         {/* 14 Albert Cres, Colombo 007 */}
                                     </p>
                                     <p className={`d-flex align-items-center gap-4 ${styles.contact_info}`}>
                                         <Image src="/email.png" alt="email icon" width={24} height={24} />
                                         
-                                        {site?.[0]?.emailArray.map((item, index) => (
+                                        {siteData?.[0]?.emailArray.map((item, index) => (
                           <span key={index}>{item?.email}</span>
                         ))}
                                     </p>
                                     <p className={`d-flex align-items-center gap-4 ${styles.contact_info}`}>
                                         <Image src="/call.png" alt="phone icon" width={24} height={24} />
                                         {/* <span>+94 77 231 4888</span> */}
-                                        {site?.[0]?.phoneNumberArray.map((item, index) => (
+                                        {siteData?.[0]?.phoneNumberArray.map((item, index) => (
                           <span key={index}>{item?.number}</span>
                         ))}
                                     </p>

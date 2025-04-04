@@ -11,15 +11,17 @@ const BlogCard: React.FC<BlogData> = ({ title, slug, mainImage, publishedAt, fet
                 className={`bg-white blogCardBody rounded-3 shadow-sm overflow-hidden transition-all duration-300 ease-in-out hover:shadow-md hover:scale-[1.02] cursor-pointer ${styles.blogCard}`}
             >
                 {mainImage && (
-                    <Image
-                        src={urlFor(mainImage).url()}
-                        alt={title}
-                        layout="responsive"
-                        width={500}
-                        height={300}
-                        className="w-full h-auto object-cover rounded-top-3"
-                    />
+                   <div className={styles.blogCardImageWrapper}>
+                   <Image
+                     src={urlFor(mainImage).url()}
+                     alt={title}
+                     fill 
+                     className="object-cover rounded-[20px]"
+                     sizes="(max-width: 768px) 100vw, 300px"
+                   />
+                 </div>
                 )}
+
 
                 <div className="p-4">
                     <p className={`text-[14px] ${styles.blogCardDate}`}>
