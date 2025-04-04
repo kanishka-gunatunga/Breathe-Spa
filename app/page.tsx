@@ -333,7 +333,7 @@ export default async function Home() {
                   )}
 
                   <Link
-                    href={typeof post.slug === "string" ? post.slug : post.slug.current}
+                    href={`/blog/${typeof post.slug === "string" ? post.slug : post.slug.current}`}
                     className={seStyles.se_26_card_txt}
                     style={{
                       textDecoration: "none",
