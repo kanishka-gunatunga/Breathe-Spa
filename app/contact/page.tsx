@@ -141,8 +141,8 @@ const Contact = () => {
                 />
             </div>
 
-            <section className={`${styles.contactContainer} pt-5 ${styles.formSection}`} id="contactForm">
-                <div className={`row align-items-stretch ${styles.equalHeightRow}`}>
+            <section  className={`${styles.contactContainer} pt-5 ${styles.formSection}`}>
+                <div id="contactForm" className={`row align-items-stretch ${styles.equalHeightRow}`}>
                     <div className="col-md-6 mb-4 mb-md-0">
                         <div className={styles.imageContainer}>
                             <Image
@@ -293,7 +293,7 @@ const Contact = () => {
                 </div>
             </section>
 
-            <div className={styles.mapHouContainer}>
+            <div className={styles.mapHouContainer} >
                 <div className={styles.mapMain}>
                     <div className={`${styles.contactContainer} p-4`}>
                         <div className="row">
