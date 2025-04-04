@@ -4,8 +4,11 @@ import { fetchBlogData } from "@/sanity/libs/api";
 import { urlFor } from "@/sanity/libs/sanity";
 import { PortableText } from "next-sanity";
 
-export default async function BlogPost({ params }: { params: { slug: string } }) {
-    const { slug } = params;
+
+
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+    
+    const { slug } =  await params;
     console.log("slug : ", slug);
 
     const blog = await fetchBlogData(slug);
