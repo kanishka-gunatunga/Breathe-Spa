@@ -70,6 +70,7 @@ export default async function Home() {
                           <div className={`col-6 ${styles.bottomBorder} `}>
                             <p className={`${seStyles.se_txt_18} scaleTxt`}>{item.title}</p>
                           </div>
+                      </div>
                       <div key={index} className="d-flex py-2">
                         <div className={`col-6 ${styles.bottomBorder}`}>
                           <Link href={`/services#${item.slug.current}`} className="text-decoration-none">
