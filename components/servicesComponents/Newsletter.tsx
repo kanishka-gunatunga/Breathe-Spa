@@ -30,7 +30,7 @@ const NewsletterForm = () => {
         setEmail('');
       } else {
         const errorData = await response.json();
-        setMessage(errorData.message || 'Something went wrong');
+        setMessage(errorData.message || 'Enter valid email address');
         setAlertType('danger'); 
       }
 
