@@ -71,6 +71,7 @@ const NewsletterForm = () => {
           className="form-control"
           placeholder="Join a Newsletter"
           value={email}
+          required
           onChange={(e) => setEmail(e.target.value)}
         />
         <button
