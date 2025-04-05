@@ -127,6 +127,7 @@ const ContactForm = () => {
                                 </label>
                                 <input
                                     type="text"
+                                    required
                                     className={styles.formControl}
                                     id="firstName"
                                     name="firstName"
@@ -141,6 +142,7 @@ const ContactForm = () => {
                                 </label>
                                 <input
                                     type="text"
+                                    required
                                     className={styles.formControl}
                                     id="lastName"
                                     name="lastName"
@@ -156,6 +158,7 @@ const ContactForm = () => {
                             </label>
                             <input
                                 type="email"
+                                required
                                 className={styles.formControl}
                                 id="email"
                                 name="email"
@@ -170,6 +173,7 @@ const ContactForm = () => {
                             </label>
                             <input
                                 type="tel"
+                                required
                                 className={styles.formControl}
                                 id="phone"
                                 name="phone"
@@ -196,6 +200,7 @@ const ContactForm = () => {
                                 Message
                             </label>
                             <textarea
+                                required
                                 className={styles.formControl}
                                 id="message"
                                 name="message"
@@ -217,7 +222,7 @@ const ContactForm = () => {
                                 style={{ border: "2px solid #dee2e6 !important", borderRadius: "6px !important" }}
                             />
                             <label className={`form-check-label ${styles.formCheck} ${pageStyles.agree_text}`} htmlFor="privacyPolicy">
-                                You agree to our friendly  <a href="#">Booking Policy</a>.
+                                You agree to our friendly  <a href="/terms">Booking Policy</a>.
                             </label>
                         </div>
                         <button
