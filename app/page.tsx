@@ -65,12 +65,12 @@ export default async function Home() {
                   <div className={`row py-3 px-0 ${styles.popUpRow}`}>
                     {service?.map((item, index) => (
                       <Link key={index} href={`/services#${item.slug.current}`} className="linkUnderlineNone" >
-                        <div className="d-flex pt-1">
+                        {/* <div className="d-flex pt-1">
 
                           <div className={`col-6 ${styles.bottomBorder} `}>
                             <p className={`${seStyles.se_txt_18} scaleTxt`}>{item.title}</p>
                           </div>
-                      </div>
+                      </div> */}
                       <div key={index} className="d-flex py-2">
                         <div className={`col-6 ${styles.bottomBorder}`}>
                           <Link href={`/services#${item.slug.current}`} className="text-decoration-none">
