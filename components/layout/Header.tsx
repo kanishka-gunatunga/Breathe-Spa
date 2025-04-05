@@ -1,17 +1,17 @@
 
 "use client";
 import Image from 'next/image';
-import pageStyles from "@/styles/page.module.css"
+import pageStyles from "@/styles/page.module.css";
 import { urlFor } from '@/sanity/libs/sanity';
 import { SiteData } from '@/sanity/types';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Nav, Navbar } from 'react-bootstrap';
 
 interface HeaderProps {
   site: SiteData[];
 }
-const Header = ({ site }: HeaderProps) => {
 
+const Header = ({ site }: HeaderProps) => {
   const pathname = usePathname();
 
   if (!site || !site[0]) {
@@ -19,12 +19,49 @@ const Header = ({ site }: HeaderProps) => {
     return null;
   }
 
-  const isActive = (path: string) => pathname === path ? 'active-link' : '';
+  // const isActive = (path: string) => pathname?.startsWith(path) ? 'active-link' : '';
+
+  const isActive = (path: string) => {
+    if (path === '/') {
+      return pathname === '/' ? 'active-link' : '';
+    }
+    return pathname?.startsWith(path) ? 'active-link' : '';
+  };
+  
 
   return (
     <>
-     
-      <div className="w-100 navColor py-3" style={{ backgroundColor: "#F3EEE7 !important" }}>
+      <div className='w-100 navColor' style={{ backgroundColor: "#F3EEE7 !important" }}>
+        <div className={`${pageStyles.contactContainer} ${pageStyles.mobile_width} navColor`} style={{ backgroundColor: "#F3EEE7 !important" }}>
+          <Navbar expand="lg" className="p-3 navStyleMobile" style={{ backgroundColor: "#F3EEE7 !important" }}>
+            <Navbar.Brand href="/">
+              {site[0]?.logo && (
+                <Image src={urlFor(site[0]?.logo).url() || "/interior.png"} alt="Breathe Logo" width={317} height={33} className='img-fluid ' />
+              )}
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+              <Nav>
+                <Nav.Link className={`nav-item px-lg-3 ${isActive('/')}`} href="/">Home</Nav.Link>
+                <Nav.Link className={`nav-item px-lg-3 ${isActive('/services')}`} href="/services">Our Services</Nav.Link>
+                <Nav.Link className={`nav-item px-lg-3 ${isActive('/about-breath')}`} href="/about-breath">About Breathe</Nav.Link>
+                <Nav.Link className={`nav-item px-lg-3 ${isActive('/blog')}`} href="/blog">Blog</Nav.Link>
+                <Nav.Link className={`nav-item px-lg-3 ${isActive('/contact')}`} href="/contact">Contact Us</Nav.Link>
+                <Nav.Link className={`nav-item px-lg-3 ${isActive('/terms')}`} href="/terms">T & C</Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
+          </Navbar>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Header;
+
+
+
+{/* <div className="w-100 navColor py-3" style={{ backgroundColor: "#F3EEE7 !important" }}>
         <div className={`${pageStyles.contactContainer} ${pageStyles.mobile_width} navColor`} style={{ backgroundColor: "#F3EEE7 !important" }}>
           <nav className="navbar navbar-expand-lg navbar-light" style={{ backgroundColor: "#F3EEE7 !important" }}>
             <Link className="navbar-brand" href="/">
@@ -59,16 +96,8 @@ const Header = ({ site }: HeaderProps) => {
             </div>
           </nav>
         </div>
-      </div>
-    </>
-  );
-};
-
-export default Header;
-
-
-
- {/* <div className='w-100 navColor' style={{ backgroundColor: "#F3EEE7 !important" }}>
+      </div> */}
+{/* <div className='w-100 navColor' style={{ backgroundColor: "#F3EEE7 !important" }}>
         <div className={`${pageStyles.contactContainer} ${pageStyles.mobile_width} navColor`} style={{ backgroundColor: "#F3EEE7 !important" }}>
           <Navbar expand="lg" className="p-3 navStyleMobile" style={{ backgroundColor: "#F3EEE7 !important" }} >
             <Navbar.Brand href="/">

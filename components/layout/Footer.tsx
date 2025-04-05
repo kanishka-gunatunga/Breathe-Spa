@@ -1,12 +1,11 @@
 import Image from 'next/image';
 import React, { } from 'react';
 import "./header-footer.css";
-import Form from 'next/form'
-import Button from "@/components/ReusableComponents/Button";
 import styles from "@/styles/page.module.css";
 import Link from 'next/link';
 import { urlFor } from '@/sanity/libs/sanity';
 import { ServiceCategory, SiteData } from '@/sanity/types';
+import NewsletterForm from '../servicesComponents/Newsletter';
 
 interface FooterProps {
   site: SiteData[];
@@ -23,7 +22,7 @@ const Footer = ({ site, service }: FooterProps) => {
         <svg width="100%" height="100%" viewBox="0 0 1440 151" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M376.779 30.0272C219.86 36.3225 0 89.2316 0 89.2316V-83H1440V89.2316C1440 89.2316 1382.81 108.974 1302.06 126.14C1246.98 137.852 1180.93 148.364 1114.6 150.59C848.186 159.529 643.086 19.3437 376.779 30.0272Z" fill="white" />
         </svg>
-        <div className={` ${styles.contactContainer} section`}>
+        <div className={` ${styles.contactContainer} section pb-0`}>
           <div className='col-12 position-relative footer-content px-0'>
             <div className='row footer-row'>
               <div className='col-12 col-md-8 col-lg-8 d-flex justify-content-start mb-5 mb-md-0 mb-lg-0'>
@@ -35,12 +34,13 @@ const Footer = ({ site, service }: FooterProps) => {
               </div>
 
 
-              <div className='col-12 col-md-4 col-lg-4 d-flex justify-content-end gap-3'>
+              {/* <div className='col-12 col-md-4 col-lg-4 d-flex justify-content-end gap-3'>
                 <Form action="/search" className='d-flex search-form'>
                   <input name="query" className='form-control' placeholder='Join a Newsletter' />
                   <Button text="Subscribe" href="" />
                 </Form>
-              </div>
+              </div> */}
+               <NewsletterForm />
             </div>
 
             <div className='d-block d-md-flex d-lg-flex footer-row'>
@@ -123,7 +123,7 @@ const Footer = ({ site, service }: FooterProps) => {
               </div>
             </div>
 
-            <div className='footer-row d-block d-md-flex d-lg-flex justify-content-between'>
+            <div className='footer-row d-block d-md-flex d-lg-flex justify-content-between py-3 mt-2'>
               <p className='bottom-p'>Copyright @ Breathe. All rights reserved.</p>
               <Link style={{
                 color:'unset',

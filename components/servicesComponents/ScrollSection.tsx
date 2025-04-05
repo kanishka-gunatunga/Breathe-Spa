@@ -127,7 +127,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category, categoryId }) => {
     useEffect(() => {
-        // Ensure category.services is not null/undefined before mapping
         if (category.services) {
             category.services.forEach((service, index) => {
                 const imageId = `service-image-${category.slug.current}-${index}`;
@@ -139,10 +138,16 @@ const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category, cat
                     pin: `#${imageId}`,
                 });
             });
+            setTimeout(() => {
+                const hash = window.location.hash;
+                if (hash) {
+                  const el = document.querySelector(hash);
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }
+              }, 600);
         }
     }, [category]);
 
-    // Ensure services is always an array
     const services = category.services || [];
 
     return (
@@ -191,7 +196,7 @@ const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category, cat
                     )}
                 </div>
             </div>
-            <div className="d-flex d-lg-none flex-column-reverse flex-lg-row">
+            <div className="d-flex d-lg-none flex-column-reverse flex-lg-row" id={`${category.slug.current}`}>
                 <div className="col-12 col-lg-6 pe-lg-2 mt-3 mt-lg-0">
                     <h3 className={`fade-in-up ${style.se_txt_40}`}>{category.title}</h3>
                     <p className={`${style.se_txt_15} mb-3 mb-lg-4`}>{category.description}</p>

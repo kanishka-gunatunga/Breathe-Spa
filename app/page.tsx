@@ -64,7 +64,7 @@ export default async function Home() {
 
                   <div className={`row py-3 px-0 ${styles.popUpRow}`}>
                     {service?.map((item, index) => (
-                      <Link key={index} href={`/services/${item.slug.current}`} className="linkUnderlineNone" >
+                      <Link key={index} href={`/services#${item.slug.current}`} className="linkUnderlineNone" >
                         <div className="d-flex pt-1">
 
                           <div className={`col-6 ${styles.bottomBorder} `}>
@@ -297,10 +297,7 @@ export default async function Home() {
 
 
             <div className={`col-12 col-md-4 col-lg-4 mb-5 mb-lg-0  d-flex justify-content-center  justify-content-lg-end justify-content-md-end ${styles.viewAll}`}>
-              <Link href='/blog#ourRecentPosts'>
-                <Button text="View All" href="" />
-              </Link>
-
+              <Button text="View All" href="/blog/#blogArticles" />
             </div>
           </div>
 

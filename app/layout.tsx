@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inria_Sans, Scheherazade_New } from "next/font/google";
 import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 import { getServiceCategories, getSiteData } from "@/sanity/libs/api";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
