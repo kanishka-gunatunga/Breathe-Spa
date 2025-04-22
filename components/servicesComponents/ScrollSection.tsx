@@ -141,10 +141,10 @@ const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category, cat
             setTimeout(() => {
                 const hash = window.location.hash;
                 if (hash) {
-                  const el = document.querySelector(hash);
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    const el = document.querySelector(hash);
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
                 }
-              }, 600);
+            }, 600);
         }
     }, [category]);
 
@@ -171,7 +171,7 @@ const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category, cat
                                             ))}
                                         </ul>
                                     </div>
-                                    <DarkButton text="View More" link={`/services/${category.slug.current}`} />
+                                    <DarkButton text="View More" link={`/services/${category.slug.current}`} serviceId={`service-${service.serviceName.toLowerCase().replace(/\s+/g, '-')}`}  />
                                 </div>
                             ))
                         ) : (
@@ -215,7 +215,7 @@ const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category, cat
                                             ))}
                                         </ul>
                                     </div>
-                                    <DarkButton text="View More" link={`/services/${category.slug.current}`} />
+                                    <DarkButton text="View More" link={`/services/${category.slug.current}`} serviceId={`service-${service.serviceName.toLowerCase().replace(/\s+/g, '-')}`}  />
                                 </div>
                             ))
                         ) : (

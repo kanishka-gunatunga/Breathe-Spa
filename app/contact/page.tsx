@@ -1,16 +1,16 @@
-
 import Image from "next/image";
 import styles from "@/styles/page.module.css";
-import React, {  } from "react";
+import React from "react";
 import ContactLocation from "@/components/servicesComponents/ContactLocation";
 import ContactForm from "@/components/servicesComponents/ContactForm";
+import {ScrollHandler} from "@/components/ReusableComponents/ScrollHandler";
 
 
 const Contact = () => {
 
-
     return (
         <div>
+            <ScrollHandler/>
             <div>
                 <Image
                     className={`m-0 p-0`}
@@ -18,17 +18,19 @@ const Contact = () => {
                     width={0}
                     height={0}
                     sizes="100%"
-                    style={{ width: "100%", height: "auto" }}
+                    style={{width: "100%", height: "auto"}}
                     alt=""
                 />
             </div>
 
             <section className={`${styles.contactContainer} section pt-5 ${styles.formSection}`}>
                 <div id="contactForm" className={`row align-items-stretch ${styles.equalHeightRow}`}>
-                    <ContactForm />
+                    <ContactForm/>
                 </div>
             </section>
-            <ContactLocation />
+            <div id="locationContainer">
+                <ContactLocation/>
+            </div>
 
             <div>
                 <div className={`${styles.exclusiveDeals} mt-6`}>
