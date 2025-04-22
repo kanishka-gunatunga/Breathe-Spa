@@ -9,6 +9,7 @@ import { PortableText } from 'next-sanity'
 const page = async () => {
     
 
+    
     const terms = await getTermsData()
     console.log("terms: ", terms);
 
