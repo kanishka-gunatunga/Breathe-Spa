@@ -149,6 +149,7 @@ const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category, cat
     }, [category]);
 
     const services = category.services || [];
+    console.log("services price: ", services)
 
     return (
         <div className={`${pageStyle.contactContainer} section`} id={`${category.slug.current}`}>
@@ -164,7 +165,7 @@ const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category, cat
                                         <h4 className={`${style.se_txt_18}`}>{service.serviceName}</h4>
                                         <h5 className={`${style.se_txt_12}`}>{service.serviceDescription?.title}</h5>
                                         <ul className={`${style.se_txt_14} pb-3`}>
-                                            {service.pricing.map((pricing, idx) => (
+                                            {service?.pricing?.map((pricing, idx) => (
                                                 <li key={idx} className={`${style.se_txt_14}`}>
                                                     {pricing.duration} | Rs.{pricing.price}
                                                 </li>
