@@ -65,7 +65,7 @@ export default async function ServiceCategoryPage({params}: { params: Promise<{ 
                         )}
                     </div>
                     <div className="col-12 col-lg-7 ps-lg-5 d-flex flex-column align-items-streach pt-4 pt-lg-0">
-                        <MainTitle title={category.title}/>
+                        <MainTitle title={category.categoryTitle}/>
                         <Paragraph text={category.categoryDescription}/>
                     </div>
                 </div>
