@@ -1,4 +1,4 @@
-import { TypedObject } from "@portabletext/types";
+import {PortableTextBlock, TypedObject } from "@portabletext/types";
 
 export interface ServiceCategory {
   _id: string
@@ -13,7 +13,7 @@ export interface ServiceCategory {
   servicesImage?: string
   categoryTitle: string
   description: string
-  categoryDescription: string
+  categoryDescription: PortableTextBlock[]
   homeDescription: string
   services: Service[]
 }

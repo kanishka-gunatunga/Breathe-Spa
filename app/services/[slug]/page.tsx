@@ -10,6 +10,8 @@ import {urlFor} from '@/sanity/libs/sanity';
 import {Service} from '@/sanity/types';
 import Link from 'next/link';
 import {ScrollHandler} from "@/components/ReusableComponents/ScrollHandler";
+import {PortableText} from "next-sanity";
+import React from "react";
 
 
 export default async function ServiceCategoryPage({params}: { params: Promise<{ slug: string }> }) {
@@ -66,7 +68,10 @@ export default async function ServiceCategoryPage({params}: { params: Promise<{ 
                     </div>
                     <div className="col-12 col-lg-7 ps-lg-5 d-flex flex-column align-items-streach pt-4 pt-lg-0">
                         <MainTitle title={category.categoryTitle}/>
-                        <Paragraph text={category.categoryDescription}/>
+                        {/*<Paragraph text={category.categoryDescription}/>*/}
+                        <div className={`${pageStyle.map_hours_desc} mb-0`}>
+                            <PortableText value={category.categoryDescription}/>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -96,7 +101,8 @@ export default async function ServiceCategoryPage({params}: { params: Promise<{ 
                                                         className="d-flex w-100 justify-content-between align-items-top">
                                                         <h4 className={`${style.se_txt_40}`}>{service.serviceName}</h4>
                                                         <div className="d-none d-md-flex">
-                                                            <Link href={"/contact"} className={`${style.se_link_a_20}`}>Book Now</Link>
+                                                            <Link href={"/contact"} className={`${style.se_link_a_20}`}>Book
+                                                                Now</Link>
                                                         </div>
                                                     </div>
                                                     <ul className={`${style.pricingList} ${style.se_li_26} `}>
@@ -111,7 +117,8 @@ export default async function ServiceCategoryPage({params}: { params: Promise<{ 
                                                     </ul>
                                                     <Paragraph text={service.serviceItemDescription}/>
                                                     <div className="d-flex d-md-none my-3">
-                                                        <Link href={"/contact"} className={`${style.se_link_a_20}`}>Book Now</Link>
+                                                        <Link href={"/contact"} className={`${style.se_link_a_20}`}>Book
+                                                            Now</Link>
                                                     </div>
                                                 </div>
                                             </div>
