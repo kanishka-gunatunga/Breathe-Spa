@@ -101,7 +101,7 @@ export default async function ServiceCategoryPage({params}: { params: Promise<{ 
                                                         className="d-flex w-100 justify-content-between align-items-top">
                                                         <h4 className={`${style.se_txt_40}`}>{service.serviceName}</h4>
                                                         <div className="d-none d-md-flex">
-                                                            <Link href={"/contact"} className={`${style.se_link_a_20}`}>Book
+                                                            <Link href={"/contact#contactForm"} className={`${style.se_link_a_20}`}>Book
                                                                 Now</Link>
                                                         </div>
                                                     </div>
@@ -117,7 +117,7 @@ export default async function ServiceCategoryPage({params}: { params: Promise<{ 
                                                     </ul>
                                                     <Paragraph text={service.serviceItemDescription}/>
                                                     <div className="d-flex d-md-none my-3">
-                                                        <Link href={"/contact"} className={`${style.se_link_a_20}`}>Book
+                                                        <Link href={"/contact#contactForm"} className={`${style.se_link_a_20}`}>Book
                                                             Now</Link>
                                                     </div>
                                                 </div>

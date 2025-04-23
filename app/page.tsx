@@ -35,7 +35,7 @@ export default async function Home() {
             <div className={`${styles.contactContainer} section pb-5 pt-5`}>
                 <div className="d-block d-md-block d-lg-flex justify-content-center gap-5">
                     <div
-                        className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start justify-content-lg-between">
+                        className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start">
                         <div>
                             <h1 className={`${seStyles.se_txt_50_coe} mb-3 mb-lg-3`}>
                                 {home[0]?.sectionOneTitle}
@@ -49,7 +49,7 @@ export default async function Home() {
                                        width={655} alt=""/>
                             )}
                         </div>
-                        <div className="mb-md-4 pt-4">
+                        <div className="mb-md-4 mt-5">
                             <Button href={home[0]?.sectionOneButtonLink} text={home[0]?.sectionOneButton}/>
                         </div>
                     </div>
@@ -207,8 +207,8 @@ export default async function Home() {
 
                                 </div>
                                 <div
-                                    className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start justify-content-lg-between mb-5">
-                                    <div className="mb-3">
+                                    className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start mb-5">
+                                    <div className="mb-4">
                                         <h3 className={seStyles.se_txt_40}>{item.name}</h3>
                                         <p className={seStyles.se_txt_16_work_sans_dark} style={{textAlign: "justify"}}>
                                             {item.description}
@@ -220,8 +220,8 @@ export default async function Home() {
                         ) : (
                             <>
                                 <div
-                                    className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start justify-content-lg-between mb-5">
-                                    <div className="mb-3">
+                                    className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start mb-5">
+                                    <div className="mb-4">
                                         <h3 className={seStyles.se_txt_40}>{item.name}</h3>
                                         <p className={seStyles.se_txt_16_work_sans_dark} style={{textAlign: "justify"}}>
                                             {item.description}
@@ -275,7 +275,6 @@ export default async function Home() {
                     </div>
                 ))}
             </div>
-
 
             {home[0]?.sectionTwoImage && (
                 <YellowBackSection
