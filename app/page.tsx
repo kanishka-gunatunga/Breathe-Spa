@@ -60,14 +60,14 @@ export default async function Home() {
                             <div className="card-body">
                                 {/* main topic our services */}
                                 <div className="row mb-0">
-                                    <h3 className={seStyles.se_txt_25_awesome}>OUR SERVICES</h3>
+                                    <h3 className={`${seStyles.se_txt_25_awesome} mb-0`}>OUR SERVICES</h3>
                                 </div>
 
 
                                 {/* treatments */}
                                 <div className="row px-2">
-                                    <div className={`${seStyles.line_border} mt-4 px-0`}>
-                                        <h3 className={seStyles.se_txt_18}>TREATMENTS</h3>
+                                    <div className={`${seStyles.line_border} mt-3 px-0`}>
+                                        <h3 className={`${seStyles.se_txt_18}`}>TREATMENTS</h3>
                                     </div>
 
                                     <div className="row py-3 px-0">
@@ -77,11 +77,11 @@ export default async function Home() {
                                                 <div className="d-flex pt-1">
 
                                                     <div className={`col-6 ${styles.bottomBorder} `}>
-                                                        <p className={`${seStyles.se_txt_18} scaleTxt`}>{item.title}</p>
+                                                        <p className={`${seStyles.se_txt_18} scaleTxt mb-0`}>{item.title}</p>
                                                     </div>
 
                                                     <div className={`col-6 ${styles.bottomBorder}`}>
-                                                        <p className={seStyles.se_txt_12_work_sans}>
+                                                        <p className={`${seStyles.se_txt_12_work_sans} mb-0`}>
                                                             {item.homeDescription}
                                                         </p>
                                                     </div>
@@ -106,18 +106,18 @@ export default async function Home() {
 
                                 {/* Hours */}
                                 <div className="row px-2">
-                                    <div className={`${seStyles.line_border} mt-4 px-0`}>
+                                    <div className={`${seStyles.line_border} mt-3 px-0`}>
                                         <h3 className={seStyles.se_txt_18}>HOURS</h3>
                                     </div>
                                     {site[0]?.openDays.map((item, index) => (
                                         <div key={index} className="row  pt-3 px-0 w-100">
                                             <div className="d-flex">
                                                 <div className={`col-6 ${styles.bottomBorder}`}>
-                                                    <p className={seStyles.se_txt_18}>{item.day}</p>
+                                                    <p className={`${seStyles.se_txt_18} mb-0`}>{item.day}</p>
                                                 </div>
 
                                                 <div className={`col-6 ${styles.bottomBorder}`}>
-                                                    <p className={seStyles.se_txt_12_work_sans}>
+                                                    <p className={`${seStyles.se_txt_12_work_sans} mb-0`}>
                                                         {item.time}
                                                     </p>
                                                 </div>
@@ -130,18 +130,18 @@ export default async function Home() {
                                 {/* contact */}
                                 <div className="row px-2">
                                     <div className={`${seStyles.line_border}  mt-5 px-0`}>
-                                        <h3 className={seStyles.se_txt_18}>CONTACT</h3>
+                                        <h3 className={`${seStyles.se_txt_18} mb-0`}>CONTACT</h3>
                                     </div>
 
                                     <div className="row  py-3 px-0">
                                         <div className="d-flex">
                                             <div className={`col-6 ${styles.bottomBorder}`}>
-                                                <p className={seStyles.se_txt_18}>Phone</p>
+                                                <p className={`${seStyles.se_txt_18} mb-0`}>Phone</p>
                                             </div>
 
                                             <div className={`col-6 ${styles.bottomBorder}`}>
                                                 {site[0]?.phoneNumberArray.map((item, index) => (
-                                                    <p key={index} className={seStyles.se_txt_12_work_sans}>
+                                                    <p key={index} className={`${seStyles.se_txt_12_work_sans} mb-0`}>
                                                         {item.number}
                                                     </p>
                                                 ))}
@@ -154,12 +154,12 @@ export default async function Home() {
                                     <div className="row  px-0">
                                         <div className="d-flex">
                                             <div className={`col-6 border-0 ${styles.bottomBorder}`}>
-                                                <p className={seStyles.se_txt_18}>Email</p>
+                                                <p className={`${seStyles.se_txt_18} mb-0`}>Email</p>
                                             </div>
 
                                             <div className={`col-6  border-0 ${styles.bottomBorder}`}>
                                                 {site[0]?.emailArray.map((item, index) => (
-                                                    <p key={index} className={seStyles.se_txt_12_work_sans}>
+                                                    <p key={index} className={`${seStyles.se_txt_12_work_sans} mb-0`}>
                                                         {item.email}
                                                     </p>
                                                 ))}

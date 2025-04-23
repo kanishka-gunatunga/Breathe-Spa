@@ -481,7 +481,7 @@
     font-family: 'AwesomeSerif', sans-serif;
     font-weight: 600;
     font-size: 20px;
-    line-height: 7.86px;
+    /* line-height: 7.86px; */
     letter-spacing: 0%;
     vertical-align: middle;
     color: #BCBCBC;
@@ -622,7 +622,7 @@
         font-size: 28px;
     }
     .se_li_26 {
-        font-size: 32px;
+        font-size: 26px;
     }
     .se_txt_25_awesome {
         font-size: 30px;
@@ -695,7 +695,7 @@
         font-size: 36px;
     }
     .se_li_26 {
-        font-size: 40px;
+        font-size: 34px;
     }
     .se_txt_25_awesome {
         font-size: 36px;
@@ -767,7 +767,7 @@
         font-size: 42px;
     }
     .se_li_26 {
-        font-size: 46px;
+        font-size: 36px;
     }
     .se_txt_25_awesome {
         font-size: 42px;
