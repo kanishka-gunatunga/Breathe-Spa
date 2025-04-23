@@ -13,6 +13,12 @@ interface FooterProps {
 }
 const Footer = ({ site, service }: FooterProps) => {
 
+  const serviceOrder = [
+    service.find(item => item.slug.current === 'body'),
+    service.find(item => item.slug.current === 'nail-treatment'),
+    service.find(item => item.slug.current === 'facial'),
+    service.find(item => item.slug.current === 'add-ons'),
+].filter(Boolean);
         
   return (
 
@@ -59,8 +65,8 @@ const Footer = ({ site, service }: FooterProps) => {
               <div className="col-12 col-md-2 col-lg-2 footer-row-2">
                 <div className='quick-links-container'>
                   <h5 className='footer-h5'>SERVICES</h5>
-                  {service?.map((item, index) => (
-                      <Link key={index} href={`/services/${item.slug.current}`} className='footer-link-tag'>
+                  {serviceOrder?.map((item, index) => (
+                      <Link key={index} href={`/services/${item?.slug.current}`} className='footer-link-tag'>
                         <p className='footer-quick-links'>{item?.title}</p>
                       </Link>
                     ))}
