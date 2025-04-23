@@ -74,27 +74,27 @@ export default async function Home() {
                                         {serviceOrder?.map((item, index) => item ? (
                                             <Link key={index} href={`/services#${item.slug.current}`}
                                                   className="linkUnderlineNone">
-                                                <div className="d-flex pt-1">
+                                                <div className="d-flex pt-0">
 
                                                     <div className={`col-6 ${styles.bottomBorder} `}>
-                                                        <p className={`${seStyles.se_txt_18} scaleTxt`}>{item.title}</p>
+                                                        <p className={`${seStyles.se_txt_18} scaleTxt mb-0`}>{item.title}</p>
                                                     </div>
 
-                                                    <div className={`col-6 ${styles.bottomBorder}`}>
-                                                        <p className={`${seStyles.se_txt_12_work_sans}`}>
+                                                    <div className={`col-6 py-1 ${styles.bottomBorder}`}>
+                                                        <p className={`${seStyles.se_txt_12_work_sans} mb-0`}>
                                                             {item.homeDescription}
                                                         </p>
                                                     </div>
                                                 </div>
                                             </Link>
                                         ) : null)}
-                                        <div className="d-flex pt-1">
+                                        <div className="d-flex pt-0">
                                             <div className={`col-6 ${styles.bottomBorder}`}>
-                                                <p className={seStyles.se_txt_18}>Gift Vouchers</p>
+                                                <p className={`${seStyles.se_txt_18} mb-0`}>Gift Vouchers</p>
                                             </div>
 
-                                            <div className={`col-6 ${styles.bottomBorder}`}>
-                                                <p className={seStyles.se_txt_12_work_sans}>
+                                            <div className={`col-6 py-1 ${styles.bottomBorder}`}>
+                                                <p className={`${seStyles.se_txt_12_work_sans} mb-0`}>
                                                     Stylish gift cards to share the benefits of wellness, relaxation,
                                                     and pampering
                                                 </p>
@@ -110,14 +110,14 @@ export default async function Home() {
                                         <h3 className={seStyles.se_txt_18}>HOURS</h3>
                                     </div>
                                     {site[0]?.openDays.map((item, index) => (
-                                        <div key={index} className="row  pt-3 px-0 w-100">
+                                        <div key={index} className="row px-0 w-100">
                                             <div className="d-flex">
-                                                <div className={`col-6 ${styles.bottomBorder}`}>
-                                                    <p className={`${seStyles.se_txt_18}`}>{item.day}</p>
+                                                <div className={`col-6 py-2 ${styles.bottomBorder}`}>
+                                                    <p className={`${seStyles.se_txt_18} mb-0`}>{item.day}</p>
                                                 </div>
 
-                                                <div className={`col-6 ${styles.bottomBorder}`}>
-                                                    <p className={`${seStyles.se_txt_12_work_sans}`}>
+                                                <div className={`col-6 ${styles.bottomBorder} py-2`}>
+                                                    <p className={`${seStyles.se_txt_12_work_sans} mb-0`}>
                                                         {item.time}
                                                     </p>
                                                 </div>
@@ -133,15 +133,15 @@ export default async function Home() {
                                         <h3 className={`${seStyles.se_txt_18}`}>CONTACT</h3>
                                     </div>
 
-                                    <div className="row  py-3 px-0">
+                                    <div className="row px-0">
                                         <div className="d-flex">
-                                            <div className={`col-6 ${styles.bottomBorder}`}>
-                                                <p className={`${seStyles.se_txt_18}`}>Phone</p>
+                                            <div className={`col-6 ${styles.bottomBorder} py-2`}>
+                                                <p className={`${seStyles.se_txt_18} mb-0`}>Phone</p>
                                             </div>
 
-                                            <div className={`col-6 ${styles.bottomBorder}`}>
+                                            <div className={`col-6 ${styles.bottomBorder} py-2`}>
                                                 {site[0]?.phoneNumberArray.map((item, index) => (
-                                                    <p key={index} className={`${seStyles.se_txt_12_work_sans}`}>
+                                                    <p key={index} className={`${seStyles.se_txt_12_work_sans} mb-0`}>
                                                         {item.number}
                                                     </p>
                                                 ))}
@@ -153,11 +153,11 @@ export default async function Home() {
 
                                     <div className="row  px-0">
                                         <div className="d-flex">
-                                            <div className={`col-6 border-0 ${styles.bottomBorder}`}>
+                                            <div className={`col-6 pt-2 border-0 ${styles.bottomBorder}`}>
                                                 <p className={`${seStyles.se_txt_18} mb-0`}>Email</p>
                                             </div>
 
-                                            <div className={`col-6  border-0 ${styles.bottomBorder}`}>
+                                            <div className={`col-6 pt-2 border-0 ${styles.bottomBorder}`}>
                                                 {site[0]?.emailArray.map((item, index) => (
                                                     <p key={index} className={`${seStyles.se_txt_12_work_sans} mb-0`}>
                                                         {item.email}
