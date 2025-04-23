@@ -21,12 +21,7 @@
 }
 
 
-@font-face {
-  font-family: 'AwesomeSerif Extra Tall';
-  src: url('/fonts/AwesomeSerif-ExtraTall.otf') format('opentype');
-  /* font-weight: normal; */
-  font-style: normal;
-}
+
 
 
 @font-face {

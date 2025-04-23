@@ -66,7 +66,7 @@ export default async function Home() {
 
                                 {/* treatments */}
                                 <div className="row px-2">
-                                    <div className={`${seStyles.line_border} mt-3 px-0`}>
+                                    <div className={`${seStyles.line_border} mt-4 px-0`}>
                                         <h3 className={`${seStyles.se_txt_18}`}>TREATMENTS</h3>
                                     </div>
 
@@ -77,11 +77,11 @@ export default async function Home() {
                                                 <div className="d-flex pt-1">
 
                                                     <div className={`col-6 ${styles.bottomBorder} `}>
-                                                        <p className={`${seStyles.se_txt_18} scaleTxt mb-0`}>{item.title}</p>
+                                                        <p className={`${seStyles.se_txt_18} scaleTxt`}>{item.title}</p>
                                                     </div>
 
                                                     <div className={`col-6 ${styles.bottomBorder}`}>
-                                                        <p className={`${seStyles.se_txt_12_work_sans} mb-0`}>
+                                                        <p className={`${seStyles.se_txt_12_work_sans}`}>
                                                             {item.homeDescription}
                                                         </p>
                                                     </div>
@@ -106,18 +106,18 @@ export default async function Home() {
 
                                 {/* Hours */}
                                 <div className="row px-2">
-                                    <div className={`${seStyles.line_border} mt-3 px-0`}>
+                                    <div className={`${seStyles.line_border} mt-4 px-0`}>
                                         <h3 className={seStyles.se_txt_18}>HOURS</h3>
                                     </div>
                                     {site[0]?.openDays.map((item, index) => (
                                         <div key={index} className="row  pt-3 px-0 w-100">
                                             <div className="d-flex">
                                                 <div className={`col-6 ${styles.bottomBorder}`}>
-                                                    <p className={`${seStyles.se_txt_18} mb-0`}>{item.day}</p>
+                                                    <p className={`${seStyles.se_txt_18}`}>{item.day}</p>
                                                 </div>
 
                                                 <div className={`col-6 ${styles.bottomBorder}`}>
-                                                    <p className={`${seStyles.se_txt_12_work_sans} mb-0`}>
+                                                    <p className={`${seStyles.se_txt_12_work_sans}`}>
                                                         {item.time}
                                                     </p>
                                                 </div>
@@ -129,19 +129,19 @@ export default async function Home() {
 
                                 {/* contact */}
                                 <div className="row px-2">
-                                    <div className={`${seStyles.line_border}   mt-3 pt-3 px-0`}>
-                                        <h3 className={`${seStyles.se_txt_18} mb-0`}>CONTACT</h3>
+                                    <div className={`${seStyles.line_border}   mt-4 pt-3 px-0`}>
+                                        <h3 className={`${seStyles.se_txt_18}`}>CONTACT</h3>
                                     </div>
 
                                     <div className="row  py-3 px-0">
                                         <div className="d-flex">
                                             <div className={`col-6 ${styles.bottomBorder}`}>
-                                                <p className={`${seStyles.se_txt_18} mb-0`}>Phone</p>
+                                                <p className={`${seStyles.se_txt_18}`}>Phone</p>
                                             </div>
 
                                             <div className={`col-6 ${styles.bottomBorder}`}>
                                                 {site[0]?.phoneNumberArray.map((item, index) => (
-                                                    <p key={index} className={`${seStyles.se_txt_12_work_sans} mb-0`}>
+                                                    <p key={index} className={`${seStyles.se_txt_12_work_sans}`}>
                                                         {item.number}
                                                     </p>
                                                 ))}
