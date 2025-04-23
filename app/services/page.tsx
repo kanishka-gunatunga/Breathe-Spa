@@ -15,7 +15,7 @@ const page = async () => {
     const services = await getServiceCategories()
     const servicesMainData = await getServiceMainPageData();
     console.log("services: ", services);
-    console.log("services main: ", servicesMainData);
+    console.log("services main: ", servicesMainData[0]?.description);
 
     const serviceOrder = [
         services.find(item => item.slug.current === 'body'),

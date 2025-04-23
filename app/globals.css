@@ -334,3 +334,8 @@ img {
   right: 0px;
   width: 100%;
 }
+
+
+.preserve-linebreaks {
+  white-space: pre-line;
+}
