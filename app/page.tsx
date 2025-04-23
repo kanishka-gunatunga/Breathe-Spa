@@ -129,7 +129,7 @@ export default async function Home() {
 
                                 {/* contact */}
                                 <div className="row px-2">
-                                    <div className={`${seStyles.line_border}  mt-5 px-0`}>
+                                    <div className={`${seStyles.line_border}   mt-3 pt-3 px-0`}>
                                         <h3 className={`${seStyles.se_txt_18} mb-0`}>CONTACT</h3>
                                     </div>
 
