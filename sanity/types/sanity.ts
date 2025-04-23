@@ -163,6 +163,7 @@ export interface OpenItem {
 
 export interface SocialMediaItem {
   link: string
+  name: string
   icon ?: Image
 }
 

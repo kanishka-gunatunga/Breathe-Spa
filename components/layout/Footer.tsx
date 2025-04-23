@@ -18,8 +18,24 @@ const Footer = ({ site, service }: FooterProps) => {
     service.find(item => item.slug.current === 'nail-treatment'),
     service.find(item => item.slug.current === 'facial'),
     service.find(item => item.slug.current === 'add-ons'),
-].filter(Boolean);
-        
+  ].filter(Boolean);
+
+  const PRIORITY = [
+    "youtube",
+    "facebook",
+    "twitter",
+    "instagram",
+    "linkedin",
+  ];
+
+  const sortedSocial = site?.[0]?.socialMedia
+    .slice()
+    .sort((a, b) => {
+      const ia = PRIORITY.indexOf(a.name?.toLowerCase() ?? "");
+      const ib = PRIORITY.indexOf(b.name?.toLowerCase() ?? "");
+      return (ia === -1 ? PRIORITY.length : ia) - (ib === -1 ? PRIORITY.length : ib);
+    });
+
   return (
 
     <>
@@ -46,7 +62,7 @@ const Footer = ({ site, service }: FooterProps) => {
                   <Button text="Subscribe" href="" />
                 </Form>
               </div> */}
-               <NewsletterForm />
+              <NewsletterForm />
             </div>
 
             <div className='d-block d-md-flex d-lg-flex footer-row'>
@@ -66,10 +82,10 @@ const Footer = ({ site, service }: FooterProps) => {
                 <div className='quick-links-container'>
                   <h5 className='footer-h5'>SERVICES</h5>
                   {serviceOrder?.map((item, index) => (
-                      <Link key={index} href={`/services/${item?.slug.current}`} className='footer-link-tag'>
-                        <p className='footer-quick-links'>{item?.title}</p>
-                      </Link>
-                    ))}
+                    <Link key={index} href={`/services/${item?.slug.current}`} className='footer-link-tag'>
+                      <p className='footer-quick-links'>{item?.title}</p>
+                    </Link>
+                  ))}
                 </div>
               </div>
 
@@ -106,7 +122,7 @@ const Footer = ({ site, service }: FooterProps) => {
               <div className="col-12 col-md-3 col-lg-3 footer-row-2">
                 <div className='quick-links-container'>
                   <h5 className='footer-h5'>JOIN US</h5>
-                  <div className="d-flex gap-3">
+                  {/* <div className="d-flex gap-3">
                     {site?.[0]?.socialMedia.map((item, index) => {
                       const iconUrl = item.icon ? urlFor(item.icon).url() : "/interior.png";
 
@@ -123,6 +139,24 @@ const Footer = ({ site, service }: FooterProps) => {
                           />
                         </Link>
                       ) : null;
+                    })}
+                  </div> */}
+                  <div className="d-flex gap-3">
+                    {sortedSocial.map((item, index) => {
+                      if (!item.link) return null;
+                      const iconUrl = item.icon ? urlFor(item.icon).url() : "/interior.png";
+                      return (
+                        <Link href={item.link} key={index}>
+                          <Image
+                            src={iconUrl}
+                            alt={`${item.name} Logo`}
+                            width={30}
+                            height={30}
+                            objectFit="contain"
+                            style={{ width: '30px !important', height: '30px !important', objectFit: 'contain' }}
+                          />
+                        </Link>
+                      );
                     })}
                   </div>
                 </div>

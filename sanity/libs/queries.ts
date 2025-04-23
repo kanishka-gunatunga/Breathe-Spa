@@ -167,6 +167,7 @@ export const GET_SITE_DATA = `
       address,
       socialMedia[]{
         link,
+        name,
         icon
       },
     }
