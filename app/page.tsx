@@ -36,7 +36,7 @@ export default async function Home() {
                 <div className="d-block d-md-block d-lg-flex justify-content-center gap-5">
                     <div
                         className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start">
-                        <div>
+                        <div className="margin_bottom_150">
                             <h1 className={`${seStyles.se_txt_50_coe} mb-3 mb-lg-3`}>
                                 {home[0]?.sectionOneTitle}
                             </h1>
@@ -49,7 +49,7 @@ export default async function Home() {
                                        width={655} alt=""/>
                             )}
                         </div>
-                        <div className="mb-md-4 mt-5">
+                        <div className="mb-md-4">
                             <Button href={home[0]?.sectionOneButtonLink} text={home[0]?.sectionOneButton}/>
                         </div>
                     </div>
