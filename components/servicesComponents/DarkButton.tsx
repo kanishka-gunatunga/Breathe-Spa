@@ -4,14 +4,17 @@ import style from '@/styles/services.module.css'
 import Link from 'next/link';
 
 interface MainTitleProps {
-  text: string;
-  link: any;
+    text: string;
+    link: any;
+    serviceId?: string;
 }
 
 const DarkButton: React.FC<MainTitleProps> = (props) => {
-  return (
-    <Link href={props.link} className={style.darkButton}>{props.text}</Link>
-  )
+    const href = props.serviceId ? `${props.link}#${props.serviceId}` : props.link;
+
+    return (
+        <Link href={href} className={style.darkButton}>{props.text}</Link>
+    )
 }
 
 export default DarkButton
