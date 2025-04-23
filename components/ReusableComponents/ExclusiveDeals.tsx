@@ -13,7 +13,7 @@ async function ExclusiveDeals() {
         <div>
             <div className={`${styles.exclusiveDeals}`}>
                 <h3 className={styles.exclusiveTitle}>{exclusive[0]?.title}</h3>
-                <p className={styles.exclusiveDescription}>
+                <p className={`${styles.exclusiveDescription}`}>
                     {exclusive[0]?.description}
                 </p>
 

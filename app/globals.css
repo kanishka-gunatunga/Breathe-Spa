@@ -339,3 +339,14 @@ img {
 .preserve-linebreaks {
   white-space: pre-line;
 }
+
+
+.margin_bottom_150{
+  margin-bottom: 150px;
+}
+
+@media screen and (max-width: 600px){
+  .margin_bottom_150{
+    margin-bottom: 0px;
+  }
+}

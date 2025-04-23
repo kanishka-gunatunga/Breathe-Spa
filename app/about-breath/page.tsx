@@ -43,7 +43,7 @@ const AboutPage = async () => {
             </div>
 
             <div className={`col-12 col-lg-5 d-flex flex-column pt-4 pt-lg-0 about ${styles.aboutBreatheContainer} justify-content-between`}>
-              <div>
+              <div className="margin_bottom_150">
               <MainTitle title={about[0]?.sectionOneTitle} />
               <Paragraph text={about[0]?.sectionOneDescription} />
               </div>

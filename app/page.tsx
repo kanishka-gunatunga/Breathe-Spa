@@ -208,9 +208,9 @@ export default async function Home() {
                                 </div>
                                 <div
                                     className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start mb-5">
-                                    <div className="mb-4">
+                                    <div className="margin_bottom_150">
                                         <h3 className={seStyles.se_txt_40}>{item.name}</h3>
-                                        <p className={seStyles.se_txt_16_work_sans_dark} style={{textAlign: "justify"}}>
+                                        <p className={`${seStyles.se_txt_16_work_sans_dark} mb-0`} style={{textAlign: "justify"}}>
                                             {item.description}
                                         </p>
                                     </div>
@@ -221,9 +221,9 @@ export default async function Home() {
                             <>
                                 <div
                                     className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start mb-5">
-                                    <div className="mb-4">
+                                    <div className="margin_bottom_150">
                                         <h3 className={seStyles.se_txt_40}>{item.name}</h3>
-                                        <p className={seStyles.se_txt_16_work_sans_dark} style={{textAlign: "justify"}}>
+                                        <p className={`${seStyles.se_txt_16_work_sans_dark} mb-0`} style={{textAlign: "justify"}}>
                                             {item.description}
                                         </p>
                                     </div>
@@ -256,7 +256,7 @@ export default async function Home() {
                                     {item.description}
                                 </p>
                             </div>
-                            <div>
+                            <div className="margin_bottom_150">
                                 {item.mainImage && (
                                     <Image
                                         className={`img-fluid ${styles.leftBoxShadow}`}

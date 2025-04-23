@@ -25,7 +25,7 @@ const YellowBackSection: React.FC<YellowBackSectionProps> = ({ title, descriptio
                         <div className="d-flex d-lg-flex d-xl-flex flex-column-reverse flex-lg-row gap-5 w-100 py-0 py-lg-5 mb-5">
 
                             <div className={`col-12 col-lg-6 d-flex flex-column ${styles.locationContainer}`}>
-                                <div className="mb-3">
+                                <div className="margin_bottom_150">
                                     <MainTitle title={title} />
                                     <Paragraph text={description} />
                                 </div>
