@@ -175,7 +175,7 @@ export default async function Home() {
                                         read our
                                     </p>
                                     <p className={`${seStyles.se_txt_10_work_sans}`}>
-                                        <a href="">booking policy </a>
+                                        <a href="/terms">booking policy </a>
                                         below prior to making an appointment.
                                     </p>
                                 </div>
