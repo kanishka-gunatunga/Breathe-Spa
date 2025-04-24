@@ -209,7 +209,7 @@ export default async function Home() {
                                 <div
                                     className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start mb-5">
                                     <div className="margin_bottom_150">
-                                        <h3 className={seStyles.se_txt_40}>{item.name}</h3>
+                                        <h3 className={seStyles.se_txt_40} style={{fontFamily: "Coefficient DEMO, sans-serif;"}}>{item.name}</h3>
                                         <p className={`${seStyles.se_txt_16_work_sans_dark} mb-0`} style={{textAlign: "justify"}}>
                                             {item.description}
                                         </p>
@@ -222,7 +222,7 @@ export default async function Home() {
                                 <div
                                     className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start mb-5">
                                     <div className="margin_bottom_150">
-                                        <h3 className={seStyles.se_txt_40}>{item.name}</h3>
+                                        <h3 className={seStyles.se_txt_40} style={{fontFamily: "Coefficient DEMO, sans-serif;"}}>{item.name}</h3>
                                         <p className={`${seStyles.se_txt_16_work_sans_dark} mb-0`} style={{textAlign: "justify"}}>
                                             {item.description}
                                         </p>
