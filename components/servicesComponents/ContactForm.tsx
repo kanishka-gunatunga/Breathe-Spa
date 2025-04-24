@@ -227,7 +227,7 @@ const ContactForm = () => {
                         </div>
                         <button
                             type="submit"
-                            className={`btn btn-dark w-100 ${pageStyle.darkButton} ${pageStyle.darkButtonWidth}`}
+                            className={` w-100 ${pageStyle.darkButton} ${pageStyle.darkButtonWidth}`}
                             style={{maxWidth: "100% !important", width: "100% !important"}}
                             disabled={isLoading}
                         >
