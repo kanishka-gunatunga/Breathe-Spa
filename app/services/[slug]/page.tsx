@@ -2,20 +2,20 @@
 import Image from 'next/image';
 import style from '@/styles/services.module.css';
 import pageStyle from '@/styles/page.module.css'
-import {fetchServiceCategory} from '@/sanity/libs/api';
+import { fetchServiceCategory } from '@/sanity/libs/api';
 import MainTitle from '@/components/servicesComponents/MainTitle';
 import Paragraph from '@/components/servicesComponents/Paragraph';
 import DescriptionSection from '@/components/servicesComponents/DescriptionSection';
-import {urlFor} from '@/sanity/libs/sanity';
-import {Service} from '@/sanity/types';
+import { urlFor } from '@/sanity/libs/sanity';
+import { Service } from '@/sanity/types';
 import Link from 'next/link';
-import {ScrollHandler} from "@/components/ReusableComponents/ScrollHandler";
-import {PortableText} from "next-sanity";
+import { ScrollHandler } from "@/components/ReusableComponents/ScrollHandler";
+import { PortableText } from "next-sanity";
 import React from "react";
 
 
-export default async function ServiceCategoryPage({params}: { params: Promise<{ slug: string }> }) {
-    const {slug} = await params;
+export default async function ServiceCategoryPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
 
     const category = await fetchServiceCategory(slug);
     console.log("category : ", category);
@@ -26,7 +26,7 @@ export default async function ServiceCategoryPage({params}: { params: Promise<{ 
 
 
     const groupedServices = category.services.reduce((acc: { [key: string]: Service[] }, service: Service) => {
-        const {title} = service.serviceDescription;
+        const { title } = service.serviceDescription;
         if (!acc[title]) {
             acc[title] = [];
         }
@@ -36,7 +36,7 @@ export default async function ServiceCategoryPage({params}: { params: Promise<{ 
 
     return (
         <div className='d-flex flex-column '>
-            <ScrollHandler/>
+            <ScrollHandler />
             {/* hero section */}
             <div className={`d-flex position-relative ${style.imageContainer}`}>
                 {category.servicesHeroImage && (
@@ -45,7 +45,7 @@ export default async function ServiceCategoryPage({params}: { params: Promise<{ 
                         alt="services hero image"
                         width={1920}
                         height={1080}
-                        style={{width: "100vw", height: "auto", objectFit: 'cover'}}
+                        style={{ width: "100vw", height: "auto", objectFit: 'cover' }}
                     />
                 )}
                 <div className="position-absolute top-50 start-50 translate-middle text-white text-center">
@@ -63,14 +63,14 @@ export default async function ServiceCategoryPage({params}: { params: Promise<{ 
 
                         {category.servicesImage && (
                             <Image src={urlFor(category.servicesImage).url()} alt='services description image'
-                                   width={600} height={800} className={style.imgHeight}/>
+                                width={600} height={800} className={style.imgHeight} />
                         )}
                     </div>
                     <div className="col-12 col-lg-7 ps-lg-5 d-flex flex-column align-items-streach pt-4 pt-lg-0">
-                        <MainTitle title={category.categoryTitle}/>
+                        <MainTitle title={category.categoryTitle} />
                         {/*<Paragraph text={category.categoryDescription}/>*/}
                         <div className={`${pageStyle.map_hours_desc} mb-0`}>
-                            <PortableText value={category.categoryDescription}/>
+                            <PortableText value={category.categoryDescription} />
                         </div>
                     </div>
                 </div>
@@ -105,7 +105,7 @@ export default async function ServiceCategoryPage({params}: { params: Promise<{ 
                                                                 Now</Link>
                                                         </div>
                                                     </div>
-                                                    <ul className={`${style.pricingList} ${style.se_li_26} `}>
+                                                    {/* <ul className={`${style.pricingList} ${style.se_li_26} `}>
                                                         {service.pricing.map((price, priceIndex) => (
                                                             <li key={priceIndex}
                                                                 className={`${style.pricingItem} me-5`}>
@@ -114,8 +114,29 @@ export default async function ServiceCategoryPage({params}: { params: Promise<{ 
                                                                     <span> ({price.priceDescription})</span>}
                                                             </li>
                                                         ))}
+                                                    </ul> */}
+                                                    <ul className={`${style.pricingList} ${style.se_li_26} `}>
+                                                        {service?.pricing?.map((pricing, idx) => {
+                                                            const priceNum =
+                                                                typeof pricing.price === 'number'
+                                                                    ? pricing.price
+                                                                    : parseFloat(pricing.price as string) || 0;
+
+                                                            const formatted = priceNum.toLocaleString('en-IN', {
+                                                                minimumFractionDigits: 2,
+                                                                maximumFractionDigits: 2,
+                                                            });
+
+                                                            return (
+                                                                <li key={idx} className={`${style.pricingItem} me-5`}>
+                                                                    {pricing.duration
+                                                                        ? `${pricing.duration} | Rs. ${formatted}`
+                                                                        : `Rs. ${formatted}`} {pricing.priceDescription}
+                                                                </li>
+                                                            );
+                                                        })}
                                                     </ul>
-                                                    <Paragraph text={service.serviceItemDescription}/>
+                                                    <Paragraph text={service.serviceItemDescription} />
                                                     <div className="d-flex d-md-none my-3">
                                                         <Link href={"/contact#contactForm"} className={`${style.se_link_a_20}`}>Book
                                                             Now</Link>
