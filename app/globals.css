@@ -67,6 +67,19 @@ a {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'AwesomeSerif Semi Bold Extra Tall';
+  src: url('/fonts/AwesomeSerif-SemBdExtraTall.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AwesomeSerif Medium Extra Tall';
+  src: url('/fonts/AwesomeSerif-MediumExtraTall.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 .brownButton{
   background-color: #313131;
@@ -200,6 +213,7 @@ a {
 .imgShapeContainer {
   position: relative;
   z-index: 0;
+  width: 100%;
 }
 
 .bgShapeImage {
@@ -210,7 +224,7 @@ a {
   left: -20px;
   background-color: #F3EEE7;
   z-index: 0; 
-  border-radius: 190px 20px 180px 20px;
+  border-radius: 140px 20px 180px 20px;
 }
 
 .imageWrapper {
@@ -242,7 +256,11 @@ a {
   /* bottom: 180px !important; */
   bottom: 16% !important;
 }
-
+@media screen and (max-width: 992px){
+  .bgShapeImage {
+    border-radius: 180px 20px 100px 20px;
+  }
+}
 @media screen and (max-width: 600px) {
   .navbar{
     padding: 0px !important;

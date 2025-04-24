@@ -33,19 +33,21 @@ const AboutPage = async () => {
 
         <div className={` ${styles.contactContainer} section`}>
           <div className={`d-block d-lg-flex justify-content-center gap-5 mt-5 ${styles.headSection} `}>
-            <div className="col-12 col-lg-5 my-5 my-md-0 my-lg-0 position-relative imgShapeContainer">
-              <div className="bgShapeImage"></div>
-              <div className="imageWrapper">
-                {about[0].sectionOneImage && (
-                  <Image className={`${pageStyle.imgHeight}`} src={urlFor(about[0]?.sectionOneImage).url() || "/about1.png"} height={650} width={548} alt="" />
-                )}
+            <div className="col-12 col-lg-5 my-5 my-md-0 my-lg-0 position-relative ">
+              <div className="d-flex imgShapeContainer">
+                <div className="bgShapeImage"></div>
+                <div className="imageWrapper" style={{width: "100%", height: "100%"}}>
+                  {about[0].sectionOneImage && (
+                    <Image className={`${pageStyle.imgHeight}`} src={urlFor(about[0]?.sectionOneImage).url() || "/about1.png"} height={650} width={548} alt="" />
+                  )}
+                </div>
               </div>
             </div>
 
             <div className={`col-12 col-lg-5 d-flex flex-column pt-4 pt-lg-0 about ${styles.aboutBreatheContainer} justify-content-between`}>
               <div className="margin_bottom_150">
-              <MainTitle title={about[0]?.sectionOneTitle} />
-              <Paragraph text={about[0]?.sectionOneDescription} />
+                <MainTitle title={about[0]?.sectionOneTitle} />
+                <Paragraph text={about[0]?.sectionOneDescription} />
               </div>
               <Button text={about[0]?.sectionOneButton} href={about[0]?.sectionOneButtonLink || "/contact"} />
             </div>
