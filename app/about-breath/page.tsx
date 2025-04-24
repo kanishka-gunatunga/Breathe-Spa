@@ -67,7 +67,9 @@ const AboutPage = async () => {
 
         <div className={`${styles.baseSection}`}>
           <div className="d-flex flex-column align-items-center justify-content-center">
+            <div className="mb-5">
             <MainTitle title={"Testimonials"} />
+            </div>
             <TestimonialSlider testimonials={testimonials[0]?.testimonialsArray || []} />
             {/* <div className="col-12 col-md-12 col-lg-8 position-relative mb-5">
               <Swiper
