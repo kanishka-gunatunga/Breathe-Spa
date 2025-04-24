@@ -51,7 +51,7 @@ export interface ServiceMainData {
   servicesHeroImage?: Image
   description: string
   tagLine: string
-  tagdescription: string
+  tagDescription: string
 }
 
 export interface AboutMainData {

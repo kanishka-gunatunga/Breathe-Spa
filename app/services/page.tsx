@@ -15,7 +15,7 @@ const page = async () => {
     const services = await getServiceCategories()
     const servicesMainData = await getServiceMainPageData();
     console.log("services: ", services);
-    console.log("services main tag: ", servicesMainData[0]?.tagdescription);
+    console.log("services main tag: ", servicesMainData[0]?.tagDescription);
 
     const serviceOrder = [
         services.find(item => item.slug.current === 'body'),
@@ -52,7 +52,7 @@ const page = async () => {
                 </div>
             </div>
 
-            <DescriptionSection title={servicesMainData[0]?.tagLine} description={servicesMainData[0]?.tagdescription}/>
+            <DescriptionSection title={servicesMainData[0]?.tagLine} description={servicesMainData[0]?.tagDescription}/>
 
             <div className="scroll-sections mt-lg-5">
                 {serviceOrder && serviceOrder.map((category, index) => category ? (

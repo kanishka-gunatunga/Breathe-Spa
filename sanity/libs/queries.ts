@@ -56,7 +56,7 @@ export const GET_SERVICE_MAIN_PAGE_DATA = `
         servicesHeroImage,
         description,
         tagLine,
-        tagdescription
+        tagDescription
       }
 `;
 
