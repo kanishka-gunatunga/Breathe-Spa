@@ -70,8 +70,8 @@ const Footer = ({ site, service }: FooterProps) => {
                 <div className='quick-links-container'>
                   <h5 className='footer-h5'>Quick Links</h5>
                   <Link href="/" className='footer-link-tag'><p className='footer-quick-links'>Home</p></Link>
-                  <Link href="/about-breath" className='footer-link-tag'><p className='footer-quick-links'>About Breathe </p></Link>
                   <Link href="/services" className='footer-link-tag'><p className='footer-quick-links'>Our Services </p></Link>
+                  <Link href="/about-breath" className='footer-link-tag'><p className='footer-quick-links'>About Breathe </p></Link>
                   <Link href="/blog" className='footer-link-tag'><p className='footer-quick-links'>Blog</p></Link>
                 </div>
 
