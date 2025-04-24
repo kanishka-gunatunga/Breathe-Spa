@@ -220,6 +220,12 @@
     }
 }
 
+@media (max-width: 1024px) {
+    .serviceImage {
+        min-width: 430px;
+    }
+}
+
 /* @media (max-width: 992px) {
 
     .mobileHeight {
