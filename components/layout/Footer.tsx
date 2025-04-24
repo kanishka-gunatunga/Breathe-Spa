@@ -78,7 +78,7 @@ const Footer = ({ site, service }: FooterProps) => {
               </div>
 
 
-              <div className="col-12 col-md-2 col-lg-2 footer-row-2">
+              <div className="col-12 col-md-3 col-lg-3 footer-row-2">
                 <div className='quick-links-container'>
                   <h5 className='footer-h5'>SERVICES</h5>
                   {serviceOrder?.map((item, index) => (
