@@ -229,11 +229,27 @@ const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category, cat
                                         <h4 className={`${style.se_txt_18}`}>{service.serviceName}</h4>
                                         <h5 className={`${style.se_txt_12}`}>{service.serviceDescription?.title}</h5>
                                         <ul className={`${style.se_txt_14} pb-3`}>
-                                            {service.pricing.map((pricing, idx) => (
+                                            {/* {service.pricing.map((pricing, idx) => (
                                                 <li key={idx} className={`${style.se_txt_14}`}>
                                                     {pricing.duration} | Rs.{pricing.price}
                                                 </li>
-                                            ))}
+                                            ))} */}
+                                            {service?.pricing?.map((pricing, idx) => {
+                                                const priceNum = typeof pricing.price === 'number'
+                                                    ? pricing.price
+                                                    : parseFloat(pricing.price as string) || 0;
+
+                                                const formatted = priceNum.toLocaleString('en-IN', {
+                                                    minimumFractionDigits: 2,
+                                                    maximumFractionDigits: 2,
+                                                });
+
+                                                return (
+                                                    <li key={idx} className={style.se_txt_14}>
+                                                        {pricing.duration} | Rs.{formatted}
+                                                    </li>
+                                                );
+                                            })}
                                         </ul>
                                     </div>
                                     <DarkButton text="View More" link={`/services/${category.slug.current}`} serviceId={`service-${service.serviceName.toLowerCase().replace(/\s+/g, '-')}`} />
