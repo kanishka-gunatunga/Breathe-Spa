@@ -1045,7 +1045,8 @@ a.text-decoration-none {
   .rightBoxShadow,
   .leftBoxShadow {
     border-radius: 0;
-    box-shadow: none;
+    border-radius: 15px;
+    /* box-shadow: none; */
   }
 
   /*.exclusiveTitle {*/
@@ -1120,7 +1121,11 @@ a.text-decoration-none {
 
 
 }
-
+@media screen and (max-width: 992px){
+  .mobileRadius{
+    border-top-left-radius: 100px !important;
+  }
+}
 
 @media screen and (max-width: 1300px) and (min-width: 800px) {
   .articleDiv {
@@ -1647,6 +1652,9 @@ a.text-decoration-none {
   }
   .exclusiveDescription {
     width: 98%;
+  }
+  .mobileRadius{
+    border-top-left-radius: 50px !important;
   }
 }
 

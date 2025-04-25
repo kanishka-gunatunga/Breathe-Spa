@@ -54,8 +54,8 @@ export default async function Home() {
                         <div className="mb-md-4">
                             {/* <Button href={home[0]?.sectionOneButtonLink} text={home[0]?.sectionOneButton} /> */}
                             <Link href={home[0]?.sectionOneButtonLink}>
-                                        <button className={`${pageStyle.darkButton}`} style={{ fontSize: "15px !important", border: "none" }} >{home[0]?.sectionOneButton}</button>
-                                    </Link>
+                                <button className={`${pageStyle.darkButton}`} style={{ fontSize: "15px !important", border: "none" }} >{home[0]?.sectionOneButton}</button>
+                            </Link>
                         </div>
                     </div>
 
@@ -263,29 +263,61 @@ export default async function Home() {
 
             <div className={`container section py-3 ${styles.OnmobileHideExtra}`}>
                 {ethos[0]?.ethosArray.map((item, index) => (
-                    <div key={index} className="d-block d-md-block d-lg-flex gap-5 mb-5">
-                        <div className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start">
-                            <div className="row">
-                                <h3 className={seStyles.se_txt_40}>{item.name}</h3>
-                                <p className={seStyles.se_txt_16_work_sans_dark}>
-                                    {item.description}
-                                </p>
-                            </div>
-                            <div className="margin_bottom_150">
-                                {item.mainImage && (
-                                    <Image
-                                        className={`img-fluid ${styles.leftBoxShadow}`}
-                                        src={urlFor(item?.mainImage).url() || "/banner-about.png"}
-                                        height={368}
-                                        width={624}
-                                        alt={item.name}
-                                    />
-                                )}
-                            </div>
-                        </div>
-                        <div className="col-12 col-md-12 col-lg-6 col-xl-6 mt-4 mt-lg-0">
-                            <Button text={item.button} href={item.link || "/contact"} />
-                        </div>
+                    <div key={index} className="d-block d-md-block d-lg-flex  mb-5">
+                        {index % 2 === 0 ? (
+                            <>
+                                <div className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start">
+                                    <div className="row">
+                                        <h3 className={seStyles.se_txt_40}>{item.name}</h3>
+                                        <p className={seStyles.se_txt_16_work_sans_dark}>
+                                            {item.description}
+                                        </p>
+                                    </div>
+                                    <div className="margin_bottom_150">
+                                        <div style={{ paddingLeft: "30px", paddingTop: "26px" }}>
+                                            {item.mainImage && (
+                                                <Image
+                                                    className={`img-fluid ${styles.leftBoxShadow}`}
+                                                    src={urlFor(item?.mainImage).url() || "/banner-about.png"}
+                                                    height={368}
+                                                    width={624}
+                                                    alt={item.name}
+                                                />
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-12 col-md-12 col-lg-6 col-xl-6 mt-4 mt-lg-0">
+                                    <Button text={item.button} href={item.link || "/contact"} />
+                                </div></>
+                        ) : (
+                            <>
+                                <div className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start">
+                                    <div className="row">
+                                        <h3 className={seStyles.se_txt_40}>{item.name}</h3>
+                                        <p className={seStyles.se_txt_16_work_sans_dark}>
+                                            {item.description}
+                                        </p>
+                                    </div>
+                                    <div className="margin_bottom_150">
+                                        <div style={{ paddingRight: "30px", paddingTop: "26px" }}>
+                                            {item.mainImage && (
+                                                <Image
+                                                    className={`img-fluid ${styles.rightBoxShadow} ${styles.mobileRadius}`}
+                                                    src={urlFor(item?.mainImage).url() || "/banner-about.png"}
+                                                    height={368}
+                                                    width={624}
+                                                    alt={item.name}
+                                                />
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-12 col-md-12 col-lg-6 col-xl-6 mt-4 mt-lg-0">
+                                    <Button text={item.button} href={item.link || "/contact"} />
+                                </div></>
+                        )}
+
 
                     </div>
                 ))}
