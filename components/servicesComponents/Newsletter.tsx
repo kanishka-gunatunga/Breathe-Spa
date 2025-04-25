@@ -52,7 +52,7 @@ const NewsletterForm = () => {
   };
 
   return (
-    <div className="col-12 col-md-4 col-lg-4 d-flex justify-content-end gap-3 d-flex flex-column">
+    <div className="col-12 col-md-4 col-lg-4 d-flex justify-content-end gap-3 d-flex flex-column px-0 px-2 ps-md-0">
        
       <form onSubmit={handleSubmit} className="d-flex search-form position-relative">
       {showAlert && message && (
@@ -77,7 +77,7 @@ const NewsletterForm = () => {
         <button
           type="submit"
           className={`${pageStyle.darkButton}`}
-          style={{ minWidth: '160px' }}
+          style={{ minWidth: '160px', fontSize: "16px !important", borderTopLeftRadius: "0px !important",borderBottomLeftRadius: "0px !important", borderTopRightRadius: "5px !important", borderBottomRightRadius: '5px !important', border: "none" }}
         >
           Subscribe
         </button>

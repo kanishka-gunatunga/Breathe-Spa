@@ -380,3 +380,110 @@ img {
     margin-bottom: 20px;
   }
 }
+
+.footer-terms{
+  color: #313131;
+  text-decoration: none !important;
+  font-weight: 400;
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+}
+.footer-row a{
+  text-decoration: none !important;
+}
+.footer-row{
+  border-bottom: none;
+}
+.hr-line{
+  background-color: #c1c7cd;
+  width: 100% !important;
+  height: 1px !important;
+  /* border-bottom: 2px solid #c1c7cd; */
+}
+.footer-Contact-container{
+  width: 96% !important;
+  padding-top: 88px !important;
+}
+.lg-y-space-footer{
+  padding-top: 30px !important;
+  padding-bottom: 40px !important;
+}
+.navbar-brand{
+  
+  height: max-content;
+  margin: 0px;
+  padding: 0px;
+
+}
+.lg-y-space-footer{
+  padding-top: 39px !important;
+  padding-bottom: 49px !important;
+}
+.footer-row-top-y-space{
+  padding-top: 30px  !important;
+  padding-bottom: 39px !important;
+}
+@media screen and (min-width: 992px) {
+  .footer-col-23{
+    width: 21.5% !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .footer-col-22{
+    width: 20% !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .footer-col-34{
+    width: 36% !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .footer-col-last{
+    width: 22.5% !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .footer-row{
+    width: 87%;
+    margin-left: auto !important;
+    margin-right: auto  !important;
+  }
+  .footer-row-top-y-space{
+    padding-top: 0px  !important;
+    padding-bottom: 39px !important;
+  }
+}
+
+@media screen and (max-width: 992px){
+  .footer-col-23{
+    width: 50% !important;
+  }
+  .footer-col-22{
+    width: 50% !important;
+  }
+  .footer-col-34{
+    width: 50% !important;
+  }
+  .footer-col-last{
+    width: 50% !important;
+  }
+  .navbar-brand{
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .footer-col-23{
+    width: 100% !important;
+  }
+  .footer-col-22{
+    width: 100% !important;
+  }
+  .footer-col-34{
+    width: 100% !important;
+  }
+  .footer-col-last{
+    width: 100% !important;
+  }
+}

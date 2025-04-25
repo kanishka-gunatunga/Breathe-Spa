@@ -44,10 +44,10 @@ const Footer = ({ site, service }: FooterProps) => {
         <svg width="100%" height="100%" viewBox="0 0 1440 151" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M376.779 30.0272C219.86 36.3225 0 89.2316 0 89.2316V-83H1440V89.2316C1440 89.2316 1382.81 108.974 1302.06 126.14C1246.98 137.852 1180.93 148.364 1114.6 150.59C848.186 159.529 643.086 19.3437 376.779 30.0272Z" fill="white" />
         </svg>
-        <div className={` ${styles.contactContainer} section pb-0`}>
+        <div className={` ${styles.contactContainer} section pb-0 footer-Contact-container`}>
           <div className='col-12 position-relative footer-content px-0'>
-            <div className='row footer-row'>
-              <div className='col-12 col-md-8 col-lg-8 d-flex justify-content-start mb-5 mb-md-0 mb-lg-0'>
+            <div className='row footer-row footer-row-middle footer-row-top-y-space'>
+              <div className='col-12 col-md-8 col-lg-8 d-flex justify-content-start px-lg-0 align-items-center'>
                 <Link className="navbar-brand" href="/">
                   {site[0]?.logo && (
                     <Image src={urlFor(site[0]?.logo).url() || "/interior.png"} alt="Breathe Logo" width={317} height={33} className='logo_footer' />
@@ -64,9 +64,10 @@ const Footer = ({ site, service }: FooterProps) => {
               </div> */}
               <NewsletterForm />
             </div>
+            <div className="hr-line line-one"></div>
 
-            <div className='d-block d-md-flex d-lg-flex footer-row'>
-              <div className="col-12 col-md-2 col-lg-2 footer-row-2">
+            <div className='d-block d-md-flex d-lg-flex row row-cols-1 row-cols-sm-2 row-cols-lg-4 footer-row footer-row-middle'>
+              <div className="col-12 col-md-3 col-lg-3 footer-row-2 footer-col-23">
                 <div className='quick-links-container'>
                   <h5 className='footer-h5'>Quick Links</h5>
                   <Link href="/" className='footer-link-tag'><p className='footer-quick-links'>Home</p></Link>
@@ -78,7 +79,7 @@ const Footer = ({ site, service }: FooterProps) => {
               </div>
 
 
-              <div className="col-12 col-md-3 col-lg-3 footer-row-2">
+              <div className="col-12 col-md-3 col-lg-3 footer-row-2 footer-col-22">
                 <div className='quick-links-container'>
                   <h5 className='footer-h5'>SERVICES</h5>
                   {serviceOrder?.map((item, index) => (
@@ -90,7 +91,7 @@ const Footer = ({ site, service }: FooterProps) => {
               </div>
 
 
-              <div className="col-12 col-md-4 col-lg-4 footer-row-2">
+              <div className="col-12 col-md-3 col-lg-3 footer-row-2 footer-col-34">
 
                 <div className='quick-links-container'>
                   <h5 className='footer-h5'>CONTACT US</h5>
@@ -119,7 +120,7 @@ const Footer = ({ site, service }: FooterProps) => {
                     {site[0]?.phoneNumberArray[0]?.number}</p>
                 </div>
               </div>
-              <div className="col-12 col-md-3 col-lg-3 footer-row-2">
+              <div className="col-12 col-md-3 col-lg-3 footer-row-2 footer-col-last">
                 <div className='quick-links-container'>
                   <h5 className='footer-h5'>JOIN US</h5>
                   {/* <div className="d-flex gap-3">
@@ -162,10 +163,10 @@ const Footer = ({ site, service }: FooterProps) => {
                 </div>
               </div>
             </div>
-
-            <div className='footer-row d-block d-md-flex d-lg-flex justify-content-between py-3 mt-2'>
-              <p className='bottom-p'>Copyright @ Breathe. All rights reserved.</p>
-              <Link href={"/terms"}><p className='bottom-p'>Terms & Conditions</p></Link>
+            <div className="hr-line"></div>
+            <div className='footer-row d-block d-md-flex d-lg-flex justify-content-between lg-y-space-footer'>
+              <p className='mb-0 footer-terms'>Copyright @ Breathe. All rights reserved.</p>
+              <Link href={"/terms"}><p className='footer-terms mb-0'>Terms & Conditions</p></Link>
             </div>
           </div>
         </div>
