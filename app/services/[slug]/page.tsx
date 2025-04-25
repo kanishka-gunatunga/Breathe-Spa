@@ -82,10 +82,10 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
                     {Object.keys(groupedServices).slice(0, 2).map((title, index) => (
                         <div key={index}>
                             <div className='mb-0'>
-                            <DescriptionSection
-                                title={title}
-                                description={groupedServices[title][0].serviceDescription?.description}
-                            />
+                                <DescriptionSection
+                                    title={title}
+                                    description={groupedServices[title][0].serviceDescription?.description}
+                                />
                             </div>
                             <div className={`my-3 my-lg-0 pb-0 section ${pageStyle.contactContainer}`}>
                                 {groupedServices[title].map((service, index) => (
@@ -103,8 +103,13 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
                                                         className="d-flex w-100 justify-content-between align-items-top">
                                                         <h4 className={`${style.se_txt_40}`}>{service.serviceName}</h4>
                                                         <div className="d-none d-md-flex">
-                                                            <Link href={"/contact#contactForm"} className={`${style.se_link_a_20}`}>Book
-                                                                Now</Link>
+                                                            {/* <Link href={"/contact#contactForm"} className={`${style.se_link_a_20}`}>Book
+                                                                Now</Link> */}
+                                                            <Link href="/contact#contactForm" className={`${style.se_link_a_20} arrow_button`}>
+                                                                <span>Book Now</span>
+                                                            </Link>
+
+
                                                         </div>
                                                     </div>
                                                     {/* <ul className={`${style.pricingList} ${style.se_li_26} `}>
@@ -140,7 +145,7 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
                                                     </ul>
                                                     <Paragraph text={service.serviceItemDescription} />
                                                     <div className="d-flex d-md-none my-3">
-                                                        <Link href={"/contact#contactForm"} className={`${style.se_link_a_20}`}>Book
+                                                        <Link href={"/contact#contactForm"} className={`${style.se_link_a_20} arrow_button`}>Book
                                                             Now</Link>
                                                     </div>
                                                 </div>

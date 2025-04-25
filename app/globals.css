@@ -491,3 +491,39 @@ img {
 .exclusiveDeals button{
   text-transform: capitalize !important;
 }
+
+.arrow_button {
+  border-radius: 4px;
+  text-align: center;
+  padding: 0px !important;
+  display: inline-block;
+  transition: all 0.5s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.arrow_button span {
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.arrow_button span::after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.arrow_button:hover span {
+  padding-right: 25px;
+  color: #313131;
+}
+
+.arrow_button:hover span::after {
+  opacity: 1;
+  right: 0;
+  color: #313131;
+}
