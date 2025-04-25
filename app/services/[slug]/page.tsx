@@ -81,10 +81,12 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
                 <div>
                     {Object.keys(groupedServices).slice(0, 2).map((title, index) => (
                         <div key={index}>
+                            <div className='mb-0'>
                             <DescriptionSection
                                 title={title}
                                 description={groupedServices[title][0].serviceDescription?.description}
                             />
+                            </div>
                             <div className={`my-3 my-lg-0 pb-0 section ${pageStyle.contactContainer}`}>
                                 {groupedServices[title].map((service, index) => (
                                     <div

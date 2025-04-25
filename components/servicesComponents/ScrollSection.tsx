@@ -152,7 +152,7 @@ const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category, cat
     console.log("services price: ", services)
 
     return (
-        <div className={`${pageStyle.contactContainer} section`} id={`${category.slug.current}`}>
+        <div className={`${pageStyle.contactContainer} section pt-lg-0`} id={`${category.slug.current}`}>
             <div className="d-none d-lg-flex flex-column-reverse flex-lg-row">
                 <div className="col-12 col-lg-6 pe-lg-2 mt-0 mt-lg-0">
                     <h3 className={`fade-in-up ${style.se_txt_40}`}>{category.title}</h3>

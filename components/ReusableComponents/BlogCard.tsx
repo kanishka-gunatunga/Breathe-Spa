@@ -23,7 +23,7 @@ const BlogCard: React.FC<BlogData> = ({ title, slug, mainImage, publishedAt, fet
                 )}
 
 
-                <div className="p-4">
+                <div className="p-4 px-0">
                     <p className={`text-[14px] ${styles.blogCardDate}`}>
                         {new Date(publishedAt).toLocaleDateString("en-GB", {
                             day: "numeric",

@@ -13,7 +13,7 @@ const DarkButton: React.FC<MainTitleProps> = (props) => {
     const href = props.serviceId ? `${props.link}#${props.serviceId}` : props.link;
 
     return (
-        <Link href={href} className={style.darkButton}>{props.text}</Link>
+        <Link href={href} className={style.darkButton} style={{textTransform: "uppercase"}}>{props.text}</Link>
     )
 }
 

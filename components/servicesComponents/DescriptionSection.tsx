@@ -29,7 +29,7 @@ const DescriptionSection: React.FC<MainTitleProps> = (props) => {
             >
                 <div className={`py-5 section ${pageStyle.contactContainer}`}>
                     <h2 className={style.se_title_60}>{props.title}</h2>
-                    <p className={style.se_txt_15}>{props.description}</p>
+                    <p className={`${style.se_txt_15} ${style.descMaxWidth}`} >{props.description}</p>
                 </div>
             </div>
         </div>

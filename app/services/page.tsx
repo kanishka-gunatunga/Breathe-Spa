@@ -52,7 +52,9 @@ const page = async () => {
                 </div>
             </div>
 
+            <div className='p-0 mb-lg-4'>
             <DescriptionSection title={servicesMainData[0]?.tagLine} description={servicesMainData[0]?.tagDescription}/>
+            </div>
 
             <div className="scroll-sections mt-lg-5">
                 {serviceOrder && serviceOrder.map((category, index) => category ? (
