@@ -425,12 +425,13 @@
     font-family: 'AwesomeSerif Light Extra Tall', sans-serif;
     /* font-weight: 600; */
     font-size: 12px;
-    text-transform: uppercase;
+    text-transform: capitalize;
     padding: 10px 20px;
     text-decoration: none;
     letter-spacing: 1.5px !important;
     outline: none;
     box-shadow: none;
+    border: none;
 }
 .darkButtonWidth {
     

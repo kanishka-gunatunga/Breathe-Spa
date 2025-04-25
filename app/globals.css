@@ -487,3 +487,7 @@ img {
     width: 100% !important;
   }
 }
+
+.exclusiveDeals button{
+  text-transform: capitalize !important;
+}

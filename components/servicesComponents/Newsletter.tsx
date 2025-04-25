@@ -77,7 +77,7 @@ const NewsletterForm = () => {
         <button
           type="submit"
           className={`${pageStyle.darkButton}`}
-          style={{ minWidth: '160px', fontSize: "16px !important", borderTopLeftRadius: "0px !important",borderBottomLeftRadius: "0px !important", borderTopRightRadius: "5px !important", borderBottomRightRadius: '5px !important', border: "none" }}
+          style={{ minWidth: '160px', fontSize: "16px !important", borderTopLeftRadius: "0px !important",borderBottomLeftRadius: "0px !important", borderTopRightRadius: "5px !important", borderBottomRightRadius: '5px !important', border: "none", textTransform: 'capitalize' }}
         >
           Subscribe
         </button>

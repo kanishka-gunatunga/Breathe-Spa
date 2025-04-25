@@ -307,11 +307,11 @@ export default async function Home() {
                     </div>
 
 
-                    <div className="d-md-flex d-lg-flex d-block justify-content-between">
+                    <div className="d-md-flex d-lg-flex d-block justify-content-between gap-5">
 
                         {blogs.slice(0, 3).map((post) => (
                             <div key={post._id} className={`card ${styles.articleCard1}`}>
-                                <div className="card-body p-0 p-md-2 d-flex align-items-end position-relative">
+                                <div className="card-body p-0 d-flex align-items-end position-relative">
                                     {post?.feturedImage && (
                                         <div
                                             style={{

@@ -275,7 +275,7 @@
   border: none !important;
   /* height: 434px; */
   width: auto;
-  margin-right: 50px;
+  margin-right: 0px;
   background-repeat: no-repeat;
   object-fit: cover;
   background-size: cover;
@@ -332,6 +332,7 @@
   letter-spacing: 5%;
   text-align: center;
   text-align: center;
+  width: 77%;
 }
 
 .exclusiveTitle {
@@ -959,7 +960,9 @@ a.text-decoration-none {
   .articleCard1 , .articleCard2{
     margin-right: 0 !important;
   }
-
+  .exclusiveDescription {
+    width: 90%;
+  }
 }
 
 @media screen and (max-width: 968px) {
@@ -1627,6 +1630,9 @@ a.text-decoration-none {
   }
   .mobile_width{
     width: 100% !important;
+  }
+  .exclusiveDescription {
+    width: 98%;
   }
 }
 
