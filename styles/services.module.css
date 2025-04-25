@@ -857,3 +857,10 @@
     margin-right: auto;
     max-width: 1450px;
 }
+
+.innerItemOne{
+    margin-bottom: 40px;
+}
+.innerItemTwo{
+    margin-bottom: 60px;
+}

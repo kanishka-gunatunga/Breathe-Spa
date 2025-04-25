@@ -94,65 +94,55 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
                                         id={`service-${service.serviceName.toLowerCase().replace(/\s+/g, '-')}`}
                                         className="p-0 position-relative"
                                     >
-                                        <div
-                                            className={`p-3 p-md-3 p-lg-4 ${style.serviceInnerItem} ${index % 2 === 0 ? style.roundedBottomLeft : style.roundedTopRight}`}
-                                        >
-                                            <div className="d-flex flex-column flex-md-row">
-                                                <div className="col-12 col-lg-12 d-flex flex-column align-items-start">
-                                                    <div
-                                                        className="d-flex w-100 justify-content-between align-items-top">
-                                                        <h4 className={`${style.se_txt_40}`}>{service.serviceName}</h4>
-                                                        <div className="d-none d-md-flex">
-                                                            {/* <Link href={"/contact#contactForm"} className={`${style.se_link_a_20}`}>Book
-                                                                Now</Link> */}
-                                                            <Link href="/contact#contactForm" className={`${style.se_link_a_20} arrow_button`}>
-                                                                <span>Book Now</span>
-                                                            </Link>
+                                        <div className={`${index % 2 === 0 ? style.innerItemOne : style.innerItemTwo}`}>
+                                            <div
+                                                className={`p-3 p-md-3 p-lg-4 ${style.serviceInnerItem} mb-0 ${index % 2 === 0 ? style.roundedBottomLeft : style.roundedTopRight}`}
+                                            >
+                                                <div className="d-flex flex-column flex-md-row">
+                                                    <div className="col-12 col-lg-12 d-flex flex-column align-items-start">
+                                                        <div
+                                                            className="d-flex w-100 justify-content-between align-items-top">
+                                                            <h4 className={`${style.se_txt_40}`}>{service.serviceName}</h4>
+                                                            <div className="d-none d-md-flex">
+                                                                <Link href="/contact#contactForm" className={`${style.se_link_a_20} arrow_button`}>
+                                                                    <span>Book Now</span>
+                                                                </Link>
 
 
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    {/* <ul className={`${style.pricingList} ${style.se_li_26} `}>
-                                                        {service.pricing.map((price, priceIndex) => (
-                                                            <li key={priceIndex}
-                                                                className={`${style.pricingItem} me-5`}>
-                                                                {price.duration} | Rs.{price.price}.00
-                                                                {price.priceDescription &&
-                                                                    <span> ({price.priceDescription})</span>}
-                                                            </li>
-                                                        ))}
-                                                    </ul> */}
-                                                    <ul className={`${style.pricingList} ${style.se_li_26} `}>
-                                                        {service?.pricing?.map((pricing, idx) => {
-                                                            const priceNum =
-                                                                typeof pricing.price === 'number'
-                                                                    ? pricing.price
-                                                                    : parseFloat(pricing.price as string) || 0;
+                                                        <ul className={`${style.pricingList} ${style.se_li_26} `}>
+                                                            {service?.pricing?.map((pricing, idx) => {
+                                                                const priceNum =
+                                                                    typeof pricing.price === 'number'
+                                                                        ? pricing.price
+                                                                        : parseFloat(pricing.price as string) || 0;
 
-                                                            const formatted = priceNum.toLocaleString('en-IN', {
-                                                                minimumFractionDigits: 2,
-                                                                maximumFractionDigits: 2,
-                                                            });
+                                                                const formatted = priceNum.toLocaleString('en-IN', {
+                                                                    minimumFractionDigits: 2,
+                                                                    maximumFractionDigits: 2,
+                                                                });
 
-                                                            return (
-                                                                <li key={idx} className={`${style.pricingItem} me-5`}>
-                                                                    {pricing.duration
-                                                                        ? `${pricing.duration} | Rs. ${formatted}`
-                                                                        : `Rs. ${formatted}`} {pricing.priceDescription}
-                                                                </li>
-                                                            );
-                                                        })}
-                                                    </ul>
-                                                    <Paragraph text={service.serviceItemDescription} />
-                                                    <div className="d-flex d-md-none my-3">
-                                                        <Link href={"/contact#contactForm"} className={`${style.se_link_a_20} arrow_button`}>Book
-                                                            Now</Link>
+                                                                return (
+                                                                    <li key={idx} className={`${style.pricingItem} me-5`}>
+                                                                        {pricing.duration
+                                                                            ? `${pricing.duration} | Rs. ${formatted}`
+                                                                            : `Rs. ${formatted}`} {pricing.priceDescription}
+                                                                    </li>
+                                                                );
+                                                            })}
+                                                        </ul>
+                                                        <Paragraph text={service.serviceItemDescription} />
+                                                        <div className="d-flex d-md-none my-3">
+                                                            <Link href={"/contact#contactForm"} className={`${style.se_link_a_20} arrow_button`}>Book
+                                                                Now</Link>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div
+                                                className={`${style.darkRectangle} ${index % 2 === 0 ? style.roundedBottomLeftRct : style.roundedTopRightRct}`}></div>
                                         </div>
-                                        <div
-                                            className={`${style.darkRectangle} ${index % 2 === 0 ? style.roundedBottomLeftRct : style.roundedTopRightRct}`}></div>
                                     </div>
                                 ))}
                             </div>
