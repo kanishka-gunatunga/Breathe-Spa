@@ -1,4 +1,3 @@
-import Button from "@/components/ReusableComponents/Button";
 import styles from "@/styles/page.module.css";
 import pageStyle from '@/styles/services.module.css'
 
@@ -13,6 +12,7 @@ import MainTitle from "@/components/servicesComponents/MainTitle";
 import { getAboutMainPageData, getTeamData, getTestimonialData } from "@/sanity/libs/api";
 import { urlFor } from "@/sanity/libs/sanity";
 import TestimonialSlider from "@/components/ReusableComponents/SliderTestimonials";
+import Link from "next/link";
 
 
 
@@ -31,9 +31,10 @@ const AboutPage = async () => {
 
         </div>
 
-        <div className={` ${styles.contactContainer} section`}>
-          <div className={`d-block d-lg-flex justify-content-center gap-5 mt-5 ${styles.headSection} `}>
-            <div className="col-12 col-lg-5 my-5 my-md-0 my-lg-0 position-relative ">
+        <div className={` ${styles.contactContainer} section`} style={{paddingTop: '50px !important', paddingBottom: "0px !important"}}>
+          <div className={`d-block d-lg-flex justify-content-between  ${styles.headSection} `}>
+            <div className="col-12 col-lg-6 my-5 my-md-0 my-lg-0 pe-lg-5 position-relative ">
+              <div className="position-relative" style={{paddingTop: '20px !important', paddingLeft: "20px !important"}}>
               <div className="d-flex imgShapeContainer">
                 <div className="bgShapeImage"></div>
                 <div className="imageWrapper" style={{width: "100%", height: "100%"}}>
@@ -42,14 +43,17 @@ const AboutPage = async () => {
                   )}
                 </div>
               </div>
+              </div>
             </div>
 
-            <div className={`col-12 col-lg-5 d-flex flex-column pt-4 pt-lg-0 about ${styles.aboutBreatheContainer} justify-content-between`}>
+            <div className={`col-12 col-lg-6 d-flex flex-column pt-4 pt-lg-0  ps-lg-2 about ${styles.aboutBreatheContainer} justify-content-between`}>
               <div className="margin_bottom_150">
                 <MainTitle title={about[0]?.sectionOneTitle} />
                 <Paragraph text={about[0]?.sectionOneDescription} />
               </div>
-              <Button text={about[0]?.sectionOneButton} href={about[0]?.sectionOneButtonLink || "/contact"} />
+              <Link href={about[0]?.sectionOneButtonLink || "/contact"}>
+                                        <button className={`${pageStyle.darkButton}`} style={{ fontSize: "17px !important", border: "none" }} >{about[0]?.sectionOneButton}</button>
+                                    </Link>
             </div>
           </div>
         </div>
@@ -65,7 +69,7 @@ const AboutPage = async () => {
         )}
 
 
-        <div className={`${styles.baseSection}`}>
+        <div className={`${styles.baseSection}`} style={{marginTop: "38px !important", marginBottom: "50px !important"}}>
           <div className="d-flex flex-column align-items-center justify-content-center">
             <div className="mb-5">
             <MainTitle title={"Testimonials"} />

@@ -24,7 +24,7 @@ const YellowBackSection: React.FC<YellowBackSectionProps> = ({ title, descriptio
             <div className={`${styles.shapedBg} py-5`}>
                 <div className={`${styles.contactContainer} section py-0`}>
                     <div className='w-100 py-5'>
-                        <div className="d-flex d-lg-flex d-xl-flex flex-column-reverse flex-lg-row w-100 py-0 py-lg-5 mb-5">
+                        <div className="d-flex d-lg-flex d-xl-flex flex-column-reverse flex-lg-row w-100 py-0 py-lg-5 mb-0">
 
                             <div className={`col-12 col-lg-6 pe-lg-4 d-flex flex-column justify-content-start ${styles.locationContainer}`}>
                                 <div className="margin_bottom_150">

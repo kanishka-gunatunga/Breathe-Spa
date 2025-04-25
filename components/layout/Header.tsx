@@ -33,7 +33,7 @@ const Header = ({ site }: HeaderProps) => {
     <>
       <div className='w-100 navColor' style={{ backgroundColor: "#F3EEE7 !important" }}>
         <div className={`${pageStyles.contactContainer} ${pageStyles.mobile_width} navColor`} style={{ backgroundColor: "#F3EEE7 !important" }}>
-          <Navbar expand="xl" className="p-3 navStyleMobile" style={{ backgroundColor: "#F3EEE7 !important" }}>
+          <Navbar expand="xl" className="p-3 py-lg-4 navStyleMobile" style={{ backgroundColor: "#F3EEE7 !important" }}>
             <Navbar.Brand href="/">
               {site[0]?.logo && (
                 <Image src={urlFor(site[0]?.logo).url() || "/interior.png"} alt="Breathe Logo" width={317} height={33} className='img-fluid ' />

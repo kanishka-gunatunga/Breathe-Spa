@@ -24,7 +24,7 @@ const DescriptionSection: React.FC<MainTitleProps> = (props) => {
             </svg> */}
 
             <div
-                className={`${pageStyle.shapedBg}  d-flex flex-column justify-content-center align-items-center w-100 text-center fade-in-up py-5 `}
+                className={`${pageStyle.shapedBgSmall}  d-flex flex-column justify-content-center align-items-center w-100 text-center fade-in-up py-5 `}
                
             >
                 <div className={`py-5 section ${pageStyle.contactContainer}`}>

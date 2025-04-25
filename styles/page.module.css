@@ -360,12 +360,23 @@
 .shapedBg {
   position: relative;
   background-image: url('/yellowBackground.png');
+  /* height: 505px; */
   padding: 100px 0px;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: center;
 }
 
+.shapedBgSmall {
+  position: relative;
+  /* background-image: url('/yellowBackground.png'); */
+  background-image: url('/Group 1000003148.png');
+  height: 505px;
+  padding: 100px 0px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
 
 
 .aboutSectionTitle {

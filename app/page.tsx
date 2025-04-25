@@ -52,30 +52,33 @@ export default async function Home() {
                             )}
                         </div>
                         <div className="mb-md-4">
-                            <Button href={home[0]?.sectionOneButtonLink} text={home[0]?.sectionOneButton} />
+                            {/* <Button href={home[0]?.sectionOneButtonLink} text={home[0]?.sectionOneButton} /> */}
+                            <Link href={home[0]?.sectionOneButtonLink}>
+                                        <button className={`${pageStyle.darkButton}`} style={{ fontSize: "15px !important", border: "none" }} >{home[0]?.sectionOneButton}</button>
+                                    </Link>
                         </div>
                     </div>
 
 
                     <div className="col-12 col-md-12 col-lg-6 col-xl-6">
                         <div className={`card ${styles.card1}`}>
-                            <div className="card-body">
+                            <div className="card-body py-3">
                                 {/* main topic our services */}
-                                <div className="row mb-0">
-                                    <h3 className={`${seStyles.se_txt_25_awesome} mb-0`}>OUR SERVICES</h3>
+                                <div className="row mb-0 mx-0 mt-2">
+                                    <h3 className={`${seStyles.se_txt_25_awesome}`} style={{ marginBottom: "20px" }}>OUR SERVICES</h3>
                                 </div>
 
 
                                 {/* treatments */}
-                                <div className="row px-2">
+                                <div className="row px-2 mx-0">
                                     <div className={`${seStyles.line_border} mt-4 px-0`}>
                                         <h3 className={`${seStyles.se_txt_18}`}>TREATMENTS</h3>
                                     </div>
 
-                                    <div className="row py-3 px-0">
+                                    <div className="row py-3 px-0 mx-0">
                                         {serviceOrder?.map((item, index) => item ? (
                                             <Link key={index} href={`/services#${item.slug.current}`}
-                                                className="linkUnderlineNone">
+                                                className="linkUnderlineNone px-0">
                                                 <div className="d-flex pt-0">
 
                                                     <div className={`col-6 ${styles.bottomBorder} `}>
@@ -90,7 +93,7 @@ export default async function Home() {
                                                 </div>
                                             </Link>
                                         ) : null)}
-                                        <div className="d-flex pt-0">
+                                        <div className="d-flex pt-0 px-0">
                                             <div className={`col-6 ${styles.bottomBorder}`}>
                                                 <p className={`${seStyles.se_txt_18} mb-0`}>Gift Vouchers</p>
                                             </div>
@@ -107,13 +110,13 @@ export default async function Home() {
 
 
                                 {/* Hours */}
-                                <div className="row px-2">
+                                <div className="row px-2 mx-0">
                                     <div className={`${seStyles.line_border} mt-4 px-0`}>
                                         <h3 className={seStyles.se_txt_18}>HOURS</h3>
                                     </div>
                                     {site[0]?.openDays.map((item, index) => (
-                                        <div key={index} className="row px-0 w-100">
-                                            <div className="d-flex">
+                                        <div key={index} className="row mx-0 px-0 w-100">
+                                            <div className="d-flex w-100 px-0">
                                                 <div className={`col-6 py-2 ${styles.bottomBorder}`}>
                                                     <p className={`${seStyles.se_txt_18} mb-0`}>{item.day}</p>
                                                 </div>
@@ -130,13 +133,13 @@ export default async function Home() {
 
 
                                 {/* contact */}
-                                <div className="row px-2">
+                                <div className="row mx-0 px-2">
                                     <div className={`${seStyles.line_border}   mt-4 pt-3 px-0`}>
                                         <h3 className={`${seStyles.se_txt_18}`}>CONTACT</h3>
                                     </div>
 
-                                    <div className="row px-0">
-                                        <div className="d-flex">
+                                    <div className="row mx-0 px-0">
+                                        <div className="d-flex px-0">
                                             <div className={`col-6 ${styles.bottomBorder} py-2`}>
                                                 <p className={`${seStyles.se_txt_18} mb-0`}>Phone</p>
                                             </div>
@@ -153,8 +156,8 @@ export default async function Home() {
                                     </div>
 
 
-                                    <div className="row  px-0">
-                                        <div className="d-flex">
+                                    <div className="row  mx-0 px-0">
+                                        <div className="d-flex px-0">
                                             <div className={`col-6 pt-2 border-0 ${styles.bottomBorder}`}>
                                                 <p className={`${seStyles.se_txt_18} mb-0`}>Email</p>
                                             </div>
@@ -170,17 +173,19 @@ export default async function Home() {
                                     </div>
                                 </div>
 
-
-                                <div className={`${styles.privacyPRow} pt-3 px-0`}>
-                                    <p className={`${seStyles.se_txt_10_work_sans} mb-1`}>
-                                        For Same Day appointment please call us so we can respond to you quickly. Please
-                                        read our
-                                    </p>
-                                    <p className={`${seStyles.se_txt_10_work_sans}`}>
-                                        <a href="/terms">booking policy </a>
-                                        below prior to making an appointment.
-                                    </p>
+                                <div className="row mx-0 px-2">
+                                    <div className={`${styles.privacyPRow} pt-1 px-0`}>
+                                        <p className={`${seStyles.se_txt_10_work_sans} mb-1`}>
+                                            For Same Day appointment please call us so we can respond to you quickly. Please
+                                            read our
+                                        </p>
+                                        <p className={`${seStyles.se_txt_10_work_sans}`}>
+                                            <a href="/terms">booking policy </a>
+                                            below prior to making an appointment.
+                                        </p>
+                                    </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -197,17 +202,17 @@ export default async function Home() {
                             <>
                                 <div className="col-12 col-md-12 col-lg-6 col-xl-6 pe-lg-4">
 
-                                   <div  style={{paddingLeft: "30px", paddingTop: "26px"}}>
-                                   {item.mainImage && (
-                                        <Image
-                                            className={`img-fluid ${styles.leftBoxShadow}`}
-                                            src={urlFor(item?.mainImage).url() || "/banner-about.png"}
-                                            height={368}
-                                            width={624}
-                                            alt={item.name}
-                                        />
-                                    )}
-                                   </div>
+                                    <div style={{ paddingLeft: "30px", paddingTop: "26px" }}>
+                                        {item.mainImage && (
+                                            <Image
+                                                className={`img-fluid ${styles.leftBoxShadow}`}
+                                                src={urlFor(item?.mainImage).url() || "/banner-about.png"}
+                                                height={368}
+                                                width={624}
+                                                alt={item.name}
+                                            />
+                                        )}
+                                    </div>
 
                                 </div>
                                 <div
@@ -218,8 +223,8 @@ export default async function Home() {
                                             {item.description}
                                         </p>
                                     </div>
-                                    <Link href={item.link || "/contact"}> 
-                                    <button className={`${pageStyle.darkButton}`} style={{fontSize: "15px !important", border: "none"}} >{item.button}</button>
+                                    <Link href={item.link || "/contact"}>
+                                        <button className={`${pageStyle.darkButton}`} style={{ fontSize: "15px !important", border: "none" }} >{item.button}</button>
                                     </Link>
                                 </div>
                             </>
@@ -233,21 +238,21 @@ export default async function Home() {
                                             {item.description}
                                         </p>
                                     </div>
-                                    <Link href={item.link || "/contact"}> 
-                                    <button className={`${pageStyle.darkButton}`} style={{fontSize: "15px !important", border: "none"}} >{item.button}</button>
+                                    <Link href={item.link || "/contact"}>
+                                        <button className={`${pageStyle.darkButton}`} style={{ fontSize: "15px !important", border: "none" }} >{item.button}</button>
                                     </Link>
                                 </div>
                                 <div className="col-12 col-md-12 ps-lg-4 col-lg-6 col-xl-6 my-4">
-                                    <div style={{paddingRight: "30px", paddingTop: "26px"}}>
-                                    {item.mainImage && (
-                                        <Image
-                                            className={`img-fluid ${styles.rightBoxShadow}`}
-                                            src={urlFor(item?.mainImage).url() || "/banner-about.png"}
-                                            height={368}
-                                            width={624}
-                                            alt={item.name}
-                                        />
-                                    )}
+                                    <div style={{ paddingRight: "30px", paddingTop: "26px" }}>
+                                        {item.mainImage && (
+                                            <Image
+                                                className={`img-fluid ${styles.rightBoxShadow}`}
+                                                src={urlFor(item?.mainImage).url() || "/banner-about.png"}
+                                                height={368}
+                                                width={624}
+                                                alt={item.name}
+                                            />
+                                        )}
                                     </div>
                                 </div>
                             </>
@@ -296,7 +301,7 @@ export default async function Home() {
             )}
 
 
-            <div className={`position-relative mt-0 mt-lg-4 ${styles.contactContainer} section mt-0`} style={{marginTop:"0px !important", paddingTop: "58px !important"}}>
+            <div className={`position-relative mt-0 mt-lg-4 ${styles.contactContainer} section mt-0`} style={{ marginTop: "0px !important", paddingTop: "58px !important" }}>
                 <div className={`${styles.articleDiv}`}>
                     <div className="d-flex flex-column d-block justify-content-between">
                         <div className="d-flex flex-row justify-content-center justify-content-md-between align-items-center">

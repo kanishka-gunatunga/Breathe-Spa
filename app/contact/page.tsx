@@ -32,7 +32,7 @@ const Contact = () => {
                 <ContactLocation/>
             </div>
 
-            <div>
+            <div className="mt-5">
                 <div className={`${styles.exclusiveDeals} mt-6`}>
                     <h3 className={styles.exclusiveTitle}>Exclusive Deals</h3>
                     <p className={styles.exclusiveDescription}>
