@@ -6,8 +6,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ExclusiveDeals from "@/components/ReusableComponents/ExclusiveDeals";
 import DescriptionSection from '@/components/servicesComponents/DescriptionSection'
 import YellowBackSection from "@/components/ReusableComponents/YellowBackSection";
-import {getBlogData, getEthosData, getHomeData, getServiceCategories, getSiteData} from "@/sanity/libs/api";
-import {urlFor} from "@/sanity/libs/sanity";
+import { getBlogData, getEthosData, getHomeData, getServiceCategories, getSiteData } from "@/sanity/libs/api";
+import { urlFor } from "@/sanity/libs/sanity";
 import Link from "next/link";
 import HeroSlider from "@/components/ReusableComponents/HeroSlider";
 
@@ -31,7 +31,7 @@ export default async function Home() {
     return (
 
         <>
-            <HeroSlider home={home || []}/>
+            <HeroSlider home={home || []} />
             <div className={`${styles.contactContainer} section pb-5 pt-5`}>
                 <div className="d-block d-md-block d-lg-flex justify-content-center gap-5">
                     <div
@@ -45,12 +45,12 @@ export default async function Home() {
                             </p>
                             {home[0]?.sectionOneImage && (
                                 <Image className="img-fluid mt-3"
-                                       src={urlFor(home[0]?.sectionOneImage).url() || "/Vector12.png"} height={400}
-                                       width={655} alt=""/>
+                                    src={urlFor(home[0]?.sectionOneImage).url() || "/Vector12.png"} height={400}
+                                    width={655} alt="" />
                             )}
                         </div>
                         <div className="mb-md-4">
-                            <Button href={home[0]?.sectionOneButtonLink} text={home[0]?.sectionOneButton}/>
+                            <Button href={home[0]?.sectionOneButtonLink} text={home[0]?.sectionOneButton} />
                         </div>
                     </div>
 
@@ -73,7 +73,7 @@ export default async function Home() {
                                     <div className="row py-3 px-0">
                                         {serviceOrder?.map((item, index) => item ? (
                                             <Link key={index} href={`/services#${item.slug.current}`}
-                                                  className="linkUnderlineNone">
+                                                className="linkUnderlineNone">
                                                 <div className="d-flex pt-0">
 
                                                     <div className={`col-6 ${styles.bottomBorder} `}>
@@ -186,7 +186,7 @@ export default async function Home() {
             </div>
 
             <DescriptionSection title={ethos[0]?.title || "Our Ethos"}
-                                description={ethos[0]?.description || "We are passionately committed to providing our clients with the most professional, customized, and hygienic wellness experience."}/>
+                description={ethos[0]?.description || "We are passionately committed to providing our clients with the most professional, customized, and hygienic wellness experience."} />
 
             <div className={`section py-3 ${styles.OnDesktopHideExtra} ${styles.contactContainer}`}>
                 {ethos[0]?.ethosArray.map((item, index) => (
@@ -209,12 +209,12 @@ export default async function Home() {
                                 <div
                                     className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start mb-5">
                                     <div className="margin_bottom_150">
-                                        <h3 className={seStyles.se_txt_40} style={{fontFamily: "Coefficient DEMO, sans-serif;"}}>{item.name}</h3>
-                                        <p className={`${seStyles.se_txt_16_work_sans_dark} mb-0`} style={{textAlign: "justify"}}>
+                                        <h3 className={seStyles.se_txt_40} style={{ fontFamily: "Coefficient DEMO, sans-serif;" }}>{item.name}</h3>
+                                        <p className={`${seStyles.se_txt_16_work_sans_dark} mb-0`} style={{ textAlign: "justify" }}>
                                             {item.description}
                                         </p>
                                     </div>
-                                    <Button text={item.button} href={item.link || "/contact"}/>
+                                    <Button text={item.button} href={item.link || "/contact"} />
                                 </div>
                             </>
                         ) : (
@@ -222,12 +222,12 @@ export default async function Home() {
                                 <div
                                     className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start mb-5">
                                     <div className="margin_bottom_150">
-                                        <h3 className={seStyles.se_txt_40} style={{fontFamily: "Coefficient DEMO, sans-serif;"}}>{item.name}</h3>
-                                        <p className={`${seStyles.se_txt_16_work_sans_dark} mb-0`} style={{textAlign: "justify"}}>
+                                        <h3 className={seStyles.se_txt_40} style={{ fontFamily: "Coefficient DEMO, sans-serif;" }}>{item.name}</h3>
+                                        <p className={`${seStyles.se_txt_16_work_sans_dark} mb-0`} style={{ textAlign: "justify" }}>
                                             {item.description}
                                         </p>
                                     </div>
-                                    <Button text={item.button} href={item.link || "/contact"}/>
+                                    <Button text={item.button} href={item.link || "/contact"} />
                                 </div>
                                 <div className="col-12 col-md-12 col-lg-6 col-xl-6">
                                     {item.mainImage && (
@@ -269,7 +269,7 @@ export default async function Home() {
                             </div>
                         </div>
                         <div className="col-12 col-md-12 col-lg-6 col-xl-6 mt-4 mt-lg-0">
-                            <Button text={item.button} href={item.link || "/contact"}/>
+                            <Button text={item.button} href={item.link || "/contact"} />
                         </div>
 
                     </div>
@@ -282,28 +282,31 @@ export default async function Home() {
                     description={home[0]?.sectionTwoDescription}
                     image={urlFor(home[0]?.sectionTwoImage).url() || "/interior.png"}
                     buttonText={home[0]?.sectionTwoButton}
-                    buttonLink={home[0]?.sectionTwoButtonLink}/>
+                    buttonLink={home[0]?.sectionTwoButtonLink} />
             )}
 
 
-            <div className={`position-relative mt-0 mt-lg-4 ${styles.contactContainer} section`}>
+            <div className={`position-relative mt-0 mt-lg-4 ${styles.contactContainer} section mt-0`} style={{marginTop:"0px !important", paddingTop: "58px !important"}}>
                 <div className={`${styles.articleDiv}`}>
-                    <div className="d-md-flex d-lg-flex d-block justify-content-between">
-                        <div className="col-12 col-md-8 col-lg-8">
-                            <div>
+                    <div className="d-flex flex-column d-block justify-content-between">
+                        <div className="d-flex flex-row justify-content-center justify-content-md-between align-items-center">
+                            <div className="">
                                 <h3 className={`${styles.locationDivTitle} text-center text-md-start`}>Recent
                                     Articles</h3>
-                                <p className={`mt-0 ${seStyles.se_txt_16_work_sans_dark} text-center text-md-start`}>
-                                    Here’s what we&apos;ve been up to recently.
-                                </p>
+
+                            </div>
+                            <div
+                                className={` d-none d-md-flex justify-content-center  justify-content-lg-end justify-content-md-end ${styles.viewAll}`}>
+                                <Button text="View All" href="/blog/#blogArticles" />
                             </div>
                         </div>
 
 
-                        <div
-                            className={`col-12 col-md-4 col-lg-4 mb-5 mb-lg-0  d-flex justify-content-center  justify-content-lg-end justify-content-md-end ${styles.viewAll}`}>
-                            <Button text="View All" href="/blog/#blogArticles"/>
-                        </div>
+
+                        <p className={`mt-0 ${seStyles.se_txt_16_work_sans_dark} text-center text-md-start`}>
+                            Here’s what we&apos;ve been up to recently.
+                        </p>
+
                     </div>
 
 
@@ -330,8 +333,8 @@ export default async function Home() {
                                                 fill
                                             />
                                             <Image className={`img-fluid object-cover`}
-                                                   src={urlFor(post?.feturedImage).url()} height={368} width={624}
-                                                   alt=""/>
+                                                src={urlFor(post?.feturedImage).url()} height={368} width={624}
+                                                alt="" />
 
                                             <div
                                                 style={{
@@ -350,13 +353,6 @@ export default async function Home() {
                                     <Link
                                         href={`/blog/${typeof post.slug === "string" ? post.slug : post.slug.current}`}
                                         className={seStyles.se_26_card_txt}
-                                        style={{
-                                            textDecoration: "none",
-                                            position: "absolute",
-                                            bottom: "16px",
-                                            left: "16px",
-                                            color: "white"
-                                        }}
                                     >
                                         {post.title}
                                     </Link>
@@ -366,10 +362,14 @@ export default async function Home() {
                         ))}
 
                     </div>
+                    <div
+                        className={` d-flex d-md-none justify-content-center mt-5  justify-content-lg-end justify-content-md-end ${styles.viewAll}`}>
+                        <Button text="View All" href="/blog/#blogArticles" />
+                    </div>
                 </div>
             </div>
 
-            <ExclusiveDeals/>
+            <ExclusiveDeals />
 
         </>
     );
