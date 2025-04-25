@@ -149,7 +149,7 @@ const AboutPage = async () => {
           </div>
         </div>
 
-        <div className={`d-flex position-relative  py-5 pb-0 pb-md-5 mb-5  flex-column justify-content-center align-items-center ${styles.mobileHeightOnMobile}  ${styles.shapedBg}`} style={{ width: "100%", overflow: "hidden" }}>
+        <div className={`d-flex position-relative  py-5 pb-0 pb-md-5 mb-5  flex-column justify-content-center align-items-center ${styles.mobileHeightOnMobile}  ${styles.shapedBgTeam}`} style={{ width: "100%", overflow: "hidden" }}>
           <div className={`${styles.contactContainer} section py-0 py-lg-5`}>
             <div className="d-flex flex-column align-items-center justify-content-center">
               <MainTitle title={team?.[0]?.title || "Team of Breathe"} />
