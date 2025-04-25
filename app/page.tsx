@@ -10,6 +10,8 @@ import { getBlogData, getEthosData, getHomeData, getServiceCategories, getSiteDa
 import { urlFor } from "@/sanity/libs/sanity";
 import Link from "next/link";
 import HeroSlider from "@/components/ReusableComponents/HeroSlider";
+import pageStyle from '@/styles/services.module.css'
+
 
 export default async function Home() {
 
@@ -190,12 +192,13 @@ export default async function Home() {
 
             <div className={`section py-3 ${styles.OnDesktopHideExtra} ${styles.contactContainer}`}>
                 {ethos[0]?.ethosArray.map((item, index) => (
-                    <div key={index} className="d-block d-md-block d-lg-flex gap-5 my-5">
+                    <div key={index} className="d-block d-md-block d-lg-flex my-5">
                         {index % 2 === 0 ? (
                             <>
-                                <div className="col-12 col-md-12 col-lg-6 col-xl-6">
+                                <div className="col-12 col-md-12 col-lg-6 col-xl-6 pe-lg-4">
 
-                                    {item.mainImage && (
+                                   <div  style={{paddingLeft: "30px", paddingTop: "26px"}}>
+                                   {item.mainImage && (
                                         <Image
                                             className={`img-fluid ${styles.leftBoxShadow}`}
                                             src={urlFor(item?.mainImage).url() || "/banner-about.png"}
@@ -204,32 +207,38 @@ export default async function Home() {
                                             alt={item.name}
                                         />
                                     )}
+                                   </div>
 
                                 </div>
                                 <div
-                                    className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start mb-5">
+                                    className="col-12 col-md-12 col-lg-6 ps-lg-4 col-xl-6 d-flex flex-column justify-content-start">
                                     <div className="margin_bottom_150">
                                         <h3 className={seStyles.se_txt_40} style={{ fontFamily: "Coefficient DEMO, sans-serif;" }}>{item.name}</h3>
                                         <p className={`${seStyles.se_txt_16_work_sans_dark} mb-0`} style={{ textAlign: "justify" }}>
                                             {item.description}
                                         </p>
                                     </div>
-                                    <Button text={item.button} href={item.link || "/contact"} />
+                                    <Link href={item.link || "/contact"}> 
+                                    <button className={`${pageStyle.darkButton}`} style={{fontSize: "15px !important", border: "none"}} >{item.button}</button>
+                                    </Link>
                                 </div>
                             </>
                         ) : (
                             <>
                                 <div
-                                    className="col-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-start mb-5">
+                                    className="col-12 col-md-12 col-lg-6 pe-lg-4 col-xl-6 my-4 d-flex flex-column justify-content-start">
                                     <div className="margin_bottom_150">
                                         <h3 className={seStyles.se_txt_40} style={{ fontFamily: "Coefficient DEMO, sans-serif;" }}>{item.name}</h3>
                                         <p className={`${seStyles.se_txt_16_work_sans_dark} mb-0`} style={{ textAlign: "justify" }}>
                                             {item.description}
                                         </p>
                                     </div>
-                                    <Button text={item.button} href={item.link || "/contact"} />
+                                    <Link href={item.link || "/contact"}> 
+                                    <button className={`${pageStyle.darkButton}`} style={{fontSize: "15px !important", border: "none"}} >{item.button}</button>
+                                    </Link>
                                 </div>
-                                <div className="col-12 col-md-12 col-lg-6 col-xl-6">
+                                <div className="col-12 col-md-12 ps-lg-4 col-lg-6 col-xl-6 my-4">
+                                    <div style={{paddingRight: "30px", paddingTop: "26px"}}>
                                     {item.mainImage && (
                                         <Image
                                             className={`img-fluid ${styles.rightBoxShadow}`}
@@ -239,6 +248,7 @@ export default async function Home() {
                                             alt={item.name}
                                         />
                                     )}
+                                    </div>
                                 </div>
                             </>
                         )}
