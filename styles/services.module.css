@@ -199,11 +199,26 @@
 } */
 
 
-.pricingList {
+/* .pricingList {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 
-}
+} */
+.pricingList {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 1.5rem; /* optional for spacing */
+    row-gap: 0.5rem; /* for vertical spacing */
+    padding-left: 0;
+    list-style: none;
+  }
+
+  @media (max-width: 576px) {
+    .pricingList {
+      grid-template-columns: 1fr;
+    }
+  }
+  
 
 .pricingItem {
     list-style-type: none;
