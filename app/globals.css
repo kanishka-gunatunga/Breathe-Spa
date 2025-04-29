@@ -527,3 +527,8 @@ img {
   right: 0;
   color: #313131;
 }
+
+
+.nav-link{
+  word-spacing: 3px;
+}
