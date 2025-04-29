@@ -46,15 +46,17 @@ const Footer = ({ site, service }: FooterProps) => {
         </svg>
         <div className={` ${styles.contactContainer} section pb-0 footer-Contact-container`}>
           <div className='col-12 position-relative footer-content px-0'>
-            <div className='row footer-row footer-row-middle footer-row-top-y-space'>
-              <div className='col-12 col-md-8 col-lg-8 d-flex justify-content-start px-lg-0 align-items-center'>
+            <div className='row footer-row footer-row-middle footer-row-top-y-space d-flex flex-column flex-md-row justify-content-between'>
+              <div className='col-12 col-md-5 col-lg-5 d-flex justify-content-start px-lg-0 align-items-center'>
                 <Link className="navbar-brand" href="/">
                   {site[0]?.logo && (
-                    <Image src={urlFor(site[0]?.logo).url() || "/interior.png"} alt="Breathe Logo" width={317} height={33} className='logo_footer' />
+                    <Image src={urlFor(site[0]?.logo).url() || "/interior.png"} alt="Breathe Logo" width={317} height={33} className='logo_footer mb-3 mb-md-0' />
                   )}
                 </Link>
               </div>
-
+<div className='col-12 col-md-7 col-lg-6 d-flex justify-content-end pe-0 me-0'>
+<NewsletterForm />
+</div>
 
               {/* <div className='col-12 col-md-4 col-lg-4 d-flex justify-content-end gap-3'>
                 <Form action="/search" className='d-flex search-form'>
@@ -62,7 +64,7 @@ const Footer = ({ site, service }: FooterProps) => {
                   <Button text="Subscribe" href="" />
                 </Form>
               </div> */}
-              <NewsletterForm />
+              
             </div>
             <div className="hr-line line-one"></div>
 

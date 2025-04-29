@@ -52,9 +52,9 @@ const NewsletterForm = () => {
   };
 
   return (
-    <div className="col-12 col-md-4 col-lg-4 d-flex justify-content-end gap-3 d-flex flex-column px-0 px-2 ps-md-0">
+    <div className="w-100 d-flex justify-content-end align-items-md-end gap-3 d-flex flex-column px-0 px-0 ps-md-0">
        
-      <form onSubmit={handleSubmit} className="d-flex search-form position-relative">
+      <form onSubmit={handleSubmit} className="d-flex search-form position-relative" style={{maxWidth: "475px !important"}}>
       {showAlert && message && (
         <div className={`alert alert-${alertType} alert-dismissible fade show py-1`} role="alert">
           {message}
