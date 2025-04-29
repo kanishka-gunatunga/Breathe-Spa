@@ -18,7 +18,7 @@ async function ExclusiveDeals() {
                     {exclusive[0]?.description}
                 </p>
 
-                <Link href={exclusive[0]?.link}> <button className={`${pageStyle.darkButton}`} style={{fontSize: "16px !important", border: "none"}} >{exclusive[0]?.buttonTxt}</button></Link>
+                <Link href={exclusive[0]?.link}> <button className={`${pageStyle.darkButton}`} style={{fontSize: "18px !important", border: "none"}} >{exclusive[0]?.buttonTxt}</button></Link>
             </div>
 
         </div>
