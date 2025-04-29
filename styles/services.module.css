@@ -864,3 +864,56 @@
 .innerItemTwo{
     margin-bottom: 60px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cardCustom {
+    border-radius: 30px !important;
+    overflow: visible;
+    position: relative;
+    background-color: transparent !important;
+  }
+  
+  .imageWrapper {
+    height: 440px;
+    border-radius: 30px;
+    background-color: transparent;
+    position: relative;
+    overflow: visible;
+  }
+  
+  .imageContainer {
+    top: -40px;
+    left: 0;
+    right: 0;
+    height: 380px;
+    position: absolute;
+    border-radius: 30px;
+    overflow: visible;
+  }
+  
+  .teamImg {
+    object-fit: cover;
+    border-radius: 30px;
+    transform: translateY(-10px);
+  }
+  
+  @media (max-width: 768px) {
+    .imageContainer {
+      top: -30px;
+      height: 320px;
+    }
+  }
+  

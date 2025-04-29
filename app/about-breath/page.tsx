@@ -31,18 +31,18 @@ const AboutPage = async () => {
 
         </div>
 
-        <div className={` ${styles.contactContainer} section`} style={{paddingTop: '50px !important', paddingBottom: "0px !important"}}>
+        <div className={` ${styles.contactContainer} section`} style={{ paddingTop: '50px !important', paddingBottom: "0px !important" }}>
           <div className={`d-block d-lg-flex justify-content-between  ${styles.headSection} `}>
             <div className="col-12 col-lg-6 my-5 my-md-0 my-lg-0 pe-lg-5 position-relative ">
-              <div className="position-relative" style={{paddingTop: '20px !important', paddingLeft: "20px !important"}}>
-              <div className="d-flex imgShapeContainer">
-                <div className="bgShapeImage"></div>
-                <div className="imageWrapper" style={{width: "100%", height: "100%"}}>
-                  {about[0].sectionOneImage && (
-                    <Image className={`${pageStyle.imgHeight}`} src={urlFor(about[0]?.sectionOneImage).url() || "/about1.png"} height={650} width={548} alt="" />
-                  )}
+              <div className="position-relative" style={{ paddingTop: '20px !important', paddingLeft: "20px !important" }}>
+                <div className="d-flex imgShapeContainer">
+                  <div className="bgShapeImage"></div>
+                  <div className="imageWrapper" style={{ width: "100%", height: "100%" }}>
+                    {about[0].sectionOneImage && (
+                      <Image className={`${pageStyle.imgHeight}`} src={urlFor(about[0]?.sectionOneImage).url() || "/about1.png"} height={650} width={548} alt="" />
+                    )}
+                  </div>
                 </div>
-              </div>
               </div>
             </div>
 
@@ -52,8 +52,8 @@ const AboutPage = async () => {
                 <Paragraph text={about[0]?.sectionOneDescription} />
               </div>
               <Link href={about[0]?.sectionOneButtonLink || "/contact"}>
-                                        <button className={`${pageStyle.darkButton}`} style={{ fontSize: "17px !important", border: "none" }} >{about[0]?.sectionOneButton}</button>
-                                    </Link>
+                <button className={`${pageStyle.darkButton}`} style={{ fontSize: "17px !important", border: "none" }} >{about[0]?.sectionOneButton}</button>
+              </Link>
             </div>
           </div>
         </div>
@@ -69,10 +69,10 @@ const AboutPage = async () => {
         )}
 
 
-        <div className={`${styles.baseSection}`} style={{marginTop: "38px !important", marginBottom: "50px !important"}}>
+        <div className={`${styles.baseSection}`} style={{ marginTop: "38px !important", marginBottom: "50px !important" }}>
           <div className="d-flex flex-column align-items-center justify-content-center">
             <div className="mb-5">
-            <MainTitle title={"Testimonials"} />
+              <MainTitle title={"Testimonials"} />
             </div>
             <TestimonialSlider testimonials={testimonials[0]?.testimonialsArray || []} />
             {/* <div className="col-12 col-md-12 col-lg-8 position-relative mb-5">
