@@ -63,12 +63,11 @@ const CardSlider: React.FC<CardSliderProps> = ({ team }) => {
                                             src={urlFor(card?.mainImage).url() || "/about1.png"}
                                             alt={card.name}
                                             fill
-                                            style={{ objectFit: 'cover', borderRadius: "30px !important", backgroundColor: "transparent !important" }}
+                                            style={{ objectFit: 'cover', borderRadius: "30px !important", backgroundColor: "transparent !important", width: 'auto !important' }}
                                             className={`${AboutStyles.TeamImg} `}
                                         />
                                     )}
                                 </div>
-
                             </div>
                             <div className={`card-body d-flex flex-column ${AboutStyles.cardBody}`}>
                                 <h5 className={`card-title ${styles.se_txt_35_awsome}`}>{card.name}</h5>
