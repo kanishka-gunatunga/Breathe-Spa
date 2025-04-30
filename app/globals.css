@@ -598,3 +598,10 @@ img {
 .blogCard:hover{
   transform: scale(1) !important;
 }
+
+
+input:focus{
+  border: solid 1px #171717 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
