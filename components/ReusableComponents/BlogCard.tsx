@@ -8,7 +8,7 @@ const BlogCard: React.FC<BlogData> = ({ title, slug, mainImage, publishedAt, fet
     return (
         <Link href={`/blog/${slug}`} className="text-decoration-none">
             <div
-                className={`bg-white blogCardBody rounded-3 overflow-hidden transition-all duration-300 ease-in-out hover:shadow-md hover:scale-[1.02] cursor-pointer ${styles.blogCard}`}
+                className={`bg-white blogCardBody rounded-3 overflow-hidden cursor-pointer ${styles.blogCard}`}
             >
                 {mainImage && (
                    <div className={styles.blogCardImageWrapper}>

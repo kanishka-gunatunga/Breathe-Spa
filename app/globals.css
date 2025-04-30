@@ -589,3 +589,12 @@ img {
     height: 375px  !important;
   }
 }
+
+.blogCardBody:hover{
+  box-shadow: none !important;
+  scale: scale(1) !important;
+}
+
+.blogCard:hover{
+  transform: scale(1) !important;
+}
