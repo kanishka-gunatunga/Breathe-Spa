@@ -38,7 +38,7 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({ testimonials }) =
           <div className={`card ${styles.testimonialCard}`}>
             <div className="card-body p-0 p-lg-2">
               <div className="d-block d-md-flex d-lg-flex gap-5">
-                <div>
+                <div className='d-flex justify-content-center justify-content-lg-start'>
                   {testimonial.mainImage && (
                     <Image
                       className={`${styles.testimonialPic} rounded`}
