@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from "react";
+import {useState} from "react";
 import pageStyles from "@/styles/page.module.css";
 import styles from "@/styles/page.module.css";
 import pageStyle from '@/styles/services.module.css'
@@ -32,7 +32,7 @@ const ContactForm = () => {
     const [isLoading, setIsLoading] = useState(false);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value, type } = e.target;
+        const {name, value, type} = e.target;
         const checked = "checked" in e.target ? (e.target as HTMLInputElement).checked : false;
         setFormData((prev) => ({
             ...prev,
@@ -99,18 +99,19 @@ const ContactForm = () => {
                         alt="Spa treatment"
                         fill
                         className={`img-fluid ${styles.responsiveImage}`}
-                        style={{ objectFit: 'cover' }}
+                        style={{objectFit: 'cover'}}
                     />
                 </div>
             </div>
             <div className={`col-md-6 ${styles.formWrapper}`}>
                 <div className={styles.formContainer}>
-                    <h2 className={styles.section_title}>Schedule your in Haus presence</h2>
-                    <p className={`text-muted ${styles.sectionSubTitle}`}>Get in touch with us</p>
+                    <h2 className={styles.section_title}>Get in touch with us</h2>
+                    <p className={`text-muted ${styles.sectionSubTitle}`}>Please let us know which treatments you’re
+                        interested in. For same day appointments please whatsapp or call us on +947772444888</p>
 
                     {submissionStatus === "success" && (
                         <div className="alert alert-success" role="alert">
-                            Thank you for your message! We&#39;ll get back to you soon.
+                            Thank you for getting in touch with us. Our team will reach out to you soon.
                         </div>
                     )}
                     {submissionStatus === "error" && (
@@ -219,10 +220,12 @@ const ContactForm = () => {
                                 name="privacyPolicy"
                                 checked={formData.privacyPolicy}
                                 onChange={handleChange}
-                                style={{ border: "2px solid #dee2e6 !important", borderRadius: "6px !important" }}
+                                style={{border: "2px solid #dee2e6 !important", borderRadius: "6px !important"}}
                             />
-                            <label className={`form-check-label ${styles.formCheck} ${pageStyles.agree_text}`} htmlFor="privacyPolicy">
-                                You agree to our friendly  <a href="/terms">Booking Policy</a>.
+                            <label className={`form-check-label ${styles.formCheck} ${pageStyles.agree_text}`}
+                                   htmlFor="privacyPolicy">
+                                Please take a minute to review our <a href="/terms">Booking Policy</a> and click accept
+                                to continue
                             </label>
                         </div>
                         <button
