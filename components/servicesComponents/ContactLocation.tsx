@@ -7,6 +7,8 @@ import {getContactData, getSiteData} from "@/sanity/libs/api";
 const ContactLocation = async () => {
     const contact = await getContactData();
     const site = await getSiteData();
+    console.log("contact : ", contact)
+    console.log("site : ", site)
     return (
         <div>
             <div className={styles.mapHouContainer}>
