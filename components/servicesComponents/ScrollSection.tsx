@@ -191,7 +191,7 @@ const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category, cat
 
 
                                     </div>
-                                    <DarkButton text="View More" link={`/services/${category.slug.current}`} serviceId={`service-${service.serviceName.toLowerCase().replace(/\s+/g, '-')}`} />
+                                    <DarkButton text="LEARN MORE" link={`/services/${category.slug.current}`} serviceId={`service-${service.serviceName.toLowerCase().replace(/\s+/g, '-')}`} />
                                 </div>
                             ))
                         ) : (
@@ -251,7 +251,7 @@ const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category, cat
                                             })}
                                         </ul>
                                     </div>
-                                    <DarkButton text="View More" link={`/services/${category.slug.current}`} serviceId={`service-${service.serviceName.toLowerCase().replace(/\s+/g, '-')}`} />
+                                    <DarkButton text="LEARN MORE" link={`/services/${category.slug.current}`} serviceId={`service-${service.serviceName.toLowerCase().replace(/\s+/g, '-')}`} />
                                 </div>
                             ))
                         ) : (
