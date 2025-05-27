@@ -1,20 +1,22 @@
 import React from 'react'
 import style from '@/styles/services.module.css'
 import pageStyle from '@/styles/page.module.css'
-import { getTermsData } from '@/sanity/libs/api'
-import { PortableText } from 'next-sanity'
-
+import pageStyles from '@/styles/services.module.css'
+import {getTermsData} from '@/sanity/libs/api'
+import {PortableText} from 'next-sanity'
+import Link from "next/link";
+import {ScrollHandler} from "@/components/ReusableComponents/ScrollHandler";
 
 
 const page = async () => {
-    
 
-    
+
     const terms = await getTermsData()
     console.log("terms: ", terms);
 
     return (
         <div className='d-flex flex-column'>
+            <ScrollHandler/>
             <div className={`section ${pageStyle.contactContainer} py-5`}>
                 <div className='d-flex flex-column'>
                     {terms.map((term) => (
@@ -28,10 +30,16 @@ const page = async () => {
                                 </div>
                             )}
                             <div className={`d-flex flex-column text-start ${style.blockContent}`}>
-                                <PortableText value={term.body} />
+                                <PortableText value={term.body}/>
                             </div>
                         </div>
                     ))}
+
+                    <div className="d-flex justify-content-center mt-4">
+                        <Link href="/contact#contactForm" className={`${pageStyles.darkButton} text-center`}>
+                            Return to Contact Us Page
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>
