@@ -30,7 +30,7 @@ const page = async () => {
         <div className='d-flex flex-column'>
             {/* hero section */}
             <ScrollHandler/>
-            <div id="serviceSection" className={`d-flex ${style.imageContainer}`}>
+            <div className={`d-flex ${style.imageContainer}`}>
                 {servicesMainData[0].servicesHeroImage && (
                     <Image src={urlFor(servicesMainData[0]?.servicesHeroImage).url()} alt='services hero image'
                            width={1920} height={1080} style={{width: "100vw", height: "auto", objectFit: 'cover'}}/>
@@ -38,7 +38,7 @@ const page = async () => {
             </div>
 
             {/* services description page */}
-            <div className={`section py-3 ${pageStyle.contactContainer}`}>
+            <div id="serviceSection" className={`section py-3 ${pageStyle.contactContainer}`}>
                 <div className="d-flex flex-column flex-lg-row w-100">
                     <div className="col-12 col-lg-5 d-flex pt-3 pt-lg-0">
                         {servicesMainData[0].mainImage && (
