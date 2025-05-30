@@ -67,7 +67,7 @@ export const ScrollHandler = () => {
                     });
 
                     setTimeout(() => {
-                        const headerOffset = 100; // Adjust based on your header height
+                        const headerOffset = 50; // Adjust based on your header height
                         const elementPosition = targetElement.getBoundingClientRect().top;
                         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 

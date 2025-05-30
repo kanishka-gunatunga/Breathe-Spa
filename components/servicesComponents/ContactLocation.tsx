@@ -17,7 +17,7 @@ const ContactLocation = async () => {
                                 <h1 className={styles.sectionTitle}>
                                     {contact?.[0]?.title ?? 'Find us in our quiet, urban wellness retreat'}
                                 </h1>
-                                <p className={styles.map_hours_desc}>
+                                <p className={`preserve-linebreaks ${styles.map_hours_desc}`}>
                                     {contact?.[0]?.description ?? 'No description available.'}
                                 </p>
 
