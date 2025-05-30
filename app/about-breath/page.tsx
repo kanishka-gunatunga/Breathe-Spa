@@ -64,7 +64,7 @@ const AboutPage = async () => {
             description={about[0]?.sectionTwoDescription}
             image={urlFor(about[0]?.sectionTwoImage).url() || "/about2.png"}
             buttonText={about[0]?.sectionTwoButton}
-            buttonLink={about[0]?.sectionTwoButtonLink || "/services"}
+            buttonLink={about[0]?.sectionTwoButtonLink || "/services#serviceSection"}
           />
         )}
 

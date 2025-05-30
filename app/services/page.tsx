@@ -8,6 +8,7 @@ import Paragraph from '@/components/servicesComponents/Paragraph'
 import DescriptionSection from '@/components/servicesComponents/DescriptionSection'
 import ServiceCategoryCard from '@/components/servicesComponents/ScrollSection'
 import {urlFor} from '@/sanity/libs/sanity'
+import {ScrollHandler} from "@/components/ReusableComponents/ScrollHandler";
 
 
 const page = async () => {
@@ -28,7 +29,8 @@ const page = async () => {
     return (
         <div className='d-flex flex-column'>
             {/* hero section */}
-            <div className={`d-flex ${style.imageContainer}`}>
+            <ScrollHandler/>
+            <div id="serviceSection" className={`d-flex ${style.imageContainer}`}>
                 {servicesMainData[0].servicesHeroImage && (
                     <Image src={urlFor(servicesMainData[0]?.servicesHeroImage).url()} alt='services hero image'
                            width={1920} height={1080} style={{width: "100vw", height: "auto", objectFit: 'cover'}}/>
