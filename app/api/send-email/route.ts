@@ -45,7 +45,7 @@ export async function POST(request: NextRequest) {
         const body = JSON.parse(bodyText);
         console.log("Webhook body:", body);
 
-        const {firstName, lastName, email, phone, message, attachment, privacyPolicy, submittedAt} = body;
+        const {firstName, lastName, email, phone, message, privacyPolicy, submittedAt} = body;
 
 
         if (!firstName || !lastName || !email || !message) {
@@ -53,12 +53,12 @@ export async function POST(request: NextRequest) {
             return NextResponse.json({error: "Invalid webhook payload"}, {status: 400});
         }
 
-        let attachmentUrl = "No attachment";
-        if (attachment?.asset?._ref) {
-            const assetQuery = `*[_id == $ref][0]{url}`;
-            const asset = await sanityClient.fetch(assetQuery, {ref: attachment.asset._ref});
-            attachmentUrl = asset?.url || "Attachment not found";
-        }
+        // let attachmentUrl = "No attachment";
+        // if (attachment?.asset?._ref) {
+        //     const assetQuery = `*[_id == $ref][0]{url}`;
+        //     const asset = await sanityClient.fetch(assetQuery, {ref: attachment.asset._ref});
+        //     attachmentUrl = asset?.url || "Attachment not found";
+        // }
 
 
         const settingsQuery = `*[_type == "contactSettings"][0]{recipientEmail,email,password}`;
@@ -84,7 +84,6 @@ export async function POST(request: NextRequest) {
         Email: ${email}
         Phone: ${phone}
         Message: ${message}
-        Attachment Url: ${attachmentUrl}
         Privacy Policy Accepted: ${privacyPolicy}
         Submitted At: ${submittedAt}
       `,
@@ -94,21 +93,20 @@ export async function POST(request: NextRequest) {
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Phone:</strong> ${phone}</p>
         <p><strong>Message:</strong> ${message}</p>
-        <p><strong>Attachment Url:</strong>> ${attachmentUrl}</p>
         <p><strong>Privacy Policy Accepted:</strong> ${privacyPolicy}</p>
         <p><strong>Submitted At:</strong> ${submittedAt}</p>
       `,
         };
 
 
-        if (attachmentUrl !== "No attachment" && attachmentUrl !== "Attachment not found") {
-            mailOptions.attachments = [
-                {
-                    filename: attachmentUrl.split("/").pop() || "attachment",
-                    path: attachmentUrl,
-                },
-            ];
-        }
+        // if (attachmentUrl !== "No attachment" && attachmentUrl !== "Attachment not found") {
+        //     mailOptions.attachments = [
+        //         {
+        //             filename: attachmentUrl.split("/").pop() || "attachment",
+        //             path: attachmentUrl,
+        //         },
+        //     ];
+        // }
 
         await transporter.sendMail(mailOptions);
 

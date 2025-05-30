@@ -1,13 +1,13 @@
 import {NextRequest, NextResponse} from "next/server";
 import {sanityClient} from "@/sanity/libs/sanity";
 
-interface SanityFile {
-    _type: "file";
-    asset: {
-        _type: "reference";
-        _ref: string;
-    };
-}
+// interface SanityFile {
+//     _type: "file";
+//     asset: {
+//         _type: "reference";
+//         _ref: string;
+//     };
+// }
 
 interface ContactSubmission {
     _type: "contactSubmission";
@@ -17,7 +17,7 @@ interface ContactSubmission {
     phone: string;
     message: string;
     privacyPolicy: boolean;
-    attachment?: SanityFile;
+    // attachment?: SanityFile;
     submittedAt: string;
 }
 
@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
         const message = formData.get("message") as string;
         const privacyPolicy = formData.get("privacyPolicy") === "true";
         const submittedAt = formData.get("submittedAt") as string;
-        const attachment = formData.get("attachment");
+        // const attachment = formData.get("attachment");
 
         if (!firstName || !lastName || !email || !message || !privacyPolicy) {
             return NextResponse.json({error: "Missing required fields"}, {status: 400});
@@ -49,28 +49,28 @@ export async function POST(request: NextRequest) {
             submittedAt,
         };
 
-        if (attachment && attachment instanceof File) {
-            console.log("Uploading file:", {
-                name: attachment.name,
-                type: attachment.type,
-                size: attachment.size,
-            });
-            const fileBuffer = Buffer.from(await attachment.arrayBuffer());
-            const asset = await sanityClient.assets.upload("file", fileBuffer, {
-                filename: attachment.name,
-                contentType: attachment.type,
-            });
-            console.log("Asset uploaded:", asset);
-            submission.attachment = {
-                _type: "file",
-                asset: {
-                    _type: "reference",
-                    _ref: asset._id,
-                },
-            };
-        } else {
-            console.log("No file uploaded");
-        }
+        // if (attachment && attachment instanceof File) {
+        //     console.log("Uploading file:", {
+        //         name: attachment.name,
+        //         type: attachment.type,
+        //         size: attachment.size,
+        //     });
+        //     const fileBuffer = Buffer.from(await attachment.arrayBuffer());
+        //     const asset = await sanityClient.assets.upload("file", fileBuffer, {
+        //         filename: attachment.name,
+        //         contentType: attachment.type,
+        //     });
+        //     console.log("Asset uploaded:", asset);
+        //     submission.attachment = {
+        //         _type: "file",
+        //         asset: {
+        //             _type: "reference",
+        //             _ref: asset._id,
+        //         },
+        //     };
+        // } else {
+        //     console.log("No file uploaded");
+        // }
 
         console.log("Submission data:", submission);
         const response = await sanityClient.create(submission);
