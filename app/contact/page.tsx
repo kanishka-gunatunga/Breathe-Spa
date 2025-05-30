@@ -28,7 +28,7 @@ const Contact = () => {
                     <ContactForm/>
                 </div>
             </section>
-            <div id="locationContainer">
+            <div>
                 <ContactLocation/>
             </div>
 

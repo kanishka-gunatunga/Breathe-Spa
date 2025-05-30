@@ -19,7 +19,7 @@ const ContactLocation = async () => {
                                 <h1 className={styles.sectionTitle}>
                                     {contact?.[0]?.title ?? 'Find us in our quiet, urban wellness retreat'}
                                 </h1>
-                                <p className={styles.map_hours_desc}>
+                                <p className={`preserve-linebreaks ${styles.map_hours_desc}`}>
                                     {contact?.[0]?.description ?? 'No description available.'}
                                 </p>
 
@@ -62,7 +62,7 @@ const ContactLocation = async () => {
                             </div>
 
                             <div className="col-lg-6 col-md-12">
-                                <div className={styles.map_container}>
+                                <div id="locationContainer" className={styles.map_container}>
                                     <iframe
                                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.847711096713!2d79.85992937481267!3d6.90880641856629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2594fe67ad047%3A0x958aa9f666117ab1!2sBreathe%20Day%20Spa!5e0!3m2!1sen!2slk!4v1742980011520!5m2!1sen!2slk"
                                         width="100%"
