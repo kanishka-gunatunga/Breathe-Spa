@@ -107,7 +107,7 @@ const ContactForm = () => {
                 <div className={styles.formContainer}>
                     <h2 className={styles.section_title}>Get in touch with us</h2>
                     <p className={`text-muted ${styles.sectionSubTitle}`}>Please let us know which treatments you’re
-                        interested in. For same day appointments please whatsapp or call us on +947772444888</p>
+                        interested in. For same day appointments please whatsapp or call us on +94772444888</p>
 
                     {submissionStatus === "success" && (
                         <div className="alert alert-success" role="alert">
