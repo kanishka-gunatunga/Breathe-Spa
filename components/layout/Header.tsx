@@ -105,10 +105,10 @@ const Header = ({ site }: HeaderProps) => {
                       id="services-dropdown"
                       className={`nav-item px-lg-3 ${isActive('/services')}`}
                   >
-                    <NavDropdown.Item href="/services#body" className="nav-item">Body</NavDropdown.Item>
-                    <NavDropdown.Item href="/services#nail-treatment" className="nav-item">Nail Treatment</NavDropdown.Item>
-                    <NavDropdown.Item href="/services#facial" className="nav-item">Facial</NavDropdown.Item>
-                    <NavDropdown.Item href="/services#add-ons" className="nav-item">Add-ons</NavDropdown.Item>
+                    <NavDropdown.Item href="/services#body" className="dropdown-item">Body</NavDropdown.Item>
+                    <NavDropdown.Item href="/services#nail-treatment" className="dropdown-item">Nail Treatment</NavDropdown.Item>
+                    <NavDropdown.Item href="/services#facial" className="dropdown-item">Facial</NavDropdown.Item>
+                    <NavDropdown.Item href="/services#add-ons" className="dropdown-item">Add-Ons</NavDropdown.Item>
                   </NavDropdown>
                   <Nav.Link className={`nav-item px-lg-3 ${isActive('/about-breath')}`} href="/about-breath">About Breathe</Nav.Link>
                   <Nav.Link className={`nav-item px-lg-3 ${isActive('/blog')}`} href="/blog">Blog</Nav.Link>
