@@ -542,25 +542,25 @@ img {
 .teamMemberCard {
   border-radius: 40px  !important;
   border: none !important;
-  border-radius: 30px !important;
+  border-radius: 16px !important;
 }
 .team_member_shadow_card_wrapper{
   position: relative;
   height: 440px;
-  border-radius: 30px !important;
+  border-radius: 16px !important;
   background-color: transparent !important;
 
 }
 .team_card_out{
   height: 350px;
-  border-radius: 30px !important;
+  border-radius: 16px !important;
 }
 
 @media screen and (max-width: 1024px){
   .team_member_shadow_card_wrapper{
     position: relative;
     height: 290px;
-    border-radius: 30px !important;
+    border-radius: 16px !important;
     background-color: transparent !important;
   
   }
@@ -577,13 +577,13 @@ img {
   .team_member_shadow_card_wrapper{
     position: relative;
     height: 320px;
-    border-radius: 30px !important;
+    border-radius: 16px !important;
     background-color: transparent !important;
   
   }
   .team_card_out{
     height: 375px ;
-    border-radius: 30px !important;
+    border-radius: 16px !important;
   }
   .team_card_out img{
     height: 375px  !important;

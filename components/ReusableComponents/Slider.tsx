@@ -65,7 +65,7 @@ const CardSlider: React.FC<CardSliderProps> = ({ team }) => {
                                             // fill
                                             width={200}
                                             height={200}
-                                            style={{ objectFit: 'cover', borderRadius: "30px !important", backgroundColor: "transparent !important", width: 'auto !important' }}
+                                            style={{ objectFit: 'cover', borderRadius: "16px !important", backgroundColor: "transparent !important", width: 'auto !important' }}
                                             className={`${AboutStyles.TeamImg} `}
                                         />
                                     )}
