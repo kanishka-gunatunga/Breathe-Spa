@@ -54,8 +54,8 @@ const CardSlider: React.FC<CardSliderProps> = ({ team }) => {
             >
                 {team.map((card, index) => (
                     <SwiperSlide key={index} className='team_slide_wrapper'>
-                        <div className={`card h-100 teamMemberCard`}>
-                            <div className='shadow-sm team_member_shadow_card_wrapper d-flex justify-content-center'>
+                        <div className={`card h-100 teamMemberCard`} style={{backgroundColor: "transparent !important"}}>
+                            <div className='shadow-sm team_member_shadow_card_wrapper d-flex justify-content-center' style={{backgroundColor: "#fff !important"}}>
                                 <div className={`position-absolute team_card_out`}>
 
                                     {card.mainImage && (
