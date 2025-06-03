@@ -62,7 +62,9 @@ const CardSlider: React.FC<CardSliderProps> = ({ team }) => {
                                         <Image
                                             src={urlFor(card?.mainImage).url() || "/about1.png"}
                                             alt={card.name}
-                                            fill
+                                            // fill
+                                            width={200}
+                                            height={200}
                                             style={{ objectFit: 'cover', borderRadius: "30px !important", backgroundColor: "transparent !important", width: 'auto !important' }}
                                             className={`${AboutStyles.TeamImg} `}
                                         />
