@@ -455,6 +455,28 @@ img {
   }
 }
 
+.dropdown-item {
+  font-family: 'AwesomeSerif Light Extra Tall', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100% ;
+  color: #656565 !important;
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+  padding-left: 25px !important;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+  background-color: #F2EDE6 !important;
+  color: #313131 !important;
+  /*text-decoration: underline;*/
+}
+.dropdown-menu {
+  background-color: #F3EEE7  !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
+
 @media screen and (max-width: 992px){
   .footer-col-23{
     width: 50% !important;
