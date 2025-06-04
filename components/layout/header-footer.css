@@ -18,7 +18,7 @@
 .nav-item {
     font-family: 'AwesomeSerif Light Extra Tall', sans-serif;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 18px !important;
     line-height: 100%;
     letter-spacing: 5%;
     color: #656565;
@@ -33,24 +33,6 @@
     text-decoration: underline !important;
 }
 
-.dropdown-item {
-    font-family: 'AwesomeSerif Light Extra Tall', sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 100%;
-    letter-spacing: 5%;
-    color: #656565;
-}
-.dropdown-item:hover, .dropdown-item:focus {
-    background-color: #F3EEE7;
-    color: #313131;
-    text-decoration: underline;
-}
-.dropdown-menu {
-    background-color: #F3EEE7;
-    border: none;
-    border-radius: 0;
-}
 
 
 
