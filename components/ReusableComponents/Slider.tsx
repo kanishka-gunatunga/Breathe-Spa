@@ -28,7 +28,7 @@ const CardSlider: React.FC<CardSliderProps> = ({ team }) => {
     return (
         <div className="container my-5">
 
-            <div className="container my-5 d-flex justify-content-center align-items-center">
+            <div className=" my-5 d-flex justify-content-center align-items-center">
                 {card.mainImage && (
                     <Image
                         src={urlFor(card.mainImage).url() || "/about1.png"}
@@ -39,7 +39,7 @@ const CardSlider: React.FC<CardSliderProps> = ({ team }) => {
                             objectFit: 'cover',
                             borderRadius: "16px",
                             backgroundColor: "transparent",
-                            width: 'auto'
+                            // width: 'auto'
                         }}
                         className={`${AboutStyles.TeamImg}`}
                     />

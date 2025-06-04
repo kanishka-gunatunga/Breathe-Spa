@@ -85,15 +85,15 @@
 
 .TeamImg {
     width: 100%;
-    right: 0;
-    bottom: 0;
+    /* right: 0;
+    bottom: 0; */
     object-fit: cover;
     color: #0000;
     z-index: 3;
     position: relative !important;
     height: 494px !important;
-    left: 14px !important;
-    top: -55px !important;
+    /* left: 14px !important;
+    top: -55px !important; */
 }
 
 /* .positionAbDiv {
