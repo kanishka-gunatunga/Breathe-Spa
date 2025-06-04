@@ -17,7 +17,7 @@
 
 .nav-item {
     font-family: 'AwesomeSerif Light Extra Tall', sans-serif;
-    font-weight: 700;
+    font-weight: 700 !important;
     font-size: 18px !important;
     line-height: 100%;
     letter-spacing: 5%;
