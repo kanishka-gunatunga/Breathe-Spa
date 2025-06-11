@@ -51,7 +51,7 @@ const AboutPage = async () => {
                 <MainTitle title={about[0]?.sectionOneTitle} />
                 <Paragraph text={about[0]?.sectionOneDescription} />
               </div>
-              <Link href={about[0]?.sectionOneButtonLink || "/contact"}>
+              <Link href={about[0]?.sectionOneButtonLink || "/contact#contactForm"}>
                 <button className={`${pageStyle.darkButton}`} style={{ fontSize: "17px !important", border: "none" }} >{about[0]?.sectionOneButton}</button>
               </Link>
             </div>
@@ -149,16 +149,16 @@ const AboutPage = async () => {
           </div>
         </div>
 
-        <div className={`d-flex position-relative  py-5 pb-0 pb-md-5 mb-5  flex-column justify-content-center align-items-center ${styles.mobileHeightOnMobile}  ${styles.shapedBgTeam}`} style={{ width: "100%", overflow: "hidden" }}>
-          <div className={`${styles.contactContainer} section py-0 py-lg-5`}>
-            <div className="d-flex flex-column align-items-center justify-content-center">
-              <MainTitle title={team?.[0]?.title || "Team of Breathe"} />
-            </div>
-            <div className="d-block d-lg-flex d-xl-flex gap-5">
-              <CardSlider team={team?.[0]?.teamArray || []} />
-            </div>
-          </div>
-        </div>
+        {/*<div className={`d-flex position-relative  py-5 pb-0 pb-md-5 mb-5  flex-column justify-content-center align-items-center ${styles.mobileHeightOnMobile}  ${styles.shapedBgTeam}`} style={{ width: "100%", overflow: "hidden" }}>*/}
+        {/*  <div className={`${styles.contactContainer} section py-0 py-lg-5`}>*/}
+        {/*    <div className="d-flex flex-column align-items-center justify-content-center">*/}
+        {/*      <MainTitle title={team?.[0]?.title || "Team of Breathe"} />*/}
+        {/*    </div>*/}
+        {/*    <div className="d-block justify-content-center d-lg-flex d-xl-flex gap-5">*/}
+        {/*      <CardSlider team={team?.[0]?.teamArray || []} />*/}
+        {/*    </div>*/}
+        {/*  </div>*/}
+        {/*</div>*/}
 
       </div>
       <ExclusiveDeals />
