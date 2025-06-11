@@ -4,12 +4,13 @@ import pageStyle from '@/styles/services.module.css'
 import Image from "next/image";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ExclusiveDeals from "@/components/ReusableComponents/ExclusiveDeals";
-import CardSlider from "@/components/ReusableComponents/Slider";
+// import CardSlider from "@/components/ReusableComponents/Slider";
 import style from '@/styles/services.module.css'
 import YellowBackSection from "@/components/ReusableComponents/YellowBackSection";
 import Paragraph from "@/components/servicesComponents/Paragraph";
 import MainTitle from "@/components/servicesComponents/MainTitle";
-import { getAboutMainPageData, getTeamData, getTestimonialData } from "@/sanity/libs/api";
+// import { getAboutMainPageData, getTeamData, getTestimonialData } from "@/sanity/libs/api";
+import { getAboutMainPageData, getTestimonialData } from "@/sanity/libs/api";
 import { urlFor } from "@/sanity/libs/sanity";
 import TestimonialSlider from "@/components/ReusableComponents/SliderTestimonials";
 import Link from "next/link";
@@ -19,7 +20,7 @@ import Link from "next/link";
 const AboutPage = async () => {
   const about = await getAboutMainPageData();
   const testimonials = await getTestimonialData();
-  const team = await getTeamData();
+  // const team = await getTeamData();
 
   return (
     <div>
