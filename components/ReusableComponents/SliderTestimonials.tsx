@@ -2,7 +2,7 @@
 import React from 'react';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {Navigation, Pagination} from 'swiper/modules';
-import Image from 'next/image';
+// import Image from 'next/image';
 
 
 import 'swiper/css';
@@ -10,7 +10,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import {urlFor} from '@/sanity/libs/sanity';
+// import {urlFor} from '@/sanity/libs/sanity';
 import {Client} from '@/sanity/types';
 import pageStyle from '@/styles/services.module.css'
 import styles from "@/styles/page.module.css";
