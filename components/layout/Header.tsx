@@ -112,6 +112,7 @@ const Header = ({ site }: HeaderProps) => {
                   <Nav.Link className={`nav-item px-lg-3 ${isActive('/about-breath')}`} href="/about-breath">About Breathe</Nav.Link>
                   <Nav.Link className={`nav-item px-lg-3 ${isActive('/blog')}`} href="/blog">Blog</Nav.Link>
                   <Nav.Link className={`nav-item px-lg-3 ${isActive('/contact')}`} href="/contact">Contact Us</Nav.Link>
+                  <Nav.Link className={`nav-item px-lg-3 ${isActive('/careers')}`} href="/careers">Careers</Nav.Link>
                   <Nav.Link className={`nav-item px-lg-3 ${isActive('/terms')}`} href="/terms">T & C</Nav.Link>
                 </Nav>
               </Navbar.Collapse>
