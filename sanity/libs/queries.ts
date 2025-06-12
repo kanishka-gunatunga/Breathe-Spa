@@ -47,7 +47,6 @@ export const GET_SERVICE_CATEGORY_BY_SLUG = `
 `;
 
 
-
 export const GET_SERVICE_MAIN_PAGE_DATA = `
    *[_type == "serviceMainPage"] {
         _id,
@@ -216,3 +215,17 @@ export const GET_CONTACT_PAGE_DATA = `
       description,
     }
 `;
+
+
+export const GET_CAREER_PAGE_DATA = `
+    *[_type == "careersPage"][0] {
+      title,
+      subtitle,
+      careers[] {
+        positionTitle,
+        description,
+        requirements
+      }
+    }
+  `
+;
