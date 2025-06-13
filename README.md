@@ -1,4 +1,4 @@
-## Getting
+## Get
 
 ```bash
 npm run dev
