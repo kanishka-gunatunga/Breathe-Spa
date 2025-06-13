@@ -1,4 +1,4 @@
-## Getting Started
+## Getting
 
 ```bash
 npm run dev
