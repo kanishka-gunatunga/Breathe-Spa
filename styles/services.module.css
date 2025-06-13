@@ -606,12 +606,10 @@
     font-family: "Work Sans", sans-serif;
     font-weight: 300;
     margin-bottom: 0px;
-    line-height: 10px;
 }
 
 .blockContent p strong {
     font-size: 29px;
-    line-height: 0;
 }
 
 .blockContent ul {
