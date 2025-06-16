@@ -51,11 +51,11 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({testimonials}) => 
 
                                     {/*</div>*/}
                                     <div className="d-flex flex-column justify-content-center align-items-center">
-                                        <p className={`${pageStyle.se_txt_20_work_sans} justify-content-center align-items-center mb-5`}>
+                                        <p className={`${pageStyle.se_txt_20_work_sans_new} justify-content-center align-items-center mb-5`}>
                                             &quot;{testimonial.description}&quot;
                                         </p>
                                         <div className="align-items-center text-center">
-                                            <h5 className={pageStyle.se_txt_25_awesome}>{testimonial.name}</h5>
+                                            <h5 className={pageStyle.se_txt_25_awesome_new}>{testimonial.name}</h5>
                                             <p className={pageStyle.se_txt_16_work_sans}>{testimonial.position}</p>
                                             <div className="d-flex align-items-center starRate justify-content-center">
                                                 {[...Array(5)].map((_, i) => (

@@ -472,6 +472,14 @@
     font-weight: 400;
 }
 
+.se_txt_20_work_sans_new {
+    font-size: 20px;
+    color: #313131;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 300;
+    text-align: center;
+}
+
 .se_txt_18 {
     font-size: 18px;
     color: #313131;
@@ -524,6 +532,13 @@
 .se_txt_25_awesome {
     font-size: 25px;
     color: #313131;
+    font-family: 'AwesomeSerif Light Extra Tall', sans-serif;
+    font-weight: 400;
+}
+
+.se_txt_25_awesome_new {
+    font-size: 25px;
+    color: #211E1E;
     font-family: 'AwesomeSerif Light Extra Tall', sans-serif;
     font-weight: 400;
 }
@@ -722,11 +737,20 @@
         font-size: 28px;
     }
 
+    .se_txt_20_work_sans_new {
+        font-size: 28px;
+    }
+
     .se_li_26 {
         font-size: 26px;
     }
 
     .se_txt_25_awesome {
+        font-size: 30px;
+    }
+
+
+    .se_txt_25_awesome_new {
         font-size: 30px;
     }
 
@@ -845,11 +869,20 @@
         font-size: 36px;
     }
 
+    .se_txt_20_work_sans_new {
+        font-size: 36px;
+    }
+
+
     .se_li_26 {
         font-size: 34px;
     }
 
     .se_txt_25_awesome {
+        font-size: 36px;
+    }
+
+    .se_txt_25_awesome_new {
         font-size: 36px;
     }
 
@@ -968,11 +1001,19 @@
         font-size: 42px;
     }
 
+    .se_txt_20_work_sans_new {
+        font-size: 42px;
+    }
+
     .se_li_26 {
         font-size: 36px;
     }
 
     .se_txt_25_awesome {
+        font-size: 42px;
+    }
+
+    .se_txt_25_awesome_new {
         font-size: 42px;
     }
 
@@ -1074,6 +1115,10 @@
 
     .career_subtitle {
         font-size: 18px;
+    }
+
+    .se_txt_20_work_sans_new {
+        font-size: 14px;
     }
 
     .career_title {

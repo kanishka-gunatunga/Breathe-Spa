@@ -1347,6 +1347,7 @@ a.text-decoration-none {
 
   .map_hours_desc {
     font-size: 24px;
+    line-height: 38px;
   }
   .agree_text{
     font-size: 20px;
@@ -1468,7 +1469,7 @@ a.text-decoration-none {
 
   .map_hours_desc {
     font-size: 28px;
-    line-height: 36px;
+    line-height: 40px;
     padding: 2rem 0;
   }
 
@@ -1627,7 +1628,7 @@ a.text-decoration-none {
     font-size: 38px;
     letter-spacing: 3px;
     text-align: start;
-    line-height: 42px;
+    line-height: 50px;
     padding: 3rem 0;
   }
 }
