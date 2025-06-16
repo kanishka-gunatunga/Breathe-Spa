@@ -211,6 +211,16 @@
     vertical-align: middle;
 }
 
+.sectionTitle_v2 {
+    font-family: 'Coefficient DEMO', sans-serif;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #333333;
+}
+
 .sectionTitle_v1 {
     font-family: 'Coefficient DEMO', sans-serif;
     font-weight: 400;
@@ -747,19 +757,30 @@
     min-height: max-content;
 }
 
+.blogCardTitle_new {
+    font-family: 'AwesomeSerif Light Extra Tall', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    color: #313131;
+    min-height: max-content;
+}
+
 .blogCardDesc {
     font-family: "Work Sans", sans-serif;
     font-weight: 300;
-    font-size: 14px;
+    font-size: 15px;
     color: #666666;
     line-height: 24px;
     margin-top: 8px;
+    min-height: 80px;
 }
 
 .blogCardRead {
     font-family: 'AwesomeSerif Light Extra Tall', sans-serif;
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: 600;
+    font-size: 18px;
     line-height: 150%;
     text-decoration-line: underline;
     color: #313131;
@@ -774,8 +795,8 @@ a.text-decoration-none {
 
 .blogContent {
     font-family: "Work Sans", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
+    font-weight: 300;
+    font-size: 15px;
     line-height: 28px;
     color: #313131;
 }
@@ -1064,6 +1085,10 @@ a.text-decoration-none {
         font-size: 30px;
     }
 
+    .sectionTitle_v2 {
+        font-size: 30px;
+    }
+
     .sectionTitle_v1 {
         font-size: 30px;
     }
@@ -1097,6 +1122,10 @@ a.text-decoration-none {
     }
 
     .sectionTitle {
+        margin-top: 20px;
+    }
+
+    .sectionTitle_v2 {
         margin-top: 20px;
     }
 
@@ -1310,6 +1339,10 @@ a.text-decoration-none {
     }
 
     .sectionTitle {
+        font-size: 64px;
+    }
+
+    .sectionTitle_v2 {
         font-size: 4rem;
     }
 
@@ -1322,6 +1355,11 @@ a.text-decoration-none {
     }
 
     .blogCardTitle {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .blogCardTitle_new {
         font-size: 2.5rem;
         margin-bottom: 1rem;
     }
@@ -1342,7 +1380,7 @@ a.text-decoration-none {
     }
 
     .blogContent {
-        font-size: 2.1rem;
+        font-size: 20px;
         line-height: 1.8;
         max-width: 1600px;
         margin: 0 auto;
@@ -1435,6 +1473,10 @@ a.text-decoration-none {
         font-size: 4.25rem;
     }
 
+    .sectionTitle_v2 {
+        font-size: 68px;
+    }
+
     .sectionTitle_v1 {
         font-size: 4.25rem;
     }
@@ -1458,6 +1500,11 @@ a.text-decoration-none {
         margin-bottom: 1.25rem;
     }
 
+    .blogCardTitle_new {
+        font-size: 3rem;
+        margin-bottom: 1.25rem;
+    }
+
     .blogCardDesc {
         font-size: 2rem;
         line-height: 1.6;
@@ -1474,7 +1521,7 @@ a.text-decoration-none {
     }
 
     .blogContent {
-        font-size: 2.3rem;
+        font-size: 24px;
         line-height: 1.7;
         max-width: 1800px;
         margin: 0 auto;
@@ -1608,6 +1655,10 @@ a.text-decoration-none {
         font-size: 4.5rem;
     }
 
+    .sectionTitle_v2 {
+        font-size: 72px;
+    }
+
     .sectionTitle_v1 {
         font-size: 4.5rem;
     }
@@ -1626,9 +1677,15 @@ a.text-decoration-none {
         margin-bottom: 1rem;
     }
 
+    .blogCardTitle_new {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+    }
+
     .blogCardDesc {
         font-size: 2.1rem;
         line-height: 1.6;
+        min-height: 90px;
     }
 
     .blogCardDate {
@@ -1641,7 +1698,7 @@ a.text-decoration-none {
     }
 
     .blogContent {
-        font-size: 2.5rem;
+        font-size: 28px;
         line-height: 1.8;
         max-width: 2000px;
         margin: 0 auto;
@@ -1731,10 +1788,36 @@ a.text-decoration-none {
     .mobileRadius {
         border-top-left-radius: 50px !important;
     }
+
+    .blogCardTitle_new {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .blogCardDesc {
+        font-size: 12px;
+        min-height: 20px;
+    }
+
+    .blogCardRead {
+        font-size: 14px;
+    }
+
+    .blogContent {
+        font-size: 12px;
+    }
 }
 
 
 .blogCardTitle {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.blogCardTitle_new {
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;

@@ -32,7 +32,7 @@ const BlogCard: React.FC<BlogData> = ({ title, slug, mainImage, publishedAt, fet
                         })}
                     </p>
 
-                    <h3 className={`mb-2 ${styles.blogCardTitle}`}>
+                    <h3 className={`mb-2 ${styles.blogCardTitle_new}`}>
                         {title}
                     </h3>
                     <p className={styles.blogCardDesc}>{feturedText}</p>
