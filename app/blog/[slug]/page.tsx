@@ -23,7 +23,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     return (
         <div className={`${styles.contactContainer} section py-5 px-lg-5 mobile_padding_remove`}>
             <div className="text-center mb-5">
-                <h1 className={`${styles.sectionTitle} mb-3`}>{blog.title}</h1>
+                <h1 className={`${styles.sectionTitle_v2} mb-3`}>{blog.title}</h1>
                 <p className={`text-[14px] ${styles.blogCardDate}`}> {new Date(blog.publishedAt).toLocaleDateString("en-GB", {
                     day: "numeric",
                     month: "long",
