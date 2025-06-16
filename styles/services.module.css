@@ -421,7 +421,7 @@
     color: #F3EEE7;
     font-family: 'AwesomeSerif Light Extra Tall', sans-serif;
     /* font-weight: 600; */
-    font-size: 18px;
+    font-size: 12px;
     text-transform: capitalize;
     padding: 10px 20px;
     text-decoration: none;
@@ -1036,7 +1036,7 @@
     }
 
     .se_title_60 {
-        font-size: 50px;
+        font-size: 40px;
     }
 
     .se_txt_40_awsome {
