@@ -636,12 +636,21 @@
     font-weight: 500;
 }
 
+.termTitle {
+    font-size: 40px;
+    color: #000;
+    font-family: 'AwesomeSerif Light Extra Tall', sans-serif;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
 .blockContent p {
     font-size: 20px;
     color: #000;
     font-family: "Work Sans", sans-serif;
     font-weight: 300;
     margin-bottom: 0px;
+    line-height: 45px;
 }
 
 .blockContent p strong {
@@ -798,6 +807,10 @@
         font-size: 46px;
     }
 
+    .termTitle {
+        font-size: 46px;
+    }
+
     .career_txt_40_awsome {
         font-size: 46px;
     }
@@ -817,6 +830,11 @@
 
     .blockContent p {
         font-size: 28px;
+        line-height: 55px;
+    }
+
+    .blockContent p strong {
+        font-size: 32px;
     }
 
     .blockContent ul {
@@ -934,6 +952,10 @@
         font-size: 52px;
     }
 
+    .termTitle {
+        font-size: 52px;
+    }
+
     .career_content {
         font-size: 24px;
         line-height: 50px;
@@ -948,6 +970,11 @@
     }
 
     .blockContent p {
+        font-size: 36px;
+        line-height: 60px;
+    }
+
+    .blockContent p strong {
         font-size: 36px;
     }
 
@@ -1065,6 +1092,10 @@
         font-size: 56px;
     }
 
+    .termTitle {
+        font-size: 56px;
+    }
+
     .career_txt_40_awsome {
         font-size: 56px;
     }
@@ -1084,6 +1115,11 @@
 
     .blockContent p {
         font-size: 42px;
+        line-height: 65px;
+    }
+
+    .blockContent p strong {
+        font-size: 42px;
     }
 
     .blockContent ul {
@@ -1101,6 +1137,10 @@
     }
 
     .se_txt_40_awsome {
+        font-size: 24px;
+    }
+
+    .termTitle {
         font-size: 24px;
     }
 
@@ -1127,6 +1167,11 @@
 
     .blockContent p {
         font-size: 16px;
+        line-height: 40px;
+    }
+
+    .blockContent p strong {
+        font-size: 18px;
     }
 
     .blockContent ul {

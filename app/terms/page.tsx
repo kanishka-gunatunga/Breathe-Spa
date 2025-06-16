@@ -21,8 +21,8 @@ const page = async () => {
                 <div className='d-flex flex-column'>
                     {terms.map((term) => (
                         <div key={term._id} className={`section ${pageStyle.contactContainer} py-5`}>
-                            <div className="d-flex flex-column text-center">
-                                <h2 className={`${style.se_txt_40_awsome}`}>{term.title}</h2>
+                            <div className="d-flex flex-column text-center mb-3">
+                                <h2 className={`${style.termTitle}`}>{term.title}</h2>
                             </div>
                             {term.subTitle && (
                                 <div className="d-flex flex-column text-start">
