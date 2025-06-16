@@ -149,6 +149,10 @@
     align-items: center;
 }
 
+.contactBorder {
+    border-bottom: 1px solid #BDBDBD;
+}
+
 .card1 {
     background-color: #F3EEE7 !important;
     border: none;
