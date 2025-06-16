@@ -105,7 +105,7 @@ const ContactForm = () => {
             </div>
             <div className={`col-md-6 ${styles.formWrapper}`}>
                 <div className={styles.formContainer}>
-                    <h2 className={styles.section_title}>Get in touch with us</h2>
+                    <h2 className={styles.section_title_new}>Get in touch with us</h2>
                     <p className={`text-muted ${styles.sectionSubTitle}`}>Please let us know which treatments you’re
                         interested in. For same day appointments please whatsapp or call us on +94772444888</p>
 
@@ -231,7 +231,12 @@ const ContactForm = () => {
                         <button
                             type="submit"
                             className={` w-100 ${pageStyle.darkButton} ${pageStyle.darkButtonWidth}`}
-                            style={{maxWidth: "100% !important", width: "100% !important"}}
+                            style={{
+                                fontSize: "17px !important",
+                                fontWeight: 600,
+                                maxWidth: "100% !important",
+                                width: "100% !important"
+                            }}
                             disabled={isLoading}
                         >
                             {isLoading ? (

@@ -16,7 +16,7 @@ const ContactLocation = async () => {
                     <div className={`${styles.contactContainer} p-4`}>
                         <div className="row">
                             <div className={`col-lg-6 col-md-12 mb-4 ${styles.contact_info_container}`}>
-                                <h1 className={styles.sectionTitle}>
+                                <h1 className={styles.sectionTitle_v1}>
                                     {contact?.[0]?.title ?? 'Find us in our quiet, urban wellness retreat'}
                                 </h1>
                                 <p className={`preserve-linebreaks ${styles.map_hours_desc}`}>
@@ -29,7 +29,7 @@ const ContactLocation = async () => {
                                 <div className="">
                                     {site?.[0]?.openDays.map((item, index) => (
                                         <div key={index}
-                                             className="d-flex justify-content-between border-top border-1 border-secondary py-2">
+                                             className={`d-flex justify-content-between ${styles.contact_info_v1} py-2`}>
                                             <span className={styles.map_hours_days}>{item.day}</span>
                                             <span className={styles.map_hours_time}>{item.time}</span>
                                         </div>
