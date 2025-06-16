@@ -451,6 +451,13 @@
     font-weight: 300;
 }
 
+.se_txt_15_new {
+    font-size: 15px;
+    color: #313131;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 300;
+}
+
 .se_txt_40 {
     font-size: 40px;
     color: #292929;
@@ -678,6 +685,11 @@
         font-size: 25px;
     }
 
+    .se_txt_15_new {
+        font-size: 25px;
+    }
+
+
     .se_txt_40 {
         font-size: 50px;
     }
@@ -797,6 +809,10 @@
         font-size: 35px;
     }
 
+    .se_txt_15_new {
+        font-size: 35px;
+    }
+
     .se_txt_40 {
         font-size: 60px;
     }
@@ -913,6 +929,10 @@
     }
 
     .se_txt_15 {
+        font-size: 45px;
+    }
+
+    .se_txt_15_new {
         font-size: 45px;
     }
 
