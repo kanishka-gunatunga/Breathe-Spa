@@ -65,7 +65,7 @@ export default async function Home() {
                             <div className="card-body py-3">
                                 {/* main topic our services */}
                                 <div className="row mb-0 mx-0 mt-2">
-                                    <h3 className={`${seStyles.se_txt_25_awesome}`} style={{ marginBottom: "20px" }}>OUR SERVICES</h3>
+                                    <h3 className={`${seStyles.se_txt_25_awesome_300}`} style={{ marginBottom: "20px" }}>OUR SERVICES</h3>
                                 </div>
 
 
@@ -82,7 +82,7 @@ export default async function Home() {
                                                 <div className="d-flex pt-0">
 
                                                     <div className={`col-6 ${styles.bottomBorder} `}>
-                                                        <p className={`${seStyles.se_txt_18} scaleTxt mb-0`}>{item.title}</p>
+                                                        <p className={`${seStyles.se_txt_16} scaleTxt mb-0`}>{item.title}</p>
                                                     </div>
 
                                                     <div className={`col-6 py-1 ${styles.bottomBorder}`}>
@@ -95,7 +95,7 @@ export default async function Home() {
                                         ) : null)}
                                         <div className="d-flex pt-0 px-0">
                                             <div className={`col-6 ${styles.bottomBorder}`}>
-                                                <p className={`${seStyles.se_txt_18} mb-0`}>Gift Vouchers</p>
+                                                <p className={`${seStyles.se_txt_16} mb-0`}>Gift Vouchers</p>
                                             </div>
 
                                             <div className={`col-6 py-1 ${styles.bottomBorder}`}>
@@ -118,7 +118,7 @@ export default async function Home() {
                                         <div key={index} className="row mx-0 px-0 w-100">
                                             <div className="d-flex w-100 px-0">
                                                 <div className={`col-6 py-2 ${styles.bottomBorder}`}>
-                                                    <p className={`${seStyles.se_txt_18} mb-0`}>{item.day}</p>
+                                                    <p className={`${seStyles.se_txt_16} mb-0`}>{item.day}</p>
                                                 </div>
 
                                                 <div className={`col-6 ${styles.bottomBorder} py-2`}>
@@ -141,7 +141,7 @@ export default async function Home() {
                                     <div className="row mx-0 px-0">
                                         <div className="d-flex px-0">
                                             <div className={`col-6 ${styles.bottomBorder} py-2`}>
-                                                <p className={`${seStyles.se_txt_18} mb-0`}>Phone</p>
+                                                <p className={`${seStyles.se_txt_16} mb-0`}>Phone</p>
                                             </div>
 
                                             <div className={`col-6 ${styles.bottomBorder} py-2`}>
@@ -159,7 +159,7 @@ export default async function Home() {
                                     <div className="row  mx-0 px-0">
                                         <div className="d-flex px-0">
                                             <div className={`col-6 pt-2 border-0 ${styles.bottomBorder}`}>
-                                                <p className={`${seStyles.se_txt_18} mb-0`}>Email</p>
+                                                <p className={`${seStyles.se_txt_16} mb-0`}>Email</p>
                                             </div>
 
                                             <div className={`col-6 pt-2 border-0 ${styles.bottomBorder}`}>

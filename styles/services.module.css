@@ -421,7 +421,7 @@
     color: #F3EEE7;
     font-family: 'AwesomeSerif Light Extra Tall', sans-serif;
     /* font-weight: 600; */
-    font-size: 12px;
+    font-size: 18px;
     text-transform: capitalize;
     padding: 10px 20px;
     text-decoration: none;
@@ -438,14 +438,14 @@
 }
 
 .se_title_60 {
-    font-size: 54px;
+    font-size: 60px;
     color: #313131;
     font-family: 'Coefficient DEMO';
     font-weight: 400;
 }
 
 .se_txt_15 {
-    font-size: 15px;
+    font-size: 16px;
     color: #313131;
     font-family: "Work Sans", sans-serif;
     font-weight: 300;
@@ -455,7 +455,7 @@
     font-size: 40px;
     color: #292929;
     font-family: 'AwesomeSerif Light Extra Tall';
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .se_txt_20_work_sans {
@@ -467,6 +467,13 @@
 
 .se_txt_18 {
     font-size: 18px;
+    color: #313131;
+    font-family: 'AwesomeSerif Light Extra Tall', sans-serif;
+    font-weight: 400;
+}
+
+.se_txt_16 {
+    font-size: 16px;
     color: #313131;
     font-family: 'AwesomeSerif Light Extra Tall', sans-serif;
     font-weight: 400;
@@ -512,6 +519,13 @@
     color: #313131;
     font-family: 'AwesomeSerif Light Extra Tall', sans-serif;
     font-weight: 400;
+}
+
+.se_txt_25_awesome_300 {
+    font-size: 25px;
+    color: #313131;
+    font-family: 'AwesomeSerif Light Extra Tall', sans-serif;
+    font-weight: 300;
 }
 
 .se_txt_16_work_sans {
@@ -672,6 +686,10 @@
         font-size: 22px;
     }
 
+    .se_txt_16 {
+        font-size: 20px;
+    }
+
     .se_txt_12 {
         font-size: 18px;
     }
@@ -697,6 +715,10 @@
     }
 
     .se_txt_25_awesome {
+        font-size: 30px;
+    }
+
+    .se_txt_25_awesome_300 {
         font-size: 30px;
     }
 
@@ -783,6 +805,10 @@
         font-size: 26px;
     }
 
+    .se_txt_16 {
+        font-size: 24px;
+    }
+
     .se_txt_12 {
         font-size: 28px;
     }
@@ -808,6 +834,10 @@
     }
 
     .se_txt_25_awesome {
+        font-size: 36px;
+    }
+
+    .se_txt_25_awesome_300 {
         font-size: 36px;
     }
 
@@ -894,6 +924,10 @@
         font-size: 30px;
     }
 
+    .se_txt_16 {
+        font-size: 28px;
+    }
+
     .se_txt_12 {
         font-size: 36px;
     }
@@ -919,6 +953,10 @@
     }
 
     .se_txt_25_awesome {
+        font-size: 42px;
+    }
+
+    .se_txt_25_awesome_300 {
         font-size: 42px;
     }
 
