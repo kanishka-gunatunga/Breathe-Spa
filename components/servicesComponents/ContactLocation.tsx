@@ -36,7 +36,7 @@ const ContactLocation = async () => {
                                     ))}
                                 </div>
 
-                                <h3 className={`mt-4 border-bottom border-1 border-secondary py-4 ${styles.map_hours_title}`}>CONTACT
+                                <h3 className={`mt-4 py-4 ${styles.contactBorder} ${styles.map_hours_title}`}>CONTACT
                                     US</h3>
                                 <div className="">
                                     <p className={`d-flex align-items-center gap-4 ${styles.contact_info}`}>
