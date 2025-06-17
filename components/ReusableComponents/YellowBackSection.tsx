@@ -20,8 +20,8 @@ const YellowBackSection: React.FC<YellowBackSectionProps> = ({ title, descriptio
 
     return (
 
-        <div className={`d-flex position-relative flex-column justify-content-center align-items-center`} style={{ width: "100%", overflow: "hidden" }}>
-            <div className={`${styles.shapedBg} py-5`}>
+        <div className={`d-flex position-relative flex-column justify-content-center align-items-center ${styles.shapedBg} py-5`} style={{ width: "100%", overflow: "hidden" }}>
+            <div className={styles.yellowBack_new}>
                 <div className={`${styles.contactContainer} section py-0`}>
                     <div className='w-100 py-5'>
                         <div className="d-flex d-lg-flex d-xl-flex flex-column-reverse flex-lg-row w-100 py-0 py-lg-5 mb-0">

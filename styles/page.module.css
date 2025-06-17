@@ -829,6 +829,14 @@ a.text-decoration-none {
     object-fit: cover;
 }
 
+@media (max-width: 992px) {
+    .shapedBg{
+        background-size: 100% 100%;
+        background-image: url(../public/map_bg_mobile.png);
+        padding: 9rem 0;
+    }
+}
+
 @media (min-width: 992px) {
     .blogImageContainer {
         /* max-width: 700px; */
@@ -852,6 +860,16 @@ a.text-decoration-none {
 
 .mapMain {
     padding: 8rem 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.yellowBack_new {
+    padding: 5rem 0;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -900,11 +918,26 @@ a.text-decoration-none {
         padding: 5rem 0;
     }
 
+    .yellowBack_new {
+        padding: 5rem 0;
+    }
+
     .mapHouContainer {
         padding: 0 1rem;
     }
 
     .mapHouContainer {
+        background-size: 100% 100%;
+        background-image: url(../public/map_bg_mobile.png);
+    }
+
+    .shapedBgSmall{
+        background-size: 100% 100%;
+        background-image: url(../public/map_bg_mobile.png);
+        margin-bottom: 30px;
+    }
+
+    .shapedBg{
         background-size: 100% 100%;
         background-image: url(../public/map_bg_mobile.png);
     }
@@ -966,6 +999,10 @@ a.text-decoration-none {
         padding: 5rem 0;
     }
 
+    .yellowBack_new {
+        padding: 5rem 0;
+    }
+
     .contact_info_container {
         padding: 2rem 1rem 0 0;
     }
@@ -986,6 +1023,17 @@ a.text-decoration-none {
     .mapHouContainer {
         background-size: 100% 100%;
         background-image: url(../public/map_bg_mobile.png);
+    }
+
+    .shapedBg{
+        background-size: 100% 100%;
+        background-image: url(../public/map_bg_mobile.png);
+    }
+
+    .shapedBgSmall{
+        background-size: 100% 100%;
+        background-image: url(../public/map_bg_mobile.png);
+        margin-bottom: 30px;
     }
 
     .sectionSubTitle {
@@ -1541,6 +1589,10 @@ a.text-decoration-none {
     }
 
     .mapMain {
+        padding: 10rem 0;
+    }
+
+    .yellowBack_new {
         padding: 10rem 0;
     }
 
