@@ -153,7 +153,7 @@ const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category, cat
 
     return (
         <div className={`${pageStyle.contactContainer} section pt-lg-0`} id={`${category.slug.current}`}>
-            <div className="d-none d-lg-flex flex-column-reverse flex-lg-row">
+            <div className="d-none d-lg-flex flex-column-reverse flex-lg-row    ">
                 <div className="col-12 col-lg-6 pe-lg-2 mt-0 mt-lg-0">
                     <h3 className={`fade-in-up ${style.se_txt_40}`}>{category.title}</h3>
                     <p className={`${style.se_txt_15_new} mb-3 mb-lg-4`}>{category.description}</p>
@@ -201,8 +201,8 @@ const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category, cat
                 </div>
                 <div className="col-12 col-lg-6 ps-lg-2 d-flex justify-content-lg-end align-items-start">
                     {category.mainImage && (
-                        <div id={`service-image-${category.slug.current}-${categoryId}`} className="stickyImageContainer" data-aos="fade-up">
-                            <div className="position-relative">
+                        <div id={`service-image-${category.slug.current}-${categoryId}`} className={`${style.stickyImageContainer}`} data-aos="fade-up">
+                            <div className="position-relative mb-3">
                                 <Image
                                     src={urlFor(category.mainImage).url()}
                                     alt={category.title}
@@ -261,7 +261,7 @@ const ServiceCategoryCard: React.FC<ServiceCategoryCardProps> = ({ category, cat
                 </div>
                 <div className="col-12 col-lg-6 ps-lg-2 d-flex justify-content-lg-end align-items-start">
                     {category.mainImage && (
-                        <div id={`service-image-${category.slug.current}-${categoryId}`} className="stickyImageContainer" data-aos="fade-up">
+                        <div id={`service-image-${category.slug.current}-${categoryId}`} className="" data-aos="fade-up">
                             <div className="position-relative">
                                 <Image
                                     src={urlFor(category.mainImage).url()}

@@ -496,6 +496,12 @@ img {
   }
 }
 
+/*.stickyImageContainer {*/
+/*  position: relative;*/
+/*  width: 100%;*/
+/*  margin-bottom: 20px; !* Added to create space between image and text *!*/
+/*}*/
+
 @media screen and (max-width: 600px){
   .footer-col-23{
     width: 100% !important;
