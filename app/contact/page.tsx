@@ -4,9 +4,12 @@ import React from "react";
 import ContactLocation from "@/components/servicesComponents/ContactLocation";
 import ContactForm from "@/components/servicesComponents/ContactForm";
 import {ScrollHandler} from "@/components/ReusableComponents/ScrollHandler";
+import {getExclusiveData} from "@/sanity/libs/api";
 
 
-const Contact = () => {
+const Contact = async () => {
+
+    const exclusive = await getExclusiveData();
 
     return (
         <div>
@@ -34,11 +37,9 @@ const Contact = () => {
 
             <div className="mt-5">
                 <div className={`${styles.exclusiveDeals} mt-6`}>
-                    <h3 className={styles.exclusiveTitle}>Exclusive Deals</h3>
+                    <h3 className={styles.exclusiveTitle}>{exclusive[0]?.title}</h3>
                     <p className={styles.exclusiveDescription}>
-                        &#34;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                        ut labore et
-                        dolore &#34;Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        {exclusive[0]?.description}
                     </p>
                 </div>
             </div>
