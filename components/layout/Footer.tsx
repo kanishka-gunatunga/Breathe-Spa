@@ -54,7 +54,7 @@ const Footer = ({ site, service }: FooterProps) => {
                   )}
                 </Link>
               </div>
-<div className='col-12 col-md-7 col-lg-6 d-flex justify-content-end pe-0 me-0'>
+<div className='col-12 col-md-6 col-lg-7 d-flex justify-content-end pe-0 me-0'>
 <NewsletterForm />
 </div>
 
