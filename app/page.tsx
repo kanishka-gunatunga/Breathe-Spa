@@ -333,7 +333,7 @@ export default async function Home() {
             )}
 
 
-            <div className={`position-relative mt-0 mt-lg-4 ${styles.contactContainer} section mt-0`} style={{ marginTop: "0px !important", paddingTop: "58px !important" }}>
+            <div className={`position-relative mt-0 mt-lg-4 ${styles.contactContainer} ${styles.article_v1} section mt-0`} style={{ marginTop: "0px !important", paddingTop: "58px !important" }}>
                 <div className={`${styles.articleDiv}`}>
                     <div className="d-flex flex-column d-block justify-content-between">
                         <div className="d-flex flex-row justify-content-center justify-content-md-between align-items-center">

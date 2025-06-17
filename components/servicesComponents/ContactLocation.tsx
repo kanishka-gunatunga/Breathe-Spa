@@ -31,7 +31,7 @@ const ContactLocation = async () => {
                                         <div key={index}
                                              className={`d-flex justify-content-between ${styles.contact_info_v1} py-2`}>
                                             <span className={styles.map_hours_days}>{item.day}</span>
-                                            <span className={styles.map_hours_time}>{item.time}</span>
+                                            <span className={`${styles.map_hours_time}`}>{item.time}</span>
                                         </div>
                                     ))}
                                 </div>
