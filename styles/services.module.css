@@ -281,6 +281,10 @@
         left: 0px !important;
         bottom: 0px !important;
     }
+
+    .se_txt_25_awesome_new {
+        font-size: 20px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1219,6 +1223,10 @@
         padding: 10px !important;
         left: 0px !important;
         bottom: 0px !important;
+    }
+
+    .se_txt_25_awesome_new {
+        font-size: 18px;
     }
 }
 
