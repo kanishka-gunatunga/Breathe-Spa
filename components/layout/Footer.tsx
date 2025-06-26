@@ -21,9 +21,7 @@ const Footer = ({ site, service }: FooterProps) => {
   ].filter(Boolean);
 
   const PRIORITY = [
-    "youtube",
     "facebook",
-    "twitter",
     "instagram",
     "linkedin",
   ];

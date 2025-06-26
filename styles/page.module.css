@@ -426,7 +426,7 @@
     border: none !important;
     padding: 20px;
     border-radius: 10px !important;
-
+    min-height: 400px !important;
 }
 
 .testimonialPic {
@@ -466,8 +466,15 @@
     justify-content: end;
     gap: 10px;
     position: absolute;
-    right: 43px;
     bottom: 24px;
+    align-items: end;
+}
+
+.arrowDivNew{
+    gap: 10px;
+    position: absolute;
+    right: 43px;
+    bottom: 15px;
 }
 
 .breatheTeamDiv {
@@ -835,6 +842,11 @@ a.text-decoration-none {
         background-image: url(../public/map_bg_mobile.png);
         padding: 9rem 0;
     }
+
+    .arrowDiv {
+        position: relative;
+        bottom: 0;
+    }
 }
 
 @media (min-width: 992px) {
@@ -1079,6 +1091,16 @@ a.text-decoration-none {
     .exclusiveDescription {
         width: 90%;
     }
+
+    .testimonialCard {
+        min-height: 650px !important;
+    }
+
+    .arrowDiv {
+        position: relative;
+    }
+
+
 }
 
 @media screen and (max-width: 968px) {
@@ -1262,6 +1284,10 @@ a.text-decoration-none {
 
     .exclusiveDeals {
         margin-top: 30px;
+    }
+
+    .testimonialCard {
+        min-height: 500px !important;
     }
 
 
@@ -1489,6 +1515,10 @@ a.text-decoration-none {
     .article_v1 {
         margin-bottom: 40px;
     }
+
+    .testimonialCard {
+        min-height: 550px !important;
+    }
 }
 
 @media screen and (min-width: 2560px) and (max-width: 3839px) {
@@ -1664,6 +1694,10 @@ a.text-decoration-none {
         margin-top: 60px;
     }
 
+    .testimonialCard {
+        min-height: 600px !important;
+    }
+
 }
 
 @media screen and (min-width: 3840px) {
@@ -1820,6 +1854,11 @@ a.text-decoration-none {
         line-height: 50px;
         padding: 3rem 0;
     }
+
+    .testimonialCard {
+        min-height: 550px !important;
+    }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -1881,6 +1920,12 @@ a.text-decoration-none {
     .blogContent {
         font-size: 12px;
     }
+
+    .testimonialCard {
+        min-height: 550px !important;
+    }
+
+
 }
 
 
