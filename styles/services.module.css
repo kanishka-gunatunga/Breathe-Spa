@@ -471,6 +471,26 @@
     border: none;
 }
 
+.darkButtonNew {
+    background-color: #313131;
+    min-width: 107px;
+    max-width: max-content;
+    min-height: 33px;
+    height: max-content;
+    border-radius: 4px !important;
+    color: #F3EEE7;
+    font-family: 'AwesomeSerif Light Extra Tall', sans-serif;
+    /* font-weight: 600; */
+    font-size: 18px;
+    text-transform: capitalize;
+    padding: 10px 20px;
+    text-decoration: none;
+    letter-spacing: 1.5px !important;
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
 .darkButtonWidth {
 
     max-width: 100% !important;
@@ -778,6 +798,10 @@
         font-size: 18px;
     }
 
+    .darkButtonNew {
+        font-size: 18px;
+    }
+
     .se_link_a_20 {
         font-size: 28px;
     }
@@ -919,6 +943,10 @@
         font-size: 28px;
     }
 
+    .darkButtonNew {
+        font-size: 28px;
+    }
+
     .se_link_a_20 {
         font-size: 36px;
     }
@@ -1057,6 +1085,10 @@
     }
 
     .darkButton {
+        font-size: 36px;
+    }
+
+    .darkButtonNew {
         font-size: 36px;
     }
 
@@ -1227,6 +1259,14 @@
 
     .se_txt_25_awesome_new {
         font-size: 18px;
+    }
+
+    .darkButtonNew {
+        background-color: #313131;
+        min-width: 110px;
+        max-width: max-content;
+        min-height: 10px;
+        font-size: 14px;
     }
 }
 

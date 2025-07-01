@@ -1,7 +1,9 @@
 import styles from "@/styles/page.module.css";
 import Image from "next/image";
 import BlogCard from "@/components/ReusableComponents/BlogCard";
-import { getBlogData } from "@/sanity/libs/api";
+import {getBlogData} from "@/sanity/libs/api";
+import {ScrollHandler} from "@/components/ReusableComponents/ScrollHandler";
+import React from "react";
 
 const Blog = async () => {
 
@@ -9,6 +11,7 @@ const Blog = async () => {
 
     return (
         <div>
+            <ScrollHandler/>
             <div>
                 <Image
                     className={`m-0 p-0 ${styles.blogCon}`}
@@ -16,13 +19,13 @@ const Blog = async () => {
                     width={0}
                     height={0}
                     sizes="100%"
-                    style={{ width: '100%', height: 'auto' }}
+                    style={{width: '100%', height: 'auto'}}
                     alt="Blog Banner"
                 />
             </div>
 
-            <div className={`${styles.contactContainer} section py-5 px-4 px-lg-5`} >
-                <h3 className={`${styles.section_title} mb-5 text-start`}>Our Recent Posts</h3>
+            <div className={`${styles.contactContainer} section py-5 px-4 px-lg-5`}>
+                <h3 id="blog-section" className={`${styles.section_title} mb-5 text-start`}>Our Recent Posts</h3>
                 <div className="row g-4" id="blogArticles">
                     {blogs.map((post) => (
                         <div key={post._id} className="col-md-4 mobile_padding_remove">
@@ -33,7 +36,7 @@ const Blog = async () => {
                                 feturedText={post.feturedText}
                                 mainImage={post.feturedImage}
                                 body={post.body}
-                                publishedAt={post.publishedAt} _id={post._id} />
+                                publishedAt={post.publishedAt} _id={post._id}/>
 
                         </div>
                     ))}
