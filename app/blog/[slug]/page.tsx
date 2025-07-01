@@ -1,14 +1,16 @@
 import Image from "next/image";
 import styles from "@/styles/page.module.css";
-import { fetchBlogData } from "@/sanity/libs/api";
-import { urlFor } from "@/sanity/libs/sanity";
-import { PortableText } from "next-sanity";
+import {fetchBlogData, getBlogData} from "@/sanity/libs/api";
+import {urlFor} from "@/sanity/libs/sanity";
+import {PortableText} from "next-sanity";
+import style from "@/styles/services.module.css";
+import Link from "next/link";
+import React from "react";
 
 
+export default async function BlogPost({params}: { params: Promise<{ slug: string }> }) {
 
-export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
-    
-    const { slug } =  await params;
+    const {slug} = await params;
     console.log("slug : ", slug);
 
     const blog = await fetchBlogData(slug);
@@ -18,6 +20,21 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         return <p>Blog not found</p>;
     }
 
+    const allBlogs = await getBlogData();
+
+    const sortedBlogs = allBlogs.sort((a, b) =>
+        new Date(a.publishedAt).getTime() - new Date(b.publishedAt).getTime()
+    );
+
+    const currentIndex = sortedBlogs.findIndex(post =>
+        (typeof post.slug === "string" ? post.slug : post.slug.current) === slug
+    );
+
+    // const prevBlog = currentIndex < sortedBlogs.length - 1 ? sortedBlogs[currentIndex + 1] : null;
+    const nextBlog = currentIndex > 0 ? sortedBlogs[currentIndex - 1] : null;
+
+    // const prevSlug = prevBlog ? (typeof prevBlog.slug === "string" ? prevBlog.slug : prevBlog.slug.current) : "#";
+    const nextSlug = nextBlog ? (typeof nextBlog.slug === "string" ? nextBlog.slug : nextBlog.slug.current) : "#";
 
 
     return (
@@ -30,7 +47,6 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                     year: "numeric"
                 })}</p>
             </div>
-
 
 
             <div className="row">
@@ -51,7 +67,20 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                     <div
                         className={`${styles.blogContent} mb-5`}
                     >
-                        <PortableText value={blog.body} />
+                        <PortableText value={blog.body}/>
+                    </div>
+                    <div className="d-flex justify-content-between">
+                        <Link href={`/blog#blog-section`} passHref>
+                            <button className={`${style.darkButtonNew}`}
+                                    style={{border: "none"}}>Back to Blogs
+                            </button>
+                        </Link>
+                        <Link href={nextBlog ? `/blog/${nextSlug}` : "#"} passHref>
+                            <button className={`${style.darkButtonNew}`}
+                                    disabled={!nextBlog}
+                                    style={{border: "none", cursor: !nextBlog ? "not-allowed" : "pointer"}}>Next Post
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>

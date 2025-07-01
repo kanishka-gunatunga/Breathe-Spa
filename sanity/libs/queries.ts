@@ -224,7 +224,8 @@ export const GET_CAREER_PAGE_DATA = `
       careers[] {
         positionTitle,
         description,
-        requirements
+        requirements,
+        email
       }
     }
   `
