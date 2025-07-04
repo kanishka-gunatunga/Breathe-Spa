@@ -4,6 +4,7 @@ import React from "react";
 import {getCareerData} from "@/sanity/libs/api";
 import {PortableText} from "next-sanity";
 import {TypedObject} from "@portabletext/types";
+import Link from "next/link";
 
 
 export interface Career {
@@ -56,6 +57,10 @@ const CareersPage = async () => {
                                             {/*</li>*/}
                                             <PortableText value={career.requirements}/>
                                         </div>
+                                        <h3 className={`${style.career_content} mb-3`}><strong className="fw-semibold">Apply
+                                            Now:</strong> <span><Link className="text-decoration-none text-black"
+                                                                      href={`mailto:${career.email}` || "mailto:shout@breathe-spa.com"}>{career.email ? career.email : "shout@breathe-spa.com"}</Link></span>
+                                        </h3>
                                         <hr className="text-[#F3EEE7] mt-5"/>
                                     </div>
                                 </div>
