@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "@/styles/page.module.css";
-import {fetchBlogData, getBlogData} from "@/sanity/libs/api";
+import {fetchBlogData} from "@/sanity/libs/api";
 import {urlFor} from "@/sanity/libs/sanity";
 import {PortableText} from "next-sanity";
 import style from "@/styles/services.module.css";
@@ -20,21 +20,21 @@ export default async function BlogPost({params}: { params: Promise<{ slug: strin
         return <p>Blog not found</p>;
     }
 
-    const allBlogs = await getBlogData();
+    // const allBlogs = await getBlogData();
 
-    const sortedBlogs = allBlogs.sort((a, b) =>
-        new Date(a.publishedAt).getTime() - new Date(b.publishedAt).getTime()
-    );
+    // const sortedBlogs = allBlogs.sort((a, b) =>
+    //     new Date(a.publishedAt).getTime() - new Date(b.publishedAt).getTime()
+    // );
 
-    const currentIndex = sortedBlogs.findIndex(post =>
-        (typeof post.slug === "string" ? post.slug : post.slug.current) === slug
-    );
+    // const currentIndex = sortedBlogs.findIndex(post =>
+    //     (typeof post.slug === "string" ? post.slug : post.slug.current) === slug
+    // );
 
     // const prevBlog = currentIndex < sortedBlogs.length - 1 ? sortedBlogs[currentIndex + 1] : null;
-    const nextBlog = currentIndex > 0 ? sortedBlogs[currentIndex - 1] : null;
+    // const nextBlog = currentIndex > 0 ? sortedBlogs[currentIndex - 1] : null;
 
     // const prevSlug = prevBlog ? (typeof prevBlog.slug === "string" ? prevBlog.slug : prevBlog.slug.current) : "#";
-    const nextSlug = nextBlog ? (typeof nextBlog.slug === "string" ? nextBlog.slug : nextBlog.slug.current) : "#";
+    // const nextSlug = nextBlog ? (typeof nextBlog.slug === "string" ? nextBlog.slug : nextBlog.slug.current) : "#";
 
 
     return (
@@ -72,15 +72,15 @@ export default async function BlogPost({params}: { params: Promise<{ slug: strin
                     <div className="d-flex justify-content-between">
                         <Link href={`/blog#blog-section`} passHref>
                             <button className={`${style.darkButtonNew}`}
-                                    style={{border: "none"}}>Back to Blogs
+                                    style={{border: "none"}}>Back
                             </button>
                         </Link>
-                        <Link href={nextBlog ? `/blog/${nextSlug}` : "#"} passHref>
-                            <button className={`${style.darkButtonNew}`}
-                                    disabled={!nextBlog}
-                                    style={{border: "none", cursor: !nextBlog ? "not-allowed" : "pointer"}}>Next Post
-                            </button>
-                        </Link>
+                        {/*<Link href={nextBlog ? `/blog/${nextSlug}` : "#"} passHref>*/}
+                        {/*    <button className={`${style.darkButtonNew}`}*/}
+                        {/*            disabled={!nextBlog}*/}
+                        {/*            style={{border: "none", cursor: !nextBlog ? "not-allowed" : "pointer"}}>Next Post*/}
+                        {/*    </button>*/}
+                        {/*</Link>*/}
                     </div>
                 </div>
             </div>

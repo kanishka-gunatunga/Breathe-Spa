@@ -4,7 +4,6 @@ import React from "react";
 import {getCareerData} from "@/sanity/libs/api";
 import {PortableText} from "next-sanity";
 import {TypedObject} from "@portabletext/types";
-import Link from "next/link";
 
 
 export interface Career {
@@ -38,11 +37,11 @@ const CareersPage = async () => {
                             <section key={index} className="mb-5">
                                 <div className="flex-row d-flex justify-content-between">
                                     <h2 className={`${style.career_title} mb-4`}>{career.positionTitle}</h2>
-                                    <Link href={`mailto:${career.email}` || "mailto:shout@breathe-spa.com"}>
-                                        <button className={`${style.darkButtonNew}`}
-                                                style={{border: "none"}}>Apply Now
-                                        </button>
-                                    </Link>
+                                    {/*<Link href={`mailto:${career.email}` || "mailto:shout@breathe-spa.com"}>*/}
+                                    {/*    <button className={`${style.darkButtonNew}`}*/}
+                                    {/*            style={{border: "none"}}>Apply Now*/}
+                                    {/*    </button>*/}
+                                    {/*</Link>*/}
                                 </div>
                                 <div className="row">
                                     <div className="col-12">
