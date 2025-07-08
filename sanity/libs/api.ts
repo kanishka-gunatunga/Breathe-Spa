@@ -7,7 +7,7 @@ import {
     GET_CONTACT_PAGE_DATA,
     GET_ETHOS_DATA,
     GET_EXCLUSIVE_DATA,
-    GET_HOME_DATA,
+    GET_HOME_DATA, GET_SEO,
     GET_SERVICE_CATEGORIES,
     GET_SERVICE_CATEGORY_BY_SLUG,
     GET_SERVICE_MAIN_PAGE_DATA,
@@ -104,6 +104,10 @@ export async function getContactData(): Promise<ContactData[]> {
 export async function getCareerData() {
     console.log('Fetching: getCareerData')
     return sanityClient.fetch(GET_CAREER_PAGE_DATA)
+}
+
+export async function getMetadata (page: string) {
+    return sanityClient.fetch(GET_SEO, { page });
 }
 
 

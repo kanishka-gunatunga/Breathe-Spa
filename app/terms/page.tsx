@@ -2,10 +2,12 @@ import React from 'react'
 import style from '@/styles/services.module.css'
 import pageStyle from '@/styles/page.module.css'
 import pageStyles from '@/styles/services.module.css'
-import {getTermsData} from '@/sanity/libs/api'
+import {getMetadata, getTermsData} from '@/sanity/libs/api'
 import {PortableText} from 'next-sanity'
 import Link from "next/link";
 import {ScrollHandler} from "@/components/ReusableComponents/ScrollHandler";
+import {Metadata} from "next";
+import {urlFor} from "@/sanity/libs/sanity";
 
 
 const page = async () => {
@@ -46,4 +48,25 @@ const page = async () => {
     )
 }
 
-export default page
+export default page;
+
+
+export async function generateMetadata(): Promise<Metadata> {
+    const mdata = await getMetadata("terms");
+
+    return {
+        title: mdata?.title || "Breathe Spa - Terms",
+        description: mdata?.description || "Welcome to Breathe Spa, your destination for wellness, relaxation, and pampering.",
+        keywords: mdata?.keywords?.join(", ") || "spa, wellness, relaxation, beauty, treatments",
+        openGraph: {
+            title: mdata?.ogTitle || mdata?.title || "Breathe Spa - Terms",
+            description: mdata?.ogDescription || mdata?.description || "Experience luxury and relaxation at Breathe Spa.",
+            images: mdata?.ogImage ? urlFor(mdata.ogImage).url() : "/Rectangle4422.png",
+            url: mdata?.canonicalUrl || "https://breathespa.vercel.app/",
+            type: "website",
+        },
+        alternates: {
+            canonical: mdata?.canonicalUrl || "https://breathespa.vercel.app/",
+        },
+    };
+}

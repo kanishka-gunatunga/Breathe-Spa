@@ -1,9 +1,11 @@
 import styles from "@/styles/page.module.css";
 import Image from "next/image";
 import BlogCard from "@/components/ReusableComponents/BlogCard";
-import {getBlogData} from "@/sanity/libs/api";
+import {getBlogData, getMetadata} from "@/sanity/libs/api";
 import {ScrollHandler} from "@/components/ReusableComponents/ScrollHandler";
 import React from "react";
+import {Metadata} from "next";
+import {urlFor} from "@/sanity/libs/sanity";
 
 const Blog = async () => {
 
@@ -47,3 +49,24 @@ const Blog = async () => {
 };
 
 export default Blog;
+
+
+export async function generateMetadata(): Promise<Metadata> {
+    const mdata = await getMetadata("blog");
+
+    return {
+        title: mdata?.title || "Breathe Spa - Blog",
+        description: mdata?.description || "Welcome to Breathe Spa, your destination for wellness, relaxation, and pampering.",
+        keywords: mdata?.keywords?.join(", ") || "spa, wellness, relaxation, beauty, treatments",
+        openGraph: {
+            title: mdata?.ogTitle || mdata?.title || "Breathe Spa - Blog",
+            description: mdata?.ogDescription || mdata?.description || "Experience luxury and relaxation at Breathe Spa.",
+            images: mdata?.ogImage ? urlFor(mdata.ogImage).url() : "/Rectangle4422.png",
+            url: mdata?.canonicalUrl || "https://breathespa.vercel.app/blog",
+            type: "website",
+        },
+        alternates: {
+            canonical: mdata?.canonicalUrl || "https://breathespa.vercel.app/blog",
+        },
+    };
+}

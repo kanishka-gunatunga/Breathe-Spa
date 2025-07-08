@@ -1,4 +1,4 @@
-import {getServiceCategories, getServiceMainPageData} from '@/sanity/libs/api'
+import {getMetadata, getServiceCategories, getServiceMainPageData} from '@/sanity/libs/api'
 import Image from 'next/image'
 import React from 'react'
 import style from '@/styles/services.module.css'
@@ -9,6 +9,7 @@ import DescriptionSection from '@/components/servicesComponents/DescriptionSecti
 import ServiceCategoryCard from '@/components/servicesComponents/ScrollSection'
 import {urlFor} from '@/sanity/libs/sanity'
 import {ScrollHandler} from "@/components/ReusableComponents/ScrollHandler";
+import {Metadata} from "next";
 
 
 const page = async () => {
@@ -55,7 +56,8 @@ const page = async () => {
             </div>
 
             <div className='p-0 mb-lg-4'>
-            <DescriptionSection title={servicesMainData[0]?.tagLine} description={servicesMainData[0]?.tagDescription}/>
+                <DescriptionSection title={servicesMainData[0]?.tagLine}
+                                    description={servicesMainData[0]?.tagDescription}/>
             </div>
 
             <div className="scroll-sections mt-lg-5">
@@ -70,3 +72,25 @@ const page = async () => {
 }
 
 export default page
+
+
+export async function generateMetadata(): Promise<Metadata> {
+    const mdata = await getMetadata("service");
+
+    return {
+        title: mdata?.title || "Breathe Spa - Services",
+        description: mdata?.description || "Welcome to Breathe Spa, your destination for wellness, relaxation, and pampering.",
+        keywords: mdata?.keywords?.join(", ") || "spa, wellness, relaxation, beauty, treatments",
+        openGraph: {
+            title: mdata?.ogTitle || mdata?.title || "Breathe Spa - Services",
+            description: mdata?.ogDescription || mdata?.description || "Experience luxury and relaxation at Breathe Spa.",
+            images: mdata?.ogImage ? urlFor(mdata.ogImage).url() : "/Rectangle4422.png",
+            url: mdata?.canonicalUrl || "https://breathespa.vercel.app/services",
+            type: "website",
+        },
+        alternates: {
+            canonical: mdata?.canonicalUrl || "https://breathespa.vercel.app/services",
+        },
+    };
+}
+

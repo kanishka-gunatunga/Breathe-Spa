@@ -9,73 +9,84 @@ import YellowBackSection from "@/components/ReusableComponents/YellowBackSection
 import Paragraph from "@/components/servicesComponents/Paragraph";
 import MainTitle from "@/components/servicesComponents/MainTitle";
 // import { getAboutMainPageData, getTeamData, getTestimonialData } from "@/sanity/libs/api";
-import { getAboutMainPageData, getTestimonialData } from "@/sanity/libs/api";
-import { urlFor } from "@/sanity/libs/sanity";
+import {getAboutMainPageData, getMetadata, getTestimonialData} from "@/sanity/libs/api";
+import {urlFor} from "@/sanity/libs/sanity";
 import TestimonialSlider from "@/components/ReusableComponents/SliderTestimonials";
 import Link from "next/link";
-
+import {Metadata} from "next";
 
 
 const AboutPage = async () => {
-  const about = await getAboutMainPageData();
-  const testimonials = await getTestimonialData();
-  // const team = await getTeamData();
+    const about = await getAboutMainPageData();
+    const testimonials = await getTestimonialData();
+    // const team = await getTeamData();
 
-  return (
-    <div>
-      <div className={styles.aboutPage}>
-        <div className={`d-flex ${style.imageContainer}`}>
-          {about[0].AboutsHeroImage && (
-            <Image src={urlFor(about[0]?.AboutsHeroImage).url() || "/banner-about.png"} alt='services hero image' width={1920} height={1080} style={{ width: "100vw", height: "auto", objectFit: 'cover' }} />
-          )}
-
-        </div>
-
-        <div className={` ${styles.contactContainer} section`} style={{ paddingTop: '50px !important', paddingBottom: "0px !important" }}>
-          <div className={`d-block d-lg-flex justify-content-between  ${styles.headSection} `}>
-            <div className="col-12 col-lg-6 my-5 my-md-0 my-lg-0 pe-lg-5 position-relative ">
-              <div className="position-relative" style={{ paddingTop: '20px !important', paddingLeft: "20px !important" }}>
-                <div className="d-flex imgShapeContainer">
-                  <div className="bgShapeImage"></div>
-                  <div className="imageWrapper" style={{ width: "100%", height: "100%" }}>
-                    {about[0].sectionOneImage && (
-                      <Image className={`${pageStyle.imgHeight}`} src={urlFor(about[0]?.sectionOneImage).url() || "/about1.png"} height={650} width={548} alt="" />
+    return (
+        <div>
+            <div className={styles.aboutPage}>
+                <div className={`d-flex ${style.imageContainer}`}>
+                    {about[0].AboutsHeroImage && (
+                        <Image src={urlFor(about[0]?.AboutsHeroImage).url() || "/banner-about.png"}
+                               alt='services hero image' width={1920} height={1080}
+                               style={{width: "100vw", height: "auto", objectFit: 'cover'}}/>
                     )}
-                  </div>
+
                 </div>
-              </div>
-            </div>
 
-            <div className={`col-12 col-lg-6 d-flex flex-column pt-4 pt-lg-0  ps-lg-2 about ${styles.aboutBreatheContainer} justify-content-between`}>
-              <div className="margin_bottom_150">
-                <MainTitle title={about[0]?.sectionOneTitle} />
-                <Paragraph text={about[0]?.sectionOneDescription} />
-              </div>
-              <Link href={about[0]?.sectionOneButtonLink || "/contact#contactForm"}>
-                <button className={`${pageStyle.darkButton}`} style={{ fontSize: "17px !important", border: "none" }} >{about[0]?.sectionOneButton}</button>
-              </Link>
-            </div>
-          </div>
-        </div>
+                <div className={` ${styles.contactContainer} section`}
+                     style={{paddingTop: '50px !important', paddingBottom: "0px !important"}}>
+                    <div className={`d-block d-lg-flex justify-content-between  ${styles.headSection} `}>
+                        <div className="col-12 col-lg-6 my-5 my-md-0 my-lg-0 pe-lg-5 position-relative ">
+                            <div className="position-relative"
+                                 style={{paddingTop: '20px !important', paddingLeft: "20px !important"}}>
+                                <div className="d-flex imgShapeContainer">
+                                    <div className="bgShapeImage"></div>
+                                    <div className="imageWrapper" style={{width: "100%", height: "100%"}}>
+                                        {about[0].sectionOneImage && (
+                                            <Image className={`${pageStyle.imgHeight}`}
+                                                   src={urlFor(about[0]?.sectionOneImage).url() || "/about1.png"}
+                                                   height={650} width={548} alt=""/>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-        {about[0].sectionTwoImage && (
-          <YellowBackSection
-            title={about[0]?.secTwoTitle}
-            description={about[0]?.sectionTwoDescription}
-            image={urlFor(about[0]?.sectionTwoImage).url() || "/about2.png"}
-            buttonText={about[0]?.sectionTwoButton}
-            buttonLink={about[0]?.sectionTwoButtonLink || "/services#serviceSection"}
-          />
-        )}
+                        <div
+                            className={`col-12 col-lg-6 d-flex flex-column pt-4 pt-lg-0  ps-lg-2 about ${styles.aboutBreatheContainer} justify-content-between`}>
+                            <div className="margin_bottom_150">
+                                <MainTitle title={about[0]?.sectionOneTitle}/>
+                                <Paragraph text={about[0]?.sectionOneDescription}/>
+                            </div>
+                            <Link href={about[0]?.sectionOneButtonLink || "/contact#contactForm"}>
+                                <button className={`${pageStyle.darkButton}`} style={{
+                                    fontSize: "17px !important",
+                                    border: "none"
+                                }}>{about[0]?.sectionOneButton}</button>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+
+                {about[0].sectionTwoImage && (
+                    <YellowBackSection
+                        title={about[0]?.secTwoTitle}
+                        description={about[0]?.sectionTwoDescription}
+                        image={urlFor(about[0]?.sectionTwoImage).url() || "/about2.png"}
+                        buttonText={about[0]?.sectionTwoButton}
+                        buttonLink={about[0]?.sectionTwoButtonLink || "/services#serviceSection"}
+                    />
+                )}
 
 
-        <div className={`${styles.baseSection}`} style={{ marginTop: "38px !important", marginBottom: "50px !important" }}>
-          <div className="d-flex flex-column align-items-center justify-content-center">
-            <div className="mb-5">
-              <MainTitle title={"Testimonials"} />
-            </div>
-            <TestimonialSlider testimonials={testimonials[0]?.testimonialsArray || []} />
-            {/* <div className="col-12 col-md-12 col-lg-8 position-relative mb-5">
+                <div className={`${styles.baseSection}`}
+                     style={{marginTop: "38px !important", marginBottom: "50px !important"}}>
+                    <div className="d-flex flex-column align-items-center justify-content-center">
+                        <div className="mb-5">
+                            <MainTitle title={"Testimonials"}/>
+                        </div>
+                        <TestimonialSlider testimonials={testimonials[0]?.testimonialsArray || []}/>
+                        {/* <div className="col-12 col-md-12 col-lg-8 position-relative mb-5">
               <Swiper
                 modules={[Navigation, Pagination]}
                 navigation={{
@@ -146,24 +157,45 @@ const AboutPage = async () => {
                 ))}
               </Swiper>
             </div> */}
-          </div>
+                    </div>
+                </div>
+
+                {/*<div className={`d-flex position-relative  py-5 pb-0 pb-md-5 mb-5  flex-column justify-content-center align-items-center ${styles.mobileHeightOnMobile}  ${styles.shapedBgTeam}`} style={{ width: "100%", overflow: "hidden" }}>*/}
+                {/*  <div className={`${styles.contactContainer} section py-0 py-lg-5`}>*/}
+                {/*    <div className="d-flex flex-column align-items-center justify-content-center">*/}
+                {/*      <MainTitle title={team?.[0]?.title || "Team of Breathe"} />*/}
+                {/*    </div>*/}
+                {/*    <div className="d-block justify-content-center d-lg-flex d-xl-flex gap-5">*/}
+                {/*      <CardSlider team={team?.[0]?.teamArray || []} />*/}
+                {/*    </div>*/}
+                {/*  </div>*/}
+                {/*</div>*/}
+
+            </div>
+            <ExclusiveDeals/>
         </div>
-
-        {/*<div className={`d-flex position-relative  py-5 pb-0 pb-md-5 mb-5  flex-column justify-content-center align-items-center ${styles.mobileHeightOnMobile}  ${styles.shapedBgTeam}`} style={{ width: "100%", overflow: "hidden" }}>*/}
-        {/*  <div className={`${styles.contactContainer} section py-0 py-lg-5`}>*/}
-        {/*    <div className="d-flex flex-column align-items-center justify-content-center">*/}
-        {/*      <MainTitle title={team?.[0]?.title || "Team of Breathe"} />*/}
-        {/*    </div>*/}
-        {/*    <div className="d-block justify-content-center d-lg-flex d-xl-flex gap-5">*/}
-        {/*      <CardSlider team={team?.[0]?.teamArray || []} />*/}
-        {/*    </div>*/}
-        {/*  </div>*/}
-        {/*</div>*/}
-
-      </div>
-      <ExclusiveDeals />
-    </div>
-  )
+    )
 }
 
 export default AboutPage;
+
+
+export async function generateMetadata(): Promise<Metadata> {
+    const mdata = await getMetadata("about");
+
+    return {
+        title: mdata?.title || "Breathe Spa - About",
+        description: mdata?.description || "Welcome to Breathe Spa, your destination for wellness, relaxation, and pampering.",
+        keywords: mdata?.keywords?.join(", ") || "spa, wellness, relaxation, beauty, treatments",
+        openGraph: {
+            title: mdata?.ogTitle || mdata?.title || "Breathe Spa - About",
+            description: mdata?.ogDescription || mdata?.description || "Experience luxury and relaxation at Breathe Spa.",
+            images: mdata?.ogImage ? urlFor(mdata.ogImage).url() : "/Rectangle4422.png",
+            url: mdata?.canonicalUrl || "https://yourdomain.com/about-breath",
+            type: "website",
+        },
+        alternates: {
+            canonical: mdata?.canonicalUrl || "https://yourdomain.com/about-breath",
+        },
+    };
+}
