@@ -6,11 +6,19 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ExclusiveDeals from "@/components/ReusableComponents/ExclusiveDeals";
 import DescriptionSection from '@/components/servicesComponents/DescriptionSection'
 import YellowBackSection from "@/components/ReusableComponents/YellowBackSection";
-import { getBlogData, getEthosData, getHomeData, getServiceCategories, getSiteData } from "@/sanity/libs/api";
+import {
+    getBlogData,
+    getEthosData,
+    getHomeData,
+    getMetadata,
+    getServiceCategories,
+    getSiteData
+} from "@/sanity/libs/api";
 import { urlFor } from "@/sanity/libs/sanity";
 import Link from "next/link";
 import HeroSlider from "@/components/ReusableComponents/HeroSlider";
 import pageStyle from '@/styles/services.module.css'
+import {Metadata} from "next";
 
 
 export default async function Home() {
@@ -420,4 +428,25 @@ export default async function Home() {
 
         </>
     );
+}
+
+
+export async function generateMetadata(): Promise<Metadata> {
+    const mdata = await getMetadata("home");
+
+    return {
+        title: mdata?.title || "Breathe Spa - Home",
+        description: mdata?.description || "Welcome to Breathe Spa, your destination for wellness, relaxation, and pampering.",
+        keywords: mdata?.keywords?.join(", ") || "spa, wellness, relaxation, beauty, treatments",
+        openGraph: {
+            title: mdata?.ogTitle || mdata?.title || "Breathe Spa - Home",
+            description: mdata?.ogDescription || mdata?.description || "Experience luxury and relaxation at Breathe Spa.",
+            images: mdata?.ogImage ? urlFor(mdata.ogImage).url() : "/Rectangle4422.png",
+            url: mdata?.canonicalUrl || "https://breathespa.vercel.app/",
+            type: "website",
+        },
+        alternates: {
+            canonical: mdata?.canonicalUrl || "https://breathespa.vercel.app/",
+        },
+    };
 }

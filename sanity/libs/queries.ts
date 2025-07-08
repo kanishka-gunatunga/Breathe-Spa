@@ -230,3 +230,14 @@ export const GET_CAREER_PAGE_DATA = `
     }
   `
 ;
+
+export const GET_SEO = `*[_type == "seo" && page == $page][0] {
+    title,
+    description,
+    keywords,
+    ogTitle,
+    ogDescription,
+    ogImage,
+    canonicalUrl
+  }`
+;

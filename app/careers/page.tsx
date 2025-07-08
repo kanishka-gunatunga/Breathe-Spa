@@ -1,10 +1,12 @@
 import pageStyle from "@/styles/page.module.css";
 import style from "@/styles/services.module.css";
 import React from "react";
-import {getCareerData} from "@/sanity/libs/api";
+import {getCareerData, getMetadata} from "@/sanity/libs/api";
 import {PortableText} from "next-sanity";
 import {TypedObject} from "@portabletext/types";
 import Link from "next/link";
+import {Metadata} from "next";
+import {urlFor} from "@/sanity/libs/sanity";
 
 
 export interface Career {
@@ -74,3 +76,24 @@ const CareersPage = async () => {
 }
 
 export default CareersPage;
+
+
+export async function generateMetadata(): Promise<Metadata> {
+    const mdata = await getMetadata("Careers");
+
+    return {
+        title: mdata?.title || "Breathe Spa - Careers",
+        description: mdata?.description || "Welcome to Breathe Spa, your destination for wellness, relaxation, and pampering.",
+        keywords: mdata?.keywords?.join(", ") || "spa, wellness, relaxation, beauty, treatments",
+        openGraph: {
+            title: mdata?.ogTitle || mdata?.title || "Breathe Spa - Careers",
+            description: mdata?.ogDescription || mdata?.description || "Experience luxury and relaxation at Breathe Spa.",
+            images: mdata?.ogImage ? urlFor(mdata.ogImage).url() : "/Rectangle4422.png",
+            url: mdata?.canonicalUrl || "https://breathespa.vercel.app/careers",
+            type: "website",
+        },
+        alternates: {
+            canonical: mdata?.canonicalUrl || "https://breathespa.vercel.app/careers",
+        },
+    };
+}
