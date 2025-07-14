@@ -28,7 +28,7 @@ const CareersPage = async () => {
                 <div className='d-flex flex-column'>
                     <div className={`section ${pageStyle.contactContainer} py-5`}>
                         <div className="d-flex flex-column text-center">
-                            <h4 className={`${style.career_txt_40_awsome}`}>{careersData.title}</h4>
+                            <h4 className={`${style.career_txt_40_awsome}`}>{careersData.pageTitle}</h4>
                         </div>
 
                         <div className="d-flex flex-column text-start">

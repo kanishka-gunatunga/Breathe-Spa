@@ -62,25 +62,36 @@
 import Image from 'next/image';
 import pageStyles from "@/styles/page.module.css";
 import { urlFor } from '@/sanity/libs/sanity';
-import { SiteData } from '@/sanity/types';
+// import { SiteData } from '@/sanity/types';
 import { usePathname } from 'next/navigation';
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 
-interface HeaderProps {
-  site: SiteData[];
-}
+// interface HeaderProps {
+//   site: SiteData[] | null;
+// }
 
-const Header = ({ site }: HeaderProps) => {
+const Header = ({site}) => {
   const pathname = usePathname();
 
-  if (!site || !site[0]) {
-    console.error("Invalid site data:", site);
-    return null;
-  }
+  // if (!site || !site[0]) {
+  //   console.error("Invalid site data:", site);
+  //   return null;
+  // }
+
+  // const isActive = (path: string) => {
+  //   if (path === '/') {
+  //     return pathname === '/' ? 'active-link' : '';
+  //   }
+  //   return pathname?.startsWith(path) ? 'active-link' : '';
+  // };
 
   const isActive = (path: string) => {
     if (path === '/') {
       return pathname === '/' ? 'active-link' : '';
+    }
+
+    if (path === '/services') {
+      return pathname?.startsWith('/services') ? 'active-link' : '';
     }
     return pathname?.startsWith(path) ? 'active-link' : '';
   };
@@ -91,8 +102,8 @@ const Header = ({ site }: HeaderProps) => {
           <div className={`${pageStyles.contactContainer} ${pageStyles.mobile_width} navColor`} style={{ backgroundColor: "#F3EEE7 !important" }}>
             <Navbar expand="xl" className="p-3 py-lg-4 navStyleMobile" style={{ backgroundColor: "#F3EEE7 !important" }}>
               <Navbar.Brand href="/">
-                {site[0]?.logo && (
-                    <Image src={urlFor(site[0]?.logo).url() || "/interior.png"} alt="Breathe Logo" width={317} height={33} className='img-fluid' />
+                {site?.logo && (
+                    <Image src={urlFor(site.logo).url() || "/interior.png"} alt="Breathe Logo" width={317} height={33} className='img-fluid' />
                 )}
               </Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -109,6 +120,41 @@ const Header = ({ site }: HeaderProps) => {
                     <NavDropdown.Item href="/services#facial" className="dropdown-item">Facial</NavDropdown.Item>
                     <NavDropdown.Item href="/services#add-ons" className="dropdown-item">Add-Ons</NavDropdown.Item>
                   </NavDropdown>
+
+                  {/*{site.navigation && site.navigation.map((navItem) => {*/}
+                  {/*  // Skip 'Our Services' if it's already handled dynamically above*/}
+                  {/*  if (navItem.title === 'Our Services' || navItem.link === '/services') {*/}
+                  {/*    return null;*/}
+                  {/*  }*/}
+                  {/*  if (navItem.dropdownItems && navItem.dropdownItems.length > 0) {*/}
+                  {/*    return (*/}
+                  {/*        <NavDropdown*/}
+                  {/*            key={navItem.link || navItem.title} // Use link or title as a key*/}
+                  {/*            title={navItem.title}*/}
+                  {/*            id={`dropdown-${navItem.title.toLowerCase().replace(/\s+/g, '-')}`}*/}
+                  {/*            className={`nav-item px-lg-3 ${isActive(navItem.link)}`}*/}
+                  {/*        >*/}
+                  {/*          {navItem.dropdownItems.map((item) => (*/}
+                  {/*              <NavDropdown.Item key={item.link} href={item.link} className="dropdown-item">*/}
+                  {/*                {item.title}*/}
+                  {/*              </NavDropdown.Item>*/}
+                  {/*          ))}*/}
+                  {/*        </NavDropdown>*/}
+                  {/*    );*/}
+                  {/*  } else {*/}
+                  {/*    return (*/}
+                  {/*        <Nav.Link*/}
+                  {/*            key={navItem.link}*/}
+                  {/*            className={`nav-item px-lg-3 ${isActive(navItem.link)}`}*/}
+                  {/*            href={navItem.link}*/}
+                  {/*        >*/}
+                  {/*          {navItem.title}*/}
+                  {/*        </Nav.Link>*/}
+                  {/*    );*/}
+                  {/*  }*/}
+                  {/*})}*/}
+
+
                   <Nav.Link className={`nav-item px-lg-3 ${isActive('/about-breath')}`} href="/about-breath">About Breathe</Nav.Link>
                   <Nav.Link className={`nav-item px-lg-3 ${isActive('/blog')}`} href="/blog">Blog</Nav.Link>
                   <Nav.Link className={`nav-item px-lg-3 ${isActive('/contact')}`} href="/contact">Contact Us</Nav.Link>

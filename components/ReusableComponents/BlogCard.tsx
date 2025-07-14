@@ -4,7 +4,7 @@ import Link from "next/link";
 import { BlogData } from "@/sanity/types";
 import { urlFor } from "@/sanity/libs/sanity";
 
-const BlogCard: React.FC<BlogData> = ({ title, slug, mainImage, publishedAt, feturedText }) => {
+const BlogCard: React.FC<BlogData> = ({ title, slug, mainImage, publishedAt, featuredText }) => {
     return (
         <Link href={`/blog/${slug}`} className="text-decoration-none">
             <div
@@ -35,7 +35,7 @@ const BlogCard: React.FC<BlogData> = ({ title, slug, mainImage, publishedAt, fet
                     <h3 className={`mb-2 ${styles.blogCardTitle_new}`}>
                         {title}
                     </h3>
-                    <p className={styles.blogCardDesc}>{feturedText}</p>
+                    <p className={styles.blogCardDesc}>{featuredText}</p>
                     {/* <PortableText value={body} /> */}
                     <p className={`${styles.blogCardRead}`}>
                         Read More...
