@@ -3,7 +3,7 @@ import { Inria_Sans, Scheherazade_New } from "next/font/google";
 import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { getServiceCategories, getSiteData } from "@/sanity/libs/api";
+import { getCategories, siteDetails} from "@/sanity/libs/api";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
@@ -29,8 +29,9 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const site = await getSiteData();
-  const service = await getServiceCategories()
+  // const site = await getSiteData();
+  const site = await siteDetails();
+  const service = await getCategories()
 
   return (
     <html lang="en">

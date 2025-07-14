@@ -36,8 +36,8 @@ const HeroSlider: React.FC<HeroSliderProps> = ({ home }) =>{
           fadeEffect={{ crossFade: true }}
           loop={true}
         >
-          {home[0]?.heroArray.map((hero, index) => (
-            <SwiperSlide key={index}>
+          {home.heroArray.map((hero) => (
+            <SwiperSlide key={hero._key}>
               {hero.mainImage && (
                 <Image src={urlFor(hero.mainImage).url() || "/Vector12.png"} alt='home hero image'
                   width={1920}

@@ -8,12 +8,13 @@ import Link from "next/link";
 import {ScrollHandler} from "@/components/ReusableComponents/ScrollHandler";
 import {Metadata} from "next";
 import {urlFor} from "@/sanity/libs/sanity";
+import {TermsData} from "@/sanity/types";
 
 
 const page = async () => {
 
 
-    const terms = await getTermsData()
+    const terms: TermsData = await getTermsData();
     console.log("terms: ", terms);
 
     return (
@@ -21,8 +22,8 @@ const page = async () => {
             <ScrollHandler/>
             <div className={`section ${pageStyle.contactContainer} py-5`}>
                 <div className='d-flex flex-column'>
-                    {terms.map((term) => (
-                        <div key={term._id} className={`section ${pageStyle.contactContainer} py-5`}>
+                    {terms.termsSections.map((term, index) => (
+                        <div key={index} className={`section ${pageStyle.contactContainer} py-5`}>
                             <div className="d-flex flex-column text-center mb-3">
                                 <h2 className={`${style.termTitle}`}>{term.title}</h2>
                             </div>
@@ -38,7 +39,8 @@ const page = async () => {
                     ))}
 
                     <div className="d-flex justify-content-center mt-4">
-                        <Link href="/contact#contactForm" className={`${pageStyles.darkButton} text-center`}>
+                        <Link href={terms.contactLink || '/contact#contactForm'}
+                              className={`${pageStyles.darkButton} text-center`}>
                             Return to Contact Us Page
                         </Link>
                     </div>
