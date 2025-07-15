@@ -14,11 +14,11 @@ import 'swiper/css/effect-fade'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { urlFor } from '@/sanity/libs/sanity';
-import {  HomeData } from '@/sanity/types';
+import {HeroImage, HomeData} from '@/sanity/types';
 
 
 interface HeroSliderProps {
-  home: HomeData[];
+  home: HomeData;
 
 }
 
@@ -36,8 +36,8 @@ const HeroSlider: React.FC<HeroSliderProps> = ({ home }) =>{
           fadeEffect={{ crossFade: true }}
           loop={true}
         >
-          {home.heroArray.map((hero) => (
-            <SwiperSlide key={hero._key}>
+          {home.heroArray.map((hero:HeroImage,index) => (
+            <SwiperSlide key={index}>
               {hero.mainImage && (
                 <Image src={urlFor(hero.mainImage).url() || "/Vector12.png"} alt='home hero image'
                   width={1920}

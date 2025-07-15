@@ -134,7 +134,6 @@ import {
     getServiceCategoriesQuery,
     homeQuery,
     serviceCategoryQuery, servicePageQuery,
-    servicesQuery,
     siteDataQuery,
     termsQuery
 } from './queries'

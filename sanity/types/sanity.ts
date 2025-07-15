@@ -205,10 +205,10 @@ export interface ServiceCategory {
     mainImage?: Image
     servicesHeroImage?: Image
     innerHeroTitle: string
-    servicesImage?: string
+    servicesMainImage?: string
     categoryTitle: string
     description: string
-    categoryDescription: string
+    categoryShortDescription: string
     homeDescription: string
     services: Service[]
 }
@@ -348,8 +348,27 @@ export interface HeroImage {
 export interface SocialMediaItem {
     _key: string;
     name: string;
-    url: string;
+    link: string;
     icon?: Image;
+}
+
+export interface OpenDay {
+    _key?: string;
+    day: string;
+    time: string;
+}
+
+export interface NavigationDropdownItem {
+    _key: string;
+    title: string;
+    link: string;
+}
+
+export interface NavigationItem {
+    _key: string;
+    title: string;
+    link: string;
+    dropdownItems?: NavigationDropdownItem[];
 }
 
 export interface SiteData {
@@ -378,11 +397,11 @@ export interface OpenItem {
     time: string
 }
 
-export interface SocialMediaItem {
-    link: string
-    name: string
-    icon?: Image
-}
+// export interface SocialMediaItem {
+//     link: string
+//     name: string
+//     icon?: Image
+// }
 
 export interface BlogData {
     _id: string

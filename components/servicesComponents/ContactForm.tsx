@@ -280,7 +280,7 @@ interface FormData {
     privacyPolicy: boolean;
 }
 
-const ContactForm = ({ title, description, image }) => {
+const ContactForm = ({title, description, image}: { title: string, description: string, image: string }) => {
     const [formData, setFormData] = useState<FormData>({
         firstName: "",
         lastName: "",
@@ -372,8 +372,10 @@ const ContactForm = ({ title, description, image }) => {
                     {/*    interested in. <br/>For same day appointments please whatsapp or call us on +94772444888`}</p>*/}
 
                     <p className={`text-muted ${styles.sectionSubTitle}`}
-                       dangerouslySetInnerHTML={{ __html: description || `Please let us know which treatments you’re
-                       interested in. <br/>For same day appointments please whatsapp or call us on +94772444888` }}
+                       dangerouslySetInnerHTML={{
+                           __html: description || `Please let us know which treatments you’re
+                       interested in. <br/>For same day appointments please whatsapp or call us on +94772444888`
+                       }}
                     />
 
                     {submissionStatus === "success" && (
