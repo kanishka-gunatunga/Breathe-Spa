@@ -36,7 +36,7 @@ import Link from 'next/link';
 import pageStyle from '@/styles/services.module.css'
 
 
-async function ExclusiveDeals({title, description, buttonText, buttonLink}) {
+async function ExclusiveDeals({title, description, buttonText, buttonLink}:{title: string, description: string, buttonText: string, buttonLink:string}) {
 
     return (
         <div>

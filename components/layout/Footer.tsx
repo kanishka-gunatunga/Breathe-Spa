@@ -4,11 +4,11 @@ import "./header-footer.css";
 import styles from "@/styles/page.module.css";
 import Link from 'next/link';
 import {urlFor} from '@/sanity/libs/sanity';
-import {ServiceCategory, SiteData} from '@/sanity/types';
+import {ServiceCategory, SiteData, SocialMediaItem} from '@/sanity/types';
 import NewsletterForm from '../servicesComponents/Newsletter';
 
 interface FooterProps {
-    site: SiteData[] | null;
+    site: SiteData | null;
     service: ServiceCategory[] | null;
 }
 
@@ -171,26 +171,32 @@ const Footer = ({site, service}: FooterProps) => {
                     })}
                   </div> */}
                                     <div className="d-flex gap-3">
-                                        {sortedSocial.map((item, index) => {
-                                            if (!item.link) return null;
-                                            const iconUrl = item.icon ? urlFor(item.icon).url() : "/interior.png";
-                                            return (
-                                                <Link href={item.link} key={index}>
-                                                    <Image
-                                                        src={iconUrl}
-                                                        alt={`${item.name} Logo`}
-                                                        width={30}
-                                                        height={30}
-                                                        objectFit="contain"
-                                                        style={{
-                                                            width: '30px !important',
-                                                            height: '30px !important',
-                                                            objectFit: 'contain'
-                                                        }}
-                                                    />
-                                                </Link>
-                                            );
-                                        })}
+                                        {sortedSocial && sortedSocial.length > 0 ? (
+
+                                            sortedSocial.map((item: SocialMediaItem, index:number) => {
+                                                if (!item.link) return null;
+                                                const iconUrl = item.icon ? urlFor(item.icon).url() : "/interior.png";
+                                                return (
+                                                    <Link href={item.link} key={index}>
+                                                        <Image
+                                                            src={iconUrl}
+                                                            alt={`${item.name} Logo`}
+                                                            width={30}
+                                                            height={30}
+                                                            objectFit="contain"
+                                                            style={{
+                                                                width: '30px !important',
+                                                                height: '30px !important',
+                                                                objectFit: 'contain'
+                                                            }}
+                                                        />
+                                                    </Link>
+                                                );
+                                            })
+
+                                        ) : (
+                                            <p className="text-muted">No social media links.</p>
+                                        )}
                                     </div>
                                 </div>
                             </div>

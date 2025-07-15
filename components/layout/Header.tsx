@@ -62,15 +62,15 @@
 import Image from 'next/image';
 import pageStyles from "@/styles/page.module.css";
 import { urlFor } from '@/sanity/libs/sanity';
-// import { SiteData } from '@/sanity/types';
+import { SiteData } from '@/sanity/types';
 import { usePathname } from 'next/navigation';
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 
-// interface HeaderProps {
-//   site: SiteData[] | null;
-// }
+interface HeaderProps {
+  site: SiteData | null;
+}
 
-const Header = ({site}) => {
+const Header = ({site}:HeaderProps) => {
   const pathname = usePathname();
 
   // if (!site || !site[0]) {

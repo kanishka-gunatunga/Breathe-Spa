@@ -89,11 +89,53 @@ import React from 'react'
 import styles from "@/styles/page.module.css";
 import Image from 'next/image';
 
-const ContactLocation = async ({contactData}) => {
+
+export interface EmailContact {
+    _key?: string;
+    email: string;
+}
+
+export interface PhoneNumberContact {
+    _key?: string;
+    number: string;
+}
+
+export interface OpenDay {
+    _key?: string;
+    day: string;
+    time: string;
+}
+
+export interface ContactSiteInfo {
+    title: string;
+    description: string;
+    openDays: OpenDay[];
+    address: string;
+    emailArray: EmailContact[];
+    phoneNumberArray: PhoneNumberContact[];
+}
+
+
+export interface ContactPageData {
+    _id: string;
+    _type: 'contactPage';
+    siteInfo: ContactSiteInfo;
+    mapEmbed: string;
+}
+
+interface ContactLocationProps {
+    contactData: ContactPageData | null;
+}
+
+const ContactLocation: React.FC<ContactLocationProps> = async ({contactData}) => {
     // const contact = await getContactData();
     // const site = await getSiteData();
     // console.log("contact : ", contact)
     // console.log("site : ", site)
+    if (!contactData) {
+        return null;
+    }
+
     return (
         <div>
             <div className={styles.mapHouContainer}>

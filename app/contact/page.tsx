@@ -111,7 +111,7 @@ const Contact = async () => {
                     <ContactForm
                         title={contactData.contactSection.title}
                         description={contactData.contactSection.description}
-                        image={contactData.contactSection.contactImage ? urlFor(contactData.contactSection.contactImage).url() : undefined}
+                        image={contactData.contactSection.contactImage ? urlFor(contactData.contactSection.contactImage).url() : ''}
                     />
                 </div>
             </section>
