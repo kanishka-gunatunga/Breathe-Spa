@@ -500,6 +500,8 @@ export default async function Home() {
 
     const service = homeData.services.serviceCategories;
 
+    console.log("------ffd: ",homeData.sectionTwo )
+
 
     const serviceOrder = [
         service.find((item: ServiceCategory) => item.slug.current === 'body'),
@@ -822,14 +824,14 @@ export default async function Home() {
                 ))}
             </div>
 
-            {homeData?.sectionTwoImage && (
+            {/*{homeData.sectionTwoImage && (*/}
                 <YellowBackSection
                     title={homeData.sectionTwo.secTwoTitle}
                     description={homeData.sectionTwo.sectionTwoDescription}
                     image={urlFor(homeData.sectionTwo.sectionTwoImage).url() || "/interior.png"}
                     buttonText={homeData.sectionTwo.sectionTwoButton}
                     buttonLink={homeData.sectionTwo.sectionTwoButtonLink}/>
-            )}
+            {/*)}*/}
 
 
             <div
