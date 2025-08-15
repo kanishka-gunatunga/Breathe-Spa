@@ -447,7 +447,7 @@ const ContactForm = ({title, description, image}: { title: string, description: 
                                 className={styles.formControl}
                                 id="phone"
                                 name="phone"
-                                placeholder="+94 71 234 5678"
+                                placeholder="+94 712 345 678"
                                 value={formData.phone}
                                 onChange={handleChange}
                             />
