@@ -685,12 +685,19 @@ input:focus {
         font-size: 14px !important;
     }
 
-    .dropdown-menu[data-bs-popper] {
-        margin-left: -90px !important;
-    }
+    /*.dropdown-menu[data-bs-popper] {*/
+    /*    margin-left: -90px !important;*/
+    /*}*/
 
     .our-services-nav-mobile {
         margin-top: 5px !important;
     }
 
+}
+
+
+@media (max-width: 1199px) {
+    .dropdown-menu[data-bs-popper] {
+        margin-left: -90px !important;
+    }
 }
