@@ -12,6 +12,40 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: '/body-menu',
+        destination: '/services/body',
+        permanent: true,
+      },
+      {
+        source: '/nails',
+        destination: '/services/nail-treatment',
+        permanent: true,
+      },
+      {
+        source: '/contactus',
+        destination: '/contact',
+        permanent: true,
+      },
+      {
+        source: '/facial',
+        destination: '/services/facial',
+        permanent: true,
+      },
+      {
+        source: '/nails-menu',
+        destination: '/services/nail-treatment',
+        permanent: true,
+      },
+      {
+        source: '/about-breath',
+        destination: '/about-breathe',
+        permanent: true,
+      },
+    ];
+  },
   // eslint: {
   //   ignoreDuringBuilds: true,
   // },

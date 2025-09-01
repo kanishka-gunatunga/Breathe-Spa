@@ -185,8 +185,8 @@ const Header = ({site}: HeaderProps) => {
                                 {/*})}*/}
 
 
-                                <Nav.Link className={`nav-item px-lg-3 ${isActive('/about-breath')}`}
-                                          href="/about-breath">About Breathe</Nav.Link>
+                                <Nav.Link className={`nav-item px-lg-3 ${isActive('/about-breathe')}`}
+                                          href="/about-breathe">About Breathe</Nav.Link>
                                 <Nav.Link className={`nav-item px-lg-3 ${isActive('/blog')}`}
                                           href="/blog">Blog</Nav.Link>
                                 <Nav.Link className={`nav-item px-lg-3 ${isActive('/contact')}`} href="/contact">Contact
