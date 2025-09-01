@@ -316,11 +316,11 @@ export async function generateMetadata(): Promise<Metadata> {
             title: mdata?.ogTitle || mdata?.title || 'Breathe Spa - About Us',
             description: mdata?.ogDescription || mdata?.description || 'Discover the story behind Breathe Spa and our dedication to relaxation.',
             images: mdata?.ogImage ? urlFor(mdata.ogImage).url() : "/Rectangle4422.png",
-            url: mdata?.canonicalUrl || "https://breathespa.vercel.app/about-breath",
+            url: mdata?.canonicalUrl || "https://breathespa.vercel.app/about-breathe",
             type: "website",
         },
         alternates: {
-            canonical: mdata?.canonicalUrl || "https://breathespa.vercel.app/about-breath",
+            canonical: mdata?.canonicalUrl || "https://breathespa.vercel.app/about-breathe",
         },
     };
 }
