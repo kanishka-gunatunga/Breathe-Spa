@@ -50,7 +50,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Breathe Spa",
     description: "Welcome to Breathe Spa, your destination for wellness, relaxation, and pampering.",
     icons: {
-      icon: '/BreatheLogo25Black.png',
+      icon: '/favicon.png',
     },
   };
 }
